@@ -61,6 +61,24 @@
 .header {
   padding-left: 24px;
   padding-right: 24px;
+  height: 100vh;
+  background-image: url("../../assets/images/illu/grille.svg");
+  background-size: 200%;
+}
+
+h1 {
+  font-family: "owners-text", sans-serif;
+  font-size: 76px;
+  line-height: 130%;
+  margin-top: 120px;
+}
+
+.h1_nom {
+  font-family: "pangaia";
+  font-weight: 200;
+  font-size: 101px;
+  color: #A89885;
+  display: block;
 }
 
 a {
