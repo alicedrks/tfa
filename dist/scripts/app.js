@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/scripts/app.js":
@@ -7,7 +8,22 @@
   \****************************/
 /***/ (() => {
 
-console.info('Hello world');
+
+
+var menuToggle = document.querySelector('.burgerMenu');
+var bodyc = document.querySelector('.home');
+menuToggle.addEventListener('click', menuOpen);
+var pew = document.querySelector('.navigation__liens');
+
+function menuOpen() {
+  document.body.classList.toggle("navigation__liens--open");
+
+  if (bodyc.classList.contains('navigation__liens--open')) {
+    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
+  } else {
+    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
+  }
+}
 
 /***/ }),
 
@@ -17,7 +33,6 @@ console.info('Hello world');
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
