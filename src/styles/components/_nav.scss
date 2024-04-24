@@ -1,0 +1,13 @@
+.navigation{
+    display: flex;
+
+    &__liens{
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__el{
+        list-style: none;
+    }
+}
