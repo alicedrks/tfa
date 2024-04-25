@@ -14,9 +14,81 @@ h1{
 }
 
 .h1_nom{
-    font-family: 'pangaia';
+    font-family: 'Pangaia';
     font-weight: 200;
     font-size: 101px;
     color: $c-element;
     display: block;
 }
+
+.description{
+    margin-left: 24px;
+    margin-right: 24px;
+    height: 100vh;
+
+    &__para{
+        font-size: 18px;
+        font-family: 'owners-text', sans-serif;
+        margin-bottom: 72px;
+
+        &--big{
+            font-size: 23px;
+            padding-top: 144px;
+            margin-top: 0;
+        }
+    }
+}
+
+.projet{
+    margin: 0;
+    padding: 0 18px;
+    height: 100vh;
+    overflow: hidden;
+
+    &__liste{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__element{
+        display: none;
+
+        &--active{
+            display: block;
+            text-align: center;
+        }
+    }
+
+    &__titre1{
+        font-size: 32px;
+        font-family: 'owners-text', sans-serif;
+        margin: 0;
+        padding-top: 144px;
+    }
+
+    &__titre2{
+        font-size: 24px;
+        font-family: 'Pangaia regular';
+        font-weight: 200;
+        margin: 36px 0 18px ;
+    }
+    
+    &__para{
+        font-size: 14px;
+        font-family: 'owners-text', sans-serif;
+        margin: 0 36px 36px;
+    }
+
+    &__illu{
+        position: relative;
+        transform: rotate(120deg);
+        left: 50%;
+        top: 900px;
+        transform: translate(-50%, -60%);
+        width: 300vw;
+
+    }
+}
+
+

@@ -2,6 +2,10 @@
   font-family: "Pangaia";
   src: url("../../assets/font/pangaia/PPPangaia-MediumItalic.otf") format("opentype");
 }
+@font-face {
+  font-family: "Pangaia regular";
+  src: url("../../assets/font/pangaia/PPPangaia-Medium.otf") format("opentype");
+}
 .navigation {
   position: relative;
   z-index: 20;
@@ -74,11 +78,71 @@ h1 {
 }
 
 .h1_nom {
-  font-family: "pangaia";
+  font-family: "Pangaia";
   font-weight: 200;
   font-size: 101px;
   color: #A89885;
   display: block;
+}
+
+.description {
+  margin-left: 24px;
+  margin-right: 24px;
+  height: 100vh;
+}
+.description__para {
+  font-size: 18px;
+  font-family: "owners-text", sans-serif;
+  margin-bottom: 72px;
+}
+.description__para--big {
+  font-size: 23px;
+  padding-top: 144px;
+  margin-top: 0;
+}
+
+.projet {
+  margin: 0;
+  padding: 0 18px;
+  height: 100vh;
+  overflow: hidden;
+}
+.projet__liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.projet__element {
+  display: none;
+}
+.projet__element--active {
+  display: block;
+  text-align: center;
+}
+.projet__titre1 {
+  font-size: 32px;
+  font-family: "owners-text", sans-serif;
+  margin: 0;
+  padding-top: 144px;
+}
+.projet__titre2 {
+  font-size: 24px;
+  font-family: "Pangaia regular";
+  font-weight: 200;
+  margin: 36px 0 18px;
+}
+.projet__para {
+  font-size: 14px;
+  font-family: "owners-text", sans-serif;
+  margin: 0 36px 36px;
+}
+.projet__illu {
+  position: relative;
+  transform: rotate(120deg);
+  left: 50%;
+  top: 900px;
+  transform: translate(-50%, -60%);
+  width: 300vw;
 }
 
 a {
@@ -96,6 +160,26 @@ button {
   background-color: transparent;
   border-style: none;
   cursor: pointer;
+}
+
+.btn {
+  border-style: solid;
+  border-color: #fff;
+  color: #fff;
+  border-radius: 25px;
+  font-family: "owners-text", sans-serif;
+  font-size: 18px;
+  padding: 9px 18px;
+  display: inline-block;
+}
+.btn--right {
+  margin-left: 9px;
+}
+
+a svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
 }
 
 /*# sourceMappingURL=app.css.map*/
