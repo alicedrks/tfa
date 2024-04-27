@@ -48,6 +48,13 @@
             color: $c-action;
         }
 
+        &--active{
+            background-image: url('../../assets/images/illu/balleTennis.svg');
+            background-repeat: no-repeat;
+            background-position-x: 50%;
+            background-position-y: 87%;
+        }
+
     }
 }
 
@@ -91,15 +98,10 @@
             cursor: pointer;
 
             &--active{
-                background-image: url('../../assets/images/illu/balleTennis.svg');
-                background-repeat: no-repeat;
-                background-position-x: 50%;
                 background-position-y: 100%;
-
             }
 
         }
-
     }
     
     .burgerMenu{
@@ -118,6 +120,7 @@
     
         &__el{
             margin-left: 64px;
+            padding: 0px 0px 14px 0px;
         }
     }
 

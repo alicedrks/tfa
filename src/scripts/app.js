@@ -21,6 +21,20 @@ function menuOpen(){
     }   
 }
 
+const links = document.querySelectorAll('.navigation__el');
+
+links.forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    links.forEach(function(link) {
+      link.classList.remove('navigation__el--active');
+    });
+  
+    link.classList.add('navigation__el--active');
+  });
+});
+
 
 
 

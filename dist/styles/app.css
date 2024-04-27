@@ -51,6 +51,12 @@
 .navigation__el a:hover {
   color: #7180AC;
 }
+.navigation__el--active {
+  background-image: url("../../assets/images/illu/balleTennis.svg");
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 87%;
+}
 
 .burgerMenu {
   text-indent: 100%;
@@ -89,9 +95,6 @@
     cursor: pointer;
   }
   .navigation__el--active {
-    background-image: url("../../assets/images/illu/balleTennis.svg");
-    background-repeat: no-repeat;
-    background-position-x: 50%;
     background-position-y: 100%;
   }
 
@@ -105,6 +108,7 @@
   }
   .navigation__el {
     margin-left: 64px;
+    padding: 0px 0px 14px 0px;
   }
 }
 .intro {
