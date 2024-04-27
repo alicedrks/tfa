@@ -88,7 +88,6 @@ h1 {
 .description {
   margin-left: 24px;
   margin-right: 24px;
-  height: 100vh;
 }
 .description__para {
   font-size: 18px;
@@ -104,7 +103,7 @@ h1 {
 .projet {
   margin: 0;
   padding: 0 18px;
-  height: 100vh;
+  height: 750px;
   overflow: hidden;
 }
 .projet__liste {
@@ -123,7 +122,7 @@ h1 {
   font-size: 32px;
   font-family: "owners-text", sans-serif;
   margin: 0;
-  padding-top: 144px;
+  padding-top: 198px;
 }
 .projet__titre2 {
   font-size: 24px;
@@ -140,9 +139,9 @@ h1 {
   position: relative;
   transform: rotate(120deg);
   left: 50%;
-  top: 900px;
+  top: 850px;
   transform: translate(-50%, -60%);
-  width: 300vw;
+  width: 1200px;
 }
 
 a {
