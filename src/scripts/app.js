@@ -18,9 +18,9 @@ function menuOpen(){
 
     } else {
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
-
-    }
-    
+    }   
 }
+
+
 
 

@@ -1,14 +1,14 @@
 .navigation{
-    position: relative;
     z-index: 20;
-    top: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 
     &__liens{
         display: flex;
         flex-direction: column;
+        justify-content: center;
         margin: 0;
         padding: 0px;
         position: fixed;
@@ -19,10 +19,19 @@
         background-color: $c-background;
         z-index: -10;
         opacity: 0;
-        transition: opacity 0.4s cubic-bezier(0.5, 0, 0.75, 0);
+        transition: opacity 0.3s linear;
         font-size: 32px;
         text-align: center;
-        padding-top: 144px;
+    }
+
+    &__logo{
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        background-image: url('../../assets/images/illu/logo.svg');
+        background-repeat: no-repeat;
     }
 
     &__el{
@@ -38,6 +47,7 @@
         & a:hover{
             color: $c-action;
         }
+
     }
 }
 
@@ -58,3 +68,57 @@
     opacity: 100;
 }
 
+
+@media (min-width: 760px){ //tablet
+    .navigation{
+        &__liens{
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            align-items: end;
+            background-color: transparent;
+            opacity: 100;
+            font-size: 22px;
+            z-index: 30;
+            width: auto;
+            height: auto;
+            position: relative;
+        }
+    
+        &__el{
+            margin-left: 44px;
+            padding: 0px 0px 12px 0px;
+            cursor: pointer;
+
+            &--active{
+                background-image: url('../../assets/images/illu/balleTennis.svg');
+                background-repeat: no-repeat;
+                background-position-x: 50%;
+                background-position-y: 100%;
+
+            }
+
+        }
+
+    }
+    
+    .burgerMenu{
+        display: none;
+    }
+
+}
+
+
+
+@media (min-width: 1110px){ //ordinateur
+    .navigation{
+        &__liens{
+            font-size: 24px;
+        }
+    
+        &__el{
+            margin-left: 64px;
+        }
+    }
+
+}

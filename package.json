@@ -21,11 +21,17 @@
   },
   "homepage": "https://github.com/dwmaj/workflow#readme",
   "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "@babel/plugin-syntax-jsx": "^7.24.1",
     "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
     "laravel-mix": "^6.0.41",
     "rimraf": "^3.0.2",
     "sass": "^1.49.0",
     "sass-loader": "^12.4.0"
+  },
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.24.3"
   }
 }
