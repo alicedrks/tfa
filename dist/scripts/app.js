@@ -22,16 +22,6 @@ function menuOpen() {
     menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
   }
 }
-var links = document.querySelectorAll('.navigation__el');
-links.forEach(function (link) {
-  link.addEventListener('click', function (event) {
-    event.preventDefault();
-    links.forEach(function (link) {
-      link.classList.remove('navigation__el--active');
-    });
-    link.classList.add('navigation__el--active');
-  });
-});
 
 /***/ }),
 
