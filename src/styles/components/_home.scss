@@ -36,20 +36,44 @@ h1{
 }
 
 .description{
-    margin-left: 24px;
-    margin-right: 24px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     &__para{
         font-size: 18px;
         font-family: 'owners-text', sans-serif;
+        margin-top: 0;
         margin-bottom: 72px;
         line-height: 140%;
 
         &--big{
             font-size: 23px;
-            padding-top: 144px;
             margin-top: 0;
         }
+    }
+
+    &__liens{
+        margin: 0;
+        padding: 0;
+
+        & li{
+            text-decoration: none;
+            display: inline;
+        }
+    }
+    &__container{
+        padding-left: 24px;
+        margin-right: 24px;
+    }
+
+    &__canva{
+        position: absolute;
+        top: 70%;
+        left: 0;
+        z-index: -1;
+        opacity: 20%;
     }
 }
 
@@ -104,6 +128,13 @@ h1{
         width: 1200px;
 
     }
+}
+
+
+.canvas{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 @media (min-width: 450px){ //background size and font size
@@ -171,7 +202,6 @@ h1{
     
             &--big{
                 font-size: 29px;
-                padding-top: 246px;
             }
         }
     }
@@ -206,7 +236,7 @@ h1{
     }
 }
 
-@media (min-width: 950px){ //padding and margin left/right + background size
+@media (min-width: 950px){ //padding and margin left/right + background size + 2 colonnes description
     .header{
         padding-left: 87px;
         padding-right: 87px;
@@ -222,6 +252,29 @@ h1{
     .description{
         margin-left: 87px;
         margin-right: 87px;
+
+        &__container{
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: repeat(2);   
+        }
+
+        &__para{
+            &--big{
+                margin-bottom: 87px;
+            }
+            &--little{
+                margin-bottom: 58px;
+            }
+    
+        }
+        
+        
+    }
+    .right{
+        grid-column: 2;
+        grid-row: 2;
+        align-self: end;
     }
     
     .projet{
@@ -265,7 +318,6 @@ h1{
     
             &--big{
                 font-size: 32px;
-                padding-top: 246px;
             }
         }
     }
@@ -299,3 +351,5 @@ h1{
         }
     }
 }
+
+

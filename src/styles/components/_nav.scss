@@ -99,15 +99,14 @@
 
             &--active{
                 background-position-y: 100%;
+                transition: opacity 0.2s linear;
             }
-
         }
     }
     
     .burgerMenu{
         display: none;
     }
-
 }
 
 
@@ -123,5 +122,4 @@
             padding: 0px 0px 14px 0px;
         }
     }
-
 }
