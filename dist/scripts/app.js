@@ -55,7 +55,7 @@ engine.timing = {
   delta: 1000 / 60
 };
 var circles = [];
-var stopHeight = render.canvas.height - 35; // Hauteur à laquelle les balles s'arrêtent
+var stopHeight = render.canvas.height - 28; // Hauteur à laquelle les balles s'arrêtent
 
 matter_js__WEBPACK_IMPORTED_MODULE_0___default().Events.on(render, "afterRender", function () {
   if (circles.length < 40) {

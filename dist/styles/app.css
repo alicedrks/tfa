@@ -150,6 +150,9 @@ h1 {
 }
 
 .description {
+  position: relative;
+}
+.description__content {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -180,8 +183,9 @@ h1 {
 }
 .description__canva {
   position: absolute;
-  top: 70%;
+  bottom: 0;
   left: 0;
+  width: 100%;
   z-index: -1;
   opacity: 20%;
 }
@@ -340,11 +344,9 @@ h1 {
     background-position-x: -150px;
   }
 
-  .description {
-    margin-left: 87px;
-    margin-right: 87px;
-  }
   .description__container {
+    padding-left: 87px;
+    padding-right: 87px;
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: repeat(2);
@@ -392,9 +394,9 @@ h1 {
     font-size: 179px;
   }
 
-  .description {
-    margin-left: 86px;
-    margin-right: 86px;
+  .description__container {
+    padding-left: 86px;
+    padding-right: 86px;
   }
   .description__para {
     font-size: 24px;

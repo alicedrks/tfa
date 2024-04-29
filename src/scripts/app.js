@@ -48,7 +48,7 @@ engine.timing = {
 };
 
 var circles = [];
-var stopHeight = render.canvas.height - 35; // Hauteur à laquelle les balles s'arrêtent
+var stopHeight = render.canvas.height - 28; // Hauteur à laquelle les balles s'arrêtent
 
 Matter.Events.on(render, "afterRender", function() {
   if (circles.length < 40) {
@@ -101,11 +101,6 @@ window.addEventListener("scroll", function() {
         myFunction();
     }
 });
-
-
-
-
-    
 
 
 

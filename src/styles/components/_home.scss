@@ -36,10 +36,15 @@ h1{
 }
 
 .description{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: relative;
+
+    &__content{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
 
     &__para{
         font-size: 18px;
@@ -70,10 +75,12 @@ h1{
 
     &__canva{
         position: absolute;
-        top: 70%;
+        bottom: 0;
         left: 0;
+        width: 100%;
         z-index: -1;
         opacity: 20%;
+
     }
 }
 
@@ -250,10 +257,11 @@ h1{
     }
     
     .description{
-        margin-left: 87px;
-        margin-right: 87px;
+        
 
         &__container{
+            padding-left: 87px;
+            padding-right: 87px;
             display: grid;
             grid-template-columns: 60% 40%;
             grid-template-rows: repeat(2);   
@@ -309,8 +317,11 @@ h1{
     }
     
     .description{
-        margin-left: 86px;
-        margin-right: 86px;
+        
+        &__container{
+            padding-left: 86px;
+            padding-right: 86px;
+        }
     
         &__para{
             font-size: 24px;
