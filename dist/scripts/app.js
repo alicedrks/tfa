@@ -10,21 +10,6 @@
 
 
 
-var menuToggle = document.querySelector('.burgerMenu');
-var bodyc = document.querySelector('.home');
-menuToggle.addEventListener('click', menuOpen);
-var pew = document.querySelector('.navigation__liens');
-
-function menuOpen() {
-  document.body.classList.toggle("navigation__liens--open");
-
-  if (bodyc.classList.contains('navigation__liens--open')) {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
-  } else {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
-  }
-}
-
 /***/ }),
 
 /***/ "./src/styles/app.scss":

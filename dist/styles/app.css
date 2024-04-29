@@ -62,86 +62,45 @@
   opacity: 100;
 }
 
-.header {
-  padding-left: 24px;
-  padding-right: 24px;
-  height: 100vh;
-  background-image: url("../../assets/images/illu/grille.svg");
-  background-size: 200%;
-}
-
-h1 {
-  font-family: "owners-text", sans-serif;
-  font-size: 76px;
-  line-height: 130%;
-  margin-top: 120px;
-}
-
-.h1_nom {
-  font-family: "Pangaia";
-  font-weight: 200;
-  font-size: 101px;
-  color: #A89885;
-  display: block;
-}
-
-.description {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-.description__para {
-  font-size: 18px;
-  font-family: "owners-text", sans-serif;
-  margin-bottom: 72px;
-}
-.description__para--big {
-  font-size: 23px;
-  padding-top: 144px;
-  margin-top: 0;
-}
-
-.projet {
-  margin: 0;
-  padding: 0 18px;
-  height: 750px;
-  overflow: hidden;
-}
-.projet__liste {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.projet__element {
-  display: none;
-}
-.projet__element--active {
-  display: block;
+body {
+  background: white;
+  margin: 2rem;
   text-align: center;
 }
-.projet__titre1 {
-  font-size: 32px;
-  font-family: "owners-text", sans-serif;
-  margin: 0;
-  padding-top: 198px;
-}
-.projet__titre2 {
-  font-size: 24px;
-  font-family: "Pangaia regular";
-  font-weight: 200;
-  margin: 36px 0 18px;
-}
-.projet__para {
-  font-size: 14px;
-  font-family: "owners-text", sans-serif;
-  margin: 0 36px 36px;
-}
-.projet__illu {
+
+header {
+  width: 100%;
+  margin: 0 auto;
   position: relative;
-  transform: rotate(120deg);
-  left: 50%;
-  top: 850px;
-  transform: translate(-50%, -60%);
-  width: 1200px;
+  max-width: 1200px;
+}
+
+header video {
+  height: 100vh;
+}
+
+svg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+svg text {
+  font-family: "owners-text", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+svg rect {
+  fill: white;
+}
+
+svg > rect {
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
 }
 
 a {

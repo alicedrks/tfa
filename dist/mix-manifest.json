@@ -1,6 +1,10 @@
 {
     "/scripts/app.js": "/scripts/app.js",
     "/styles/app.css": "/styles/app.css",
+    "/annexe.html": "/annexe.html",
+    "/dataplay.html": "/dataplay.html",
+    "/decembre.html": "/decembre.html",
     "/index.html": "/index.html",
+    "/rux.html": "/rux.html",
     "/assets/.DS_Store": "/assets/.DS_Store"
 }
