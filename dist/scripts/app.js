@@ -49,59 +49,82 @@ var render = matter_js__WEBPACK_IMPORTED_MODULE_0___default().Render.create({
     background: 'transparent'
   }
 });
-engine.timing = {
-  timeScale: 0.1,
-  timestamp: 0,
-  delta: 1000 / 60
-};
+engine.timing.timeScale = 0.03;
 var circles = [];
-var stopHeight = render.canvas.height - 28; // Hauteur à laquelle les balles s'arrêtent
-
-matter_js__WEBPACK_IMPORTED_MODULE_0___default().Events.on(render, "afterRender", function () {
-  if (circles.length < 40) {
-    var circle = matter_js__WEBPACK_IMPORTED_MODULE_0___default().Bodies.circle(matter_js__WEBPACK_IMPORTED_MODULE_0___default().Common.clamp(matter_js__WEBPACK_IMPORTED_MODULE_0___default().Common.random(0, render.canvas.width), 30, render.canvas.width - 30), -30, 30, {
-      frictionAir: 0.01,
-      restitution: 0.5,
-      collisionFilter: {
-        category: 0x0002,
-        // Catégorie de collision des cercles
-        mask: 0x0002 // Masque de collision des cercles
-      },
-      render: {
-        sprite: {
-          texture: texture.src,
-          xScale: 2 * 30 / texture.width,
-          yScale: 2 * 30 / texture.height
-        }
+var stopHeight = render.canvas.height - 70;
+function createCircle(x, y) {
+  var circle = matter_js__WEBPACK_IMPORTED_MODULE_0___default().Bodies.circle(matter_js__WEBPACK_IMPORTED_MODULE_0___default().Common.clamp(x, 30, render.canvas.width - 30), y, 30, {
+    frictionAir: 0.02,
+    restitution: 0.5,
+    collisionFilter: {
+      category: 0x0002,
+      mask: 0x0002
+    },
+    render: {
+      sprite: {
+        texture: texture.src,
+        xScale: 2 * 30 / texture.width,
+        yScale: 2 * 30 / texture.height
       }
-    });
-    circle.isCircle = true; // Marquer le cercle comme un cercle
+    }
+  });
+  circle.isCircle = true;
+  return circle;
+}
+function createCircles() {
+  for (var i = 0; i < 40; i++) {
+    var circle = createCircle(matter_js__WEBPACK_IMPORTED_MODULE_0___default().Common.random(0, render.canvas.width), -30 - i * 200);
     matter_js__WEBPACK_IMPORTED_MODULE_0___default().World.add(world, circle);
     circles.push(circle);
   }
-});
-matter_js__WEBPACK_IMPORTED_MODULE_0___default().Events.on(engine, "afterUpdate", function () {
+}
+createCircles();
+matter_js__WEBPACK_IMPORTED_MODULE_0___default().Events.on(engine, "beforeUpdate", function (event) {
+  var deltaTime = event.timestamp - engine.timing.timestamp;
+  var deltaHeight = 0.03 * deltaTime;
   circles.forEach(function (circle) {
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.translate(circle, {
+      x: 0,
+      y: deltaHeight
+    });
     if (circle.position.y > stopHeight) {
       matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(circle, {
         x: circle.position.x,
         y: stopHeight
       });
-      matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setStatic(circle, true);
     }
+    // Pour empêcher la balle de sortir sur les côtés gauche et droit
+    var circleRadius = circle.circleRadius || circle.circleRadiusMax;
+    var maxX = render.canvas.width - circleRadius;
+    var minX = circleRadius;
+    var newX = matter_js__WEBPACK_IMPORTED_MODULE_0___default().Common.clamp(circle.position.x, minX, maxX);
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(circle, {
+      x: newX,
+      y: circle.position.y
+    });
   });
 });
-function myFunction() {
-  matter_js__WEBPACK_IMPORTED_MODULE_0___default().Engine.run(engine);
-  matter_js__WEBPACK_IMPORTED_MODULE_0___default().Render.run(render);
+var lastScrollY = 0;
+function launchBalls() {
+  circles.forEach(function (circle) {
+    var forceX = Math.random() * 0.5 - 0.3;
+    var forceY = Math.random() * -0.1 - 0.3;
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.applyForce(circle, circle.position, {
+      x: forceX,
+      y: forceY
+    });
+  });
 }
-window.addEventListener("scroll", function () {
+function handleScroll() {
   var triggerSection = document.querySelector("#trigger-section");
   var triggerSectionBounds = triggerSection.getBoundingClientRect();
   if (triggerSectionBounds.top <= 10) {
-    myFunction();
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Runner.run(engine);
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Render.run(render);
   }
-});
+}
+window.addEventListener('scroll', launchBalls);
+window.addEventListener("scroll", handleScroll);
 
 /***/ }),
 

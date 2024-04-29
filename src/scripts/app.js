@@ -23,14 +23,13 @@ function menuOpen(){
 
 import Matter from 'matter-js';
 
-var description = document.querySelector('.description__canva');
-
-var texture = new Image();
+const description = document.querySelector('.description__canva');
+const texture = new Image();
 texture.src = '../assets/images/illu/balleTennis.svg';
 
-var engine = Matter.Engine.create();
-var world = engine.world;
-var render = Matter.Render.create({
+const engine = Matter.Engine.create();
+const world = engine.world;
+const render = Matter.Render.create({
   element: description,
   engine: engine,
   options: {
@@ -41,68 +40,90 @@ var render = Matter.Render.create({
   }
 });
 
-engine.timing = {
-    timeScale: 0.1, 
-    timestamp: 0, 
-    delta: 1000 / 60 
-};
+engine.timing.timeScale = 0.03;
 
-var circles = [];
-var stopHeight = render.canvas.height - 28; // Hauteur à laquelle les balles s'arrêtent
+const circles = [];
+const stopHeight = render.canvas.height - 70;
 
-Matter.Events.on(render, "afterRender", function() {
-  if (circles.length < 40) {
-    var circle = Matter.Bodies.circle(
-      Matter.Common.clamp(Matter.Common.random(0, render.canvas.width), 30, render.canvas.width - 30),
-      -30,
-      30,
-      {
-        frictionAir: 0.01,
-        restitution: 0.5,
-        collisionFilter: {
-          category: 0x0002, // Catégorie de collision des cercles
-          mask: 0x0002 // Masque de collision des cercles
-        },
-        render: {
-            sprite: {
-              texture: texture.src ,
-              xScale: 2 * 30 / texture.width, 
-              yScale: 2 * 30 / texture.height 
-            }
-          }
+function createCircle(x, y) {
+  const circle = Matter.Bodies.circle(
+    Matter.Common.clamp(x, 30, render.canvas.width - 30),
+    y,
+    30,
+    {
+      frictionAir: 0.02,
+      restitution: 0.5,
+      collisionFilter: {
+        category: 0x0002,
+        mask: 0x0002
+      },
+      render: {
+        sprite: {
+          texture: texture.src,
+          xScale: 2 * 30 / texture.width,
+          yScale: 2 * 30 / texture.height
+        }
       }
+    }
+  );
+  circle.isCircle = true;
+  return circle;
+}
+
+function createCircles() {
+  for (let i = 0; i < 40; i++) {
+    const circle = createCircle(
+      Matter.Common.random(0, render.canvas.width),
+      -30 - i * 200
     );
-    circle.isCircle = true; // Marquer le cercle comme un cercle
     Matter.World.add(world, circle);
     circles.push(circle);
   }
-});
+}
 
-Matter.Events.on(engine, "afterUpdate", function() {
-  circles.forEach(function(circle) {
+createCircles();
+
+Matter.Events.on(engine, "beforeUpdate", function(event) {
+  const deltaTime = event.timestamp - engine.timing.timestamp;
+  const deltaHeight = 0.03 * deltaTime;
+  circles.forEach(circle => {
+    Matter.Body.translate(circle, { x: 0, y: deltaHeight });
     if (circle.position.y > stopHeight) {
       Matter.Body.setPosition(circle, { x: circle.position.x, y: stopHeight });
-      Matter.Body.setStatic(circle, true);
     }
+    // Pour empêcher la balle de sortir sur les côtés gauche et droit
+    const circleRadius = circle.circleRadius || circle.circleRadiusMax;
+    const maxX = render.canvas.width - circleRadius;
+    const minX = circleRadius;
+    const newX = Matter.Common.clamp(circle.position.x, minX, maxX);
+    Matter.Body.setPosition(circle, { x: newX, y: circle.position.y });
   });
 });
 
+let lastScrollY = 0;
 
-function myFunction() {
-    Matter.Engine.run(engine);
+function launchBalls() {
+    circles.forEach(circle => {
+      const forceX = Math.random() * 0.5 - 0.3; 
+      const forceY = Math.random() * -0.1 - 0.3; 
+  
+      Matter.Body.applyForce(circle, circle.position, { x: forceX, y: forceY });
+    });
+
+  }
+
+function handleScroll() {
+  const triggerSection = document.querySelector("#trigger-section");
+  const triggerSectionBounds = triggerSection.getBoundingClientRect();
+  
+  if (triggerSectionBounds.top <= 10) {
+    Matter.Runner.run(engine) 
     Matter.Render.run(render);
+  }
 }
 
-window.addEventListener("scroll", function() {
-    var triggerSection = document.querySelector("#trigger-section");
-    var triggerSectionBounds = triggerSection.getBoundingClientRect();
-    
-    if (triggerSectionBounds.top <= 10) {
-        myFunction();
-    }
-});
+
+window.addEventListener('scroll', launchBalls);
 
 
-
-
-
+window.addEventListener("scroll", handleScroll);

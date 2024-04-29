@@ -56,6 +56,7 @@
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 87%;
+  background-size: 20%;
 }
 
 .burgerMenu {
@@ -191,15 +192,21 @@ h1 {
 }
 
 .projet {
+  width: 100%;
+  box-sizing: border-box;
   margin: 0;
   padding: 0 18px;
   height: 750px;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 .projet__liste {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 .projet__element {
   display: none;
@@ -212,7 +219,7 @@ h1 {
   font-size: 32px;
   font-family: "owners-text", sans-serif;
   margin: 0;
-  padding-top: 198px;
+  padding-top: 35%;
 }
 .projet__titre2 {
   font-size: 24px;
@@ -232,6 +239,51 @@ h1 {
   top: 850px;
   transform: translate(-50%, -60%);
   width: 1200px;
+  z-index: -10;
+}
+.projet__boutons {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.projet__boutons li {
+  list-style: none;
+  margin: 0;
+}
+.projet__btnSlider {
+  padding: 0;
+  color: white;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 35px;
+  width: 35px;
+  background-image: url("../../assets/images/icon/arrowSlider.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: 0.3s;
+  opacity: 40%;
+  margin-right: 0;
+  padding-left: 0;
+}
+.projet__btnSlider--prev {
+  transform: rotate(180deg);
+}
+.projet__btnSlider:hover {
+  background-size: 95%;
+}
+
+small {
+  font-family: "owners-text", sans-serif;
+  font-size: 12px;
+  position: absolute;
+  bottom: 12px;
+  margin-left: 24px;
+  color: #000000;
+}
+small a {
+  color: #000000;
 }
 
 .canvas {
@@ -438,6 +490,7 @@ body {
   background-color: #000000;
   color: #fff;
   margin: 0;
+  position: relative;
 }
 
 button {
