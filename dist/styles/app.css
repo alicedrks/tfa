@@ -455,9 +455,37 @@ button {
   font-size: 18px;
   padding: 9px 18px;
   display: inline-block;
+  overflow: hidden;
+  position: relative;
 }
 .btn--right {
   margin-left: 9px;
+}
+.btn__background {
+  position: absolute;
+  left: 0px;
+  width: 200%;
+  height: 300%;
+  margin: 0;
+  z-index: -20;
+  transform: rotate(-30deg) translateY(30%);
+  transition: transform 0.9s;
+}
+.btn:hover {
+  color: #000000;
+  transition: color 0.4s;
+}
+.btn:hover .btn__background {
+  position: absolute;
+  left: 0px;
+  width: 200%;
+  height: 300%;
+  margin: 0;
+  transform: rotate(0deg) translateY(-50%);
+}
+.btn:hover .btn__arrow path {
+  fill: #000000;
+  transition: fill 0.4s;
 }
 
 a svg {
