@@ -1,12 +1,10 @@
 'use strict';
 
-/*const menuToggle = document.querySelector('.burgerMenu');
+const menuToggle = document.querySelector('.burgerMenu');
 const bodyc = document.querySelector('.home');
 
 
 menuToggle.addEventListener('click', menuOpen);
-
-let pew = document.querySelector('.navigation__liens');
 
 function menuOpen(){
     document.body.classList.toggle("navigation__liens--open");
@@ -18,7 +16,7 @@ function menuOpen(){
     } else {
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
     }   
-}*/
+}
 
 
 import { gsap } from "gsap";
@@ -26,68 +24,107 @@ import ScrollTrigger from 'gsap/scrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 let tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.projet',
         start: 'top top',
         end: 'bottom center',
-        scrub: 4, 
+        scrub: 10, 
         pin: true,
         markers: true,
         }
 })
 
+
+
+
+//anim gsap
+tl.from('.projet__illu', {
+        rotation:0, 
+        duration:2,
+    })
+    .to('.projet__illu', {
+        rotation:120, 
+        duration: 40,
+        ease: "slow(0.7,0.7,false)",
+    })
+    .set('.projet__illu', {
+        rotation:120, 
+        duration: 20,
+    })
+    .to('.projet__illu', {
+        rotation:240, 
+        duration: 40,
+        ease: "slow(0.7,0.7,false)",
+    })
+
+
+
+
+// slider
+let element = document.querySelector('.projet__illu');
+let roundedAngle = 1;
+let lastAngle = 0;
+let projets = document.querySelectorAll('.projet__element');
 let projet1 = document.querySelector('#projet1');
 let projet2 = document.querySelector('#projet2');
 let projet3 = document.querySelector('#projet3');
 
 
-tl.from('.projet__illu', {
-    rotation:120, 
-    duration:2,
-    
-})
+function calculerAngleRotation() {
+    let style = window.getComputedStyle(element);
+    let transform = style.getPropertyValue('transform');
 
-    .to('.projet__illu', {
-        rotation:0, 
-        duration: 20,
-        ease: "slow(0.7,0.7,false)",
-        onEnter() {
-            projet1.classList.remove('projet__element--active');
+    let values = transform.split('(')[1].split(')')[0].split(',');
+    let a = values[0];
+    let b = values[1];
+    let angle = Math.atan2(b, a) * (180 / Math.PI);
+    
+    if (angle < 0) {
+        angle += 360;
+    }
+    
+    roundedAngle = Math.round(angle);
+
+    if (roundedAngle > lastAngle) {
+        if(roundedAngle >= 80 && roundedAngle <= 100){
+            for(let i = 0; i < projets.length; i++){
+                projets[i].classList.remove('projet__element--active');
+            }
             projet2.classList.add('projet__element--active');
-        },
-        onLeave() {
-            projet2.classList.remove('projet__element--active');
-            projet3.classList.add('projet__element--active');
-        },
-          onEnterBack() {
-            projet1.classList.remove('projet__element--active');
-            projet2.classList.add('projet__element--active');
-        },
-          onLeaveBack() {
-            projet2.classList.remove('projet__element--active');
+        
+        } else if(roundedAngle >= 200 && roundedAngle <= 220){
+            for(let i = 0; i < projets.length; i++){
+                projets[i].classList.remove('projet__element--active');
+            }
             projet3.classList.add('projet__element--active');
         }
-        
-    })
+    } else if (roundedAngle < lastAngle) {
+        if(roundedAngle <= 160 && roundedAngle >= 140){
+            for(let i = 0; i < projets.length; i++){
+                projets[i].classList.remove('projet__element--active');
+            }
+            projet2.classList.add('projet__element--active');
+        } else if(roundedAngle <= 40 && roundedAngle >= 20){
+            for(let i = 0; i < projets.length; i++){
+                projets[i].classList.remove('projet__element--active');
+            }
+            projet1.classList.add('projet__element--active');
+        }
+    }
+    lastAngle = roundedAngle;
 
-    .set('.projet__illu', {
-        rotation:0, 
-        duration: 20,
-        })
+    requestAnimationFrame(calculerAngleRotation);
+}
 
-    //.to('.projet__element--active', 0.5, { className: '-=projet__element--active' })
 
-    .to('.projet__illu', {
-        rotation:-120, 
-        duration: 20,
-        ease: "slow(0.7,0.7,false)",
-        onEnter() {
-            projet2.classList.remove('projet__element--active');
-            projet3.classList.add('projet__element--active');
-          }
-    })
+
+
+
+
+calculerAngleRotation();
+
+
 
 
 

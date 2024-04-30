@@ -1,5 +1,5 @@
 .navigation{
-    z-index: 20;
+    z-index: 30;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,9 +51,9 @@
         &--active{
             background-image: url('../../assets/images/illu/balleTennis.svg');
             background-repeat: no-repeat;
-            background-position-x: 50%;
-            background-position-y: 87%;
-            background-size: 20%;
+            background-position-x: 30%;
+            background-position-y: 50%;
+            background-size: 4%;
         }
 
     }

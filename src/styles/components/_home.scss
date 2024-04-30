@@ -104,11 +104,15 @@ h1{
     }
 
     &__element{
+        opacity:0;
         display: none;
+        text-align: center;
+        transition: opacity 10s;
 
         &--active{
-            display: block;
+            opacity: 100%;
             text-align: center;
+            display: block;
         }
     }
 
@@ -137,7 +141,7 @@ h1{
         position: relative;
         left: 50%;
         top: 850px;
-        transform: translate(-50%, -60%) rotate(120deg);
+        transform: translate(-50%, -60%);
         width: 1200px;
         z-index: -10;
     }

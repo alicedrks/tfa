@@ -172,11 +172,15 @@ h1 {
   justify-content: center;
 }
 .projet__element {
+  opacity: 0;
   display: none;
+  text-align: center;
+  transition: opacity 10s;
 }
 .projet__element--active {
-  display: block;
+  opacity: 100%;
   text-align: center;
+  display: block;
 }
 .projet__titre1 {
   font-size: 32px;
@@ -199,7 +203,7 @@ h1 {
   position: relative;
   left: 50%;
   top: 850px;
-  transform: translate(-50%, -60%) rotate(120deg);
+  transform: translate(-50%, -60%);
   width: 1200px;
   z-index: -10;
 }
@@ -445,7 +449,7 @@ small a {
   }
 }
 .navigation {
-  z-index: 20;
+  z-index: 30;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -492,9 +496,9 @@ small a {
 .navigation__el--active {
   background-image: url("../../assets/images/illu/balleTennis.svg");
   background-repeat: no-repeat;
-  background-position-x: 50%;
-  background-position-y: 87%;
-  background-size: 20%;
+  background-position-x: 30%;
+  background-position-y: 50%;
+  background-size: 4%;
 }
 
 .burgerMenu {

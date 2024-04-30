@@ -13,25 +13,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap_scrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/scrollTrigger */ "./node_modules/gsap/scrollTrigger.js");
 
 
-/*const menuToggle = document.querySelector('.burgerMenu');
-const bodyc = document.querySelector('.home');
-
-
+var menuToggle = document.querySelector('.burgerMenu');
+var bodyc = document.querySelector('.home');
 menuToggle.addEventListener('click', menuOpen);
-
-let pew = document.querySelector('.navigation__liens');
-
-function menuOpen(){
-    document.body.classList.toggle("navigation__liens--open");
-
-    if (bodyc.classList.contains('navigation__liens--open')) {
-        
-        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")'; 
-
-    } else {
-        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
-    }   
-}*/
+function menuOpen() {
+  document.body.classList.toggle("navigation__liens--open");
+  if (bodyc.classList.contains('navigation__liens--open')) {
+    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
+  } else {
+    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
+  }
+}
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_scrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"]);
@@ -40,52 +32,77 @@ var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
     trigger: '.projet',
     start: 'top top',
     end: 'bottom center',
-    scrub: 4,
+    scrub: 10,
     pin: true,
     markers: true
   }
 });
+
+//anim gsap
+tl.from('.projet__illu', {
+  rotation: 0,
+  duration: 2
+}).to('.projet__illu', {
+  rotation: 120,
+  duration: 40,
+  ease: "slow(0.7,0.7,false)"
+}).set('.projet__illu', {
+  rotation: 120,
+  duration: 20
+}).to('.projet__illu', {
+  rotation: 240,
+  duration: 40,
+  ease: "slow(0.7,0.7,false)"
+});
+
+// slider
+var element = document.querySelector('.projet__illu');
+var roundedAngle = 1;
+var lastAngle = 0;
+var projets = document.querySelectorAll('.projet__element');
 var projet1 = document.querySelector('#projet1');
 var projet2 = document.querySelector('#projet2');
 var projet3 = document.querySelector('#projet3');
-tl.from('.projet__illu', {
-  rotation: 120,
-  duration: 2
-}).to('.projet__illu', {
-  rotation: 0,
-  duration: 20,
-  ease: "slow(0.7,0.7,false)",
-  onEnter: function onEnter() {
-    projet1.classList.remove('projet__element--active');
-    projet2.classList.add('projet__element--active');
-  },
-  onLeave: function onLeave() {
-    projet2.classList.remove('projet__element--active');
-    projet3.classList.add('projet__element--active');
-  },
-  onEnterBack: function onEnterBack() {
-    projet1.classList.remove('projet__element--active');
-    projet2.classList.add('projet__element--active');
-  },
-  onLeaveBack: function onLeaveBack() {
-    projet2.classList.remove('projet__element--active');
-    projet3.classList.add('projet__element--active');
+function calculerAngleRotation() {
+  var style = window.getComputedStyle(element);
+  var transform = style.getPropertyValue('transform');
+  var values = transform.split('(')[1].split(')')[0].split(',');
+  var a = values[0];
+  var b = values[1];
+  var angle = Math.atan2(b, a) * (180 / Math.PI);
+  if (angle < 0) {
+    angle += 360;
   }
-}).set('.projet__illu', {
-  rotation: 0,
-  duration: 20
-})
-
-//.to('.projet__element--active', 0.5, { className: '-=projet__element--active' })
-.to('.projet__illu', {
-  rotation: -120,
-  duration: 20,
-  ease: "slow(0.7,0.7,false)",
-  onEnter: function onEnter() {
-    projet2.classList.remove('projet__element--active');
-    projet3.classList.add('projet__element--active');
+  roundedAngle = Math.round(angle);
+  if (roundedAngle > lastAngle) {
+    if (roundedAngle >= 80 && roundedAngle <= 100) {
+      for (var i = 0; i < projets.length; i++) {
+        projets[i].classList.remove('projet__element--active');
+      }
+      projet2.classList.add('projet__element--active');
+    } else if (roundedAngle >= 200 && roundedAngle <= 220) {
+      for (var _i = 0; _i < projets.length; _i++) {
+        projets[_i].classList.remove('projet__element--active');
+      }
+      projet3.classList.add('projet__element--active');
+    }
+  } else if (roundedAngle < lastAngle) {
+    if (roundedAngle <= 160 && roundedAngle >= 140) {
+      for (var _i2 = 0; _i2 < projets.length; _i2++) {
+        projets[_i2].classList.remove('projet__element--active');
+      }
+      projet2.classList.add('projet__element--active');
+    } else if (roundedAngle <= 40 && roundedAngle >= 20) {
+      for (var _i3 = 0; _i3 < projets.length; _i3++) {
+        projets[_i3].classList.remove('projet__element--active');
+      }
+      projet1.classList.add('projet__element--active');
+    }
   }
-});
+  lastAngle = roundedAngle;
+  requestAnimationFrame(calculerAngleRotation);
+}
+calculerAngleRotation();
 
 /*import Matter from 'matter-js';
 
