@@ -89,7 +89,6 @@ h1{
     box-sizing: border-box;
     margin: 0;
     padding: 0 18px;
-    height: 750px;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
@@ -101,6 +100,7 @@ h1{
         margin: 0;
         padding: 0;
         display: flex;
+        justify-content: center;
     }
 
     &__element{
@@ -135,10 +135,9 @@ h1{
 
     &__illu{
         position: relative;
-        transform: rotate(120deg);
         left: 50%;
         top: 850px;
-        transform: translate(-50%, -60%);
+        transform: translate(-50%, -60%) rotate(120deg);
         width: 1200px;
         z-index: -10;
     }
@@ -166,7 +165,7 @@ h1{
         background-image: url('../../assets/images/icon/arrowSlider.svg');
         background-repeat: no-repeat;
         background-size: 100%;
-        transition: 0.3s;
+        transition: 0.5s;
         opacity: 40%;
         margin-right: 0;
         padding-left: 0;
@@ -186,10 +185,10 @@ small{
     position: absolute;
     bottom: 12px;
     margin-left: 24px;
-    color: #000000;
+    color: #fff;
 
     & a{
-        color: #000000;
+        color: #fff;
     }
 }
 
@@ -198,6 +197,7 @@ small{
     width: 100%;
     overflow: hidden;
 }
+
 
 @media (min-width: 450px){ //background size and font size
     .intro{
@@ -267,35 +267,6 @@ small{
             }
         }
     }
-    
-    .projet{
-        padding: 0 66px;
-        height: 750px;
-
-    
-        &__titre1{
-            font-size: 39px;
-            padding-top: 195px;
-        }
-    
-        &__titre2{
-            font-size: 29px;
-            margin: 44px 0 22px;
-        }
-        
-        &__para{
-            font-size: 17px;
-            margin: 0 39px 39px;
-        }
-    
-        &__illu{
-            left: 50%;
-            top: 850px;
-            transform: translate(-50%, -60%);
-            width: 1200px;
-    
-        }
-    }
 }
 
 @media (min-width: 950px){ //padding and margin left/right + background size + 2 colonnes description
@@ -312,8 +283,7 @@ small{
     }
     
     .description{
-        
-
+    
         &__container{
             padding-left: 87px;
             padding-right: 87px;
@@ -329,7 +299,6 @@ small{
             &--little{
                 margin-bottom: 58px;
             }
-    
         }
         
         
@@ -390,22 +359,24 @@ small{
     
     .projet{
         padding: 0 66px;
-        height: 750px;
-
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
     
         &__titre1{
             font-size: 43px;
-            padding-top: 195px;
         }
     
         &__titre2{
             font-size: 32px;
-            margin: 44px 0 22px;
+            margin: 44px 0 22px ;
         }
         
         &__para{
             font-size: 18px;
             margin: 0 39px 39px;
+    
         }
     
         &__illu{
@@ -413,8 +384,33 @@ small{
             top: 850px;
             transform: translate(-50%, -60%);
             width: 1200px;
-    
         }
+
+    
+        &__btnSlider{
+            padding: 0;
+            color: white;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            height: 35px;
+            width: 35px;
+            background-image: url('../../assets/images/icon/arrowSlider.svg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            transition: 0.5s;
+            opacity: 40%;
+            margin-right: 0;
+            padding-left: 0;
+    
+            &--prev{
+                transform: rotate(180deg);
+            }
+            &:hover{
+                background-size: 95%;
+            }
+        }
+
     }
 }
 

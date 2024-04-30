@@ -13,7 +13,6 @@ function menuOpen(){
 
     if (bodyc.classList.contains('navigation__liens--open')) {
         
-
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")'; 
 
     } else {
@@ -21,7 +20,81 @@ function menuOpen(){
     }   
 }*/
 
-import Matter from 'matter-js';
+
+import { gsap } from "gsap";
+import ScrollTrigger from 'gsap/scrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.projet',
+        start: 'top top',
+        end: 'bottom center',
+        scrub: 4, 
+        pin: true,
+        markers: true,
+        }
+})
+
+let projet1 = document.querySelector('#projet1');
+let projet2 = document.querySelector('#projet2');
+let projet3 = document.querySelector('#projet3');
+
+
+tl.from('.projet__illu', {
+    rotation:120, 
+    duration:2,
+    
+})
+
+    .to('.projet__illu', {
+        rotation:0, 
+        duration: 20,
+        ease: "slow(0.7,0.7,false)",
+        onEnter() {
+            projet1.classList.remove('projet__element--active');
+            projet2.classList.add('projet__element--active');
+        },
+        onLeave() {
+            projet2.classList.remove('projet__element--active');
+            projet3.classList.add('projet__element--active');
+        },
+          onEnterBack() {
+            projet1.classList.remove('projet__element--active');
+            projet2.classList.add('projet__element--active');
+        },
+          onLeaveBack() {
+            projet2.classList.remove('projet__element--active');
+            projet3.classList.add('projet__element--active');
+        }
+        
+    })
+
+    .set('.projet__illu', {
+        rotation:0, 
+        duration: 20,
+        })
+
+    //.to('.projet__element--active', 0.5, { className: '-=projet__element--active' })
+
+    .to('.projet__illu', {
+        rotation:-120, 
+        duration: 20,
+        ease: "slow(0.7,0.7,false)",
+        onEnter() {
+            projet2.classList.remove('projet__element--active');
+            projet3.classList.add('projet__element--active');
+          }
+    })
+
+
+
+
+
+
+/*import Matter from 'matter-js';
 
 const description = document.querySelector('.description__canva');
 const texture = new Image();
@@ -100,12 +173,10 @@ Matter.Events.on(engine, "beforeUpdate", function(event) {
   });
 });
 
-let lastScrollY = 0;
-
 function launchBalls() {
     circles.forEach(circle => {
       const forceX = Math.random() * 0.5 - 0.3; 
-      const forceY = Math.random() * -0.1 - 0.3; 
+      const forceY = Math.random() * -0.3 - 0.5; 
   
       Matter.Body.applyForce(circle, circle.position, { x: forceX, y: forceY });
     });
@@ -126,4 +197,4 @@ function handleScroll() {
 window.addEventListener('scroll', launchBalls);
 
 
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", handleScroll);*/
