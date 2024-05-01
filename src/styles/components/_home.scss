@@ -109,13 +109,12 @@ h1{
         text-align: center;
         transition: opacity 10s;
         position: absolute;
-        box-sizing: border-box;
         width: 100vw;
 
         &--active{
-            opacity: 100%;
-            text-align: center;
+            opacity: 1;
             visibility: visible;
+            bottom: -500px;
         }
     }
 
@@ -123,7 +122,6 @@ h1{
         font-size: 32px;
         font-family: 'owners-text', sans-serif;
         margin: 0;
-        padding-top: 35%;
     }
 
     &__titre2{
@@ -212,7 +210,7 @@ h1{
         &__para{
     
             &--big{
-                margin-top: 64px;;
+                margin-top: 96px;;
             }
         }
     
@@ -229,47 +227,86 @@ h1{
 }
 @media (max-width: 350px) and (max-height: 430px){
     .intro{
-        padding-left: 24px;
-        padding-right: 24px;
         height: 100%;
-        background-repeat: no-repeat;
-        background-size: 610%;
-        background-position-x: -200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
     h1{
-        font-size: 57px;
         margin-top: 128px;
         margin-bottom: 160px;
     }
 }
 
+//350px - 455px
+@media (min-width: 350px) and (max-height: 530px){
+    .intro{
+        height: 100%;
+    }
+    h1{
+        margin-top: 128px;
+        margin-bottom: 160px;
+    }
+}
+@media (min-width: 350px) and (max-height: 680px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 96px;;
+            }
+        }
+    }
+}
 
-
-
-
-
-
-
-
-@media (min-width: 450px){ //background size and font size
+//455px - 550px
+@media (min-width: 455px){ 
     .intro{
         background-size: 450%;
         background-position-x: -400px;
     }
-    
     h1{
         font-size: 101px;
     }
-    
-    .h1_nom{
+    .h1__nom{
         font-size: 135px;
     }
 }
+@media (min-width: 455px) and (max-height: 560px){ 
+    .intro{
+        height: 100%;
+    }
+    h1{
+        margin-top: 128px;
+        margin-bottom: 160px;
+    }
+}
+@media (min-width: 455px) and (max-height: 680px){
+    .description{
+        &__content{
+            height: 100vh;
+        }
+        &__para{
+            &--big{
+                margin-top: 0px;;
+            }
+        }
+    }
+}
+@media (min-width: 350px) and (max-height: 620px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 96px;
+            }
+        }
+    }
+}
 
-@media (min-width: 550px){ //padding and margin left/right
+//550px - 760px
+@media (min-width: 550px){ 
     .header{
         padding-left: 64px;
         padding-right: 64px;
@@ -281,12 +318,42 @@ h1{
     .description{
         margin-left: 64px;
         margin-right: 64px;
+
+        &__container{
+            margin: 0;
+            padding: 0;
+        }
     }
     .projet{
         padding: 0 64px;
     }
 }
+@media (min-width: 350px) and (max-height: 620px){
+    .description{
+        &__content{
+            height: 100vh;
+        }
+        &__para{
+            &--big{
+                margin-top: 0;
+            }
+        }
+    }
+}
+@media (min-width: 550px) and (max-height: 605px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 96px;
+            }
+        }
+    }
+}
 
+//760px - 950px
 @media (min-width: 760px){ //tablet
     .header{
         padding-left: 66px;
@@ -323,7 +390,34 @@ h1{
         }
     }
 }
+@media (min-width: 760px) and (max-height: 690px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 123px;;
+            }
+        }
+    }
+}
+@media (min-width: 760px) and (max-height: 680px){ 
+    .intro{
+        height: 100%;
+    }
+    h1{
+        margin-top: 128px;
+        margin-bottom: 160px;
+    }
+}
 
+
+
+
+
+
+//950px - 1110px
 @media (min-width: 950px){ //padding and margin left/right + background size + 2 colonnes description
     .header{
         padding-left: 87px;
@@ -372,6 +466,10 @@ h1{
         display: inline;
     }
 }
+
+
+
+
 
 @media (min-width: 1110px){ //ordinateur
     .header{
