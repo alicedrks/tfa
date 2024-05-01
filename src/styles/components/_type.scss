@@ -85,6 +85,7 @@ a svg{
   height: 14px;
   margin-left: 8px;
 }
+
 button svg{
   width: 14px;
   height: 14px;
@@ -103,3 +104,23 @@ small{
       color: #fff;
   }
 }
+
+@media (max-width: 350px){
+.description__liens .btn{
+    margin-top: 14px;
+
+    &--right{
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+  }
+.para{
+    &--big{
+        margin-top: 96px;;
+    }
+  }
+}
+
+
+      
+  

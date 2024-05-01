@@ -94,6 +94,19 @@ small a {
   color: #fff;
 }
 
+@media (max-width: 350px) {
+  .description__liens .btn {
+    margin-top: 14px;
+  }
+  .description__liens .btn--right {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  .para--big {
+    margin-top: 96px;
+  }
+}
 .header {
   padding-left: 24px;
   padding-right: 24px;
@@ -819,6 +832,59 @@ h1 {
     margin-left: 64px;
     padding: 0px 0px 14px 0px;
   }
+}
+.h1Projet {
+  font-size: 76px;
+  margin: 228px 24px 0;
+  line-height: 50%;
+}
+.h1Projet__span {
+  display: block;
+  font-family: "Pangaia";
+  font-weight: 200;
+  font-size: 57px;
+  margin-left: 114px;
+}
+
+.infoProjet {
+  margin: 76px 24px 0;
+}
+.infoProjet__para {
+  font-size: 18px;
+  font-family: "owners-text", sans-serif;
+  margin-top: 0;
+  margin-bottom: 72px;
+  line-height: 140%;
+}
+.infoProjet__para--big {
+  font-size: 23px;
+  margin-top: 144px;
+}
+
+.projetVisuel {
+  padding: 144px 24px 0;
+}
+.projetVisuel__img {
+  width: 100%;
+  border-radius: 35px;
+}
+
+.next {
+  padding: 144px 24px 0;
+}
+.next__titre {
+  font-family: "owners-text", sans-serif;
+  font-size: 43px;
+  text-transform: uppercase;
+  margin: 0 0 43px;
+  line-height: 110%;
+}
+.next__titreBlock {
+  display: block;
+}
+.next__titreBlock--decal {
+  font-family: "Pangaia";
+  font-weight: 200;
 }
 
 /*# sourceMappingURL=app.css.map*/

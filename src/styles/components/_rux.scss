@@ -1,0 +1,64 @@
+.h1Projet{
+    font-size: 76px;
+    margin: 228px 24px 0;
+    line-height: 50%;
+
+    &__span{
+        display: block;
+        font-family: 'Pangaia';
+        font-weight: 200;
+        font-size: 57px;
+        margin-left: 114px;
+    }
+}
+
+.infoProjet{
+    margin: 76px 24px 0;
+
+    &__para{
+        font-size: 18px;
+        font-family: 'owners-text', sans-serif;
+        margin-top: 0;
+        margin-bottom: 72px;
+        line-height: 140%;
+
+        &--big{
+            font-size: 23px;
+            margin-top: 144px;
+        }
+    }
+}
+
+.projetVisuel{
+    padding: 144px 24px 0;
+
+    &__img{
+        width: 100%;
+        border-radius: 35px;
+    }
+}
+
+.next{
+    padding: 144px 24px 0;
+
+    &__titre{
+        font-family: 'owners-text', sans-serif;
+        font-size: 43px;
+        text-transform: uppercase;
+        margin: 0 0 43px;
+        line-height: 110%;
+        }
+    
+    &__titreBlock{
+        display: block;
+
+        &--decal{
+            font-family: 'Pangaia';
+            font-weight: 200;
+        }
+    }
+
+}
+
+
+
