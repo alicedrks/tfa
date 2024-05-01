@@ -13,29 +13,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap_scrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/scrollTrigger */ "./node_modules/gsap/scrollTrigger.js");
 
 
-var menuToggle = document.querySelector('.burgerMenu');
-var bodyc = document.querySelector('.home');
+/*const menuToggle = document.querySelector('.burgerMenu');
+const bodyc = document.querySelector('.home');
+
+
 menuToggle.addEventListener('click', menuOpen);
-function menuOpen() {
-  document.body.classList.toggle("navigation__liens--open");
-  if (bodyc.classList.contains('navigation__liens--open')) {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
-  } else {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
-  }
-}
+
+function menuOpen(){
+    document.body.classList.toggle("navigation__liens--open");
+
+    if (bodyc.classList.contains('navigation__liens--open')) {
+        
+        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")'; 
+
+    } else {
+        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
+    }   
+}*/
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_scrollTrigger__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var tl = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-  scrollTrigger: {
-    trigger: '.projet',
-    start: 'top top',
-    end: 'bottom center',
-    scrub: 10,
-    pin: true,
-    markers: true
-  }
+  /*scrollTrigger: {
+      trigger: '.projet',
+      start: 'top top',
+      end: 'bottom center',
+      scrub: 10, 
+      pin: true,
+      markers: true,
+      }*/
 });
 
 //anim gsap

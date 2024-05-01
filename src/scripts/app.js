@@ -1,6 +1,6 @@
 'use strict';
 
-const menuToggle = document.querySelector('.burgerMenu');
+/*const menuToggle = document.querySelector('.burgerMenu');
 const bodyc = document.querySelector('.home');
 
 
@@ -16,7 +16,7 @@ function menuOpen(){
     } else {
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
     }   
-}
+}*/
 
 
 import { gsap } from "gsap";
@@ -25,14 +25,14 @@ import ScrollTrigger from 'gsap/scrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 let tl = gsap.timeline({
-    scrollTrigger: {
+    /*scrollTrigger: {
         trigger: '.projet',
         start: 'top top',
         end: 'bottom center',
         scrub: 10, 
         pin: true,
         markers: true,
-        }
+        }*/
 })
 
 

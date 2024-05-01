@@ -76,6 +76,36 @@ a svg {
   margin-left: 8px;
 }
 
+small {
+  font-family: "owners-text", sans-serif;
+  font-size: 12px;
+  position: absolute;
+  bottom: 12px;
+  margin-left: 24px;
+  color: #fff;
+}
+small a {
+  color: #fff;
+}
+
+@media (max-width: 350px) {
+  .description__liens .btn {
+    margin-top: 14px;
+  }
+  .description__liens .btn--right {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+}
+.header {
+  padding-left: 24px;
+  padding-right: 24px;
+  position: fixed;
+  width: 100vw;
+  box-sizing: border-box;
+  top: 24px;
+}
+
 .intro {
   padding-left: 24px;
   padding-right: 24px;
@@ -89,15 +119,6 @@ a svg {
   justify-content: center;
 }
 
-.header {
-  padding-left: 24px;
-  padding-right: 24px;
-  position: fixed;
-  width: 100vw;
-  box-sizing: border-box;
-  top: 24px;
-}
-
 h1 {
   font-family: "owners-text", sans-serif;
   font-size: 76px;
@@ -105,7 +126,7 @@ h1 {
   margin: 0;
 }
 
-.h1_nom {
+.h1__nom {
   font-family: "Pangaia";
   font-weight: 200;
   font-size: 101px;
@@ -155,7 +176,6 @@ h1 {
 }
 
 .projet {
-  width: 100%;
   box-sizing: border-box;
   margin: 0;
   padding: 0 18px;
@@ -168,19 +188,23 @@ h1 {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0px;
 }
 .projet__element {
   opacity: 0;
-  display: none;
+  visibility: hidden;
   text-align: center;
   transition: opacity 10s;
+  position: absolute;
+  box-sizing: border-box;
+  width: 100vw;
 }
 .projet__element--active {
   opacity: 100%;
   text-align: center;
-  display: block;
+  visibility: visible;
 }
 .projet__titre1 {
   font-size: 32px;
@@ -200,11 +224,11 @@ h1 {
   margin: 0 36px 36px;
 }
 .projet__illu {
-  position: relative;
-  left: 50%;
-  top: 850px;
-  transform: translate(-50%, -60%);
+  position: absolute;
   width: 1200px;
+  left: 50%;
+  bottom: -1700px;
+  transform: translate(-50%, -60%);
   z-index: -10;
 }
 .projet__boutons {
@@ -240,24 +264,58 @@ h1 {
   background-size: 95%;
 }
 
-small {
-  font-family: "owners-text", sans-serif;
-  font-size: 12px;
-  position: absolute;
-  bottom: 12px;
-  margin-left: 24px;
-  color: #fff;
-}
-small a {
-  color: #fff;
-}
-
 .canvas {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
+@media (max-width: 350px) {
+  h1 {
+    font-size: 57px;
+  }
+
+  .h1__nom {
+    font-size: 76px;
+  }
+
+  .description {
+    position: relative;
+  }
+  .description__content {
+    height: 100%;
+  }
+  .description__para--big {
+    margin-top: 64px;
+  }
+  .description__liens {
+    margin: 0 0 96px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .description__liens li {
+    display: block;
+  }
+}
+@media (max-width: 350px) and (max-height: 430px) {
+  .intro {
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 610%;
+    background-position-x: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 57px;
+    margin-top: 128px;
+    margin-bottom: 160px;
+  }
+}
 @media (min-width: 450px) {
   .intro {
     background-size: 450%;
