@@ -668,6 +668,8 @@ h1 {
   }
   .navigation__el--active {
     background-position-y: 100%;
+    background-size: 17%;
+    background-position-x: 50%;
     transition: opacity 0.2s linear;
   }
 
