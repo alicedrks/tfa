@@ -870,7 +870,9 @@ h1 {
 }
 
 .next {
-  padding: 144px 24px 0;
+  padding: 144px 24px 216Px;
+  position: relative;
+  overflow: hidden;
 }
 .next__titre {
   font-family: "owners-text", sans-serif;
@@ -885,6 +887,54 @@ h1 {
 .next__titreBlock--decal {
   font-family: "Pangaia";
   font-weight: 200;
+  margin-left: 154px;
+}
+.next__img {
+  width: 1000px;
+  position: absolute;
+  left: -80px;
+  top: 320px;
+  z-index: -40;
+}
+
+footer {
+  margin: 0 24px;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer {
+  margin: 0 0 18px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.footer a {
+  color: #000000;
+}
+.footer__el {
+  font-family: "owners-text", sans-serif;
+  font-size: 14px;
+}
+.footer__el:nth-child(2) {
+  background-image: url("../../assets/images/icon/instagramBlack.svg");
+}
+.footer__el:nth-child(3) {
+  background-image: url("../../assets/images/icon/mailBlack.svg");
+  height: 16px;
+  width: 20.44px;
+}
+.footer__el--icon {
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=app.css.map*/

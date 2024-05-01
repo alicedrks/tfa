@@ -39,7 +39,9 @@
 }
 
 .next{
-    padding: 144px 24px 0;
+    padding: 144px 24px 216Px;
+    position: relative;
+    overflow: hidden;
 
     &__titre{
         font-family: 'owners-text', sans-serif;
@@ -55,9 +57,63 @@
         &--decal{
             font-family: 'Pangaia';
             font-weight: 200;
+            margin-left: 154px; //////////////////////////////////////
         }
     }
+    &__img{
+        width: 1000px;
+        position: absolute;
+        left: -80px;
+        top: 320px;
+        z-index: -40;
+    }
+}
 
+footer{
+    margin: 0 24px;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer{
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    & a{
+        color: #000000;
+    }
+    
+
+    &__el{
+        font-family: 'owners-text', sans-serif;
+        font-size: 14px;
+
+        &:nth-child(2){
+            background-image: url('../../assets/images/icon/instagramBlack.svg');
+        }
+
+        &:nth-child(3){
+            background-image: url('../../assets/images/icon/mailBlack.svg');
+            height: 16px;
+            width: 20.44px;
+        }
+
+        &--icon{
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 16px;
+            width: 16px;
+            margin-left: 8px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+    
+        }
+    }
 }
 
 
