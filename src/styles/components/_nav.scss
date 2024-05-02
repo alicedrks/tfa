@@ -41,11 +41,12 @@
         padding: 24px;
 
         & a{
-            transition: color 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+            transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+            opacity: 60%;
         }
 
         & a:hover{
-            color: $c-action;
+            opacity: 100%;
         }
 
         &--active{
@@ -54,6 +55,11 @@
             background-position-x: 30%;
             background-position-y: 50%;
             background-size: 4%;
+
+            & a{
+               opacity: 100%; 
+            }
+            
         }
 
     }
@@ -87,7 +93,7 @@
             background-color: transparent;
             opacity: 100;
             font-size: 22px;
-            z-index: 30;
+            z-index: 40;
             width: auto;
             height: auto;
             position: relative;
@@ -111,6 +117,7 @@
         display: none;
     }
 }
+
 
 
 

@@ -57,9 +57,10 @@
         &--decal{
             font-family: 'Pangaia';
             font-weight: 200;
-            margin-left: 154px; //////////////////////////////////////
+            margin-left: 154px; 
         }
     }
+
     &__img{
         width: 1000px;
         position: absolute;
@@ -86,7 +87,6 @@ footer{
     & a{
         color: #000000;
     }
-    
 
     &__el{
         font-family: 'owners-text', sans-serif;
@@ -113,6 +113,363 @@ footer{
             background-repeat: no-repeat;
     
         }
+    }
+}
+
+
+@media (max-width: 350px){
+    .h1Projet{
+        line-height: 90%;
+    
+        &__span{
+            margin-left: 0px;
+        }
+    }
+
+    .projetVisuel{
+        &__img{
+            border-radius: 25px;
+        }
+    }
+    
+    .next{
+        &__titreBlock{
+            &--decal{
+                margin-left: 0px; 
+            }
+        }
+    }
+}
+
+@media (min-width: 455px){
+
+}
+
+@media (min-width: 550px){
+    .h1Projet{
+        margin: 228px 64px 0;
+    }
+    
+    .infoProjet{
+        margin: 76px 64px 0;
+    }
+    
+    .projetVisuel{
+        padding: 144px 64px 0;
+    }
+    
+    .next{
+        padding: 144px 64px 216Px;
+
+        &__img{
+            width: 1400px;
+            left: 0px;
+            top: 240px;
+        }
+    }
+    
+    footer{
+        margin: 0 64px;
+    }
+}
+
+@media (min-width: 760px){
+    .h1Projet{
+        font-size: 123px;
+        margin: 312px 66px 0;
+        line-height: 50%;
+    
+        &__span{
+            font-size: 93px;
+            margin-left: 186px;
+        }
+    }
+    
+    .infoProjet{
+        margin: 186px 66px 0;
+    
+        &__para{
+            font-size: 22px;
+            margin-bottom: 78px;
+            line-height: 140%;
+    
+            &--big{
+                font-size: 29px;
+                margin-top: 186px;
+            }
+        }
+    }
+    
+    .projetVisuel{
+        padding: 186px 66px 0;
+    
+        &__img{
+            border-radius: 60px;
+        }
+    }
+    
+    .next{
+        padding: 186px 66px 246px;
+    
+        &__titre{
+            font-size: 52px;
+            margin: 0 0 52px;
+            }
+        
+        &__titreBlock{       
+            &--decal{
+                margin-left: 234px; 
+            }
+        }
+    
+        &__img{
+            width: 1600px;
+            left: -20px;
+            top: 320px;
+        }
+    }
+    
+    footer{
+        margin: 0 66px;
+    }
+    
+    .footer{
+        margin: 0 0 22px;
+    
+        &__el{
+            font-size: 17px;
+    
+            &:nth-child(3){
+                height: 18px;
+                width: 23px;
+            }
+    
+            &--icon{
+                height: 18px;
+                width: 18px;
+                margin-left: 11px;
+            }
+        }
+    }
+}
+
+@media (min-width: 950px){
+    .h1Projet{
+        margin: 246px 116px 0;
+        line-height: 80%;
+
+        &__span{
+            margin-left: 148px;
+        }
+    }
+    
+    .infoProjet{
+        margin: 123px 116px 0;
+    
+        &__para{
+            margin-left: 154px;
+    
+            &--big{
+                font-size: 29px;
+                margin-top: 123px;
+            }
+        }
+
+        & button{
+            margin-left: 154px;
+        }
+    }
+    
+    .projetVisuel{
+        padding: 186px 116px 0;
+    }
+    
+    .next{
+        padding: 279px 116px 246px;
+    
+        &__img{
+            width: 1600px;
+            left: -0px;
+            top: 420px;
+        }
+    }
+    
+    footer{
+        margin: 0 116px;
+    }
+}
+
+@media (min-width: 1110px){
+    .h1Projet{
+        font-size: 135px;
+        margin: 288px 86px 0;
+        line-height: 50%;
+    
+        &__span{
+            font-size: 101px;
+            margin-left: 202px;
+        }
+    }
+    
+    .infoProjet{
+        margin: 171px 86px 0;
+    
+        &__para{
+            font-size: 24px;
+            margin-bottom: 96px;
+            line-height: 140%;
+            margin-left: 303px;
+    
+            &--big{
+                font-size: 32px;
+                margin-top: 171px;
+            }
+        }
+
+        & button{
+            margin-left: 303px;
+        }
+    }
+    
+    .projetVisuel{
+        padding: 202px 86px 0;
+    
+        &__img{
+            border-radius: 90px;
+        }
+    }
+    
+    .next{
+        padding: 202px 66px 285px;
+    
+        &__titre{
+            font-size: 57px;
+            margin: 0 0 57px;
+            }
+        
+        &__titreBlock{       
+            &--decal{
+                margin-left: 256px; 
+            }
+        }
+    
+        &__img{
+            width: 2300px;
+            left: -100px;
+            top: 320px;
+        }
+    }
+    
+    footer{
+        margin: 0 66px;
+    }
+    
+    .footer{
+        margin: 0 0 24px;
+    
+        &__el{
+            font-size: 18px;
+    
+            &:nth-child(3){
+                height: 20px;
+                width: 25.56px;
+            }
+    
+            &--icon{
+                height: 20px;
+                width: 20px;
+                margin-left: 9px;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 1530px){ 
+    .h1Projet{
+        margin: 288px 172px 0;
+    }
+    
+    .infoProjet{
+        margin: 171px 172px 0;
+    }
+    
+    .projetVisuel{
+        padding: 202px 172px 0;
+    }
+    
+    .next{
+        padding: 202px 172px 285px;
+
+        &__img{
+            width: px;
+            left: px;
+            top: px;
+        }
+    }
+    
+    footer{
+        margin: 0 172px;
+    }
+}
+
+//1820px - 2200px
+@media (min-width: 1820px){ 
+    .h1Projet{
+        margin: 288px 344px 0;
+    }
+    
+    .infoProjet{
+        margin: 171px 344px 0;
+    }
+    
+    .projetVisuel{
+        padding: 202px 344px 0;
+    }
+    
+    .next{
+        padding: 202px 344px 285px;
+
+        &__img{
+            width: px;
+            left: px;
+            top: px;
+        }
+    }
+    
+    footer{
+        margin: 0 344px;
+    }
+
+}
+
+//2200px et plus
+@media (min-width: 2200px){
+    .h1Projet{
+        margin: 288px 473px 0;
+    }
+    
+    .infoProjet{
+        margin: 171px 473px 0;
+    }
+    
+    .projetVisuel{
+        padding: 202px 473px 0;
+    }
+    
+    .next{
+        padding: 202px 473px 285px;
+
+        &__img{
+            width: px;
+            left: px;
+            top: px;
+        }
+    }
+    
+    footer{
+        margin: 0 473px;
     }
 }
 
