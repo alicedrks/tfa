@@ -1161,26 +1161,81 @@ footer {
     margin-left: 9px;
   }
 }
+@media (min-width: 1300px) {
+  .h1Projet {
+    font-size: 135px;
+  }
+  .h1Projet__span {
+    font-size: 101px;
+  }
+
+  .infoProjet {
+    margin: 228px 86px 0;
+  }
+  .infoProjet__para {
+    font-size: 32px;
+  }
+  .infoProjet__para--big {
+    font-size: 43px;
+    margin-top: 228px;
+  }
+
+  .projetVisuel {
+    padding: 285px 86px 0;
+  }
+  .projetVisuel__img {
+    border-radius: 110px;
+  }
+
+  .next {
+    padding: 285px 66px 285px;
+  }
+  .next__titre {
+    font-size: 76px;
+    margin: 0 0 76px;
+  }
+  .next__titreBlock--decal {
+    margin-left: 304px;
+  }
+  .next__img--late {
+    width: 3300px;
+    left: 150px;
+    top: 320px;
+  }
+
+  .footer {
+    color: #fff;
+  }
+  .footer a {
+    color: #fff;
+  }
+  .footer__el:nth-child(2) {
+    background-image: url(../../assets/images/icon/instagram.svg);
+  }
+  .footer__el:nth-child(3) {
+    background-image: url(../../assets/images/icon/mail.svg);
+  }
+}
 @media (min-width: 1530px) {
   .h1Projet {
     margin: 288px 172px 0;
   }
 
   .infoProjet {
-    margin: 171px 172px 0;
+    margin: 228px 172px 0;
   }
 
   .projetVisuel {
-    padding: 202px 172px 0;
+    padding: 342px 172px 0;
   }
 
   .next {
-    padding: 202px 172px 285px;
+    padding: 342px 172px 285px;
   }
   .next__img--late {
-    width: px;
-    left: px;
-    top: px;
+    width: 3300px;
+    left: 350px;
+    top: 220px;
   }
 
   footer {
@@ -1193,20 +1248,19 @@ footer {
   }
 
   .infoProjet {
-    margin: 171px 344px 0;
+    margin: 228px 344px 0;
   }
 
   .projetVisuel {
-    padding: 202px 344px 0;
+    padding: 342px 344px 0;
   }
 
   .next {
-    padding: 202px 344px 285px;
+    padding: 342px 344px 513px;
   }
   .next__img--late {
-    width: px;
-    left: px;
-    top: px;
+    left: 650px;
+    top: 350px;
   }
 
   footer {
@@ -1219,20 +1273,20 @@ footer {
   }
 
   .infoProjet {
-    margin: 171px 473px 0;
+    margin: 228px 473px 0;
   }
 
   .projetVisuel {
-    padding: 202px 473px 0;
+    padding: 342px 473px 0;
   }
 
   .next {
-    padding: 202px 473px 285px;
+    padding: 342px 473px 627px;
   }
   .next__img--late {
-    width: px;
-    left: px;
-    top: px;
+    width: 3700px;
+    left: 800px;
+    top: 400px;
   }
 
   footer {
