@@ -893,7 +893,7 @@ h1 {
   font-weight: 200;
   margin-left: 154px;
 }
-.next__img {
+.next__img--late {
   width: 1000px;
   position: absolute;
   left: -80px;
@@ -973,7 +973,7 @@ footer {
   .next {
     padding: 144px 64px 216Px;
   }
-  .next__img {
+  .next__img--late {
     width: 1400px;
     left: 0px;
     top: 240px;
@@ -1024,7 +1024,7 @@ footer {
   .next__titreBlock--decal {
     margin-left: 234px;
   }
-  .next__img {
+  .next__img--late {
     width: 1600px;
     left: -20px;
     top: 320px;
@@ -1080,7 +1080,7 @@ footer {
   .next {
     padding: 279px 116px 246px;
   }
-  .next__img {
+  .next__img--late {
     width: 1600px;
     left: 0px;
     top: 420px;
@@ -1135,7 +1135,7 @@ footer {
   .next__titreBlock--decal {
     margin-left: 256px;
   }
-  .next__img {
+  .next__img--late {
     width: 2300px;
     left: -100px;
     top: 320px;
@@ -1177,7 +1177,7 @@ footer {
   .next {
     padding: 202px 172px 285px;
   }
-  .next__img {
+  .next__img--late {
     width: px;
     left: px;
     top: px;
@@ -1203,7 +1203,7 @@ footer {
   .next {
     padding: 202px 344px 285px;
   }
-  .next__img {
+  .next__img--late {
     width: px;
     left: px;
     top: px;
@@ -1229,7 +1229,7 @@ footer {
   .next {
     padding: 202px 473px 285px;
   }
-  .next__img {
+  .next__img--late {
     width: px;
     left: px;
     top: px;
