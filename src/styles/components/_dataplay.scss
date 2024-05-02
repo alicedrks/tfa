@@ -1,0 +1,52 @@
+.h1Projet--late{
+    line-height: 90%;
+}
+.h1Projet__span--late{
+    margin-left: 0px;
+}
+
+
+.projetVisuel--late{
+    padding: 144px 24px 0;
+}
+.projetVisuel{
+    &__img{
+        width: 100%;
+        border-radius: 35px;
+        transform: rotate(-5deg);
+
+        &--right{
+            margin-top: 76px;
+            transform: rotate(5deg);
+        }
+    }
+}
+
+
+.next{
+    &__titreBlock{
+
+        &--late{
+            margin-left: 0px; 
+        }
+    }
+}
+
+.footer--late{
+    color: #fff;
+
+    & a{
+        color: #fff;
+    }
+
+    &__el{
+
+        &:nth-child(2){
+            background-image: url('../../assets/images/icon/instagram.svg');
+        }
+
+        &:nth-child(3){
+            background-image: url('../../assets/images/icon/mail.svg');
+        }
+    }
+}

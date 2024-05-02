@@ -107,6 +107,16 @@ small a {
     margin-top: 96px;
   }
 }
+@media (min-width: 760px) {
+  .btn {
+    font-size: 22px;
+  }
+}
+@media (min-width: 1110px) {
+  .btn {
+    font-size: 24px;
+  }
+}
 .header {
   padding-left: 24px;
   padding-right: 24px;
@@ -890,6 +900,7 @@ h1 {
 }
 .next__titreBlock--decal {
   font-family: "Pangaia";
+  text-transform: capitalize;
   font-weight: 200;
   margin-left: 154px;
 }
@@ -1053,7 +1064,6 @@ footer {
 @media (min-width: 950px) {
   .h1Projet {
     margin: 246px 116px 0;
-    line-height: 80%;
   }
   .h1Projet__span {
     margin-left: 148px;
@@ -1292,6 +1302,44 @@ footer {
   footer {
     margin: 0 473px;
   }
+}
+.h1Projet--late {
+  line-height: 90%;
+}
+
+.h1Projet__span--late {
+  margin-left: 0px;
+}
+
+.projetVisuel--late {
+  padding: 144px 24px 0;
+}
+
+.projetVisuel__img {
+  width: 100%;
+  border-radius: 35px;
+  transform: rotate(-5deg);
+}
+.projetVisuel__img--right {
+  margin-top: 76px;
+  transform: rotate(5deg);
+}
+
+.next__titreBlock--late {
+  margin-left: 0px;
+}
+
+.footer--late {
+  color: #fff;
+}
+.footer--late a {
+  color: #fff;
+}
+.footer--late__el:nth-child(2) {
+  background-image: url("../../assets/images/icon/instagram.svg");
+}
+.footer--late__el:nth-child(3) {
+  background-image: url("../../assets/images/icon/mail.svg");
 }
 
 /*# sourceMappingURL=app.css.map*/
