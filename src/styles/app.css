@@ -102,7 +102,6 @@ small a {
     margin-left: 0px;
     margin-top: 0px;
   }
-
   .para--big {
     margin-top: 96px;
   }
@@ -292,11 +291,9 @@ h1 {
   h1 {
     font-size: 57px;
   }
-
   .h1__nom {
     font-size: 76px;
   }
-
   .description {
     position: relative;
   }
@@ -319,7 +316,6 @@ h1 {
   .intro {
     height: 100%;
   }
-
   h1 {
     margin-top: 128px;
     margin-bottom: 160px;
@@ -329,7 +325,6 @@ h1 {
   .intro {
     height: 100%;
   }
-
   h1 {
     margin-top: 128px;
     margin-bottom: 160px;
@@ -348,11 +343,9 @@ h1 {
     background-size: 450%;
     background-position-x: -400px;
   }
-
   h1 {
     font-size: 101px;
   }
-
   .h1__nom {
     font-size: 135px;
   }
@@ -361,7 +354,6 @@ h1 {
   .intro {
     height: 100%;
   }
-
   h1 {
     margin-top: 128px;
     margin-bottom: 160px;
@@ -388,12 +380,10 @@ h1 {
     padding-left: 64px;
     padding-right: 64px;
   }
-
   .intro {
     padding-left: 64px;
     padding-right: 64px;
   }
-
   .description {
     margin-left: 64px;
     margin-right: 64px;
@@ -402,7 +392,6 @@ h1 {
     margin: 0;
     padding: 0;
   }
-
   .projet {
     padding: 0 64px;
   }
@@ -429,22 +418,18 @@ h1 {
     padding-right: 66px;
     top: 29px;
   }
-
   .intro {
     padding-left: 66px;
     padding-right: 66px;
     background-size: 350%;
     background-position-x: -200px;
   }
-
   h1 {
     font-size: 123px;
   }
-
   .h1__nom {
     font-size: 165px;
   }
-
   .description {
     margin-left: 66px;
     margin-right: 66px;
@@ -469,7 +454,6 @@ h1 {
   .intro {
     height: 100%;
   }
-
   h1 {
     margin-top: 128px;
     margin-bottom: 160px;
@@ -480,14 +464,12 @@ h1 {
     padding-left: 116px;
     padding-right: 116px;
   }
-
   .intro {
     background-size: 280%;
     background-position-x: -150px;
     padding-left: 116px;
     padding-right: 116px;
   }
-
   .description {
     padding: 0;
     margin: 0;
@@ -502,17 +484,14 @@ h1 {
   .description__para--little {
     margin-bottom: 58px;
   }
-
   .right {
     grid-column: 2;
     grid-row: 2;
     align-self: end;
   }
-
   .projet {
     padding: 0 87px;
   }
-
   .h1_n {
     display: inline;
   }
@@ -521,7 +500,6 @@ h1 {
   .intro {
     height: 100vh;
   }
-
   h1 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -531,7 +509,6 @@ h1 {
   .intro {
     height: 100%;
   }
-
   h1 {
     margin-top: 128px;
     margin-bottom: 160px;
@@ -551,22 +528,18 @@ h1 {
     padding-right: 86px;
     top: 39px;
   }
-
   .intro {
     padding-left: 86px;
     padding-right: 86px;
     background-size: 200%;
     background-position-x: -250px;
   }
-
   h1 {
     font-size: 135px;
   }
-
   .h1__nom {
     font-size: 179px;
   }
-
   .description__container {
     padding-left: 86px;
     padding-right: 86px;
@@ -582,7 +555,6 @@ h1 {
     font-size: 32px;
     margin-bottom: 87px;
   }
-
   .projet {
     padding: 0 66px;
     overflow: hidden;
@@ -642,7 +614,6 @@ h1 {
   .intro {
     height: 100%;
   }
-
   h1 {
     margin-top: 135px;
     margin-bottom: 179px;
@@ -653,17 +624,14 @@ h1 {
     padding-left: 172px;
     padding-right: 172px;
   }
-
   .intro {
     padding-left: 172px;
     padding-right: 172px;
   }
-
   .description__container {
     padding-left: 172px;
     padding-right: 172px;
   }
-
   .projet {
     padding: 0 66px;
   }
@@ -679,17 +647,14 @@ h1 {
     padding-left: 344px;
     padding-right: 344px;
   }
-
   .intro {
     padding-left: 344px;
     padding-right: 344px;
   }
-
   .description__container {
     padding-left: 344px;
     padding-right: 344px;
   }
-
   .projet {
     padding: 0 66px;
   }
@@ -704,26 +669,21 @@ h1 {
   h1 {
     font-size: 179px;
   }
-
   .h1__nom {
     font-size: 239px;
   }
-
   .header {
     padding-left: 473px;
     padding-right: 473px;
   }
-
   .intro {
     padding-left: 473px;
     padding-right: 473px;
   }
-
   .description__container {
     padding-left: 473px;
     padding-right: 473px;
   }
-
   .projet {
     padding: 0 66px;
   }
@@ -833,7 +793,6 @@ h1 {
     background-position-x: 50%;
     transition: opacity 0.2s linear;
   }
-
   .burgerMenu {
     display: none;
   }
@@ -958,7 +917,6 @@ footer {
   .h1Projet__span {
     margin-left: 0px;
   }
-
   .projetVisuel__img {
     border-radius: 25px;
   }
@@ -967,15 +925,12 @@ footer {
   .h1Projet {
     margin: 228px 64px 0;
   }
-
   .infoProjet {
     margin: 76px 64px 0;
   }
-
   .projetVisuel {
     padding: 144px 64px 0;
   }
-
   .next {
     padding: 144px 64px 216Px;
   }
@@ -984,7 +939,6 @@ footer {
     left: -5%;
     top: 35%;
   }
-
   footer {
     margin: 0 64px;
   }
@@ -999,7 +953,6 @@ footer {
     font-size: 93px;
     margin-left: 186px;
   }
-
   .infoProjet {
     margin: 186px 66px 0;
   }
@@ -1012,14 +965,12 @@ footer {
     font-size: 29px;
     margin-top: 186px;
   }
-
   .projetVisuel {
     padding: 186px 66px 0;
   }
   .projetVisuel__img {
     border-radius: 60px;
   }
-
   .next {
     padding: 186px 66px 246px;
   }
@@ -1032,11 +983,9 @@ footer {
     left: -8%;
     top: 40%;
   }
-
   footer {
     margin: 0 66px;
   }
-
   .footer {
     margin: 0 0 22px;
   }
@@ -1060,7 +1009,6 @@ footer {
   .h1Projet__span {
     margin-left: 148px;
   }
-
   .infoProjet {
     margin: 123px 116px 0;
   }
@@ -1071,14 +1019,12 @@ footer {
     font-size: 29px;
     margin-top: 123px;
   }
-  .infoProjet a {
+  .infoProjet button {
     margin-left: 154px;
   }
-
   .projetVisuel {
     padding: 186px 116px 0;
   }
-
   .next {
     padding: 279px 116px 246px;
   }
@@ -1087,7 +1033,6 @@ footer {
     left: 7%;
     top: 45%;
   }
-
   footer {
     margin: 0 116px;
   }
@@ -1102,7 +1047,6 @@ footer {
     font-size: 101px;
     margin-left: 202px;
   }
-
   .infoProjet {
     margin: 171px 86px 0;
   }
@@ -1116,17 +1060,15 @@ footer {
     font-size: 32px;
     margin-top: 171px;
   }
-  .infoProjet a {
+  .infoProjet button {
     margin-left: 303px;
   }
-
   .projetVisuel {
     padding: 202px 86px 0;
   }
   .projetVisuel__img {
     border-radius: 90px;
   }
-
   .next {
     padding: 202px 66px 285px;
   }
@@ -1139,11 +1081,9 @@ footer {
     left: -10%;
     top: 30%;
   }
-
   footer {
     margin: 0 66px;
   }
-
   .footer {
     margin: 0 0 24px;
   }
@@ -1167,7 +1107,6 @@ footer {
   .h1Projet__span {
     font-size: 101px;
   }
-
   .infoProjet {
     margin: 228px 86px 0;
   }
@@ -1178,14 +1117,12 @@ footer {
     font-size: 43px;
     margin-top: 228px;
   }
-
   .projetVisuel {
     padding: 285px 86px 0;
   }
   .projetVisuel__img {
     border-radius: 110px;
   }
-
   .next {
     padding: 285px 66px 285px;
   }
@@ -1198,7 +1135,6 @@ footer {
     left: 150px;
     top: 320px;
   }
-
   .footer {
     color: #fff;
   }
@@ -1216,15 +1152,12 @@ footer {
   .h1Projet {
     margin: 288px 172px 0;
   }
-
   .infoProjet {
     margin: 228px 172px 0;
   }
-
   .projetVisuel {
     padding: 342px 172px 0;
   }
-
   .next {
     padding: 342px 172px 285px;
   }
@@ -1233,7 +1166,6 @@ footer {
     left: 350px;
     top: 220px;
   }
-
   footer {
     margin: 0 172px;
   }
@@ -1242,15 +1174,12 @@ footer {
   .h1Projet {
     margin: 288px 344px 0;
   }
-
   .infoProjet {
     margin: 228px 344px 0;
   }
-
   .projetVisuel {
     padding: 342px 344px 0;
   }
-
   .next {
     padding: 342px 344px 513px;
   }
@@ -1258,7 +1187,6 @@ footer {
     left: 650px;
     top: 350px;
   }
-
   footer {
     margin: 0 344px;
   }
@@ -1267,15 +1195,12 @@ footer {
   .h1Projet {
     margin: 288px 473px 0;
   }
-
   .infoProjet {
     margin: 228px 473px 0;
   }
-
   .projetVisuel {
     padding: 342px 473px 0;
   }
-
   .next {
     padding: 342px 473px 627px;
   }
@@ -1284,7 +1209,6 @@ footer {
     left: 800px;
     top: 400px;
   }
-
   footer {
     margin: 0 473px;
   }
@@ -1319,6 +1243,9 @@ footer {
   transform: rotate(5deg);
 }
 
+.next__titreBlock--late {
+  margin-left: 0px;
+}
 .next__img--late {
   top: 55%;
   left: -20%;
@@ -1346,18 +1273,16 @@ footer {
   .h1Projet--late {
     line-height: 50%;
   }
-
   .h1Projet__span--late {
     margin-left: 144px;
   }
-
   .projetVisuel--late {
     padding: 144px 27px 144px;
     display: flex;
     flex-direction: column;
     background-size: 140%;
+    background-position-y: 120px;
   }
-
   .projetVisuel__img--late {
     width: 70%;
   }
@@ -1365,94 +1290,10 @@ footer {
     margin-top: 144px;
     align-self: end;
   }
-
   .next__img--late {
-    top: 37%;
-    left: -25%;
+    top: 380px;
   }
-
   .next--late {
     padding-top: 0px;
   }
-}
-@media (min-width: 600Px) {
-  .projetVisuel--late {
-    background-size: 130%;
-  }
-}
-@media (min-width: 760px) {
-  .h1Projet__span--late {
-    margin-left: 232px;
-  }
-
-  .projetVisuel--late {
-    padding: 186px 84px 93px;
-    background-size: 105%;
-    background-position-y: 170px;
-  }
-
-  .projetVisuel__img--late {
-    width: 65%;
-  }
-  .projetVisuel__img--right {
-    margin-top: 186px;
-  }
-
-  .next__img--late {
-    top: 40%;
-    left: -10%;
-  }
-
-  .next--late {
-    padding: 93px 66px 246px;
-  }
-}
-@media (min-width: 950px) {
-  .projetVisuel__img--late {
-    width: 70%;
-  }
-
-  .projetVisuel--late {
-    padding: 192px 132px 96px;
-    background-size: 100%;
-    background-position-y: 170px;
-  }
-
-  .next__img--late {
-    top: 45%;
-    left: -5%;
-  }
-
-  .next--late {
-    padding: 96px 116px 246px;
-  }
-}
-@media (min-width: 1110px) {
-  .h1Projet__span--late {
-    margin-left: 264px;
-  }
-
-  .projetVisuel--late {
-    padding: 404px 96px 202px;
-    background-size: 100%;
-    background-position-y: 350px;
-  }
-
-  .projetVisuel__img--late {
-    width: 60%;
-  }
-  .projetVisuel__img--right {
-    margin-top: 202px;
-  }
-
-  .next__img--late {
-    top: 30%;
-    left: -5%;
-  }
-
-  .next--late {
-    padding: 202px 86px 246px;
-  }
-}
-
-/*# sourceMappingURL=app.css.map*/
+}/*# sourceMappingURL=app.css.map */

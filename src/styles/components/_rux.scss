@@ -58,15 +58,14 @@
             font-family: 'Pangaia';
             text-transform: capitalize;
             font-weight: 200;
-            margin-left: 154px; 
         }
     }
 
     &__img{
         width: 1000px;
         position: absolute;
-        left: -80px;
-        top: 320px;
+        left: -10%;
+        top: 50%;
         z-index: -40; 
     }
 }
@@ -132,14 +131,6 @@ footer{
             border-radius: 25px;
         }
     }
-    
-    .next{
-        &__titreBlock{
-            &--decal{
-                margin-left: 0px; 
-            }
-        }
-    }
 }
 
 @media (min-width: 550px){
@@ -160,8 +151,8 @@ footer{
 
         &__img{
             width: 1400px;
-            left: 0px;
-            top: 240px; 
+            left: -5%;
+            top: 35%; 
         }
     }
     
@@ -212,17 +203,11 @@ footer{
             font-size: 52px;
             margin: 0 0 52px;
             }
-        
-        &__titreBlock{       
-            &--decal{
-                margin-left: 234px; 
-            }
-        }
     
         &__img{
             width: 1600px;
-            left: -20px;
-            top: 320px;   
+            left: -8%;
+            top: 40%;   
         }
     }
     
@@ -271,7 +256,7 @@ footer{
             }
         }
 
-        & button{
+        & a{
             margin-left: 154px;
         }
     }
@@ -285,8 +270,8 @@ footer{
     
         &__img{
             width: 1600px;
-            left: -0px;
-            top: 420px;   
+            left: 7%;
+            top: 45%;   
         }
     }
     
@@ -322,7 +307,7 @@ footer{
             }
         }
 
-        & button{
+        & a{
             margin-left: 303px;
         }
     }
@@ -342,17 +327,11 @@ footer{
             font-size: 57px;
             margin: 0 0 57px;
             }
-        
-        &__titreBlock{       
-            &--decal{
-                margin-left: 256px; 
-            }
-        }
     
         &__img{
             width: 2300px;
-            left: -100px;
-            top: 320px;  
+            left: -10%;
+            top: 30%;  
         }
     }
     
@@ -380,7 +359,7 @@ footer{
     }
 }
 
-@media (min-width: 1300px){ /////////changer picto
+@media (min-width: 1300px){ 
     .h1Projet{
         font-size: 135px;
     
@@ -417,12 +396,6 @@ footer{
             font-size: 76px;
             margin: 0 0 76px;
         }
-        
-        &__titreBlock{       
-            &--decal{
-                margin-left: 304px; 
-            }
-        }
     
         &__img{
             width: 3300px;
@@ -440,11 +413,11 @@ footer{
     
         &__el{
             &:nth-child(2){
-                background-image: url(../../assets/images/icon/instagram.svg);
+                background-image: url('../../assets/images/icon/instagram.svg');
             }
 
             &:nth-child(3){
-                background-image: url(../../assets/images/icon/mail.svg);
+                background-image: url('../../assets/images/icon/mail.svg');
             }
         }
     }
