@@ -63,13 +63,11 @@
     }
 
     &__img{
-        &--late{
-           width: 1000px;
+        width: 1000px;
         position: absolute;
         left: -80px;
         top: 320px;
         z-index: -40; 
-        }
     }
 }
 
@@ -161,11 +159,9 @@ footer{
         padding: 144px 64px 216Px;
 
         &__img{
-            &--late{
-               width: 1400px;
+            width: 1400px;
             left: 0px;
             top: 240px; 
-            }
         }
     }
     
@@ -224,13 +220,9 @@ footer{
         }
     
         &__img{
-
-            &--late{
-                width: 1600px;
-                left: -20px;
-                top: 320px;  
-            }
-            
+            width: 1600px;
+            left: -20px;
+            top: 320px;   
         }
     }
     
@@ -292,12 +284,9 @@ footer{
         padding: 279px 116px 246px;
     
         &__img{
-            &--late{
-                width: 1600px;
-                left: -0px;
-                top: 420px;
-            }
-            
+            width: 1600px;
+            left: -0px;
+            top: 420px;   
         }
     }
     
@@ -361,12 +350,9 @@ footer{
         }
     
         &__img{
-            &--late{
-                width: 2300px;
-                left: -100px;
-                top: 320px; 
-            }
-            
+            width: 2300px;
+            left: -100px;
+            top: 320px;  
         }
     }
     
@@ -439,11 +425,9 @@ footer{
         }
     
         &__img{
-            &--late{
-                width: 3300px;
-                left: 150px;
-                top: 320px; 
-            }  
+            width: 3300px;
+            left: 150px;
+            top: 320px; 
         }
     }
     
@@ -483,11 +467,9 @@ footer{
         padding: 342px 172px 285px;
 
         &__img{
-            &--late{
-                width: 3300px;
-                left: 350px;
-                top: 220px; 
-            }  
+            width: 3300px;
+            left: 350px;
+            top: 220px; 
         }
     }
     
@@ -513,10 +495,8 @@ footer{
         padding: 342px 344px 513px;
 
         &__img{
-            &--late{
-                left: 650px;
-                top: 350px;
-            }
+            left: 650px;
+            top: 350px;
         }
     }
     
@@ -543,11 +523,9 @@ footer{
         padding: 342px 473px 627px;
 
         &__img{
-            &--late{
                 width: 3700px;
                 left: 800px;
                 top: 400px; 
-            }
         }
     }
     
