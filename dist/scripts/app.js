@@ -9,7 +9,6 @@
 /***/ (() => {
 
 
-
 /*const menuToggle = document.querySelector('.burgerMenu');
 const bodyc = document.querySelector('.home');
 
@@ -42,9 +41,10 @@ let tl = gsap.timeline({
         pin: true,
         markers: true,
         }*/
-/*})*/
 
+/*})*/
 //anim gsap
+
 /*tl.from('.projet__illu', {
         rotation:0, 
         duration:2,
