@@ -19,7 +19,7 @@ function menuOpen(){
 }*/
 
 
-import { gsap } from "gsap";
+/*import { gsap } from "gsap";
 import ScrollTrigger from 'gsap/scrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -33,13 +33,13 @@ let tl = gsap.timeline({
         pin: true,
         markers: true,
         }*/
-})
+/*})*/
 
 
 
 
 //anim gsap
-tl.from('.projet__illu', {
+/*tl.from('.projet__illu', {
         rotation:0, 
         duration:2,
     })
@@ -122,7 +122,7 @@ function calculerAngleRotation() {
 
 
 
-calculerAngleRotation();
+calculerAngleRotation();*/
 
 
 
