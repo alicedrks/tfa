@@ -1,6 +1,6 @@
 .h1Projet{
     font-size: 76px;
-    margin: 228px 24px 0;
+    padding: 228px 24px 144px;
     line-height: 50%;
 
     &__span{
@@ -13,7 +13,7 @@
 }
 
 .infoProjet{
-    margin: 76px 24px 0;
+    margin: 0 24px;
 
     &__para{
         font-size: 18px;
@@ -24,7 +24,6 @@
 
         &--big{
             font-size: 23px;
-            margin-top: 144px;
         }
     }
 }
@@ -135,11 +134,11 @@ footer{
 
 @media (min-width: 550px){
     .h1Projet{
-        margin: 228px 64px 0;
+        padding: 228px 64px 144px;
     }
     
     .infoProjet{
-        margin: 76px 64px 0;
+        margin: 0px 64px;
     }
     
     .projetVisuel{
@@ -164,7 +163,7 @@ footer{
 @media (min-width: 760px){
     .h1Projet{
         font-size: 123px;
-        margin: 312px 66px 0;
+        padding: 312px 66px 186px;
         line-height: 50%;
     
         &__span{
@@ -174,7 +173,7 @@ footer{
     }
     
     .infoProjet{
-        margin: 186px 66px 0;
+        margin: 0 66px;
     
         &__para{
             font-size: 22px;
@@ -183,7 +182,6 @@ footer{
     
             &--big{
                 font-size: 29px;
-                margin-top: 186px;
             }
         }
     }
@@ -237,7 +235,7 @@ footer{
 
 @media (min-width: 950px){
     .h1Projet{
-        margin: 246px 116px 0;
+        padding: 246px 116px 123px;
 
         &__span{
             margin-left: 148px;
@@ -245,14 +243,13 @@ footer{
     }
     
     .infoProjet{
-        margin: 123px 116px 0;
+        margin: 0px 116px;
     
         &__para{
             margin-left: 154px;
     
             &--big{
                 font-size: 29px;
-                margin-top: 123px;
             }
         }
 
@@ -283,7 +280,7 @@ footer{
 @media (min-width: 1110px){
     .h1Projet{
         font-size: 135px;
-        margin: 288px 86px 0;
+        padding: 288px 86px 171px;
         line-height: 50%;
     
         &__span{
@@ -293,7 +290,7 @@ footer{
     }
     
     .infoProjet{
-        margin: 171px 86px 0;
+        margin: 0px 86px;
     
         &__para{
             font-size: 24px;
@@ -303,7 +300,6 @@ footer{
     
             &--big{
                 font-size: 32px;
-                margin-top: 171px;
             }
         }
 
@@ -362,6 +358,7 @@ footer{
 @media (min-width: 1300px){ 
     .h1Projet{
         font-size: 135px;
+        padding: 288px 86px 228px;
     
         &__span{
             font-size: 101px;
@@ -369,14 +366,11 @@ footer{
     }
     
     .infoProjet{
-        margin: 228px 86px 0;
-    
         &__para{
             font-size: 32px;
     
             &--big{
                 font-size: 43px;
-                margin-top: 228px;
             }
         }
     }
@@ -425,11 +419,7 @@ footer{
 
 @media (min-width: 1530px){ 
     .h1Projet{
-        margin: 288px 172px 0;
-    }
-    
-    .infoProjet{
-        margin: 228px 172px 0;
+        padding: 288px 172px 228px;
     }
     
     .projetVisuel{
@@ -453,11 +443,11 @@ footer{
 
 @media (min-width: 1820px){ 
     .h1Projet{
-        margin: 288px 344px 0;
+        padding: 288px 344px 228px;
     }
     
     .infoProjet{
-        margin: 228px 344px 0;
+        margin: 0px 344px;
     }
     
     .projetVisuel{
@@ -481,11 +471,11 @@ footer{
 
 @media (min-width: 2200px){
     .h1Projet{
-        margin: 288px 473px 0;
+        padding: 288px 473px 228px;
     }
     
     .infoProjet{
-        margin: 228px 473px 0;
+        margin: 0px 473px;
     }
     
     .projetVisuel{

@@ -156,8 +156,6 @@
 }
 
 @media (min-width: 1110px){
-
-    
     .infoProjet--dec{
         margin-bottom: 0px;
     }
@@ -167,11 +165,6 @@
     }
     
     .projetVisuel{
-        &__imgs{
-            display: flex;
-            justify-content: center;
-        }
-    
         &__img--dec{
             &:nth-child(1){
                 width: 55%;
@@ -189,7 +182,26 @@
 }
 
 @media (min-width: 1300px){ 
+    .h1Projet--dec{
+        line-height: 65%;
+    }
+    
+    .h1Projet__span--dec{
+        margin-left: 675px;
+    }
 
+    .projetVisuel{
+        &__img--dec{
+            &:nth-child(1){
+                width: 47%;
+                left: -5%;
+            }
+            &:nth-child(2){
+                width: 42%;
+                right: -5%;
+            }
+        }
+    }
 }
 
 @media (min-width: 1530px){ 

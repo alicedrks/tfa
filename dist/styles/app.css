@@ -849,7 +849,7 @@ h1 {
 }
 .h1Projet {
   font-size: 76px;
-  margin: 228px 24px 0;
+  padding: 228px 24px 144px;
   line-height: 50%;
 }
 .h1Projet__span {
@@ -861,7 +861,7 @@ h1 {
 }
 
 .infoProjet {
-  margin: 76px 24px 0;
+  margin: 0 24px;
 }
 .infoProjet__para {
   font-size: 18px;
@@ -872,7 +872,6 @@ h1 {
 }
 .infoProjet__para--big {
   font-size: 23px;
-  margin-top: 144px;
 }
 
 .projetVisuel {
@@ -965,11 +964,11 @@ footer {
 }
 @media (min-width: 550px) {
   .h1Projet {
-    margin: 228px 64px 0;
+    padding: 228px 64px 144px;
   }
 
   .infoProjet {
-    margin: 76px 64px 0;
+    margin: 0px 64px;
   }
 
   .projetVisuel {
@@ -992,7 +991,7 @@ footer {
 @media (min-width: 760px) {
   .h1Projet {
     font-size: 123px;
-    margin: 312px 66px 0;
+    padding: 312px 66px 186px;
     line-height: 50%;
   }
   .h1Projet__span {
@@ -1001,7 +1000,7 @@ footer {
   }
 
   .infoProjet {
-    margin: 186px 66px 0;
+    margin: 0 66px;
   }
   .infoProjet__para {
     font-size: 22px;
@@ -1010,7 +1009,6 @@ footer {
   }
   .infoProjet__para--big {
     font-size: 29px;
-    margin-top: 186px;
   }
 
   .projetVisuel {
@@ -1055,21 +1053,20 @@ footer {
 }
 @media (min-width: 950px) {
   .h1Projet {
-    margin: 246px 116px 0;
+    padding: 246px 116px 123px;
   }
   .h1Projet__span {
     margin-left: 148px;
   }
 
   .infoProjet {
-    margin: 123px 116px 0;
+    margin: 0px 116px;
   }
   .infoProjet__para {
     margin-left: 154px;
   }
   .infoProjet__para--big {
     font-size: 29px;
-    margin-top: 123px;
   }
   .infoProjet a {
     margin-left: 154px;
@@ -1095,7 +1092,7 @@ footer {
 @media (min-width: 1110px) {
   .h1Projet {
     font-size: 135px;
-    margin: 288px 86px 0;
+    padding: 288px 86px 171px;
     line-height: 50%;
   }
   .h1Projet__span {
@@ -1104,7 +1101,7 @@ footer {
   }
 
   .infoProjet {
-    margin: 171px 86px 0;
+    margin: 0px 86px;
   }
   .infoProjet__para {
     font-size: 24px;
@@ -1114,7 +1111,6 @@ footer {
   }
   .infoProjet__para--big {
     font-size: 32px;
-    margin-top: 171px;
   }
   .infoProjet a {
     margin-left: 303px;
@@ -1163,20 +1159,17 @@ footer {
 @media (min-width: 1300px) {
   .h1Projet {
     font-size: 135px;
+    padding: 288px 86px 228px;
   }
   .h1Projet__span {
     font-size: 101px;
   }
 
-  .infoProjet {
-    margin: 228px 86px 0;
-  }
   .infoProjet__para {
     font-size: 32px;
   }
   .infoProjet__para--big {
     font-size: 43px;
-    margin-top: 228px;
   }
 
   .projetVisuel {
@@ -1214,11 +1207,7 @@ footer {
 }
 @media (min-width: 1530px) {
   .h1Projet {
-    margin: 288px 172px 0;
-  }
-
-  .infoProjet {
-    margin: 228px 172px 0;
+    padding: 288px 172px 228px;
   }
 
   .projetVisuel {
@@ -1240,11 +1229,11 @@ footer {
 }
 @media (min-width: 1820px) {
   .h1Projet {
-    margin: 288px 344px 0;
+    padding: 288px 344px 228px;
   }
 
   .infoProjet {
-    margin: 228px 344px 0;
+    margin: 0px 344px;
   }
 
   .projetVisuel {
@@ -1265,11 +1254,11 @@ footer {
 }
 @media (min-width: 2200px) {
   .h1Projet {
-    margin: 288px 473px 0;
+    padding: 288px 473px 228px;
   }
 
   .infoProjet {
-    margin: 228px 473px 0;
+    margin: 0px 473px;
   }
 
   .projetVisuel {
@@ -1291,6 +1280,11 @@ footer {
 }
 .h1Projet--late {
   line-height: 90%;
+  background-image: url("../../assets/images/illu/illuLateFirst.svg");
+  background-repeat: no-repeat;
+  background-size: 600px;
+  background-position-x: 210px;
+  background-position-y: 150px;
 }
 
 .h1Projet__span--late {
@@ -1585,10 +1579,6 @@ footer {
     padding: 202px 24px;
   }
 
-  .projetVisuel__imgs {
-    display: flex;
-    justify-content: center;
-  }
   .projetVisuel__img--dec:nth-child(1) {
     width: 55%;
     left: -10%;
@@ -1599,6 +1589,24 @@ footer {
     width: 50%;
     right: -10%;
     bottom: 0%;
+  }
+}
+@media (min-width: 1300px) {
+  .h1Projet--dec {
+    line-height: 65%;
+  }
+
+  .h1Projet__span--dec {
+    margin-left: 675px;
+  }
+
+  .projetVisuel__img--dec:nth-child(1) {
+    width: 47%;
+    left: -5%;
+  }
+  .projetVisuel__img--dec:nth-child(2) {
+    width: 42%;
+    right: -5%;
   }
 }
 
