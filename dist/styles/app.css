@@ -1297,8 +1297,9 @@ footer {
 .projetVisuel--late {
   padding: 144px 27px 72px;
   background-image: url("../../assets/images/illu/backgroundDataplayProjets.svg");
-  background-size: 170%;
-  background-position-y: 120px;
+  background-size: 280%;
+  background-position-y: 110px;
+  background-position-x: -120px;
   background-repeat: no-repeat;
   position: relative;
   z-index: -20;
@@ -1362,7 +1363,7 @@ footer {
     padding: 144px 27px 144px;
     display: flex;
     flex-direction: column;
-    background-size: 140%;
+    background-size: 230%;
   }
 
   .projetVisuel__img--late {
@@ -1389,7 +1390,7 @@ footer {
   }
 
   .projetVisuel--late {
-    background-size: 130%;
+    background-size: 220%;
   }
 }
 @media (min-width: 760px) {
@@ -1409,7 +1410,7 @@ footer {
 
   .projetVisuel--late {
     padding: 186px 84px 93px;
-    background-size: 105%;
+    background-size: 175%;
     background-position-y: 170px;
   }
 
@@ -1447,7 +1448,7 @@ footer {
 
   .projetVisuel--late {
     padding: 192px 132px 96px;
-    background-size: 100%;
+    background-size: 160%;
     background-position-y: 200px;
   }
 
@@ -1482,7 +1483,7 @@ footer {
 
   .projetVisuel--late {
     padding: 404px 96px 202px;
-    background-size: 100%;
+    background-size: 165%;
     background-position-y: 350px;
   }
 
@@ -1508,7 +1509,12 @@ footer {
   }
 
   .infoProjet--late {
-    padding-bottom: 606px;
+    padding-bottom: 404px;
+  }
+
+  .projetVisuel--late {
+    background-position-y: 300px;
+    background-size: 170%;
   }
 
   .next__img--late {
@@ -1562,7 +1568,9 @@ footer {
   }
 
   .projetVisuel--late {
-    background-position-y: 290px;
+    background-position-y: 340px;
+    background-position-x: -200px;
+    background-size: 150%;
     padding: 404px 360px 202px;
   }
 
@@ -1593,9 +1601,10 @@ footer {
   }
 
   .projetVisuel--late {
-    background-size: 90%;
-    background-position-y: 290px;
-    padding: 342px 490px 627px;
+    background-size: 130%;
+    background-position-x: -180px;
+    background-position-y: 320px;
+    padding: 342px 490px 456px;
   }
 
   .projetVisuel__img--late {
@@ -1606,12 +1615,12 @@ footer {
   }
 
   .next__img--late {
-    top: 35%;
+    top: 0%;
     left: 22%;
   }
 
   .next--late {
-    padding: 342px 473px 627px;
+    padding: 0px 473px 627px;
   }
 }
 .h1Projet--dec {
