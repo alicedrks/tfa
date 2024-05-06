@@ -844,7 +844,7 @@ h1 {
 }
 .h1Projet {
   font-size: 76px;
-  padding: 228px 24px 144px;
+  padding: 228px 24px 108px;
   line-height: 50%;
 }
 .h1Projet__span {
@@ -871,10 +871,17 @@ h1 {
 
 .projetVisuel {
   padding: 144px 24px 0;
+  position: relative;
 }
 .projetVisuel__img {
   width: 100%;
   border-radius: 35px;
+}
+.projetVisuel__bulle {
+  position: absolute;
+  top: 90%;
+  left: 78%;
+  width: 20%;
 }
 
 .next {
@@ -945,6 +952,27 @@ footer {
   background-repeat: no-repeat;
 }
 
+.titre {
+  position: relative;
+  overflow: hidden;
+}
+.titre__bulle {
+  position: absolute;
+}
+.titre__bulle--1 {
+  width: 400px;
+  top: -25%;
+  left: 40%;
+  z-index: -20;
+  transform: rotate(10deg);
+}
+.titre__bulle--2 {
+  width: 100px;
+  top: 20%;
+  left: 27%;
+  z-index: -20;
+}
+
 @media (max-width: 350px) {
   .h1Projet {
     line-height: 90%;
@@ -959,7 +987,7 @@ footer {
 }
 @media (min-width: 550px) {
   .h1Projet {
-    padding: 228px 64px 144px;
+    padding: 228px 64px 108px;
   }
 
   .infoProjet {
@@ -968,6 +996,11 @@ footer {
 
   .projetVisuel {
     padding: 144px 64px 0;
+  }
+  .projetVisuel__bulle {
+    top: 85%;
+    left: 78%;
+    width: 18%;
   }
 
   .next {
@@ -981,6 +1014,15 @@ footer {
 
   footer {
     margin: 0 64px;
+  }
+
+  .titre__bulle--1 {
+    top: -15%;
+    left: 50%;
+  }
+  .titre__bulle--2 {
+    top: 25%;
+    left: 40%;
   }
 }
 @media (min-width: 760px) {
@@ -1045,6 +1087,20 @@ footer {
     width: 18px;
     margin-left: 11px;
   }
+
+  .titre__bulle--1 {
+    width: 500px;
+    top: -15%;
+    left: 55%;
+    z-index: -20;
+    transform: rotate(10deg);
+  }
+  .titre__bulle--2 {
+    width: 120px;
+    top: 30%;
+    left: 50%;
+    z-index: -20;
+  }
 }
 @media (min-width: 950px) {
   .h1Projet {
@@ -1070,6 +1126,11 @@ footer {
   .projetVisuel {
     padding: 186px 116px 0;
   }
+  .projetVisuel__bulle {
+    top: 82%;
+    left: 82%;
+    width: 16%;
+  }
 
   .next {
     padding: 279px 116px 246px;
@@ -1082,6 +1143,20 @@ footer {
 
   footer {
     margin: 0 116px;
+  }
+
+  .titre__bulle--1 {
+    width: 550px;
+    top: -2%;
+    left: 58%;
+    z-index: -20;
+    transform: rotate(10deg);
+  }
+  .titre__bulle--2 {
+    width: 130px;
+    top: 65%;
+    left: 57%;
+    z-index: -20;
   }
 }
 @media (min-width: 1110px) {

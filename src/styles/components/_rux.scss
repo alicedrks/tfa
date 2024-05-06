@@ -1,6 +1,6 @@
 .h1Projet{
     font-size: 76px;
-    padding: 228px 24px 144px;
+    padding: 228px 24px 108px;
     line-height: 50%;
 
     &__span{
@@ -30,10 +30,18 @@
 
 .projetVisuel{
     padding: 144px 24px 0;
+    position: relative;
 
     &__img{
         width: 100%;
         border-radius: 35px;
+    }
+
+    &__bulle{
+        position: absolute;
+        top: 90%;
+        left: 78%;
+        width: 20%;
     }
 }
 
@@ -115,6 +123,29 @@ footer{
     }
 }
 
+.titre{
+    position: relative;
+    overflow:hidden;
+
+    &__bulle{
+        position: absolute;
+
+        &--1{
+            width: 400px;
+            top: -25%;
+            left: 40%;
+            z-index: -20;
+            transform: rotate(10deg);
+        }
+        &--2{
+            width: 100px;
+            top: 20%;
+            left: 27%;
+            z-index: -20;
+        }
+    }
+}
+
 
 @media (max-width: 350px){
     .h1Projet{
@@ -134,7 +165,7 @@ footer{
 
 @media (min-width: 550px){
     .h1Projet{
-        padding: 228px 64px 144px;
+        padding: 228px 64px 108px;
     }
     
     .infoProjet{
@@ -143,6 +174,12 @@ footer{
     
     .projetVisuel{
         padding: 144px 64px 0;
+
+        &__bulle{
+            top: 85%;
+            left: 78%;
+            width: 18%;
+        }
     }
     
     .next{
@@ -157,6 +194,20 @@ footer{
     
     footer{
         margin: 0 64px;
+    }
+
+    .titre{
+        &__bulle{
+    
+            &--1{
+                top: -15%;
+                left: 50%;
+            }
+            &--2{
+                top: 25%;
+                left: 40%;
+            }
+        }
     }
 }
 
@@ -192,6 +243,7 @@ footer{
         &__img{
             border-radius: 60px;
         }
+
     }
     
     .next{
@@ -231,6 +283,26 @@ footer{
             }
         }
     }
+
+    .titre{
+    
+        &__bulle{
+    
+            &--1{
+                width: 500px;
+                top: -15%;
+                left: 55%;
+                z-index: -20;
+                transform: rotate(10deg);
+            }
+            &--2{
+                width: 120px;
+                top: 30%;
+                left: 50%;
+                z-index: -20;
+            }
+        }
+    }
 }
 
 @media (min-width: 950px){
@@ -260,6 +332,12 @@ footer{
     
     .projetVisuel{
         padding: 186px 116px 0;
+
+        &__bulle{
+            top: 82%;
+            left: 82%;
+            width: 16%;
+        }
     }
     
     .next{
@@ -274,6 +352,26 @@ footer{
     
     footer{
         margin: 0 116px;
+    }
+
+    .titre{
+    
+        &__bulle{
+    
+            &--1{
+                width: 550px;
+                top: -2%;
+                left: 58%;
+                z-index: -20;
+                transform: rotate(10deg);
+            }
+            &--2{
+                width: 130px;
+                top: 65%;
+                left: 57%;
+                z-index: -20;
+            }
+        }
     }
 }
 
