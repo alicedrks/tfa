@@ -14,6 +14,7 @@
 
 .infoProjet{
     padding: 0 24px;
+    position: relative;
 
     &__para{
         font-size: 18px;
@@ -25,6 +26,10 @@
         &--big{
             font-size: 23px;
         }
+    }
+
+    &__bulle{
+        display: none;
     }
 }
 
@@ -317,8 +322,6 @@ footer{
     
     .infoProjet{
         padding: 0px 116px;
-        position: relative;
-        z-index: -10;
     
         &__para{
             margin-left: 154px;
@@ -334,6 +337,7 @@ footer{
 
         &__bulle{
             position: absolute;
+            display: block;
             z-index: -20;
             width: 300px;
             top: 50%;
@@ -438,7 +442,7 @@ footer{
     }
     
     .next{
-        padding: 202px 66px 285px;
+        padding: 202px 86px 285px;
     
         &__titre{
             font-size: 57px;
@@ -453,7 +457,7 @@ footer{
     }
     
     footer{
-        margin: 0 66px;
+        margin: 0 86px;
     }
     
     .footer{
@@ -596,6 +600,8 @@ footer{
     }
 
     .infoProjet{
+        padding: 0px 172px;
+
         &__bulle{
             width: 350px;
             top: 57%;
