@@ -872,6 +872,7 @@ h1 {
 .projetVisuel {
   padding: 144px 24px 0;
   position: relative;
+  z-index: -10;
 }
 .projetVisuel__img {
   width: 100%;
@@ -1107,11 +1108,13 @@ footer {
     padding: 246px 116px 123px;
   }
   .h1Projet__span {
-    margin-left: 148px;
+    margin-left: 186px;
   }
 
   .infoProjet {
     padding: 0px 116px;
+    position: relative;
+    z-index: -10;
   }
   .infoProjet__para {
     margin-left: 154px;
@@ -1121,6 +1124,13 @@ footer {
   }
   .infoProjet a {
     margin-left: 154px;
+  }
+  .infoProjet__bulle {
+    position: absolute;
+    z-index: -20;
+    width: 300px;
+    top: 50%;
+    left: -14%;
   }
 
   .projetVisuel {
@@ -1148,14 +1158,14 @@ footer {
   .titre__bulle--1 {
     width: 550px;
     top: -2%;
-    left: 58%;
+    left: 67%;
     z-index: -20;
     transform: rotate(10deg);
   }
   .titre__bulle--2 {
     width: 130px;
     top: 65%;
-    left: 57%;
+    left: 63%;
     z-index: -20;
   }
 }
@@ -1185,12 +1195,22 @@ footer {
   .infoProjet a {
     margin-left: 303px;
   }
+  .infoProjet__bulle {
+    width: 300px;
+    top: 50%;
+    left: -5%;
+  }
 
   .projetVisuel {
     padding: 202px 86px 0;
   }
   .projetVisuel__img {
     border-radius: 90px;
+  }
+  .projetVisuel__bulle {
+    top: 82%;
+    left: 82%;
+    width: 16%;
   }
 
   .next {
@@ -1225,6 +1245,20 @@ footer {
     width: 20px;
     margin-left: 9px;
   }
+
+  .titre__bulle--1 {
+    width: 600px;
+    top: -2%;
+    left: 67%;
+    z-index: -20;
+    transform: rotate(10deg);
+  }
+  .titre__bulle--2 {
+    width: 130px;
+    top: 60%;
+    left: 64%;
+    z-index: -20;
+  }
 }
 @media (min-width: 1300px) {
   .h1Projet {
@@ -1241,12 +1275,22 @@ footer {
   .infoProjet__para--big {
     font-size: 43px;
   }
+  .infoProjet__bulle {
+    width: 350px;
+    top: 57%;
+    left: -2%;
+  }
 
   .projetVisuel {
     padding: 285px 86px 0;
   }
   .projetVisuel__img {
     border-radius: 110px;
+  }
+  .projetVisuel__bulle {
+    top: 87%;
+    left: 82%;
+    width: 16%;
   }
 
   .next {
@@ -1257,9 +1301,9 @@ footer {
     margin: 0 0 76px;
   }
   .next__img {
-    width: 2100px;
-    left: 150px;
-    top: 320px;
+    width: 2400px;
+    left: 25%;
+    top: 30%;
   }
 
   .footer {
@@ -1274,23 +1318,47 @@ footer {
   .footer__el:nth-child(3) {
     background-image: url("../../assets/images/icon/mail.svg");
   }
+
+  .titre__bulle--1 {
+    width: 600px;
+    top: 2%;
+    left: 57%;
+    z-index: -20;
+    transform: rotate(10deg);
+  }
+  .titre__bulle--2 {
+    width: 130px;
+    top: 65%;
+    left: 57%;
+    z-index: -20;
+  }
 }
 @media (min-width: 1530px) {
   .h1Projet {
     padding: 288px 172px 228px;
   }
 
+  .infoProjet__bulle {
+    width: 350px;
+    top: 57%;
+    left: 0%;
+  }
+
   .projetVisuel {
     padding: 342px 172px 0;
+  }
+  .projetVisuel__bulle {
+    top: 85%;
+    left: 78%;
   }
 
   .next {
     padding: 342px 172px 285px;
   }
   .next__img {
-    width: 3300px;
-    left: 350px;
-    top: 220px;
+    width: 2900px;
+    left: 28%;
+    top: 25%;
   }
 
   footer {
@@ -1305,21 +1373,38 @@ footer {
   .infoProjet {
     padding: 0px 344px;
   }
+  .infoProjet__bulle {
+    width: 400px;
+    top: 57%;
+    left: 7%;
+  }
 
   .projetVisuel {
     padding: 342px 344px 0;
+  }
+  .projetVisuel__bulle {
+    width: 12%;
+    left: 74%;
   }
 
   .next {
     padding: 342px 344px 513px;
   }
   .next__img {
-    left: 650px;
-    top: 350px;
+    width: 3600px;
+    left: 33%;
+    top: 20%;
   }
 
   footer {
     margin: 0 344px;
+  }
+
+  .titre__bulle--1 {
+    left: 63%;
+  }
+  .titre__bulle--2 {
+    left: 63%;
   }
 }
 @media (min-width: 2200px) {
@@ -1330,6 +1415,11 @@ footer {
   .infoProjet {
     padding: 0px 473px;
   }
+  .infoProjet__bulle {
+    width: 450px;
+    top: 25%;
+    left: 6%;
+  }
 
   .projetVisuel {
     padding: 342px 473px 0;
@@ -1339,9 +1429,9 @@ footer {
     padding: 342px 473px 627px;
   }
   .next__img {
-    width: 3700px;
-    left: 800px;
-    top: 400px;
+    width: 3900px;
+    left: 30%;
+    top: 20%;
   }
 
   footer {
@@ -1354,7 +1444,8 @@ footer {
   background-repeat: no-repeat;
   background-size: 600px;
   background-position-x: 210px;
-  background-position-y: 150px;
+  background-position-y: 50px;
+  padding: 152px 24px 108px;
 }
 
 .h1Projet__span--late {
@@ -1420,14 +1511,15 @@ footer {
   .h1Projet--late {
     background-size: 600px;
     background-position-x: 140px;
-    background-position-y: 180px;
+    background-position-y: 80px;
   }
 }
 @media (min-width: 550px) {
   .h1Projet--late {
     line-height: 50%;
     background-position-x: 360px;
-    background-position-y: 100px;
+    background-position-y: 0px;
+    padding: 152px 64px 108px;
   }
 
   .h1Projet__span--late {
@@ -1461,7 +1553,6 @@ footer {
 @media (min-width: 600Px) {
   .h1Projet--late {
     background-position-x: 380px;
-    background-position-y: 100px;
   }
 
   .projetVisuel--late {
@@ -1477,6 +1568,7 @@ footer {
     background-size: 700px;
     background-position-x: 560px;
     background-position-y: 220px;
+    padding: 312px 66px 186px;
   }
 
   .infoProjet--late {
@@ -1510,6 +1602,7 @@ footer {
     background-size: 700px;
     background-position-x: 660px;
     background-position-y: 43px;
+    padding: 246px 116px 123px;
   }
 
   .infoProjet--late {
@@ -1541,6 +1634,7 @@ footer {
     background-size: 800px;
     background-position-x: 670px;
     background-position-y: 47px;
+    padding: 288px 86px 171px;
   }
 
   .h1Projet__span--late {
@@ -1581,6 +1675,7 @@ footer {
 @media (min-width: 1300px) {
   .h1Projet--late {
     background-position-x: 870px;
+    padding: 288px 86px 228px;
   }
 
   .infoProjet--late {
@@ -1602,6 +1697,7 @@ footer {
     background-size: 1100px;
     background-position-y: 20px;
     background-position-x: 870px;
+    padding: 288px 172px 228px;
   }
 
   .infoProjet--late {
@@ -1635,6 +1731,7 @@ footer {
     background-position-x: 1200px;
     background-position-y: 0px;
     background-size: 1200px;
+    padding: 288px 344px 228px;
   }
 
   .infoProjet--late {
@@ -1668,10 +1765,11 @@ footer {
 @media (min-width: 2200px) {
   .h1Projet--late {
     background-position-x: 1600px;
+    padding: 288px 473px 228px;
   }
 
   .infoProjet--late {
-    padding-bottom: 808px;
+    padding-bottom: 1010px;
     background-position-y: 85%;
   }
 

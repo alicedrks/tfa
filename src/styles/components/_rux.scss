@@ -31,6 +31,7 @@
 .projetVisuel{
     padding: 144px 24px 0;
     position: relative;
+    z-index: -10;
 
     &__img{
         width: 100%;
@@ -310,12 +311,14 @@ footer{
         padding: 246px 116px 123px;
 
         &__span{
-            margin-left: 148px;
+            margin-left: 186px;
         }
     }
     
     .infoProjet{
         padding: 0px 116px;
+        position: relative;
+        z-index: -10;
     
         &__para{
             margin-left: 154px;
@@ -327,6 +330,14 @@ footer{
 
         & a{
             margin-left: 154px;
+        }
+
+        &__bulle{
+            position: absolute;
+            z-index: -20;
+            width: 300px;
+            top: 50%;
+            left: -14%;
         }
     }
     
@@ -361,14 +372,14 @@ footer{
             &--1{
                 width: 550px;
                 top: -2%;
-                left: 58%;
+                left: 67%;
                 z-index: -20;
                 transform: rotate(10deg);
             }
             &--2{
                 width: 130px;
                 top: 65%;
-                left: 57%;
+                left: 63%;
                 z-index: -20;
             }
         }
@@ -404,6 +415,12 @@ footer{
         & a{
             margin-left: 303px;
         }
+
+        &__bulle{
+            width: 300px;
+            top: 50%;
+            left: -5%;
+        }
     }
     
     .projetVisuel{
@@ -411,6 +428,12 @@ footer{
     
         &__img{
             border-radius: 90px;
+        }
+
+        &__bulle{
+            top: 82%;
+            left: 82%;
+            width: 16%;
         }
     }
     
@@ -451,6 +474,26 @@ footer{
             }
         }
     }
+
+    .titre{
+    
+        &__bulle{
+    
+            &--1{
+                width: 600px;
+                top: -2%;
+                left: 67%;
+                z-index: -20;
+                transform: rotate(10deg);
+            }
+            &--2{
+                width: 130px;
+                top: 60%;
+                left: 64%;
+                z-index: -20;
+            }
+        }
+    }
 }
 
 @media (min-width: 1300px){ 
@@ -471,6 +514,12 @@ footer{
                 font-size: 43px;
             }
         }
+
+        &__bulle{
+            width: 350px;
+            top: 57%;
+            left: -2%;
+        }
     }
     
     .projetVisuel{
@@ -478,6 +527,12 @@ footer{
     
         &__img{
             border-radius: 110px;
+        }
+
+        &__bulle{
+            top: 87%;
+            left: 82%;
+            width: 16%;
         }
     }
     
@@ -490,9 +545,9 @@ footer{
         }
     
         &__img{
-            width: 2100px;
-            left: 150px;
-            top: 320px; 
+            width: 2400px;
+            left: 25%;
+            top: 30%; 
         }
     }
     
@@ -513,24 +568,57 @@ footer{
             }
         }
     }
+
+    .titre{
+    
+        &__bulle{
+    
+            &--1{
+                width: 600px;
+                top: 2%;
+                left: 57%;
+                z-index: -20;
+                transform: rotate(10deg);
+            }
+            &--2{
+                width: 130px;
+                top: 65%;
+                left: 57%;
+                z-index: -20;
+            }
+        }
+    }
 }
 
 @media (min-width: 1530px){ 
     .h1Projet{
         padding: 288px 172px 228px;
     }
+
+    .infoProjet{
+        &__bulle{
+            width: 350px;
+            top: 57%;
+            left: 0%;
+        }
+    }
     
     .projetVisuel{
         padding: 342px 172px 0;
+
+        &__bulle{
+            top: 85%;
+            left: 78%;
+        }
     }
     
     .next{
         padding: 342px 172px 285px;
 
         &__img{
-            width: 3300px;
-            left: 350px;
-            top: 220px; 
+            width: 2900px;
+            left: 28%;
+            top: 25%; 
         }
     }
     
@@ -546,23 +634,48 @@ footer{
     
     .infoProjet{
         padding: 0px 344px;
+
+        &__bulle{
+            width: 400px;
+            top: 57%;
+            left: 7%;
+        }
     }
     
     .projetVisuel{
         padding: 342px 344px 0;
+
+        &__bulle{
+            width: 12%;
+            left: 74%;
+        }
     }
     
     .next{
         padding: 342px 344px 513px;
 
         &__img{
-            left: 650px;
-            top: 350px;
+            width: 3600px;
+            left: 33%;
+            top: 20%;
         }
     }
     
     footer{
         margin: 0 344px;
+    }
+
+    .titre{
+    
+        &__bulle{
+    
+            &--1{
+                left: 63%;
+            }
+            &--2{
+                left: 63%;
+            }
+        }
     }
 
 }
@@ -574,6 +687,12 @@ footer{
     
     .infoProjet{
         padding: 0px 473px;
+
+        &__bulle{
+            width: 450px;
+            top: 25%;
+            left: 6%;
+        }
     }
     
     .projetVisuel{
@@ -584,9 +703,9 @@ footer{
         padding: 342px 473px 627px;
 
         &__img{
-                width: 3700px;
-                left: 800px;
-                top: 400px; 
+                width: 3900px;
+                left: 30%;
+                top: 20%; 
         }
     }
     
