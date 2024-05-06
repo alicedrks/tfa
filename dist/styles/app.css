@@ -49,7 +49,7 @@ button {
   width: 200%;
   height: 300%;
   margin: 0;
-  z-index: -20;
+  z-index: 5;
   transform: rotate(-30deg) translateY(30%);
   transition: transform 0.9s;
 }
@@ -59,6 +59,7 @@ button {
 }
 .btn:hover .btn__background {
   position: absolute;
+  z-index: -10;
   left: 0px;
   width: 200%;
   height: 300%;
@@ -92,6 +93,13 @@ small {
 }
 small a {
   color: #fff;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 @media (max-width: 350px) {
@@ -156,6 +164,7 @@ h1 {
 
 .description {
   position: relative;
+  z-index: 20;
 }
 .description__content {
   height: 100vh;
@@ -191,7 +200,7 @@ h1 {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
+  z-index: -10;
   opacity: 20%;
 }
 
@@ -203,12 +212,14 @@ h1 {
   width: 100%;
   height: 100vh;
   position: relative;
+  z-index: 5;
 }
 .projet__liste {
   list-style: none;
   margin: 0;
   padding: 0;
   position: absolute;
+  z-index: 10;
   left: 0;
   top: 0px;
 }
@@ -247,7 +258,7 @@ h1 {
   left: 50%;
   bottom: -1700px;
   transform: translate(-50%, -60%);
-  z-index: -10;
+  z-index: 5;
 }
 .projet__boutons {
   padding: 0;
@@ -730,7 +741,6 @@ h1 {
   }
 }
 .navigation {
-  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -747,7 +757,7 @@ h1 {
   width: 100%;
   height: 100%;
   background-color: #000000;
-  z-index: -10;
+  z-index: 90;
   opacity: 0;
   transition: opacity 0.3s linear;
   font-size: 32px;
@@ -812,7 +822,7 @@ h1 {
     background-color: transparent;
     opacity: 100;
     font-size: 22px;
-    z-index: 40;
+    z-index: 90;
     width: auto;
     height: auto;
     position: relative;
@@ -858,6 +868,7 @@ h1 {
 .infoProjet {
   padding: 0 24px;
   position: relative;
+  z-index: 10;
 }
 .infoProjet__para {
   font-size: 18px;
@@ -876,7 +887,7 @@ h1 {
 .projetVisuel {
   padding: 144px 24px 0;
   position: relative;
-  z-index: -10;
+  z-index: 10;
 }
 .projetVisuel__img {
   width: 100%;
@@ -892,6 +903,7 @@ h1 {
 .next {
   padding: 144px 24px 216Px;
   position: relative;
+  z-index: 30;
   overflow: hidden;
 }
 .next__titre {
@@ -914,7 +926,7 @@ h1 {
   position: absolute;
   left: -10%;
   top: 50%;
-  z-index: -40;
+  z-index: 10;
 }
 
 footer {
@@ -959,6 +971,7 @@ footer {
 
 .titre {
   position: relative;
+  z-index: 10;
   overflow: hidden;
 }
 .titre__bulle {
@@ -968,14 +981,14 @@ footer {
   width: 400px;
   top: -25%;
   left: 40%;
-  z-index: -20;
+  z-index: 5;
   transform: rotate(10deg);
 }
 .titre__bulle--2 {
   width: 100px;
   top: 20%;
   left: 27%;
-  z-index: -20;
+  z-index: 5;
 }
 
 @media (max-width: 350px) {
@@ -1097,14 +1110,14 @@ footer {
     width: 500px;
     top: -15%;
     left: 55%;
-    z-index: -20;
+    z-index: 5;
     transform: rotate(10deg);
   }
   .titre__bulle--2 {
     width: 120px;
     top: 30%;
     left: 50%;
-    z-index: -20;
+    z-index: 5;
   }
 }
 @media (min-width: 950px) {
@@ -1130,14 +1143,14 @@ footer {
   .infoProjet__bulle {
     position: absolute;
     display: block;
-    z-index: -20;
+    z-index: 5;
     width: 300px;
     top: 50%;
     left: -14%;
   }
 
   .projetVisuel {
-    padding: 186px 116px 0;
+    padding: 279px 116px 0;
   }
   .projetVisuel__bulle {
     top: 82%;
@@ -1162,14 +1175,11 @@ footer {
     width: 550px;
     top: -2%;
     left: 67%;
-    z-index: -20;
-    transform: rotate(10deg);
   }
   .titre__bulle--2 {
     width: 130px;
     top: 65%;
     left: 63%;
-    z-index: -20;
   }
 }
 @media (min-width: 1110px) {
@@ -1253,14 +1263,11 @@ footer {
     width: 600px;
     top: -2%;
     left: 67%;
-    z-index: -20;
-    transform: rotate(10deg);
   }
   .titre__bulle--2 {
     width: 130px;
     top: 60%;
     left: 64%;
-    z-index: -20;
   }
 }
 @media (min-width: 1300px) {
@@ -1297,7 +1304,7 @@ footer {
   }
 
   .next {
-    padding: 285px 66px 285px;
+    padding: 285px 86px 285px;
   }
   .next__titre {
     font-size: 76px;
@@ -1326,14 +1333,11 @@ footer {
     width: 600px;
     top: 2%;
     left: 57%;
-    z-index: -20;
-    transform: rotate(10deg);
   }
   .titre__bulle--2 {
     width: 130px;
     top: 65%;
     left: 57%;
-    z-index: -20;
   }
 }
 @media (min-width: 1530px) {
@@ -1474,7 +1478,7 @@ footer {
   background-position-x: -120px;
   background-repeat: no-repeat;
   position: relative;
-  z-index: -20;
+  z-index: 5;
 }
 
 .projetVisuel__img--late {
@@ -1483,7 +1487,7 @@ footer {
   border-radius: 0px;
   transform: rotate(-5deg);
   position: relative;
-  z-index: -10;
+  z-index: 10;
 }
 .projetVisuel__img--right {
   margin-top: 76px;
@@ -1685,7 +1689,7 @@ footer {
   }
 
   .infoProjet--late {
-    padding-bottom: 404px;
+    padding-bottom: 505px;
   }
 
   .projetVisuel--late {
@@ -1828,7 +1832,7 @@ footer {
 .projetVisuel--dec {
   position: relative;
   overflow: hidden;
-  z-index: -10;
+  z-index: 10;
   padding: 144px 24px;
 }
 
@@ -1943,7 +1947,7 @@ footer {
   }
 }
 @media (min-width: 950px) {
-  .projetVisuel {
+  .projetVisuel--dec {
     padding: 93px 116px;
   }
   .projetVisuel__img--dec:nth-child(1) {

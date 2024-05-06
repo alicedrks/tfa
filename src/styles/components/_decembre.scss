@@ -30,7 +30,7 @@
 .projetVisuel--dec{
     position: relative;
     overflow: hidden;
-    z-index: -10;
+    z-index: 10;
     padding: 144px 24px;
 
 }
@@ -176,7 +176,11 @@
 
 @media (min-width: 950px){
     .projetVisuel{
-        padding: 93px 116px;
+
+        &--dec{
+            padding: 93px 116px;
+        }
+        
 
         &__img--dec{
 

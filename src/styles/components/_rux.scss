@@ -15,6 +15,7 @@
 .infoProjet{
     padding: 0 24px;
     position: relative;
+    z-index: 10;
 
     &__para{
         font-size: 18px;
@@ -36,7 +37,7 @@
 .projetVisuel{
     padding: 144px 24px 0;
     position: relative;
-    z-index: -10;
+    z-index: 10;
 
     &__img{
         width: 100%;
@@ -54,6 +55,7 @@
 .next{
     padding: 144px 24px 216Px;
     position: relative;
+    z-index: 30;
     overflow: hidden;
 
     &__titre{
@@ -79,7 +81,7 @@
         position: absolute;
         left: -10%;
         top: 50%;
-        z-index: -40; 
+        z-index: 10; 
     }
 }
 
@@ -131,6 +133,7 @@ footer{
 
 .titre{
     position: relative;
+    z-index: 10;
     overflow:hidden;
 
     &__bulle{
@@ -140,14 +143,14 @@ footer{
             width: 400px;
             top: -25%;
             left: 40%;
-            z-index: -20;
+            z-index: 5;
             transform: rotate(10deg);
         }
         &--2{
             width: 100px;
             top: 20%;
             left: 27%;
-            z-index: -20;
+            z-index: 5;
         }
     }
 }
@@ -298,14 +301,14 @@ footer{
                 width: 500px;
                 top: -15%;
                 left: 55%;
-                z-index: -20;
+                z-index: 5;
                 transform: rotate(10deg);
             }
             &--2{
                 width: 120px;
                 top: 30%;
                 left: 50%;
-                z-index: -20;
+                z-index: 5;
             }
         }
     }
@@ -338,7 +341,7 @@ footer{
         &__bulle{
             position: absolute;
             display: block;
-            z-index: -20;
+            z-index: 5;
             width: 300px;
             top: 50%;
             left: -14%;
@@ -346,7 +349,7 @@ footer{
     }
     
     .projetVisuel{
-        padding: 186px 116px 0;
+        padding: 279px 116px 0;
 
         &__bulle{
             top: 82%;
@@ -377,14 +380,11 @@ footer{
                 width: 550px;
                 top: -2%;
                 left: 67%;
-                z-index: -20;
-                transform: rotate(10deg);
             }
             &--2{
                 width: 130px;
                 top: 65%;
                 left: 63%;
-                z-index: -20;
             }
         }
     }
@@ -487,14 +487,11 @@ footer{
                 width: 600px;
                 top: -2%;
                 left: 67%;
-                z-index: -20;
-                transform: rotate(10deg);
             }
             &--2{
                 width: 130px;
                 top: 60%;
                 left: 64%;
-                z-index: -20;
             }
         }
     }
@@ -541,7 +538,7 @@ footer{
     }
     
     .next{
-        padding: 285px 66px 285px;
+        padding: 285px 86px 285px;
     
         &__titre{
             font-size: 76px;
@@ -581,14 +578,11 @@ footer{
                 width: 600px;
                 top: 2%;
                 left: 57%;
-                z-index: -20;
-                transform: rotate(10deg);
             }
             &--2{
                 width: 130px;
                 top: 65%;
                 left: 57%;
-                z-index: -20;
             }
         }
     }
