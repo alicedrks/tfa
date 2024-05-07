@@ -69,8 +69,7 @@ h1{
         }
     }
     &__container{
-        padding-left: 24px;
-        margin-right: 24px;
+        padding: 0 24px;
     }
 
     &__canva{
@@ -87,7 +86,6 @@ h1{
 .projet{
     box-sizing: border-box;
     margin: 0;
-    padding: 0 18px;
     overflow: hidden;
     width: 100%;
     height: 100vh;
@@ -100,10 +98,6 @@ h1{
         list-style: none;
         margin: 0;
         padding: 0;
-        position: absolute;
-        z-index: 10;
-        left: 0;
-        top: 0px;
     }
 
     &__element{
@@ -112,7 +106,11 @@ h1{
         text-align: center;
         transition: opacity 10s;
         position: absolute;
-        width: 100vw;
+        z-index: 5;
+        height: 100%;
+        width: 100%;
+        top: 96px;
+        left: 0;
 
         &--active{
             opacity: 1;
@@ -121,17 +119,27 @@ h1{
         }
     }
 
+    &__container{
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        height: 1000px;
+        top: 30px;
+    }
+
     &__titre1{
         font-size: 32px;
         font-family: 'owners-text', sans-serif;
-        margin: 0;
+        margin: 0 24px;
     }
 
     &__titre2{
         font-size: 24px;
         font-family: 'Pangaia regular';
         font-weight: 200;
-        margin: 36px 0 18px ;
+        margin: 36px 24px 18px ;
     }
     
     &__para{
@@ -144,13 +152,13 @@ h1{
         position: absolute;
         width: 1200px;
         left: 50%;
-        bottom: -1700px;
+        top: 1150px;
         transform: translate(-50%, -60%);
         z-index: 5;
     }
 
     &__boutons{
-        padding: 0;
+        padding: 0 24px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -220,11 +228,21 @@ h1{
         &__liens{
             margin: 0 0 96px;
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
     
             & li{
                 display: block;
             }
+        }
+    }
+    .projet{
+        &__container{
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            height: 1000px;
+            top: 70px;
         }
     }
 }
@@ -236,6 +254,52 @@ h1{
         margin-top: 128px;
         margin-bottom: 160px;
     }
+}
+@media (max-width: 350px) and (max-height: 630px){
+    .projet{
+        box-sizing: border-box;
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 5;
+    
+        &__element{
+            opacity:0;
+            visibility: hidden;
+            text-align: center;
+            transition: opacity 10s;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0;
+    
+            &--active{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    
+        &__container{
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            height: 600px;
+            top: 0px;
+        }
+    
+        &__illu{
+            position: absolute;
+            width: 1200px;
+            left: 50%;
+            top: 1130px;
+            transform: translate(-50%, -60%);
+            z-index: 5;
+        }
+    } 
 }
 
 //350px - 455px
@@ -260,6 +324,33 @@ h1{
         }
     }
 }
+@media (min-width: 350px) and (max-height: 600px){
+    .projet{
+        height: 100%;
+
+        &__element{
+            top: 96px;
+        }
+    
+        &__container{
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            height: 600px;
+            top: 40px;
+        }
+    
+        &__illu{
+            position: absolute;
+            width: 1200px;
+            left: 50%;
+            top: 1130px;
+            transform: translate(-50%, -60%);
+            z-index: 5;
+        }
+    } 
+}
 
 //455px - 550px
 @media (min-width: 455px){ 
@@ -272,6 +363,15 @@ h1{
     }
     .h1__nom{
         font-size: 135px;
+    }
+    .projet{
+        &__container{
+            top: 30px;
+        }
+        
+        &__para{
+            margin: 0 90px 36px;
+        }
     }
 }
 @media (min-width: 455px) and (max-height: 560px){ 
@@ -328,10 +428,25 @@ h1{
         }
     }
     .projet{
-        padding: 0 64px;
+        &__element{
+            top: 128px;
+        }
+    
+        &__container{
+            height: 1000px;
+            top: 100px;
+        }
+        
+        &__para{
+            margin: 0 126px 36px;
+        }
+
+        &__boutons{
+            padding: 0 126px;
+        }
     }
 }
-@media (min-width: 350px) and (max-height: 620px){
+@media (min-width: 550px) and (max-height: 620px){
     .description{
         &__content{
             height: 100vh;
@@ -354,6 +469,16 @@ h1{
             }
         }
     }
+}
+@media (min-width: 550px) and (max-height: 780px){
+    .projet{
+        height: 100%;
+    
+        &__container{
+            height: 800px;
+            top: 90px;
+        }
+    } 
 }
 
 //760px - 950px
@@ -392,6 +517,46 @@ h1{
             }
         }
     }
+
+    .projet{
+        &__element{
+            top: 123px;
+        }
+    
+        &__container{
+            height: 1500px;
+            top: 30px;
+        }
+    
+        &__titre1{
+            font-size: 39px;
+            margin: 0 66px;
+        }
+    
+        &__titre2{
+            font-size: 29px;
+            margin: 39px 66px 22px ;
+        }
+        
+        &__para{
+            font-size: 17px;
+            margin: 0 203px 39px;
+        }
+    
+        &__illu{
+            width: 2200px;
+            top: 1910px;
+        }
+    
+        &__boutons{
+            padding: 0 165px;
+        }
+    
+        &__btnSlider{
+            height: 52px;
+            width: 52px;
+        }
+    }
 }
 @media (min-width: 760px) and (max-height: 690px){
     .description{
@@ -414,6 +579,15 @@ h1{
         margin-bottom: 160px;
         }
     }
+}
+@media (min-width: 760px) and (max-height: 870px){
+    .projet{
+        height: 100%;
+    
+        &__container{
+            height: 950px;
+        }
+    } 
 }
 
 //950px - 1110px
@@ -454,12 +628,29 @@ h1{
         align-self: end;
     }
     
-    .projet{
-        padding: 0 87px;
-    }
-    
     .h1_n{
         display: inline;
+    }
+
+    .projet{
+        &__element{
+            top: 123px;
+        }
+    
+        &__container{
+            height: 1500px;
+            top: 0px;
+        }
+        
+        &__para{
+            margin: 0 290px 39px;
+        }
+
+
+
+        &__boutons{
+            padding: 0 203px;
+        }
     }
 }
 @media (min-width: 950px) and (max-height: 680px){
@@ -492,8 +683,19 @@ h1{
         }
     }
 }
+@media (min-width: 950px) and (max-height: 870px){
+    .projet{
+        &__container{
+            height: 650px;
+        }
 
-//1110px - 1530px
+        &__illu{
+            top: 1800px;
+        }
+    }
+}
+
+//1110px - 1530px/1300px
 @media (min-width: 1110px){ 
     .header{
         padding-left: 86px;
@@ -538,61 +740,45 @@ h1{
 
 
     }
-    
+
     .projet{
-        padding: 0 66px;
-        overflow: hidden;
-        width: 100%;
-        height: 100vh;
-        position: relative;
+        &__element{
+            top: 192px;
+        }
+    
+        &__container{
+            height: 1500px;
+            top: 30px;
+        }
     
         &__titre1{
             font-size: 43px;
+            margin: 0 86px;
         }
     
         &__titre2{
             font-size: 32px;
-            margin: 44px 0 22px ;
+            margin: 43px 86px 24px ;
         }
         
         &__para{
             font-size: 18px;
-            margin: 0 39px 39px;
-    
+            margin: 0 358px 43px;
         }
     
         &__illu{
-            left: 50%;
-            top: 850px;
-            transform: translate(-50%, -60%);
-            width: 1200px;
+            width: 2400px;
+            top: 2080px;
         }
-
+    
+        &__boutons{
+            padding: 0 303px;
+        }
     
         &__btnSlider{
-            padding: 0;
-            color: white;
-            text-indent: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-            height: 35px;
-            width: 35px;
-            background-image: url('../../assets/images/icon/arrowSlider.svg');
-            background-repeat: no-repeat;
-            background-size: 100%;
-            transition: 0.5s;
-            opacity: 40%;
-            margin-right: 0;
-            padding-left: 0;
-    
-            &--prev{
-                transform: rotate(180deg);
-            }
-            &:hover{
-                background-size: 95%;
-            }
+            height: 57px;
+            width: 57px;
         }
-
     }
 }
 @media (min-width: 1110px) and (max-height: 850px){
@@ -617,6 +803,55 @@ h1{
         }
     }
 }
+@media (min-width: 1110px) and (max-height: 870px){
+    .projet{
+        height: 100%; 
+
+        &__container{
+            height: 830px;
+            top: 30px;
+        }
+    
+        &__illu{
+            width: 2400px;
+            top: 2000px;
+        }
+    }
+}
+
+//1300px - 1530px
+@media (min-width: 1300px){
+    .projet{
+        &__container{
+            height: 2500px;
+            top: 30px;
+        }
+    
+        &__illu{
+            width: 2600px;
+            top: 2150px;
+        }
+
+        &__para{
+            margin: 0 456px 43px;
+        }
+    }
+}
+@media (min-width: 1300px) and (max-height: 880px){
+    .projet{
+        height: 100%; 
+
+        &__container{
+            height: 900px;
+            top: 30px;
+        }
+    
+        &__illu{
+            width: 2600px;
+            top: 2150px;
+        }
+    }
+}
 
 //1530px - 1820px
 @media (min-width: 1530px){ 
@@ -638,13 +873,31 @@ h1{
     }
 
     .projet{
-        padding: 0 66px;
-    
-        &__titre2{
-            margin: 44px 0 22px ;
+        &__container{
+            height: 2500px;
+            top: 30px;
         }
+    
+        &__illu{
+            width: 3200px;
+            top: 2550px;
+        }
+
         &__para{
-            margin: 0 39px 39px;
+            margin: 0 570px 43px;
+        }
+
+        &__boutons{
+            padding: 0 505px;
+        }
+    }
+}
+@media (min-width: 1530px) and (max-height: 930px){
+    .projet{
+        height: 100%;
+
+        &__container{
+            height: 950px;
         }
     }
 }
@@ -670,13 +923,21 @@ h1{
     }
 
     .projet{
-        padding: 0 66px;
-    
-        &__titre2{
-            margin: 44px 0 22px ;
-        }
         &__para{
-            margin: 0 39px 39px;
+            margin: 0 741px 43px;
+        }
+
+        &__boutons{
+            padding: 0 707px;
+        }
+    }
+}
+@media (min-width: 1820px) and (max-height: 1050px){
+    .projet{
+        height: 100%;
+
+        &__container{
+            height: 1090px;
         }
     }
 }
@@ -709,15 +970,43 @@ h1{
     }
 
     .projet{
-        padding: 0 66px;
+        &__container{
+            height: 3000px;
+            top: 30px;
+        }
+    
+        &__titre1{
+            font-size: 57px;
+        }
     
         &__titre2{
-            margin: 44px 0 22px ;
+            font-size: 43px;
         }
+        
         &__para{
-            margin: 0 39px 39px;
+            font-size: 22px;
+            margin: 0 871px 43px;
+        }
+    
+        &__illu{
+            width: 3900px;
+            top: 2980px;
+        }
+    
+        &__boutons{
+            padding: 0 909px;
         }
     }
+}
+@media (min-width: 2200px) and (max-height: 1130px){
+
+    .projet{
+        height: 100%;
+
+        &__container{
+            height: 1200px;
+        }
+    } 
 }
 
 
