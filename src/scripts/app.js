@@ -18,6 +18,128 @@ function menuOpen(){
     }   
 }*/
 
+import Matter from 'matter-js';
+
+var Engine = Matter.Engine,
+      Render = Matter.Render,
+      Runner = Matter.Runner,
+      Bodies = Matter.Bodies,
+      Composite = Matter.Composite;
+
+const description = document.querySelector(".description");
+const thiccness = 60;
+
+var engine = Engine.create();
+
+var render = Matter.Render.create({
+element: description,
+engine: engine,
+options: {
+    width: window.innerWidth,
+    height: window.innerHeight,
+    wireframes: false,
+    background: 'transparent'
+  }
+});
+
+for (let i = 0; i < 30; i++){
+    let circle = Bodies.circle(i, 10, 30, {
+        friction: 0.3,
+        frictionAir: 0.00001,
+        restitution: 0.8
+    });
+    Composite.add(engine.world, circle);
+}
+
+let ground = Bodies.rectangle(
+  window.innerWidth / 2, 
+  window.innerHeight + thiccness / 2, 
+  window.innerWidth, 
+  thiccness, 
+  { isStatic: true })
+let leftWall = Bodies.rectangle(
+  0 - thiccness / 2,
+  window.innerHeight / 2,
+  thiccness,
+  window.innerHeight * 5,
+  { isStatic: true }
+);
+let rightWall = Bodies.rectangle(
+  window.innerWidth + thiccness / 2,
+    window.innerHeight / 2,
+    thiccness,
+    window.innerHeight * 5,
+    { isStatic: true }
+      );
+
+Composite.add(engine.world, [ground, leftWall, rightWall]);
+
+let mouse = Matter.Mouse.create(render.canvas);
+let mouseConstraint = Matter.MouseConstraint.create(engine, {
+  mouse: mouse,
+  constraint: {
+      stiffness: 0.2,
+  }
+});
+Composite.add(engine.world, mouseConstraint);
+
+mouseConstraint.mouse.element.removeEventListener('mousewheel', mouseConstraint.mouse.mousewheel);
+mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', mouseConstraint.mouse.mousewheel);
+
+Render.run(render);
+
+var runner = Runner.create();
+
+Runner.run(runner, engine);
+
+function handleResize() {
+  render.canvas.width = window.innerWidth;
+  render.canvas.height = window.innerHeight;
+  Matter.Body.setPosition(
+      ground,
+      Matter.Vector.create(
+          window.innerWidth / 2,
+          window.innerHeight + thiccness / 2,
+          window.innerWidth,
+          thiccness
+      )
+  );
+  Matter.Body.setPosition(
+      rightWall,
+      Matter.Vector.create(
+          window.innerWidth + thiccness / 2,
+          window.innerHeight / 2
+      )
+  );
+  Matter.Body.setPosition(
+      leftWall,
+      Matter.Vector.create(
+          0 - thiccness / 2,
+          window.innerHeight / 2
+      )
+  );
+}
+
+window.addEventListener('resize', () => handleResize(description));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*import { gsap } from "gsap";
 import ScrollTrigger from 'gsap/scrollTrigger';

@@ -81,9 +81,14 @@
     opacity: 100;
 }
 
+.header{
+    mix-blend-mode: difference;
+}
+
 
 @media (min-width: 760px){ //tablet
     .navigation{
+
         &__liens{
             display: flex;
             flex-direction: row;

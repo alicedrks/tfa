@@ -44,9 +44,12 @@ h1{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 0 24px;
     }
 
     &__para{
+        position: relative;
+        z-index: 2;
         font-size: 18px;
         font-family: 'owners-text', sans-serif;
         margin-top: 0;
@@ -62,24 +65,13 @@ h1{
     &__liens{
         margin: 0;
         padding: 0;
+        position: relative;
+        z-index: 2;
 
         & li{
             text-decoration: none;
             display: inline;
         }
-    }
-    &__container{
-        padding: 0 24px;
-    }
-
-    &__canva{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        z-index: -10;
-        opacity: 20%;
-
     }
 }
 
@@ -195,10 +187,12 @@ h1{
     }
 }
 
-.canvas{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+canvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 40%;
+    z-index: 1;
 }
 
 
