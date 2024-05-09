@@ -194,6 +194,14 @@ h1 {
   display: inline;
 }
 
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 15%;
+  z-index: 1;
+}
+
 .projet {
   box-sizing: border-box;
   margin: 0;
@@ -289,14 +297,6 @@ h1 {
 }
 .projet__btnSlider:hover {
   background-size: 95%;
-}
-
-canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 40%;
-  z-index: 1;
 }
 
 @media (max-width: 350px) {
@@ -404,6 +404,9 @@ canvas {
   .description__para--big {
     margin-top: 96px;
   }
+  .description__liens {
+    margin: 0 0 96px;
+  }
 }
 @media (min-width: 350px) and (max-height: 600px) {
   .projet {
@@ -463,9 +466,6 @@ canvas {
   .description__content {
     height: 100vh;
   }
-  .description__para--big {
-    margin-top: 0px;
-  }
 }
 @media (min-width: 350px) and (max-height: 620px) {
   .description__content {
@@ -486,13 +486,12 @@ canvas {
     padding-right: 64px;
   }
 
-  .description {
-    margin-left: 64px;
-    margin-right: 64px;
-  }
   .description__container {
     margin: 0;
     padding: 0;
+  }
+  .description__content {
+    padding: 0 64px;
   }
 
   .projet__element {
@@ -556,9 +555,8 @@ canvas {
     font-size: 165px;
   }
 
-  .description {
-    margin-left: 66px;
-    margin-right: 66px;
+  .description__content {
+    padding: 0 66px;
   }
   .description__para {
     font-size: 22px;
@@ -606,6 +604,9 @@ canvas {
   .description__para--big {
     margin-top: 123px;
   }
+  .description__liens {
+    margin: 0 0 123px;
+  }
 }
 @media (min-width: 760px) and (max-height: 680px) {
   .intro {
@@ -641,9 +642,8 @@ canvas {
     padding: 0;
     margin: 0;
   }
-  .description__container {
-    padding-left: 116px;
-    padding-right: 116px;
+  .description__content {
+    padding: 0 116px;
   }
   .description__para--big {
     margin-bottom: 87px;
@@ -701,6 +701,9 @@ canvas {
   .description__para--big {
     margin-top: 195px;
   }
+  .description__liens {
+    margin: 0 0 195px;
+  }
 }
 @media (min-width: 950px) and (max-height: 870px) {
   .projet__container {
@@ -733,8 +736,6 @@ canvas {
   }
 
   .description__container {
-    padding-left: 86px;
-    padding-right: 86px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 2;
@@ -746,6 +747,9 @@ canvas {
   .description__para--big {
     font-size: 32px;
     margin-bottom: 87px;
+  }
+  .description__content {
+    padding: 0 86px;
   }
 
   .projet__element {
@@ -785,6 +789,9 @@ canvas {
   }
   .description__para--big {
     margin-top: 192px;
+  }
+  .description__liens {
+    margin: 0 0 192px;
   }
 }
 @media (min-width: 1110px) and (max-height: 580px) {
@@ -846,9 +853,8 @@ canvas {
     padding-right: 172px;
   }
 
-  .description__container {
-    padding-left: 172px;
-    padding-right: 172px;
+  .description__content {
+    padding: 0 172px;
   }
 
   .projet__container {
@@ -885,9 +891,8 @@ canvas {
     padding-right: 344px;
   }
 
-  .description__container {
-    padding-left: 344px;
-    padding-right: 344px;
+  .description__content {
+    padding: 0 344px;
   }
 
   .projet__para {
@@ -924,9 +929,8 @@ canvas {
     padding-right: 473px;
   }
 
-  .description__container {
-    padding-left: 473px;
-    padding-right: 473px;
+  .description__content {
+    padding: 0 473px;
   }
 
   .projet__container {

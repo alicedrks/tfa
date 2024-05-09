@@ -1,6 +1,21 @@
 'use strict';
 
-/*const menuToggle = document.querySelector('.burgerMenu');
+import Matter from 'matter-js';
+import { gsap } from "gsap";
+import ScrollTrigger from 'gsap/scrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+let home = document.querySelector('.home');
+let rux = document.querySelector('.rux');
+let dataplay = document.querySelector('.dataplay');
+let december = document.querySelector('.decembre');
+let annexe = document.querySelector('.annexe');
+
+
+
+//Burger Menu
+const menuToggle = document.querySelector('.burgerMenu');
 const bodyc = document.querySelector('.home');
 
 
@@ -16,344 +31,352 @@ function menuOpen(){
     } else {
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
     }   
-}*/
-
-import Matter from 'matter-js';
-
-var Engine = Matter.Engine,
-      Render = Matter.Render,
-      Runner = Matter.Runner,
-      Bodies = Matter.Bodies,
-      Composite = Matter.Composite;
-
-const description = document.querySelector(".description");
-const thiccness = 60;
-
-var engine = Engine.create();
-
-var render = Matter.Render.create({
-element: description,
-engine: engine,
-options: {
-    width: window.innerWidth,
-    height: window.innerHeight,
-    wireframes: false,
-    background: 'transparent'
-  }
-});
-
-for (let i = 0; i < 30; i++){
-    let circle = Bodies.circle(i, 10, 30, {
-        friction: 0.3,
-        frictionAir: 0.00001,
-        restitution: 0.8
-    });
-    Composite.add(engine.world, circle);
-}
-
-let ground = Bodies.rectangle(
-  window.innerWidth / 2, 
-  window.innerHeight + thiccness / 2, 
-  window.innerWidth, 
-  thiccness, 
-  { isStatic: true })
-let leftWall = Bodies.rectangle(
-  0 - thiccness / 2,
-  window.innerHeight / 2,
-  thiccness,
-  window.innerHeight * 5,
-  { isStatic: true }
-);
-let rightWall = Bodies.rectangle(
-  window.innerWidth + thiccness / 2,
-    window.innerHeight / 2,
-    thiccness,
-    window.innerHeight * 5,
-    { isStatic: true }
-      );
-
-Composite.add(engine.world, [ground, leftWall, rightWall]);
-
-let mouse = Matter.Mouse.create(render.canvas);
-let mouseConstraint = Matter.MouseConstraint.create(engine, {
-  mouse: mouse,
-  constraint: {
-      stiffness: 0.2,
-  }
-});
-Composite.add(engine.world, mouseConstraint);
-
-mouseConstraint.mouse.element.removeEventListener('mousewheel', mouseConstraint.mouse.mousewheel);
-mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', mouseConstraint.mouse.mousewheel);
-
-Render.run(render);
-
-var runner = Runner.create();
-
-Runner.run(runner, engine);
-
-function handleResize() {
-  render.canvas.width = window.innerWidth;
-  render.canvas.height = window.innerHeight;
-  Matter.Body.setPosition(
-      ground,
-      Matter.Vector.create(
-          window.innerWidth / 2,
-          window.innerHeight + thiccness / 2,
-          window.innerWidth,
-          thiccness
-      )
-  );
-  Matter.Body.setPosition(
-      rightWall,
-      Matter.Vector.create(
-          window.innerWidth + thiccness / 2,
-          window.innerHeight / 2
-      )
-  );
-  Matter.Body.setPosition(
-      leftWall,
-      Matter.Vector.create(
-          0 - thiccness / 2,
-          window.innerHeight / 2
-      )
-  );
-}
-
-window.addEventListener('resize', () => handleResize(description));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import { gsap } from "gsap";
-import ScrollTrigger from 'gsap/scrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-let tl = gsap.timeline({
-    /*scrollTrigger: {
-        trigger: '.projet',
-        start: 'top top',
-        end: 'bottom center',
-        scrub: 10, 
-        pin: true,
-        markers: true,
-        }*/
-/*})*/
-
-
-
-
-//anim gsap
-/*tl.from('.projet__illu', {
-        rotation:0, 
-        duration:2,
-    })
-    .to('.projet__illu', {
-        rotation:120, 
-        duration: 40,
-        ease: "slow(0.7,0.7,false)",
-    })
-    .set('.projet__illu', {
-        rotation:120, 
-        duration: 20,
-    })
-    .to('.projet__illu', {
-        rotation:240, 
-        duration: 40,
-        ease: "slow(0.7,0.7,false)",
-    })
-
-
-
-
-// slider
-let element = document.querySelector('.projet__illu');
-let roundedAngle = 1;
-let lastAngle = 0;
-let projets = document.querySelectorAll('.projet__element');
-let projet1 = document.querySelector('#projet1');
-let projet2 = document.querySelector('#projet2');
-let projet3 = document.querySelector('#projet3');
-
-
-function calculerAngleRotation() {
-    let style = window.getComputedStyle(element);
-    let transform = style.getPropertyValue('transform');
-
-    let values = transform.split('(')[1].split(')')[0].split(',');
-    let a = values[0];
-    let b = values[1];
-    let angle = Math.atan2(b, a) * (180 / Math.PI);
-    
-    if (angle < 0) {
-        angle += 360;
-    }
-    
-    roundedAngle = Math.round(angle);
-
-    if (roundedAngle > lastAngle) {
-        if(roundedAngle >= 80 && roundedAngle <= 100){
-            for(let i = 0; i < projets.length; i++){
-                projets[i].classList.remove('projet__element--active');
-            }
-            projet2.classList.add('projet__element--active');
-        
-        } else if(roundedAngle >= 200 && roundedAngle <= 220){
-            for(let i = 0; i < projets.length; i++){
-                projets[i].classList.remove('projet__element--active');
-            }
-            projet3.classList.add('projet__element--active');
-        }
-    } else if (roundedAngle < lastAngle) {
-        if(roundedAngle <= 160 && roundedAngle >= 140){
-            for(let i = 0; i < projets.length; i++){
-                projets[i].classList.remove('projet__element--active');
-            }
-            projet2.classList.add('projet__element--active');
-        } else if(roundedAngle <= 40 && roundedAngle >= 20){
-            for(let i = 0; i < projets.length; i++){
-                projets[i].classList.remove('projet__element--active');
-            }
-            projet1.classList.add('projet__element--active');
-        }
-    }
-    lastAngle = roundedAngle;
-
-    requestAnimationFrame(calculerAngleRotation);
 }
 
 
+if(home){
+  //Balle de tennis
+  var Engine = Matter.Engine,
+        Render = Matter.Render,
+        Runner = Matter.Runner,
+        Bodies = Matter.Bodies,
+        Composite = Matter.Composite;
 
+  const description = document.querySelector(".description");
+  const thiccness = 60;
+  const texture = new Image();
+  texture.src = '../assets/images/illu/balleTennis.svg';
 
+  var height = description.clientHeight;
+  var width = description.clientWidth;
+  var windowWidth = window.innerWidth;
 
+  var engine = Engine.create();
 
-calculerAngleRotation();*/
-
-
-
-
-
-
-
-
-/*import Matter from 'matter-js';
-
-const description = document.querySelector('.description__canva');
-const texture = new Image();
-texture.src = '../assets/images/illu/balleTennis.svg';
-
-const engine = Matter.Engine.create();
-const world = engine.world;
-const render = Matter.Render.create({
+  var render = Matter.Render.create({
   element: description,
   engine: engine,
   options: {
-    width: window.innerWidth,
-    height: window.innerHeight,
-    wireframes: false,
-    background: 'transparent'
-  }
-});
-
-engine.timing.timeScale = 0.03;
-
-const circles = [];
-const stopHeight = render.canvas.height - 70;
-
-function createCircle(x, y) {
-  const circle = Matter.Bodies.circle(
-    Matter.Common.clamp(x, 30, render.canvas.width - 30),
-    y,
-    30,
-    {
-      frictionAir: 0.02,
-      restitution: 0.5,
-      collisionFilter: {
-        category: 0x0002,
-        mask: 0x0002
-      },
-      render: {
-        sprite: {
-          texture: texture.src,
-          xScale: 2 * 30 / texture.width,
-          yScale: 2 * 30 / texture.height
-        }
-      }
+      width: width,
+      height: height,
+      wireframes: false,
+      background: 'transparent'
     }
-  );
-  circle.isCircle = true;
-  return circle;
-}
-
-function createCircles() {
-  for (let i = 0; i < 40; i++) {
-    const circle = createCircle(
-      Matter.Common.random(0, render.canvas.width),
-      -30 - i * 200
-    );
-    Matter.World.add(world, circle);
-    circles.push(circle);
-  }
-}
-
-createCircles();
-
-Matter.Events.on(engine, "beforeUpdate", function(event) {
-  const deltaTime = event.timestamp - engine.timing.timestamp;
-  const deltaHeight = 0.03 * deltaTime;
-  circles.forEach(circle => {
-    Matter.Body.translate(circle, { x: 0, y: deltaHeight });
-    if (circle.position.y > stopHeight) {
-      Matter.Body.setPosition(circle, { x: circle.position.x, y: stopHeight });
-    }
-    // Pour empêcher la balle de sortir sur les côtés gauche et droit
-    const circleRadius = circle.circleRadius || circle.circleRadiusMax;
-    const maxX = render.canvas.width - circleRadius;
-    const minX = circleRadius;
-    const newX = Matter.Common.clamp(circle.position.x, minX, maxX);
-    Matter.Body.setPosition(circle, { x: newX, y: circle.position.y });
   });
-});
 
-function launchBalls() {
-    circles.forEach(circle => {
-      const forceX = Math.random() * 0.5 - 0.3; 
-      const forceY = Math.random() * -0.3 - 0.5; 
-  
-      Matter.Body.applyForce(circle, circle.position, { x: forceX, y: forceY });
-    });
-
+  if (windowWidth < 760){
+    for (let i = 0; i < 20; i++){
+      let circle = Bodies.circle(i, 10, 30, {
+          friction: 0.3,
+          frictionAir: 0.00001,
+          restitution: 0.8,
+          render: {
+            sprite: {
+              texture: texture.src,
+              xScale: 2 * 30 / texture.width,
+              yScale: 2 * 30 / texture.height
+            }
+          }
+      });
+      Composite.add(engine.world, circle);
+    }
+  } else if (windowWidth < 950){
+    for (let i = 0; i < 30; i++){
+      let circle = Bodies.circle(i, 10, 30, {
+          friction: 0.3,
+          frictionAir: 0.00001,
+          restitution: 0.8,
+          render: {
+            sprite: {
+              texture: texture.src,
+              xScale: 2 * 30 / texture.width,
+              yScale: 2 * 30 / texture.height
+            }
+          }
+      });
+      Composite.add(engine.world, circle);
+    }
+  } else if (windowWidth < 1530){
+    for (let i = 0; i < 50; i++){
+      let circle = Bodies.circle(i, 10, 30, {
+          friction: 0.3,
+          frictionAir: 0.00001,
+          restitution: 0.8,
+          render: {
+            sprite: {
+              texture: texture.src,
+              xScale: 2 * 30 / texture.width,
+              yScale: 2 * 30 / texture.height
+            }
+          }
+      });
+      Composite.add(engine.world, circle);
+    }
+  } else if (windowWidth < 1820){
+    for (let i = 0; i < 80; i++){
+      let circle = Bodies.circle(i, 10, 30, {
+          friction: 0.3,
+          frictionAir: 0.00001,
+          restitution: 0.8,
+          render: {
+            sprite: {
+              texture: texture.src,
+              xScale: 2 * 30 / texture.width,
+              yScale: 2 * 30 / texture.height
+            }
+          }
+      });
+      Composite.add(engine.world, circle);
+    }
+  } else {
+    for (let i = 0; i < 120; i++){
+      let circle = Bodies.circle(i, 10, 30, {
+          friction: 0.3,
+          frictionAir: 0.00001,
+          restitution: 0.8,
+          render: {
+            sprite: {
+              texture: texture.src,
+              xScale: 2 * 30 / texture.width,
+              yScale: 2 * 30 / texture.height
+            }
+          }
+      });
+      Composite.add(engine.world, circle);
+    }
   }
 
-function handleScroll() {
-  const triggerSection = document.querySelector("#trigger-section");
-  const triggerSectionBounds = triggerSection.getBoundingClientRect();
-  
-  if (triggerSectionBounds.top <= 10) {
-    Matter.Runner.run(engine) 
-    Matter.Render.run(render);
+
+
+  let ground = Bodies.rectangle(
+    width / 2, 
+    height + thiccness / 2, 
+    width, 
+    thiccness, 
+    { isStatic: true })
+  let leftWall = Bodies.rectangle(
+    0 - thiccness / 2,
+    height / 2,
+    thiccness,
+    height * 5,
+    { isStatic: true }
+  );
+  let rightWall = Bodies.rectangle(
+      width + thiccness / 2,
+      height / 2,
+      thiccness,
+      height * 5,
+      { isStatic: true }
+        );
+
+  Composite.add(engine.world, [ground, leftWall, rightWall]);
+
+  let mouse = Matter.Mouse.create(render.canvas);
+  let mouseConstraint = Matter.MouseConstraint.create(engine, {
+    mouse: mouse,
+    constraint: {
+        stiffness: 0.2,
+    }
+  });
+  Composite.add(engine.world, mouseConstraint);
+
+  mouseConstraint.mouse.element.removeEventListener('mousewheel', mouseConstraint.mouse.mousewheel);
+  mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', mouseConstraint.mouse.mousewheel);
+
+  Render.run(render);
+
+  var runner = Runner.create();
+
+  Runner.run(runner, engine);
+
+  function handleResize() {
+    height = description.clientHeight;
+    width = description.clientWidth;
+
+    render.canvas.width = width;
+    render.canvas.height = height;
+    Matter.Body.setPosition(
+        ground,
+        Matter.Vector.create(
+            width / 2,
+            height + thiccness / 2,
+            width,
+            thiccness
+        )
+    );
+    Matter.Body.setPosition(
+        rightWall,
+        Matter.Vector.create(
+            width + thiccness / 2,
+            height / 2
+        )
+    );
+    Matter.Body.setPosition(
+        leftWall,
+        Matter.Vector.create(
+            0 - thiccness / 2,
+            height / 2
+        )
+    );
   }
+
+  window.addEventListener('resize', () => handleResize(description));
+
+
+  /*window.addEventListener('wheel', function(event) {
+
+    if (event.deltaY > 0) {
+        Matter.Composite.allBodies(engine.world).forEach(body => {
+            if (body.label === 'Circle Body') {
+                Matter.Body.applyForce(body, body.position, { x: 0, y: -0.006 });
+            }
+        });
+    }
+  });*/
+
+  /*function handleScroll() {
+    const triggerSection = document.querySelector("#trigger-section");
+    const triggerSectionBounds = triggerSection.getBoundingClientRect();
+    
+    if (triggerSectionBounds.top <= 10) {
+      Matter.Runner.run(engine) 
+      Matter.Render.run(render);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
+
+  let tl = gsap.timeline({
+      /*scrollTrigger: {
+          trigger: '.projet',
+          start: 'top top',
+          end: 'bottom center',
+          scrub: 10, 
+          pin: true,
+          markers: true,
+          }*/
+  /*})*/
+
+
+
+
+  //anim gsap
+  /*tl.from('.projet__illu', {
+          rotation:0, 
+          duration:2,
+      })
+      .to('.projet__illu', {
+          rotation:120, 
+          duration: 40,
+          ease: "slow(0.7,0.7,false)",
+      })
+      .set('.projet__illu', {
+          rotation:120, 
+          duration: 20,
+      })
+      .to('.projet__illu', {
+          rotation:240, 
+          duration: 40,
+          ease: "slow(0.7,0.7,false)",
+      })
+
+
+
+
+  // slider
+  let element = document.querySelector('.projet__illu');
+  let roundedAngle = 1;
+  let lastAngle = 0;
+  let projets = document.querySelectorAll('.projet__element');
+  let projet1 = document.querySelector('#projet1');
+  let projet2 = document.querySelector('#projet2');
+  let projet3 = document.querySelector('#projet3');
+
+
+  function calculerAngleRotation() {
+      let style = window.getComputedStyle(element);
+      let transform = style.getPropertyValue('transform');
+
+      let values = transform.split('(')[1].split(')')[0].split(',');
+      let a = values[0];
+      let b = values[1];
+      let angle = Math.atan2(b, a) * (180 / Math.PI);
+      
+      if (angle < 0) {
+          angle += 360;
+      }
+      
+      roundedAngle = Math.round(angle);
+
+      if (roundedAngle > lastAngle) {
+          if(roundedAngle >= 80 && roundedAngle <= 100){
+              for(let i = 0; i < projets.length; i++){
+                  projets[i].classList.remove('projet__element--active');
+              }
+              projet2.classList.add('projet__element--active');
+          
+          } else if(roundedAngle >= 200 && roundedAngle <= 220){
+              for(let i = 0; i < projets.length; i++){
+                  projets[i].classList.remove('projet__element--active');
+              }
+              projet3.classList.add('projet__element--active');
+          }
+      } else if (roundedAngle < lastAngle) {
+          if(roundedAngle <= 160 && roundedAngle >= 140){
+              for(let i = 0; i < projets.length; i++){
+                  projets[i].classList.remove('projet__element--active');
+              }
+              projet2.classList.add('projet__element--active');
+          } else if(roundedAngle <= 40 && roundedAngle >= 20){
+              for(let i = 0; i < projets.length; i++){
+                  projets[i].classList.remove('projet__element--active');
+              }
+              projet1.classList.add('projet__element--active');
+          }
+      }
+      lastAngle = roundedAngle;
+
+      requestAnimationFrame(calculerAngleRotation);
+  }
+
+  calculerAngleRotation();*/
+} else if (december){
+  document.addEventListener('mousemove', e => {
+    const x = e.clientX;
+    const y = e.clientY;
+    //console.log(e.clientX, e.clientY);
+    const posX = (x / window.innerWidth).toFixed(2);
+    const posY = (y / window.innerHeight).toFixed(2);
+    console.log(posX, posY);
+    document.documentElement.style.setProperty('--x-mouse', posX);
+    document.documentElement.style.setProperty('--y-mouse', posY);
+  });
 }
 
 
-window.addEventListener('scroll', launchBalls);
 
 
-window.addEventListener("scroll", handleScroll);*/
+
+

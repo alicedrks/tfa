@@ -75,6 +75,14 @@ h1{
     }
 }
 
+canvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 15%;
+    z-index: 1;
+}
+
 .projet{
     box-sizing: border-box;
     margin: 0;
@@ -187,15 +195,6 @@ h1{
     }
 }
 
-canvas{
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 40%;
-    z-index: 1;
-}
-
-
 //inférieur à 350px
 @media (max-width: 350px){
     h1{
@@ -211,7 +210,6 @@ canvas{
             height: 100%;
         }
         
-    
         &__para{
     
             &--big{
@@ -316,6 +314,9 @@ canvas{
                 margin-top: 96px;;
             }
         }
+        &__liens{
+            margin: 0 0 96px;
+        }
     }
 }
 @media (min-width: 350px) and (max-height: 600px){
@@ -382,11 +383,7 @@ canvas{
         &__content{
             height: 100vh;
         }
-        &__para{
-            &--big{
-                margin-top: 0px;;
-            }
-        }
+
     }
 }
 @media (min-width: 350px) and (max-height: 620px){
@@ -413,12 +410,14 @@ canvas{
         padding-right: 64px;
     }
     .description{
-        margin-left: 64px;
-        margin-right: 64px;
 
         &__container{
             margin: 0;
             padding: 0;
+        }
+
+        &__content{
+            padding: 0 64px;
         }
     }
     .projet{
@@ -499,8 +498,9 @@ canvas{
     }
     
     .description{
-        margin-left: 66px;
-        margin-right: 66px;
+        &__content{
+            padding: 0 66px;
+        }
     
         &__para{
             font-size: 22px;
@@ -562,6 +562,9 @@ canvas{
                 margin-top: 123px;;
             }
         }
+        &__liens{
+            margin: 0 0 123px;
+        }
     }
 }
 @media (min-width: 760px) and (max-height: 680px){ 
@@ -601,10 +604,9 @@ canvas{
     .description{
         padding: 0;
         margin: 0;
-        &__container{
-            padding-left: 116px;
-            padding-right: 116px;
-  
+
+        &__content{
+            padding: 0 116px; 
         }
         &__para{
             &--big{
@@ -675,6 +677,9 @@ canvas{
                 margin-top: 195px;;
             }
         }
+        &__liens{
+            margin: 0 0 195px;
+        }
     }
 }
 @media (min-width: 950px) and (max-height: 870px){
@@ -715,8 +720,6 @@ canvas{
     .description{
         
         &__container{
-            padding-left: 86px;
-            padding-right: 86px;
             display: grid;
             grid-template-columns: 2fr 1fr;
             grid-template-rows: 2;
@@ -730,6 +733,9 @@ canvas{
                 font-size: 32px;
                 margin-bottom: 87px;
             }
+        }
+        &__content{
+            padding: 0 86px;
         }
 
 
@@ -784,6 +790,9 @@ canvas{
             &--big{
                 margin-top: 192px;;
             }
+        }
+        &__liens{
+            margin: 0 0 192px;
         }
     }
 }
@@ -859,10 +868,9 @@ canvas{
     }
 
     .description{
-        
-        &__container{
-            padding-left: 172px;
-            padding-right: 172px;
+
+        &__content{
+            padding: 0 172px;
         }
     }
 
@@ -910,9 +918,8 @@ canvas{
 
     .description{
         
-        &__container{
-            padding-left: 344px;
-            padding-right: 344px;
+        &__content{
+            padding: 0 344px;
         }
     }
 
@@ -957,9 +964,8 @@ canvas{
 
     .description{
         
-        &__container{
-            padding-left: 473px;
-            padding-right: 473px;
+        &__content{
+            padding: 0 473px;
         }
     }
 
