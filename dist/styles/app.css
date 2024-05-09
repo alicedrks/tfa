@@ -1109,6 +1109,8 @@ canvas {
 }
 .infoProjet__bulle {
   display: none;
+  -webkit-animation: 6s linear bulle4 infinite;
+          animation: 6s linear bulle4 infinite;
 }
 
 .projetVisuel {
@@ -1122,9 +1124,9 @@ canvas {
 }
 .projetVisuel__bulle {
   position: absolute;
-  top: 90%;
-  left: 78%;
   width: 20%;
+  -webkit-animation: 4s linear bulle3 infinite;
+          animation: 4s linear bulle3 infinite;
 }
 
 .next {
@@ -1207,18 +1209,131 @@ footer {
 }
 .titre__bulle--1 {
   width: 400px;
-  top: -25%;
-  left: 40%;
   z-index: 5;
   transform: rotate(10deg);
+  -webkit-animation: 6s linear bulle1 infinite;
+          animation: 6s linear bulle1 infinite;
 }
 .titre__bulle--2 {
   width: 100px;
-  top: 20%;
-  left: 27%;
   z-index: 5;
+  -webkit-animation: 6s linear bulle2 infinite;
+          animation: 6s linear bulle2 infinite;
 }
 
+@-webkit-keyframes bulle1 {
+  0% {
+    top: -22%;
+    left: 55%;
+  }
+  50% {
+    top: -21%;
+    left: 54%;
+  }
+  100% {
+    top: -22%;
+    left: 55%;
+  }
+}
+
+@keyframes bulle1 {
+  0% {
+    top: -22%;
+    left: 55%;
+  }
+  50% {
+    top: -21%;
+    left: 54%;
+  }
+  100% {
+    top: -22%;
+    left: 55%;
+  }
+}
+@-webkit-keyframes bulle2 {
+  0% {
+    top: 41%;
+    left: 54%;
+  }
+  50% {
+    top: 42%;
+    left: 55%;
+  }
+  100% {
+    top: 41%;
+    left: 54%;
+  }
+}
+@keyframes bulle2 {
+  0% {
+    top: 41%;
+    left: 54%;
+  }
+  50% {
+    top: 42%;
+    left: 55%;
+  }
+  100% {
+    top: 41%;
+    left: 54%;
+  }
+}
+@-webkit-keyframes bulle3 {
+  0% {
+    top: 92%;
+    left: 78%;
+  }
+  50% {
+    top: 91.5%;
+    left: 78.5%;
+  }
+  100% {
+    top: 92%;
+    left: 78%;
+  }
+}
+@keyframes bulle3 {
+  0% {
+    top: 92%;
+    left: 78%;
+  }
+  50% {
+    top: 91.5%;
+    left: 78.5%;
+  }
+  100% {
+    top: 92%;
+    left: 78%;
+  }
+}
+@-webkit-keyframes bulle4 {
+  0% {
+    top: 50%;
+    left: 0%;
+  }
+  50% {
+    top: 51%;
+    left: -1%;
+  }
+  100% {
+    top: 50%;
+    left: 0%;
+  }
+}
+@keyframes bulle4 {
+  0% {
+    top: 50%;
+    left: 0%;
+  }
+  50% {
+    top: 51%;
+    left: -1%;
+  }
+  100% {
+    top: 50%;
+    left: 0%;
+  }
+}
 @media (max-width: 350px) {
   .h1Projet {
     line-height: 90%;
