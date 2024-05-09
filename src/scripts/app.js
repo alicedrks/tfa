@@ -14,7 +14,7 @@ let annexe = document.querySelector('.annexe');
 
 
 
-//Burger Menu
+//burger Menu
 const menuToggle = document.querySelector('.burgerMenu');
 const bodyc = document.querySelector('.home');
 
@@ -32,6 +32,18 @@ function menuOpen(){
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
     }   
 }
+
+//déplacement homme
+document.addEventListener('mousemove', e => {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  const posX = (x / window.innerWidth).toFixed(1);
+  const posY = (y / window.innerHeight).toFixed(2);
+
+  document.documentElement.style.setProperty('--x-mouse', posX);
+  document.documentElement.style.setProperty('--y-mouse', posY);
+});
 
 
 if(home){
@@ -248,26 +260,7 @@ if(home){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   /*
-
   let tl = gsap.timeline({
       /*scrollTrigger: {
           trigger: '.projet',
@@ -363,16 +356,41 @@ if(home){
 
   calculerAngleRotation();*/
 } else if (december){
-  document.addEventListener('mousemove', e => {
-    const x = e.clientX;
-    const y = e.clientY;
-    //console.log(e.clientX, e.clientY);
-    const posX = (x / window.innerWidth).toFixed(2);
-    const posY = (y / window.innerHeight).toFixed(2);
-    console.log(posX, posY);
-    document.documentElement.style.setProperty('--x-mouse', posX);
-    document.documentElement.style.setProperty('--y-mouse', posY);
-  });
+  var windowHeight = window.innerHeight;
+
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.projetVisuel',
+        start: '20% 15%',
+        end: 'bottom center',
+        scrub: 1, 
+        pin: true,
+        markers: true,
+        }
+      })
+
+
+
+
+//anim gsap
+tl.add('start')
+	.to('.main1', {
+    rotation:-20, 
+    duration: 3,
+    opacity: 0
+  }, '+=2')
+	.to('.main2', {
+    rotation:20, 
+    duration: 5,
+    opacity: 0
+  }, '-=3')
+  .to('.visu', {
+    scale: 1,
+    duration: 7
+  },
+'-=5')
+
 }
 
 

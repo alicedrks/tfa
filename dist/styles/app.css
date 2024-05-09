@@ -2034,6 +2034,14 @@ footer {
     padding: 0px 473px 627px;
   }
 }
+:root {
+  --x-mouse: 0;
+  --y-mouse: 0;
+  --block-size: 50px;
+  --transform-x: calc(var(--block-size) * var(--x-mouse));
+  --transform-y: calc(var(--block-size) * var(--y-mouse));
+}
+
 .h1Projet--dec {
   line-height: 90%;
 }
@@ -2046,8 +2054,9 @@ footer {
   width: 450px;
   top: -5%;
   left: 22%;
-  transform: rotate(12deg);
   opacity: 50%;
+  transform: translate(var(--transform-x), var(--transform-y));
+  transition: transform 0.16s;
 }
 
 .infoProjet--dec {
@@ -2094,7 +2103,6 @@ footer {
     width: 450px;
     top: -5%;
     left: 30%;
-    transform: rotate(12deg);
   }
 }
 @media (min-width: 550px) {
@@ -2157,7 +2165,7 @@ footer {
   }
   .projetVisuel__img--dec:nth-child(3) {
     width: 100%;
-    scale: 1;
+    scale: 0;
   }
 
   .titre__homme {
@@ -2186,7 +2194,7 @@ footer {
   .projetVisuel__img--dec:nth-child(2) {
     width: 47%;
     right: -13%;
-    bottom: 0%;
+    bottom: -20%;
   }
 
   .infoProjet__homme {
@@ -2196,6 +2204,8 @@ footer {
     opacity: 50%;
     left: 7%;
     top: 26%;
+    transform: translate(var(--transform-x), var(--transform-y));
+    transition: transform 0.16s;
   }
   .infoProjet--dec {
     padding-bottom: 186px;

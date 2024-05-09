@@ -23,7 +23,7 @@ var home = document.querySelector('.home');
 var rux = document.querySelector('.rux');
 var dataplay = document.querySelector('.dataplay');
 var december = document.querySelector('.decembre');
-var annexe = document.querySelector('.annexe'); //Burger Menu
+var annexe = document.querySelector('.annexe'); //burger Menu
 
 var menuToggle = document.querySelector('.burgerMenu');
 var bodyc = document.querySelector('.home');
@@ -37,7 +37,17 @@ function menuOpen() {
   } else {
     menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
   }
-}
+} //déplacement homme
+
+
+document.addEventListener('mousemove', function (e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var posX = (x / window.innerWidth).toFixed(1);
+  var posY = (y / window.innerHeight).toFixed(2);
+  document.documentElement.style.setProperty('--x-mouse', posX);
+  document.documentElement.style.setProperty('--y-mouse', posY);
+});
 
 if (home) {
   var handleResize = function handleResize() {
@@ -209,7 +219,7 @@ if (home) {
    window.addEventListener("scroll", handleScroll);*/
 
   /*
-   let tl = gsap.timeline({
+  let tl = gsap.timeline({
       /*scrollTrigger: {
           trigger: '.projet',
           start: 'top top',
@@ -293,16 +303,30 @@ if (home) {
   }
    calculerAngleRotation();*/
 } else if (december) {
-  document.addEventListener('mousemove', function (e) {
-    var x = e.clientX;
-    var y = e.clientY; //console.log(e.clientX, e.clientY);
+  var windowHeight = window.innerHeight;
+  var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '.projetVisuel',
+      start: '20% 15%',
+      end: 'bottom center',
+      scrub: 1,
+      pin: true,
+      markers: true
+    }
+  }); //anim gsap
 
-    var posX = (x / window.innerWidth).toFixed(2);
-    var posY = (y / window.innerHeight).toFixed(2);
-    console.log(posX, posY);
-    document.documentElement.style.setProperty('--x-mouse', posX);
-    document.documentElement.style.setProperty('--y-mouse', posY);
-  });
+  tl.add('start').to('.main1', {
+    rotation: -20,
+    duration: 3,
+    opacity: 0
+  }, '+=2').to('.main2', {
+    rotation: 20,
+    duration: 5,
+    opacity: 0
+  }, '-=3').to('.visu', {
+    scale: 1,
+    duration: 7
+  }, '-=5');
 }
 
 /***/ }),
