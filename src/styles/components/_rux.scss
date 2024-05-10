@@ -79,14 +79,24 @@
         }
     }
 
-    &__svg{
-        width: 2000px;
-        height: 960px;
+    &__svg circle{
+        width: 960px;
+        height: 1024px;
         position: absolute;
         left: -10%;
         top: 50%;
         z-index: 20; 
         fill: red;
+        animation: train 10s infinite linear;
+        transform-origin: center center;
+    }
+    &__svg{
+        width: 960px;
+        height: 1024px;
+        position: absolute;
+        left: -10%;
+        top: 50%;
+        z-index: 20; 
         animation: train 10s infinite linear;
         transform-origin: center center;
     }
@@ -100,6 +110,14 @@
     & a{
         position: relative;
         z-index: 30;
+    }
+}
+
+@keyframes train{
+    from{
+        transform: rotate(360deg);
+    } to {
+        transform: rotate(0deg);
     }
 }
 

@@ -1161,14 +1161,25 @@ canvas {
   text-transform: capitalize;
   font-weight: 200;
 }
-.next__svg {
-  width: 2000px;
-  height: 960px;
+.next__svg circle {
+  width: 960px;
+  height: 1024px;
   position: absolute;
   left: -10%;
   top: 50%;
   z-index: 20;
   fill: red;
+  -webkit-animation: train 10s infinite linear;
+          animation: train 10s infinite linear;
+  transform-origin: center center;
+}
+.next__svg {
+  width: 960px;
+  height: 1024px;
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  z-index: 20;
   -webkit-animation: train 10s infinite linear;
           animation: train 10s infinite linear;
   transform-origin: center center;
@@ -1185,6 +1196,23 @@ canvas {
   z-index: 30;
 }
 
+@-webkit-keyframes train {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes train {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 footer {
   margin: 0 24px;
   position: absolute;
