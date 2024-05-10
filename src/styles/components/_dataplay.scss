@@ -36,13 +36,13 @@
         height: 100%;
         width: 100%;
         border-radius: 0px;
-        transform: rotate(-5deg);
         position: relative;
         z-index: 10;
+        transform: rotate(-4deg);
     }
     &__img--right{
         margin-top: 76px;
-        transform: rotate(5deg);
+        transform: rotate(4deg);
     }  
 }
 
@@ -50,11 +50,22 @@
     &__img--late{
         top: 55%;
         left: -20%;
+        width: 1000px;
+        position: absolute;
+        z-index: 10; 
     }
-}
-
-.next--late{
-    padding: 90px 24px 216Px;  /////peux juste changer le premier
+    &__hommes{
+        position: absolute;
+        top: 40%;
+        left:0;
+        z-index: 11; 
+        width: 700px;
+        transform: translate(var(--transform-x), var(--transform-y));
+        transition: transform 0.16s;
+    }
+    &--late{
+        padding: 90px 24px 216Px;  /////peux juste changer le premier
+    }
 }
 
 .footer--late{
@@ -113,13 +124,17 @@
     
     .next{
         &__img--late{
-            top: 40%;
-            left: -20%;
+            top: 50%;
+            width: 1200px;
         }
-    }
-
-    .next--late{
-        padding: 54px 64px 216Px;  /////peux juste changer le premier
+        &__hommes{
+            top: 20%;
+            left: 22%;
+            width: 900px;
+        }
+        &--late{
+            padding: 54px 64px 216Px;
+        }
     }
 }
 
@@ -131,30 +146,33 @@
     .projetVisuel--late{
         background-size: 220%;
     }
+
+    .next{
+        &__img--late{
+            top: 30%;
+            width: 1700px;
+        }
+        &__hommes{
+            top: 0%;
+            left: 37%;
+            width: 1100px;
+        }
+    }
 }
 
 @media (min-width: 760px){  
     .h1Projet__span--late{
         margin-left: 232px;
     }
-
     .h1Projet--late{
         background-size: 700px;
         background-position-x: 560px;
         background-position-y: 220px;
         padding: 312px 66px 186px;
     }
-
     .infoProjet--late{
         padding-bottom: 372px;
     }
-    
-    .projetVisuel--late{
-        padding: 186px 84px 93px; 
-        background-size: 175%;
-        background-position-y: 170px;
-    }
-    
     .projetVisuel{
         &__img--late{
             width: 65%;
@@ -162,18 +180,26 @@
         &__img--right{
             margin-top: 186px;
         }
-        
+        &--late{
+            padding: 186px 84px 93px; 
+            background-size: 175%;
+            background-position-y: 170px;   
+        }
     }
-    
     .next{
         &__img--late{
             top: 40%;
-            left: 0%;
+            left: 0;
+            width: 1700px;
         }
-    }
-
-    .next--late{
-        padding: 93px 66px 246px;  /////peux juste changer le premier
+        &__hommes{
+            top: 15%;
+            left: 37%;
+            width: 1100px;
+        }
+        &--late{
+            padding: 93px 66px 246px;
+        }
     }
 }
 
@@ -206,11 +232,16 @@
         &__img--late{
             top: 40%;
             left: 15%;
+            width: 1700px;
         }
-    }
-
-    .next--late{
-        padding: 186px 116px 246px;
+        &__hommes{
+            top: 20%;
+            left: 35%;
+            width: 1300px;
+        }
+        &--late{
+            padding: 186px 116px 246px;
+        }
     }
 }
 
@@ -249,16 +280,21 @@
             margin-top: 202px;
         }  
     }
-    
+
     .next{
         &__img--late{
-            top: 15%;
+            top: 30%;
             left: 10%;
+            width: 2000px;
         }
-    }
-    
-    .next--late{
-        padding: 101px 86px 285px;
+        &__hommes{
+            top: 10%;
+            left: 27%;
+            width: 1500px;
+        }
+        &--late{
+            padding: 101px 86px 285px;
+        }
     }
 }
 
@@ -279,8 +315,14 @@
     
     .next{
         &__img--late{
-            top: 20%;
+            top: 26%;
             left: 25%;
+            width: 2000px;
+        }
+        &__hommes{
+            top: 0%;
+            left: 40%;
+            width: 1500px;
         }
     }
 }
@@ -311,16 +353,20 @@
             margin-top: 303px;
         }  
     }
-    
     .next{
         &__img--late{
             top: 15%;
             left: 30%;
+            width: 2200px;
         }
-    }
-
-    .next--late{
-        padding: 57px 172px 285px;
+        &__hommes{
+            top: -10%;
+            left: 42%;
+            width: 1700px;
+        }
+        &--late{
+            padding: 57px 172px 285px;
+        }
     }
 }
 
@@ -355,13 +401,18 @@
 
     .next{
         &__img--late{
-            top: 15%;
-            left: 22%;
+            top: 30%;
+            left: 30%;
+            width: 2500px;
         }
-    }
-    
-    .next--late{
-        padding: 285px 344px 513px;
+        &__hommes{
+            top: 10%;
+            left: 40%;
+            width: 2000px;
+        }
+        &--late{
+            padding: 285px 344px 513px;
+        }
     }
 }
 
@@ -391,16 +442,21 @@
             margin-top: 505px;
         }  
     }
-    
+
     .next{
         &__img--late{
-            top: 0%;
-            left: 22%;
+            top: 16%;
+            left: 30%;
+            width: 3000px;
         }
-    }
-    
-    .next--late{
-        padding: 0px 473px 627px;
+        &__hommes{
+            top: -10%;
+            left: 37%;
+            width: 2500px;
+        }
+        &--late{
+            padding: 0px 473px 627px;
+        }
     }
 }
 

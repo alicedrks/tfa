@@ -20,25 +20,28 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_scrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"]);
 var home = document.querySelector('.home');
-var rux = document.querySelector('.rux');
 var dataplay = document.querySelector('.dataplay');
 var december = document.querySelector('.decembre');
 var annexe = document.querySelector('.annexe'); //burger Menu
 
-var menuToggle = document.querySelector('.burgerMenu');
-var bodyc = document.querySelector('.home');
+/*const menuToggle = document.querySelector('.burgerMenu');
+const bodyc = document.querySelector('.home');
+
+
 menuToggle.addEventListener('click', menuOpen);
 
-function menuOpen() {
-  document.body.classList.toggle("navigation__liens--open");
+function menuOpen(){
+    document.body.classList.toggle("navigation__liens--open");
 
-  if (bodyc.classList.contains('navigation__liens--open')) {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
-  } else {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
-  }
-} //déplacement homme
+    if (bodyc.classList.contains('navigation__liens--open')) {
+        
+        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")'; 
 
+    } else {
+        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
+    }   
+}*/
+//déplacement hommes
 
 document.addEventListener('mousemove', function (e) {
   var x = e.clientX;
@@ -303,7 +306,6 @@ if (home) {
   }
    calculerAngleRotation();*/
 } else if (december) {
-  var windowHeight = window.innerHeight;
   var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     scrollTrigger: {
       trigger: '.projetVisuel',
@@ -315,7 +317,7 @@ if (home) {
     }
   }); //anim gsap
 
-  tl.add('start').to('.main1', {
+  tl.to('.main1', {
     rotation: -20,
     duration: 3,
     opacity: 0
@@ -327,7 +329,33 @@ if (home) {
     scale: 1,
     duration: 7
   }, '-=5');
-}
+} else if (dataplay) {
+  var _tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '.projetVisuel',
+      start: '0% 15%',
+      end: 'bottom center',
+      scrub: 1,
+      pin: false,
+      markers: true
+    }
+  }); //anim gsap
+
+
+  _tl.from('.projetVisuel__img--left', {
+    rotation: -4,
+    duration: 1
+  }).to('.projetVisuel__img--left', {
+    rotation: -10,
+    duration: 5
+  }).from('.projetVisuel__img--right', {
+    rotation: 4,
+    duration: 1
+  }).to('.projetVisuel__img--right', {
+    rotation: 10,
+    duration: 5
+  });
+} else if (annexe) {}
 
 /***/ }),
 

@@ -1,3 +1,13 @@
+:root {
+    --x-mouse: 0;
+    --y-mouse: 0;
+    --block-size: 20px;
+    --transform-x: calc(var(--block-size) * var(--x-mouse));
+    --transform-y: calc(var(--block-size) * var(--y-mouse));
+}
+
+
+
 $c-background: #000000;
 $c-element: #A89885;
 

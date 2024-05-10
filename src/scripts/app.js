@@ -7,7 +7,6 @@ import ScrollTrigger from 'gsap/scrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 let home = document.querySelector('.home');
-let rux = document.querySelector('.rux');
 let dataplay = document.querySelector('.dataplay');
 let december = document.querySelector('.decembre');
 let annexe = document.querySelector('.annexe');
@@ -15,7 +14,7 @@ let annexe = document.querySelector('.annexe');
 
 
 //burger Menu
-const menuToggle = document.querySelector('.burgerMenu');
+/*const menuToggle = document.querySelector('.burgerMenu');
 const bodyc = document.querySelector('.home');
 
 
@@ -31,9 +30,9 @@ function menuOpen(){
     } else {
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
     }   
-}
+}*/
 
-//déplacement homme
+//déplacement hommes
 document.addEventListener('mousemove', e => {
   const x = e.clientX;
   const y = e.clientY;
@@ -356,8 +355,6 @@ if(home){
 
   calculerAngleRotation();*/
 } else if (december){
-  var windowHeight = window.innerHeight;
-
 
   let tl = gsap.timeline({
     scrollTrigger: {
@@ -370,28 +367,53 @@ if(home){
         }
       })
 
+  //anim gsap
+  tl.to('.main1', {
+      rotation:-20, 
+      duration: 3,
+      opacity: 0
+    }, '+=2')
+    .to('.main2', {
+      rotation:20, 
+      duration: 5,
+      opacity: 0
+    }, '-=3')
+    .to('.visu', {
+      scale: 1,
+      duration: 7
+    },
+  '-=5')
 
+} else if (dataplay){
+  let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.projetVisuel',
+        start: '0% 15%',
+        end: 'bottom center',
+        scrub: 1, 
+        pin: false,
+        markers: true,
+        }
+      })
 
-
-//anim gsap
-tl.add('start')
-	.to('.main1', {
-    rotation:-20, 
-    duration: 3,
-    opacity: 0
-  }, '+=2')
-	.to('.main2', {
-    rotation:20, 
-    duration: 5,
-    opacity: 0
-  }, '-=3')
-  .to('.visu', {
-    scale: 1,
-    duration: 7
-  },
-'-=5')
-
-}
+  //anim gsap
+  tl.from('.projetVisuel__img--left', {
+      rotation:-4, 
+      duration: 1
+    })
+    .to('.projetVisuel__img--left', {
+      rotation:-10, 
+      duration: 5
+    })
+    .from('.projetVisuel__img--right', {
+      rotation:4, 
+      duration: 1
+    })
+    .to('.projetVisuel__img--right', {
+      rotation:10, 
+      duration: 5
+    })
+} else if (annexe){}
 
 
 
