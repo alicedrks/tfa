@@ -14,14 +14,16 @@ let annexe = document.querySelector('.annexe');
 
 
 //burger Menu
-/*const menuToggle = document.querySelector('.burgerMenu');
+const menuToggle = document.querySelector('.burgerMenu');
 const bodyc = document.querySelector('.home');
+const header = document.querySelector('.header');
 
 
 menuToggle.addEventListener('click', menuOpen);
 
 function menuOpen(){
     document.body.classList.toggle("navigation__liens--open");
+    header.classList.toggle('header--burgerMenu');
 
     if (bodyc.classList.contains('navigation__liens--open')) {
         
@@ -30,7 +32,7 @@ function menuOpen(){
     } else {
         menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
     }   
-}*/
+}
 
 //déplacement hommes
 document.addEventListener('mousemove', e => {
@@ -258,24 +260,90 @@ if(home){
   window.addEventListener("scroll", handleScroll);*/
 
 
+  //slider
+let prevButton = document.querySelector(".projet__btnSlider--prev");
+let nextButton = document.querySelector(".projet__btnSlider--next");
 
-  /*
+prevButton.addEventListener("click", prevSlide);
+nextButton.addEventListener("click", nextSlide);
+
+//navigation clavier
+document.addEventListener("keydown", keyboardListener);
+
+function keyboardListener(event){
+    if(event.code == "ArrowLeft"){
+        prevSlide();
+    }else if(event.code == "ArrowRight"){
+        nextSlide();
+    }
+}
+
+let rota = 0;
+
+function prevSlide(){
+    let activeSlideEl = document.querySelector(".projet__element--active");
+    let prevSlideEl = activeSlideEl.previousElementSibling;
+
+    if(!prevSlideEl){
+        prevSlideEl = activeSlideEl.parentNode.lastElementChild;
+    }
+
+    rota = rota - 120;
+
+    gsap.to('.projet__illu', { 
+      duration: 3,
+      rotation: rota,
+      ease: "power4.out" 
+    });
+
+
+    activeSlideEl.classList.remove("projet__element--active");
+    prevSlideEl.classList.add("projet__element--active");
+
+}
+
+function nextSlide(){
+    let activeSlideEl = document.querySelector(".projet__element--active");
+    let nextSlideEl = activeSlideEl.nextElementSibling;
+
+    if(!nextSlideEl){
+        nextSlideEl = activeSlideEl.parentNode.firstElementChild;
+    }
+
+    rota = rota + 120;
+
+    gsap.to('.projet__illu', { 
+      duration: 3,
+      rotation: rota,
+      ease: "power4.out"
+     });
+
+    activeSlideEl.classList.remove("projet__element--active");
+    nextSlideEl.classList.add("projet__element--active");
+}
+
+
+
+
+
+
+/*
   let tl = gsap.timeline({
-      /*scrollTrigger: {
+      scrollTrigger: {
           trigger: '.projet',
           start: 'top top',
           end: 'bottom center',
           scrub: 10, 
           pin: true,
           markers: true,
-          }*/
-  /*})*/
+          }
+  })
 
 
 
 
   //anim gsap
-  /*tl.from('.projet__illu', {
+  tl.from('.projet__illu', {
           rotation:0, 
           duration:2,
       })
@@ -354,6 +422,7 @@ if(home){
   }
 
   calculerAngleRotation();*/
+
 } else if (december){
 
   let tl = gsap.timeline({

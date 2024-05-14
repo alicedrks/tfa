@@ -58,6 +58,11 @@
     position: relative;
     z-index: 30;
     overflow: hidden;
+    background-image: url('../../assets/images/illu/nuages.svg');
+    background-repeat: no-repeat;
+    background-position-y: 85%;
+    background-size: 750px;
+    animation: backgroundNuage 60s linear infinite;
 
     &__titre{
         font-family: 'owners-text', sans-serif;
@@ -79,45 +84,35 @@
         }
     }
 
-    &__svg circle{
-        width: 960px;
-        height: 1024px;
+    &__imgContainer{
         position: absolute;
-        left: -10%;
-        top: 50%;
-        z-index: 20; 
-        fill: red;
-        animation: train 10s infinite linear;
-        transform-origin: center center;
-    }
-    &__svg{
-        width: 960px;
-        height: 1024px;
-        position: absolute;
-        left: -10%;
-        top: 50%;
-        z-index: 20; 
-        animation: train 10s infinite linear;
-        transform-origin: center center;
-    }
-    &__svg2{
-        width: 2000px;
-        position: absolute;
-        left: -10%;
-        top: 50%;
-        z-index: 10; 
+        z-index: 10;
+
+        & img{
+            position: relative;
+            top:0;
+            left:0;
+        }
+
+        &:after{
+            content: "";
+            position: relative;
+            display: block;
+            z-index: 100;
+            background-image: url('../../assets/images/illu/train.svg');
+            background-size: cover;
+            top:-420px;
+            left:-69px;
+            width: 959px;
+            height: 959px;
+            animation: train 10s infinite linear;
+            transform-origin: center center;
+            background-repeat: no-repeat;
+        }
     }
     & a{
         position: relative;
         z-index: 30;
-    }
-}
-
-@keyframes train{
-    from{
-        transform: rotate(360deg);
-    } to {
-        transform: rotate(0deg);
     }
 }
 
@@ -225,6 +220,20 @@ footer{
         top: 92%;
     }
 }
+@keyframes train{
+    from{
+        transform: rotate(360deg);
+    } to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes backgroundNuage{
+    from{
+        background-position-x: 550px;
+    } to{
+        background-position-x: -750px;
+    }
+}
 
 
 
@@ -300,10 +309,23 @@ footer{
     .next{
         padding: 144px 64px 216Px;
 
-        &__img{
-            width: 1400px;
+        &__imgContainer{
+            position: absolute;
+            z-index: 10;
             left: -5%;
-            top: 35%; 
+            top: 45%; 
+    
+            & img{
+                position: relative;
+                width: 1400px;
+            }
+    
+            &:after{
+                top:-705px;
+                left:-112px;
+                width: 1610px;
+                height: 1610px;
+            }
         }
     }
     
@@ -356,6 +378,13 @@ footer{
             top: 85%;
         }
     }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 760px;
+        } to{
+            background-position-x: -750px;
+        }
+    }
 }
 
 @media (min-width: 760px){
@@ -391,16 +420,30 @@ footer{
     } 
     .next{
         padding: 186px 66px 246px;
+        background-size: 870px;
     
         &__titre{
             font-size: 52px;
             margin: 0 0 52px;
             }
     
-        &__img{
-            width: 1600px;
-            left: -8%;
+        &__imgContainer{
+            position: absolute;
+            z-index: 10;
+            left: 0%;
             top: 40%;   
+    
+            & img{
+                position: relative;
+                width: 1600px;
+            }
+    
+            &:after{
+                top:-805px;
+                left:-144px;
+                width: 1870px;
+                height: 1870px;
+            }
         }
     }
     footer{
@@ -464,6 +507,13 @@ footer{
             top: 30%;
         }
     }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 980px;
+        } to{
+            background-position-x: -870px;
+        }
+    }
 }
 
 @media (min-width: 950px){
@@ -511,9 +561,8 @@ footer{
     .next{
         padding: 279px 116px 246px;
     
-        &__img{
-            width: 1600px;
-            left: 7%;
+        &__imgContainer{
+            left: 14%;
             top: 45%;   
         }
     }
@@ -581,6 +630,13 @@ footer{
             top: 50%;
         }
     }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 1120px;
+        } to{
+            background-position-x: -870px;
+        }
+    }
 }
 
 @media (min-width: 1110px){
@@ -631,15 +687,27 @@ footer{
     
     .next{
         padding: 202px 86px 285px;
+        background-size: 950px;
     
         &__titre{
             font-size: 57px;
             margin: 0 0 57px;
             }
-        &__img{
-            width: 2300px;
-            left: -10%;
+
+        &__imgContainer{
+            left: 5%;
             top: 30%;  
+    
+            & img{
+                width: 2300px;
+            }
+    
+            &:after{
+                top:-1154px;
+                left:-203px;
+                width: 2680px;
+                height: 2680px;
+            }
         }
     }
     
@@ -725,6 +793,13 @@ footer{
             top: 50%;
         }
     }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 1300px;
+        } to{
+            background-position-x: -870px;
+        }
+    }
 }
 
 @media (min-width: 1300px){ 
@@ -767,16 +842,27 @@ footer{
     
     .next{
         padding: 285px 86px 285px;
+        background-size: 1100px;
     
         &__titre{
             font-size: 76px;
             margin: 0 0 76px;
         }
     
-        &__img{
-            width: 2400px;
+        &__imgContainer{
             left: 25%;
             top: 30%; 
+    
+            & img{
+                width: 2400px;
+            }
+    
+            &:after{
+                top:-1204px;
+                left:-203px;
+                width: 2780px;
+                height: 2780px;
+            }
         }
     }
     
@@ -855,6 +941,13 @@ footer{
             top: 57%;
         }
     }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 1300px;
+        } to{
+            background-position-x: -1100px;
+        }
+    }
 }
 
 @media (min-width: 1530px){ 
@@ -882,10 +975,20 @@ footer{
     .next{
         padding: 342px 172px 285px;
 
-        &__img{
-            width: 2900px;
-            left: 28%;
+        &__imgContainer{
+            left: 20%;
             top: 25%; 
+    
+            & img{
+                width: 2900px;
+            }
+    
+            &:after{
+                top:-1454px;
+                left:-226px;
+                width: 3320px;
+                height: 3320px;
+            }
         }
     }
     
@@ -950,6 +1053,13 @@ footer{
             top: 57%;
         }
     }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 1500px;
+        } to{
+            background-position-x: -1100px;
+        }
+    }
 }
 
 @media (min-width: 1820px){ 
@@ -978,10 +1088,20 @@ footer{
     .next{
         padding: 342px 344px 513px;
 
-        &__img{
-            width: 3600px;
+        &__imgContainer{
             left: 33%;
             top: 20%;
+    
+            & img{
+                width: 3600px;
+            }
+    
+            &:after{
+                top:-1810px;
+                left:-298px;
+                width: 4160px;
+                height: 4160px;
+            }
         }
     }
     
@@ -1046,6 +1166,13 @@ footer{
             top: 57%;
         }
     }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 1900px;
+        } to{
+            background-position-x: -1500px;
+        }
+    }
 }
 
 @media (min-width: 2200px){
@@ -1072,18 +1199,29 @@ footer{
     
     .next{
         padding: 342px 473px 627px;
+        background-size: 1700px;
+        animation: backgroundNuage 60s linear infinite;
 
-        &__img{
+        &__imgContainer{
+            left: 30%;
+            top: 20%; 
+    
+            & img{
                 width: 3900px;
-                left: 30%;
-                top: 20%; 
+            }
+    
+            &:after{
+                top:-1960px;
+                left:-342px;
+                width: 4540px;
+                height: 4540px;
+            }
         }
     }
     
     footer{
         margin: 0 473px;
     }
-
 
     @keyframes bulle3 {
         0%{
@@ -1105,6 +1243,13 @@ footer{
         }
         100%{
             top: 25%;
+        }
+    }
+    @keyframes backgroundNuage{
+        from{
+            background-position-x: 2400px;
+        } to{
+            background-position-x: -1700px;
         }
     }
 }

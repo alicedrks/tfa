@@ -104,7 +104,7 @@ canvas{
         opacity:0;
         visibility: hidden;
         text-align: center;
-        transition: opacity 10s;
+        transition: opacity 1s;
         position: absolute;
         z-index: 5;
         height: 100%;
@@ -157,11 +157,15 @@ canvas{
         z-index: 5;
     }
 
-    &__boutons{
+    &__btn{
         padding: 0 24px;
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        width: 100vw;
+        box-sizing: border-box;
+        top: 84px;
+        z-index: 40;
 
         & li {
             list-style: none;
@@ -180,7 +184,6 @@ canvas{
         background-image: url('../../assets/images/icon/arrowSlider.svg');
         background-repeat: no-repeat;
         background-size: 100%;
-        transition: 0.5s;
         opacity: 40%;
         margin-right: 0;
         padding-left: 0;
@@ -319,7 +322,7 @@ canvas{
         }
     }
 }
-@media (min-width: 350px) and (max-height: 600px){
+@media (min-width: 350px) and (max-height: 650px){
     .projet{
         height: 100%;
 
@@ -332,8 +335,8 @@ canvas{
             overflow: hidden;
             width: 100%;
             position: relative;
-            height: 600px;
-            top: 40px;
+            height: 700px;
+            top: 20px;
         }
     
         &__illu{

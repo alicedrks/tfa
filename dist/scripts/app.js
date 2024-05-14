@@ -24,24 +24,22 @@ var dataplay = document.querySelector('.dataplay');
 var december = document.querySelector('.decembre');
 var annexe = document.querySelector('.annexe'); //burger Menu
 
-/*const menuToggle = document.querySelector('.burgerMenu');
-const bodyc = document.querySelector('.home');
-
-
+var menuToggle = document.querySelector('.burgerMenu');
+var bodyc = document.querySelector('.home');
+var header = document.querySelector('.header');
 menuToggle.addEventListener('click', menuOpen);
 
-function menuOpen(){
-    document.body.classList.toggle("navigation__liens--open");
+function menuOpen() {
+  document.body.classList.toggle("navigation__liens--open");
+  header.classList.toggle('header--burgerMenu');
 
-    if (bodyc.classList.contains('navigation__liens--open')) {
-        
-        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")'; 
+  if (bodyc.classList.contains('navigation__liens--open')) {
+    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
+  } else {
+    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
+  }
+} //déplacement hommes
 
-    } else {
-        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
-    }   
-}*/
-//déplacement hommes
 
 document.addEventListener('mousemove', function (e) {
   var x = e.clientX;
@@ -62,6 +60,146 @@ if (home) {
     matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(rightWall, matter_js__WEBPACK_IMPORTED_MODULE_0___default().Vector.create(width + thiccness / 2, height / 2));
     matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(leftWall, matter_js__WEBPACK_IMPORTED_MODULE_0___default().Vector.create(0 - thiccness / 2, height / 2));
   };
+
+  var keyboardListener = function keyboardListener(event) {
+    if (event.code == "ArrowLeft") {
+      prevSlide();
+    } else if (event.code == "ArrowRight") {
+      nextSlide();
+    }
+  };
+
+  var prevSlide = function prevSlide() {
+    var activeSlideEl = document.querySelector(".projet__element--active");
+    var prevSlideEl = activeSlideEl.previousElementSibling;
+
+    if (!prevSlideEl) {
+      prevSlideEl = activeSlideEl.parentNode.lastElementChild;
+    }
+
+    rota = rota - 120;
+    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to('.projet__illu', {
+      duration: 3,
+      rotation: rota,
+      ease: "power4.out"
+    });
+    activeSlideEl.classList.remove("projet__element--active");
+    prevSlideEl.classList.add("projet__element--active");
+  };
+
+  var nextSlide = function nextSlide() {
+    var activeSlideEl = document.querySelector(".projet__element--active");
+    var nextSlideEl = activeSlideEl.nextElementSibling;
+
+    if (!nextSlideEl) {
+      nextSlideEl = activeSlideEl.parentNode.firstElementChild;
+    }
+
+    rota = rota + 120;
+    gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.to('.projet__illu', {
+      duration: 3,
+      rotation: rota,
+      ease: "power4.out"
+    });
+    activeSlideEl.classList.remove("projet__element--active");
+    nextSlideEl.classList.add("projet__element--active");
+  };
+  /*
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.projet',
+            start: 'top top',
+            end: 'bottom center',
+            scrub: 10, 
+            pin: true,
+            markers: true,
+            }
+    })
+  
+  
+  
+  
+    //anim gsap
+    tl.from('.projet__illu', {
+            rotation:0, 
+            duration:2,
+        })
+        .to('.projet__illu', {
+            rotation:120, 
+            duration: 40,
+            ease: "slow(0.7,0.7,false)",
+        })
+        .set('.projet__illu', {
+            rotation:120, 
+            duration: 20,
+        })
+        .to('.projet__illu', {
+            rotation:240, 
+            duration: 40,
+            ease: "slow(0.7,0.7,false)",
+        })
+  
+  
+  
+  
+    // slider
+    let element = document.querySelector('.projet__illu');
+    let roundedAngle = 1;
+    let lastAngle = 0;
+    let projets = document.querySelectorAll('.projet__element');
+    let projet1 = document.querySelector('#projet1');
+    let projet2 = document.querySelector('#projet2');
+    let projet3 = document.querySelector('#projet3');
+  
+  
+    function calculerAngleRotation() {
+        let style = window.getComputedStyle(element);
+        let transform = style.getPropertyValue('transform');
+  
+        let values = transform.split('(')[1].split(')')[0].split(',');
+        let a = values[0];
+        let b = values[1];
+        let angle = Math.atan2(b, a) * (180 / Math.PI);
+        
+        if (angle < 0) {
+            angle += 360;
+        }
+        
+        roundedAngle = Math.round(angle);
+  
+        if (roundedAngle > lastAngle) {
+            if(roundedAngle >= 80 && roundedAngle <= 100){
+                for(let i = 0; i < projets.length; i++){
+                    projets[i].classList.remove('projet__element--active');
+                }
+                projet2.classList.add('projet__element--active');
+            
+            } else if(roundedAngle >= 200 && roundedAngle <= 220){
+                for(let i = 0; i < projets.length; i++){
+                    projets[i].classList.remove('projet__element--active');
+                }
+                projet3.classList.add('projet__element--active');
+            }
+        } else if (roundedAngle < lastAngle) {
+            if(roundedAngle <= 160 && roundedAngle >= 140){
+                for(let i = 0; i < projets.length; i++){
+                    projets[i].classList.remove('projet__element--active');
+                }
+                projet2.classList.add('projet__element--active');
+            } else if(roundedAngle <= 40 && roundedAngle >= 20){
+                for(let i = 0; i < projets.length; i++){
+                    projets[i].classList.remove('projet__element--active');
+                }
+                projet1.classList.add('projet__element--active');
+            }
+        }
+        lastAngle = roundedAngle;
+  
+        requestAnimationFrame(calculerAngleRotation);
+    }
+  
+    calculerAngleRotation();*/
+
 
   //Balle de tennis
   var Engine = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Engine),
@@ -220,91 +358,15 @@ if (home) {
     }
   }
    window.addEventListener("scroll", handleScroll);*/
+  //slider
 
-  /*
-  let tl = gsap.timeline({
-      /*scrollTrigger: {
-          trigger: '.projet',
-          start: 'top top',
-          end: 'bottom center',
-          scrub: 10, 
-          pin: true,
-          markers: true,
-          }*/
+  var prevButton = document.querySelector(".projet__btnSlider--prev");
+  var nextButton = document.querySelector(".projet__btnSlider--next");
+  prevButton.addEventListener("click", prevSlide);
+  nextButton.addEventListener("click", nextSlide); //navigation clavier
 
-  /*})*/
-  //anim gsap
-
-  /*tl.from('.projet__illu', {
-          rotation:0, 
-          duration:2,
-      })
-      .to('.projet__illu', {
-          rotation:120, 
-          duration: 40,
-          ease: "slow(0.7,0.7,false)",
-      })
-      .set('.projet__illu', {
-          rotation:120, 
-          duration: 20,
-      })
-      .to('.projet__illu', {
-          rotation:240, 
-          duration: 40,
-          ease: "slow(0.7,0.7,false)",
-      })
-  
-   // slider
-  let element = document.querySelector('.projet__illu');
-  let roundedAngle = 1;
-  let lastAngle = 0;
-  let projets = document.querySelectorAll('.projet__element');
-  let projet1 = document.querySelector('#projet1');
-  let projet2 = document.querySelector('#projet2');
-  let projet3 = document.querySelector('#projet3');
-    function calculerAngleRotation() {
-      let style = window.getComputedStyle(element);
-      let transform = style.getPropertyValue('transform');
-       let values = transform.split('(')[1].split(')')[0].split(',');
-      let a = values[0];
-      let b = values[1];
-      let angle = Math.atan2(b, a) * (180 / Math.PI);
-      
-      if (angle < 0) {
-          angle += 360;
-      }
-      
-      roundedAngle = Math.round(angle);
-       if (roundedAngle > lastAngle) {
-          if(roundedAngle >= 80 && roundedAngle <= 100){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet2.classList.add('projet__element--active');
-          
-          } else if(roundedAngle >= 200 && roundedAngle <= 220){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet3.classList.add('projet__element--active');
-          }
-      } else if (roundedAngle < lastAngle) {
-          if(roundedAngle <= 160 && roundedAngle >= 140){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet2.classList.add('projet__element--active');
-          } else if(roundedAngle <= 40 && roundedAngle >= 20){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet1.classList.add('projet__element--active');
-          }
-      }
-      lastAngle = roundedAngle;
-       requestAnimationFrame(calculerAngleRotation);
-  }
-   calculerAngleRotation();*/
+  document.addEventListener("keydown", keyboardListener);
+  var rota = 0;
 } else if (december) {
   var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     scrollTrigger: {
