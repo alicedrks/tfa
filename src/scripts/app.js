@@ -309,6 +309,14 @@ function prevSlide(){
     activeSlideEl.classList.add("projet__element--rotateLeft");
     nextSlideEl.classList.remove("projet__element--rotateLeft");
     prevSlideEl.classList.add("projet__element--active");
+
+    if(projet1){
+      
+    } else if (projet2){
+
+    } else if (projet3){
+
+    }
 }
 
 function nextSlide(){
