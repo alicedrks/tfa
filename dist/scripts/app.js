@@ -72,9 +72,14 @@ if (home) {
   var prevSlide = function prevSlide() {
     var activeSlideEl = document.querySelector(".projet__element--active");
     var prevSlideEl = activeSlideEl.previousElementSibling;
+    var nextSlideEl = activeSlideEl.nextElementSibling;
 
     if (!prevSlideEl) {
       prevSlideEl = activeSlideEl.parentNode.lastElementChild;
+    }
+
+    if (!nextSlideEl) {
+      nextSlideEl = activeSlideEl.parentNode.firstElementChild;
     }
 
     rota = rota - 120;
@@ -84,15 +89,22 @@ if (home) {
       ease: "power4.out"
     });
     activeSlideEl.classList.remove("projet__element--active");
+    activeSlideEl.classList.add("projet__element--rotateLeft");
+    nextSlideEl.classList.remove("projet__element--rotateLeft");
     prevSlideEl.classList.add("projet__element--active");
   };
 
   var nextSlide = function nextSlide() {
     var activeSlideEl = document.querySelector(".projet__element--active");
     var nextSlideEl = activeSlideEl.nextElementSibling;
+    var prevSlideEl = activeSlideEl.previousElementSibling;
 
     if (!nextSlideEl) {
       nextSlideEl = activeSlideEl.parentNode.firstElementChild;
+    }
+
+    if (!prevSlideEl) {
+      prevSlideEl = activeSlideEl.parentNode.lastElementChild;
     }
 
     rota = rota + 120;
@@ -102,6 +114,8 @@ if (home) {
       ease: "power4.out"
     });
     activeSlideEl.classList.remove("projet__element--active");
+    prevSlideEl.classList.add("projet__element--rotateLeft");
+    nextSlideEl.classList.remove("projet__element--rotateLeft");
     nextSlideEl.classList.add("projet__element--active");
   };
   /*

@@ -228,18 +228,25 @@ canvas {
   opacity: 0;
   visibility: hidden;
   text-align: center;
-  transition: opacity 1s;
   position: absolute;
   z-index: 5;
   height: 100%;
-  width: 100%;
   top: 96px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(30deg);
+  width: 85%;
+  transform-origin: center 1600px;
+  transition: 2s;
 }
 .projet__element--active {
+  transform: translateX(-50%) rotate(0deg);
   opacity: 1;
   visibility: visible;
-  bottom: -500px;
+}
+.projet__element--rotateLeft {
+  transform: translateX(-50%) rotate(-30deg);
+  opacity: 0;
+  visibility: hidden;
 }
 .projet__container {
   margin: 0;
@@ -253,19 +260,17 @@ canvas {
 .projet__titre1 {
   font-size: 32px;
   font-family: "owners-text", sans-serif;
-  margin: 0 24px;
 }
 .projet__titre2 {
   font-size: 24px;
   font-family: "Pangaia regular";
   font-weight: 200;
-  margin: 36px 24px 18px;
 }
 .projet__para {
   font-size: 18px;
   line-height: 140%;
   font-family: "owners-text", sans-serif;
-  margin: 0 24px 24px;
+  margin: 0px 0px 36px;
 }
 .projet__illu {
   position: absolute;
@@ -379,9 +384,8 @@ canvas {
     transition: opacity 10s;
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 85%;
     top: 0px;
-    left: 0;
   }
   .projet__element--active {
     opacity: 1;
@@ -466,8 +470,8 @@ canvas {
   .projet__container {
     top: 30px;
   }
-  .projet__para {
-    margin: 0 72px 36px;
+  .projet__element {
+    width: 70%;
   }
 }
 @media (min-width: 455px) and (max-height: 560px) {
@@ -513,13 +517,14 @@ canvas {
 
   .projet__element {
     top: 128px;
+    width: 65%;
   }
   .projet__container {
     height: 1000px;
     top: 100px;
   }
   .projet__para {
-    margin: 0 108px 36px;
+    margin: 0 0px 36px;
   }
   .projet__boutons {
     padding: 0 126px;
@@ -551,8 +556,8 @@ canvas {
   }
 }
 @media (min-width: 620px) {
-  .projet__para {
-    margin: 0 152px 36px;
+  .projet__element {
+    width: 60%;
   }
 }
 @media (min-width: 760px) {
@@ -590,6 +595,7 @@ canvas {
 
   .projet__element {
     top: 123px;
+    width: 46%;
   }
   .projet__container {
     height: 1500px;
@@ -597,15 +603,15 @@ canvas {
   }
   .projet__titre1 {
     font-size: 39px;
-    margin: 0 66px;
+    margin: 0;
   }
   .projet__titre2 {
     font-size: 29px;
-    margin: 39px 66px 22px;
+    margin: 39px 0px 22px;
   }
   .projet__para {
     font-size: 17px;
-    margin: 0 232px 39px;
+    margin: 0 0 39px;
   }
   .projet__illu {
     width: 2200px;
@@ -648,8 +654,8 @@ canvas {
   }
 }
 @media (min-width: 890px) {
-  .projet__para {
-    margin: 0 261px 36px;
+  .projet__element {
+    width: 40%;
   }
 }
 @media (min-width: 950px) {
@@ -697,7 +703,7 @@ canvas {
     top: 0px;
   }
   .projet__para {
-    margin: 0 290px 39px;
+    margin: 0 0 39px;
   }
   .projet__boutons {
     padding: 0 203px;
@@ -741,8 +747,8 @@ canvas {
   }
 }
 @media (min-width: 1000px) {
-  .projet__para {
-    margin: 0 348px 36px;
+  .projet__element {
+    width: 35%;
   }
 }
 @media (min-width: 1110px) {
@@ -793,15 +799,14 @@ canvas {
   }
   .projet__titre1 {
     font-size: 43px;
-    margin: 0 86px;
   }
   .projet__titre2 {
     font-size: 32px;
-    margin: 43px 86px 24px;
+    margin: 43px 0px 24px;
   }
   .projet__para {
     font-size: 18px;
-    margin: 0 358px 43px;
+    margin: 0 0 43px;
   }
   .projet__illu {
     width: 2400px;
@@ -857,8 +862,8 @@ canvas {
     width: 2600px;
     top: 2150px;
   }
-  .projet__para {
-    margin: 0 456px 43px;
+  .projet__element {
+    width: 30%;
   }
 }
 @media (min-width: 1300px) and (max-height: 880px) {
@@ -875,8 +880,8 @@ canvas {
   }
 }
 @media (min-width: 1400px) {
-  .projet__para {
-    margin: 0 504px 43px;
+  .projet__element {
+    width: 25%;
   }
 }
 @media (min-width: 1530px) {
@@ -901,9 +906,6 @@ canvas {
   .projet__illu {
     width: 3200px;
     top: 2550px;
-  }
-  .projet__para {
-    margin: 0 570px 43px;
   }
   .projet__boutons {
     padding: 0 505px;
@@ -932,8 +934,8 @@ canvas {
     padding: 0 344px;
   }
 
-  .projet__para {
-    margin: 0 741px 43px;
+  .projet__element {
+    width: 22%;
   }
   .projet__boutons {
     padding: 0 707px;
@@ -982,7 +984,6 @@ canvas {
   }
   .projet__para {
     font-size: 22px;
-    margin: 0 871px 43px;
   }
   .projet__illu {
     width: 3900px;

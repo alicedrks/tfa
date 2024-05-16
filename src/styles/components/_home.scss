@@ -102,18 +102,26 @@ canvas{
         opacity:0;
         visibility: hidden;
         text-align: center;
-        transition: opacity 1s;
         position: absolute;
         z-index: 5;
         height: 100%;
-        width: 100%;
         top: 96px;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%) rotate(30deg);
+        width: 85%;
+        transform-origin: center 1600px;
+        transition: 2s;
 
         &--active{
+            transform: translateX(-50%) rotate(0deg);
             opacity: 1;
             visibility: visible;
-            bottom: -500px;
+        }
+
+        &--rotateLeft{
+            transform: translateX(-50%) rotate(-30deg);
+            opacity: 0;
+            visibility: hidden;
         }
     }
 
@@ -130,21 +138,19 @@ canvas{
     &__titre1{
         font-size: 32px;
         font-family: 'owners-text', sans-serif;
-        margin: 0 24px;
     }
 
     &__titre2{
         font-size: 24px;
         font-family: 'Pangaia regular';
         font-weight: 200;
-        margin: 36px 24px 18px ;
     }
     
     &__para{
         font-size: 18px;
         line-height: 140%;
         font-family: 'owners-text', sans-serif;
-        margin: 0 24px 24px;
+        margin: 0px 0px 36px;
     }
 
     &__illu{
@@ -196,6 +202,7 @@ canvas{
         }
     }
 }
+
 
 //inférieur à 350px
 @media (max-width: 370px){
@@ -273,9 +280,8 @@ canvas{
             transition: opacity 10s;
             position: absolute;
             height: 100%;
-            width: 100%;
+            width: 85%;
             top: 0px;
-            left: 0;
     
             &--active{
                 opacity: 1;
@@ -372,9 +378,9 @@ canvas{
         &__container{
             top: 30px;
         }
-        
-        &__para{
-            margin: 0 72px 36px;
+
+        &__element{
+            width: 70%;
         }
     }
 }
@@ -432,6 +438,7 @@ canvas{
     .projet{
         &__element{
             top: 128px;
+            width: 65%;
         }
     
         &__container{
@@ -440,7 +447,7 @@ canvas{
         }
         
         &__para{
-            margin: 0 108px 36px;
+            margin: 0 0px 36px;
         }
 
         &__boutons{
@@ -484,9 +491,10 @@ canvas{
 }
 @media (min-width: 620px){
     .projet{
-        &__para{
-            margin: 0 152px 36px;
+        &__element{
+            width: 60%;
         }
+
     }
 }
 
@@ -531,6 +539,7 @@ canvas{
     .projet{
         &__element{
             top: 123px;
+            width: 46%;
         }
     
         &__container{
@@ -540,17 +549,17 @@ canvas{
     
         &__titre1{
             font-size: 39px;
-            margin: 0 66px;
+            margin: 0;
         }
     
         &__titre2{
             font-size: 29px;
-            margin: 39px 66px 22px ;
+            margin: 39px 0px 22px ;
         }
         
         &__para{
             font-size: 17px;
-            margin: 0 232px 39px;
+            margin: 0 0 39px;
         }
     
         &__illu{
@@ -603,8 +612,8 @@ canvas{
     } 
 }
 @media (min-width: 890px){
-    .projet__para{
-        margin: 0 261px 36px;
+    .projet__element{
+        width: 40%;
     }
 }
 
@@ -660,7 +669,7 @@ canvas{
         }
         
         &__para{
-            margin: 0 290px 39px;
+            margin: 0 0 39px;
         }
 
 
@@ -715,8 +724,8 @@ canvas{
     }
 }
 @media (min-width: 1000px){
-    .projet__para{
-        margin: 0 348px 36px;
+    .projet__element{
+        width: 35%;
     }
 }
 
@@ -779,17 +788,16 @@ canvas{
     
         &__titre1{
             font-size: 43px;
-            margin: 0 86px;
         }
     
         &__titre2{
             font-size: 32px;
-            margin: 43px 86px 24px ;
+            margin: 43px 0px 24px ;
         }
         
         &__para{
             font-size: 18px;
-            margin: 0 358px 43px;
+            margin: 0 0 43px;
         }
     
         &__illu{
@@ -860,9 +868,8 @@ canvas{
             width: 2600px;
             top: 2150px;
         }
-
-        &__para{
-            margin: 0 456px 43px;
+        &__element{
+            width: 30%;
         }
     }
 }
@@ -883,8 +890,8 @@ canvas{
 }
 @media (min-width: 1400px){
     .projet{
-        &__para{
-            margin: 0 504px 43px;
+        &__element{
+            width: 25%;
         }
     }
 }
@@ -916,10 +923,6 @@ canvas{
         &__illu{
             width: 3200px;
             top: 2550px;
-        }
-
-        &__para{
-            margin: 0 570px 43px;
         }
 
         &__boutons{
@@ -957,8 +960,9 @@ canvas{
     }
 
     .projet{
-        &__para{
-            margin: 0 741px 43px;
+
+        &__element{
+            width: 22%;
         }
 
         &__boutons{
@@ -990,6 +994,7 @@ canvas{
         padding-left: 473px;
         padding-right: 473px;
     }
+
     .intro{
         padding-left: 473px;
         padding-right: 473px;
@@ -1018,7 +1023,6 @@ canvas{
         
         &__para{
             font-size: 22px;
-            margin: 0 871px 43px;
         }
     
         &__illu{

@@ -287,10 +287,14 @@ let rota = 0;
 function prevSlide(){
     let activeSlideEl = document.querySelector(".projet__element--active");
     let prevSlideEl = activeSlideEl.previousElementSibling;
+    let nextSlideEl = activeSlideEl.nextElementSibling;
 
     if(!prevSlideEl){
         prevSlideEl = activeSlideEl.parentNode.lastElementChild;
     }
+    if(!nextSlideEl){
+      nextSlideEl = activeSlideEl.parentNode.firstElementChild;
+  }
 
     rota = rota - 120;
 
@@ -302,17 +306,22 @@ function prevSlide(){
 
 
     activeSlideEl.classList.remove("projet__element--active");
+    activeSlideEl.classList.add("projet__element--rotateLeft");
+    nextSlideEl.classList.remove("projet__element--rotateLeft");
     prevSlideEl.classList.add("projet__element--active");
-
 }
 
 function nextSlide(){
     let activeSlideEl = document.querySelector(".projet__element--active");
     let nextSlideEl = activeSlideEl.nextElementSibling;
+    let prevSlideEl = activeSlideEl.previousElementSibling;
 
     if(!nextSlideEl){
         nextSlideEl = activeSlideEl.parentNode.firstElementChild;
     }
+    if(!prevSlideEl){
+      prevSlideEl = activeSlideEl.parentNode.lastElementChild;
+  }
 
     rota = rota + 120;
 
@@ -322,8 +331,11 @@ function nextSlide(){
       ease: "power4.out"
      });
 
-    activeSlideEl.classList.remove("projet__element--active");
-    nextSlideEl.classList.add("projet__element--active");
+     activeSlideEl.classList.remove("projet__element--active");
+     prevSlideEl.classList.add("projet__element--rotateLeft");
+     nextSlideEl.classList.remove("projet__element--rotateLeft");
+     nextSlideEl.classList.add("projet__element--active");
+
 }
 
 
