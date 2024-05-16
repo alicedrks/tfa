@@ -269,6 +269,7 @@ canvas {
   z-index: 200;
   display: block;
   transform-origin: center 1600px;
+  animation: bulleSlider 2s linear infinite alternate-reverse;
 }
 .projet__titre1 {
   font-size: 32px;
@@ -329,6 +330,23 @@ canvas {
   background-size: 95%;
 }
 
+@-webkit-keyframes bulleSlider {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-2%);
+  }
+}
+
+@keyframes bulleSlider {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-2%);
+  }
+}
 @media (max-width: 370px) {
   .projet__para {
     font-size: 14px;
@@ -1112,6 +1130,11 @@ canvas {
   }
   .projet__container {
     height: 1200px;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .projet__container:before {
+    background-image: url("../../assets/images/illu/bulles@2x.png");
   }
 }
 .navigation {

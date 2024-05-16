@@ -146,6 +146,7 @@ canvas{
             z-index: 200;
             display: block;
             transform-origin: center 1600px;
+            animation: bulleSlider 2s linear infinite alternate-reverse;
         }
     }
 
@@ -214,6 +215,14 @@ canvas{
         &:hover{
             background-size: 95%;
         }
+    }
+}
+
+@keyframes bulleSlider{
+    from{
+        transform: translateY(0%);
+    }to{
+        transform: translateY(-2%);
     }
 }
 
@@ -1177,6 +1186,15 @@ canvas{
             height: 1200px;
         }
     } 
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+    .projet{
+        &__container:before{
+            background-image: url('../../assets/images/illu/bulles@2x.png');
+        }
+    }
 }
 
 
