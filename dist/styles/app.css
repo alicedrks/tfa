@@ -257,6 +257,19 @@ canvas {
   height: 1000px;
   top: 30px;
 }
+.projet__container:before {
+  content: "";
+  width: 1000px;
+  height: 350px;
+  top: 400px;
+  left: -90px;
+  background-image: url("../../assets/images/illu/bulles.png");
+  background-size: cover;
+  position: relative;
+  z-index: 200;
+  display: block;
+  transform-origin: center 1600px;
+}
 .projet__titre1 {
   font-size: 32px;
   font-family: "owners-text", sans-serif;
@@ -276,7 +289,7 @@ canvas {
   position: absolute;
   width: 1200px;
   left: 50%;
-  top: 1150px;
+  top: 1190px;
   transform: translate(-50%, -60%);
   z-index: 5;
 }
@@ -356,6 +369,11 @@ canvas {
     height: 1000px;
     top: 70px;
   }
+  .projet__container:before {
+    width: 500px;
+    height: 230px;
+    top: 430px;
+  }
 }
 @media (max-width: 350px) and (max-height: 430px) {
   .intro {
@@ -367,7 +385,7 @@ canvas {
     margin-bottom: 160px;
   }
 }
-@media (max-width: 350px) and (max-height: 630px) {
+@media (max-width: 350px) and (max-height: 720px) {
   .projet {
     box-sizing: border-box;
     margin: 0;
@@ -399,13 +417,21 @@ canvas {
     height: 600px;
     top: 0px;
   }
+  .projet__container:before {
+    width: 500px;
+    height: 230px;
+    top: 430px;
+  }
   .projet__illu {
     position: absolute;
     width: 1200px;
     left: 50%;
-    top: 1130px;
+    top: 1190px;
     transform: translate(-50%, -60%);
     z-index: 5;
+  }
+  .projet__titre1 {
+    margin-top: 96px;
   }
 }
 @media (min-width: 350px) and (max-height: 530px) {
@@ -429,7 +455,7 @@ canvas {
     margin: 0 0 96px;
   }
 }
-@media (min-width: 350px) and (max-height: 650px) {
+@media (min-width: 350px) and (max-height: 690px) {
   .projet {
     height: 100%;
   }
@@ -444,13 +470,24 @@ canvas {
     height: 700px;
     top: 20px;
   }
+  .projet__container:before {
+    top: 390px;
+  }
   .projet__illu {
     position: absolute;
     width: 1200px;
     left: 50%;
-    top: 1130px;
+    top: 1170px;
     transform: translate(-50%, -60%);
     z-index: 5;
+  }
+}
+@media (min-width: 350px) and (max-height: 620px) {
+  .description__content {
+    height: 100%;
+  }
+  .description__para--big {
+    margin-top: 96px;
   }
 }
 @media (min-width: 455px) {
@@ -486,14 +523,6 @@ canvas {
 @media (min-width: 455px) and (max-height: 680px) {
   .description__content {
     height: 100vh;
-  }
-}
-@media (min-width: 350px) and (max-height: 620px) {
-  .description__content {
-    height: 100%;
-  }
-  .description__para--big {
-    margin-top: 96px;
   }
 }
 @media (min-width: 550px) {
@@ -601,6 +630,18 @@ canvas {
     height: 1500px;
     top: 30px;
   }
+  .projet__container:before {
+    width: 1300px;
+    height: 400px;
+    top: 420px;
+    left: -230px;
+    background-image: url("../../assets/images/illu/bulles.png");
+    background-size: cover;
+    position: relative;
+    z-index: 200;
+    display: block;
+    transform-origin: center 1600px;
+  }
   .projet__titre1 {
     font-size: 39px;
     margin: 0;
@@ -615,7 +656,7 @@ canvas {
   }
   .projet__illu {
     width: 2200px;
-    top: 1910px;
+    top: 1860px;
   }
   .projet__boutons {
     padding: 0 165px;
@@ -702,6 +743,12 @@ canvas {
     height: 1500px;
     top: 0px;
   }
+  .projet__container:before {
+    width: 1350px;
+    height: 500px;
+    top: 400px;
+    left: -200px;
+  }
   .projet__para {
     margin: 0 0 39px;
   }
@@ -740,15 +787,19 @@ canvas {
 }
 @media (min-width: 950px) and (max-height: 870px) {
   .projet__container {
-    height: 650px;
+    height: 850px;
   }
   .projet__illu {
-    top: 1800px;
+    top: 1840px;
   }
 }
 @media (min-width: 1000px) {
   .projet__element {
     width: 35%;
+  }
+  .projet__illu {
+    width: 2400px;
+    top: 1940px;
   }
 }
 @media (min-width: 1110px) {
@@ -797,6 +848,12 @@ canvas {
     height: 1500px;
     top: 30px;
   }
+  .projet__container:before {
+    width: 1600px;
+    height: 600px;
+    top: 480px;
+    left: -290px;
+  }
   .projet__titre1 {
     font-size: 43px;
   }
@@ -810,7 +867,7 @@ canvas {
   }
   .projet__illu {
     width: 2400px;
-    top: 2080px;
+    top: 2040px;
   }
   .projet__boutons {
     padding: 0 303px;
@@ -840,23 +897,34 @@ canvas {
     margin-bottom: 179px;
   }
 }
-@media (min-width: 1110px) and (max-height: 870px) {
+@media (min-width: 1110px) and (max-height: 1050px) {
   .projet {
     height: 100%;
   }
   .projet__container {
-    height: 830px;
+    height: 990px;
     top: 30px;
   }
   .projet__illu {
     width: 2400px;
-    top: 2000px;
+    top: 2050px;
+  }
+}
+@media (min-width: 1300px) and (max-height: 1050px) {
+  .projet {
+    height: 100vh;
   }
 }
 @media (min-width: 1300px) {
   .projet__container {
     height: 2500px;
     top: 30px;
+  }
+  .projet__container:before {
+    width: 1700px;
+    height: 600px;
+    top: 510px;
+    left: -190px;
   }
   .projet__illu {
     width: 2600px;
@@ -866,7 +934,12 @@ canvas {
     width: 30%;
   }
 }
-@media (min-width: 1300px) and (max-height: 880px) {
+@media (min-width: 1300px) and (max-height: 1050px) {
+  .projet {
+    height: 100vh;
+  }
+}
+@media (min-width: 1300px) and (max-height: 1020px) {
   .projet {
     height: 100%;
   }
@@ -874,9 +947,15 @@ canvas {
     height: 900px;
     top: 30px;
   }
+  .projet__container:before {
+    width: 1700px;
+    height: 600px;
+    top: 410px;
+    left: -190px;
+  }
   .projet__illu {
-    width: 2600px;
-    top: 2150px;
+    width: 2500px;
+    top: 2050px;
   }
 }
 @media (min-width: 1400px) {
@@ -900,8 +979,14 @@ canvas {
   }
 
   .projet__container {
-    height: 2500px;
+    height: 2700px;
     top: 30px;
+  }
+  .projet__container:before {
+    width: 2050px;
+    height: 850px;
+    top: 500px;
+    left: -290px;
   }
   .projet__illu {
     width: 3200px;
@@ -911,12 +996,22 @@ canvas {
     padding: 0 505px;
   }
 }
-@media (min-width: 1530px) and (max-height: 930px) {
+@media (min-width: 1530px) and (max-height: 1120px) {
   .projet {
     height: 100%;
   }
   .projet__container {
-    height: 950px;
+    top: 30px;
+    height: 1000px;
+  }
+  .projet__container:before {
+    width: 2200px;
+    height: 800px;
+    top: 410px;
+    left: -290px;
+  }
+  .projet__illu {
+    top: 2470px;
   }
 }
 @media (min-width: 1820px) {
@@ -940,6 +1035,15 @@ canvas {
   .projet__boutons {
     padding: 0 707px;
   }
+  .projet__container {
+    height: 2090px;
+  }
+  .projet__container:before {
+    width: 2500px;
+    height: 900px;
+    top: 460px;
+    left: -290px;
+  }
 }
 @media (min-width: 1820px) and (max-height: 1050px) {
   .projet {
@@ -947,6 +1051,12 @@ canvas {
   }
   .projet__container {
     height: 1090px;
+  }
+  .projet__container:before {
+    width: 2500px;
+    height: 900px;
+    top: 460px;
+    left: -290px;
   }
 }
 @media (min-width: 2200px) {
@@ -975,6 +1085,9 @@ canvas {
   .projet__container {
     height: 3000px;
     top: 30px;
+  }
+  .projet__container:before {
+    width: 2600px;
   }
   .projet__titre1 {
     font-size: 57px;

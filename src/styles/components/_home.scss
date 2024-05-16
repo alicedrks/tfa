@@ -133,6 +133,20 @@ canvas{
         z-index: 1;
         height: 1000px;
         top: 30px;
+
+        &:before{
+            content: "";
+            width: 1000px;
+            height: 350px;
+            top: 400px;
+            left: -90px;
+            background-image: url('../../assets/images/illu/bulles.png');
+            background-size: cover;
+            position: relative;
+            z-index: 200;
+            display: block;
+            transform-origin: center 1600px;
+        }
     }
 
     &__titre1{
@@ -157,7 +171,7 @@ canvas{
         position: absolute;
         width: 1200px;
         left: 50%;
-        top: 1150px;
+        top: 1190px;
         transform: translate(-50%, -60%);
         z-index: 5;
     }
@@ -251,6 +265,12 @@ canvas{
             position: relative;
             height: 1000px;
             top: 70px;
+
+            &:before{
+                width: 500px;
+                height: 230px;
+                top: 430px;
+            }
         }
     }
 }
@@ -263,7 +283,7 @@ canvas{
         margin-bottom: 160px;
     }
 }
-@media (max-width: 350px) and (max-height: 630px){
+@media (max-width: 350px) and (max-height: 720px){
     .projet{
         box-sizing: border-box;
         margin: 0;
@@ -296,15 +316,25 @@ canvas{
             position: relative;
             height: 600px;
             top: 0px;
+
+            &:before{
+                width: 500px;
+                height: 230px;
+                top: 430px;
+            }
         }
     
         &__illu{
             position: absolute;
             width: 1200px;
             left: 50%;
-            top: 1130px;
+            top: 1190px;
             transform: translate(-50%, -60%);
             z-index: 5;
+        }
+
+        &__titre1{
+            margin-top: 96px;
         }
     } 
 }
@@ -334,7 +364,7 @@ canvas{
         }
     }
 }
-@media (min-width: 350px) and (max-height: 650px){
+@media (min-width: 350px) and (max-height: 690px){
     .projet{
         height: 100%;
 
@@ -349,17 +379,33 @@ canvas{
             position: relative;
             height: 700px;
             top: 20px;
+
+            &:before{
+                top: 390px;
+            }
         }
     
         &__illu{
             position: absolute;
             width: 1200px;
             left: 50%;
-            top: 1130px;
+            top: 1170px;
             transform: translate(-50%, -60%);
             z-index: 5;
         }
     } 
+}
+@media (min-width: 350px) and (max-height: 620px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 96px;
+            }
+        }
+    }
 }
 
 //455px - 550px
@@ -401,18 +447,7 @@ canvas{
 
     }
 }
-@media (min-width: 350px) and (max-height: 620px){
-    .description{
-        &__content{
-            height: 100%;
-        }
-        &__para{
-            &--big{
-                margin-top: 96px;
-            }
-        }
-    }
-}
+
  
 //550px - 760px
 @media (min-width: 550px){ 
@@ -545,6 +580,19 @@ canvas{
         &__container{
             height: 1500px;
             top: 30px;
+
+            &:before{
+                width: 1300px;
+                height: 400px;
+                top: 420px;
+                left: -230px;
+                background-image: url('../../assets/images/illu/bulles.png');
+                background-size: cover;
+                position: relative;
+                z-index: 200;
+                display: block;
+                transform-origin: center 1600px;
+            }
         }
     
         &__titre1{
@@ -564,7 +612,7 @@ canvas{
     
         &__illu{
             width: 2200px;
-            top: 1910px;
+            top: 1860px;
         }
     
         &__boutons{
@@ -666,13 +714,18 @@ canvas{
         &__container{
             height: 1500px;
             top: 0px;
+
+            &:before{
+                width: 1350px;
+                height: 500px;
+                top: 400px;
+                left: -200px;
+            }
         }
         
         &__para{
             margin: 0 0 39px;
         }
-
-
 
         &__boutons{
             padding: 0 203px;
@@ -715,17 +768,23 @@ canvas{
 @media (min-width: 950px) and (max-height: 870px){
     .projet{
         &__container{
-            height: 650px;
+            height: 850px;
         }
 
         &__illu{
-            top: 1800px;
+            top: 1840px;
         }
     }
 }
 @media (min-width: 1000px){
-    .projet__element{
-        width: 35%;
+    .projet{
+        &__element{
+            width: 35%;
+        }
+        &__illu{
+            width: 2400px;
+            top: 1940px;
+        }
     }
 }
 
@@ -784,6 +843,13 @@ canvas{
         &__container{
             height: 1500px;
             top: 30px;
+
+            &:before{
+                width: 1600px;
+                height: 600px;
+                top: 480px;
+                left: -290px;
+            }
         }
     
         &__titre1{
@@ -802,7 +868,7 @@ canvas{
     
         &__illu{
             width: 2400px;
-            top: 2080px;
+            top: 2040px;
         }
     
         &__boutons{
@@ -840,19 +906,24 @@ canvas{
         }
     }
 }
-@media (min-width: 1110px) and (max-height: 870px){
+@media (min-width: 1110px) and (max-height: 1050px){
     .projet{
         height: 100%; 
 
         &__container{
-            height: 830px;
+            height: 990px;
             top: 30px;
         }
     
         &__illu{
             width: 2400px;
-            top: 2000px;
+            top: 2050px;
         }
+    }
+}
+@media (min-width: 1300px) and (max-height: 1050px){
+    .projet{
+        height: 100vh; 
     }
 }
 
@@ -862,6 +933,13 @@ canvas{
         &__container{
             height: 2500px;
             top: 30px;
+
+            &:before{
+                width: 1700px;
+                height: 600px;
+                top: 510px;
+                left: -190px;
+            }
         }
     
         &__illu{
@@ -873,18 +951,30 @@ canvas{
         }
     }
 }
-@media (min-width: 1300px) and (max-height: 880px){
+@media (min-width: 1300px) and (max-height: 1050px){
+    .projet{
+        height: 100vh; 
+    }
+}
+@media (min-width: 1300px) and (max-height: 1020px){
     .projet{
         height: 100%; 
 
         &__container{
             height: 900px;
             top: 30px;
+
+            &:before{
+                width: 1700px;
+                height: 600px;
+                top: 410px;
+                left: -190px;
+            }
         }
     
         &__illu{
-            width: 2600px;
-            top: 2150px;
+            width: 2500px;
+            top: 2050px;
         }
     }
 }
@@ -902,6 +992,7 @@ canvas{
         padding-left: 172px;
         padding-right: 172px;
     }
+
     .intro{
         padding-left: 172px;
         padding-right: 172px;
@@ -916,8 +1007,15 @@ canvas{
 
     .projet{
         &__container{
-            height: 2500px;
+            height: 2700px;
             top: 30px;
+
+            &:before{
+                width: 2050px;
+                height: 850px;
+                top: 500px;
+                left: -290px;
+            }
         }
     
         &__illu{
@@ -930,13 +1028,26 @@ canvas{
         }
     }
 }
-@media (min-width: 1530px) and (max-height: 930px){
+@media (min-width: 1530px) and (max-height: 1120px){
     .projet{
         height: 100%;
 
         &__container{
-            height: 950px;
+            top: 30px;
+            height: 1000px;
+
+            &:before{
+                width: 2200px;
+                height: 800px;
+                top: 410px;
+                left: -290px;
+            }
         }
+
+        &__illu{
+            top: 2470px;
+        }
+
     }
 }
 
@@ -968,6 +1079,17 @@ canvas{
         &__boutons{
             padding: 0 707px;
         }
+
+        &__container{
+            height: 2090px;
+
+            &:before{
+                width: 2500px;
+                height: 900px;
+                top: 460px;
+                left: -290px;
+            }
+        }
     }
 }
 @media (min-width: 1820px) and (max-height: 1050px){
@@ -976,6 +1098,13 @@ canvas{
 
         &__container{
             height: 1090px;
+
+            &:before{
+                width: 2500px;
+                height: 900px;
+                top: 460px;
+                left: -290px;
+            }
         }
     }
 }
@@ -1011,6 +1140,10 @@ canvas{
         &__container{
             height: 3000px;
             top: 30px;
+
+            &:before{
+                width: 2600px;
+            }
         }
     
         &__titre1{
