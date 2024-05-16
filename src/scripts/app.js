@@ -235,6 +235,10 @@ if(home){
 
   window.addEventListener('resize', () => handleResize(description));
 
+  setTimeout(() => {
+    Matter.Runner.stop(runner);
+  }, "7000");
+
 
   /*window.addEventListener('wheel', function(event) {
 

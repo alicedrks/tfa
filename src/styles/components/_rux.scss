@@ -43,6 +43,9 @@
     &__img{
         width: 100%;
         border-radius: 35px;
+        border-color: white;
+        border-style: solid;
+        border-width: 3px;
     }
 
     &__bulle{
@@ -117,6 +120,7 @@
 }
 
 footer{
+    mix-blend-mode: exclusion;
     margin: 0 24px;
     position: absolute;
     z-index: 40;
@@ -129,36 +133,25 @@ footer{
     list-style: none;
     display: flex;
     align-items: center;
-    color: #000000;
+    color: #fff;
 
-    & a{
-        color: #000000;
-    }
-
-    &__el{
+    &__el {
         font-family: 'owners-text', sans-serif;
         font-size: 14px;
+        margin-left: 8px;
+    }
 
-        &:nth-child(2){
-            background-image: url('../../assets/images/icon/instagramBlack.svg');
-        }
-
-        &:nth-child(3){
-            background-image: url('../../assets/images/icon/mailBlack.svg');
-            height: 16px;
-            width: 20.44px;
-        }
-
-        &--icon{
-            text-indent: 100%;
-            overflow: hidden;
-            white-space: nowrap;
+    &__el--icon {
+        display: flex;
+            align-self: center;
+        
+        & a{
             height: 16px;
             width: 16px;
-            margin-left: 8px;
-            background-size: 100%;
-            background-repeat: no-repeat;
-    
+        }
+        &:nth-child(3) a{
+            height: 16px;
+            width: 20.44px;
         }
     }
 }
@@ -369,13 +362,13 @@ footer{
     }
     @keyframes bulle3 {
         0%{
-            top: 85%;
+            top: 93%;
         }
         50%{
-            top: 84.5%;
+            top: 92%;
         }
         100%{
-            top: 85%;
+            top: 93%;
         }
     }
     @keyframes backgroundNuage{
@@ -449,24 +442,29 @@ footer{
     footer{
         margin: 0 66px;
     }
+
     .footer{
         margin: 0 0 22px;
     
-        &__el{
+        &__el {
             font-size: 17px;
+            margin-left: 11px;
+        }
     
-            &:nth-child(3){
+        &__el--icon {
+            
+            & a {
+                height: 18px;
+                width: 18px;
+            }
+            &:nth-child(3) a{
                 height: 18px;
                 width: 23px;
             }
-    
-            &--icon{
-                height: 18px;
-                width: 18px;
-                margin-left: 11px;
-            }
         }
     }
+
+
     .titre{
     
         &__bulle{
@@ -505,6 +503,17 @@ footer{
         }
         100%{
             top: 30%;
+        }
+    }
+    @keyframes bulle3 {
+        0%{
+            top: 88%;
+        }
+        50%{
+            top: 87%;
+        }
+        100%{
+            top: 88%;
         }
     }
     @keyframes backgroundNuage{
@@ -613,7 +622,7 @@ footer{
             top: 85%;
         }
         50%{
-            top: 84.5%;
+            top: 84%;
         }
         100%{
             top: 85%;
@@ -714,22 +723,24 @@ footer{
     footer{
         margin: 0 86px;
     }
-    
+
     .footer{
         margin: 0 0 24px;
     
-        &__el{
+        &__el {
             font-size: 18px;
+            margin-left: 9px;
+        }
     
-            &:nth-child(3){
-                height: 20px;
-                width: 25.56px;
-            }
-    
-            &--icon{
+        &__el--icon {
+            
+            & a{
                 height: 20px;
                 width: 20px;
-                margin-left: 9px;
+            }
+            &:nth-child(3) a{
+                height: 20px;
+                width: 25.56px;
             }
         }
     }
@@ -776,7 +787,7 @@ footer{
             top: 82%;
         }
         50%{
-            top: 81.5%;
+            top: 81%;
         }
         100%{
             top: 82%;
@@ -872,16 +883,7 @@ footer{
         & a{
             color: #fff;
         }
-    
-        &__el{
-            &:nth-child(2){
-                background-image: url('../../assets/images/icon/instagram.svg');
-            }
 
-            &:nth-child(3){
-                background-image: url('../../assets/images/icon/mail.svg');
-            }
-        }
     }
 
     .titre{
@@ -924,7 +926,7 @@ footer{
             top: 87%;
         }
         50%{
-            top: 86.5%;
+            top: 86%;
         }
         100%{
             top: 87%;
@@ -1036,7 +1038,7 @@ footer{
             top: 85%;
         }
         50%{
-            top: 84.5%;
+            top: 84%;
         }
         100%{
             top: 85%;
@@ -1149,7 +1151,7 @@ footer{
             top: 92%;
         }
         50%{
-            top: 91.5%;
+            top: 91%;
         }
         100%{
             top: 92%;
@@ -1228,7 +1230,7 @@ footer{
             top: 88%;
         }
         50%{
-            top: 87.5%;
+            top: 87%;
         }
         100%{
             top: 88%;

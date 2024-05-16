@@ -21,7 +21,7 @@
         visibility: hidden;
         transition: opacity 0.3s linear;
         font-size: 32px;
-        text-align: center;
+        text-align: left;
     }
 
     &__logo{
@@ -38,11 +38,16 @@
         list-style: none;
         margin-left: 0px;
         font-family: 'owners-text', sans-serif;
-        padding: 24px;
+        padding: 24px 54px;
+        margin-left: 24px;
 
-        & a{
+        a{
             transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
             opacity: 60%;
+        }
+
+        > a{
+            mix-blend-mode: difference;
         }
 
         & a:hover{
@@ -52,9 +57,9 @@
         &--active{
             background-image: url('../../assets/images/illu/balleTennis.svg');
             background-repeat: no-repeat;
-            background-position-x: 30%;
+            background-position-x: 0%;
             background-position-y: 50%;
-            background-size: 4%;
+            background-size: 20px;
 
             & a{
                opacity: 100%; 
@@ -91,6 +96,8 @@
 
 
 
+
+
 @media (min-width: 760px){ //tablet
     .navigation{
 
@@ -122,6 +129,8 @@
             }
         }
     }
+
+      
     
     .burgerMenu{
         display: none;

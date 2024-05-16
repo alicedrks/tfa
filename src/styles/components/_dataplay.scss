@@ -68,23 +68,6 @@
     }
 }
 
-.footer--late{
-    color: #fff;
-
-    & a{
-        color: #fff;
-    }
-}
-
-.footer__el--late{
-        &:nth-child(2){
-            background-image: url('../../assets/images/icon/instagram.svg');
-        }
-        &:nth-child(3){
-            background-image: url('../../assets/images/icon/mail.svg');
-        }
-}
-
 @media (max-width: 350px){
     .h1Projet--late{
         background-size: 600px;

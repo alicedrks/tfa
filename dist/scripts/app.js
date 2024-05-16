@@ -338,6 +338,9 @@ if (home) {
   window.addEventListener('resize', function () {
     return handleResize(description);
   });
+  setTimeout(function () {
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Runner.stop(runner);
+  }, "7000");
   /*window.addEventListener('wheel', function(event) {
      if (event.deltaY > 0) {
         Matter.Composite.allBodies(engine.world).forEach(body => {

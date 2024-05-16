@@ -91,8 +91,6 @@ canvas{
     height: 100vh;
     position: relative;
     z-index: 5;
-    
-
 
     &__liste{
         list-style: none;
@@ -143,9 +141,10 @@ canvas{
     }
     
     &__para{
-        font-size: 14px;
+        font-size: 18px;
+        line-height: 140%;
         font-family: 'owners-text', sans-serif;
-        margin: 0 36px 36px;
+        margin: 0 24px 24px;
     }
 
     &__illu{
@@ -199,6 +198,13 @@ canvas{
 }
 
 //inférieur à 350px
+@media (max-width: 370px){
+    .projet{
+        &__para{
+            font-size: 14px;
+        }
+    }
+}
 @media (max-width: 350px){
     h1{
         font-size: 57px;
@@ -368,7 +374,7 @@ canvas{
         }
         
         &__para{
-            margin: 0 90px 36px;
+            margin: 0 72px 36px;
         }
     }
 }
@@ -434,7 +440,7 @@ canvas{
         }
         
         &__para{
-            margin: 0 126px 36px;
+            margin: 0 108px 36px;
         }
 
         &__boutons{
@@ -475,6 +481,13 @@ canvas{
             top: 90px;
         }
     } 
+}
+@media (min-width: 620px){
+    .projet{
+        &__para{
+            margin: 0 152px 36px;
+        }
+    }
 }
 
 //760px - 950px
@@ -537,7 +550,7 @@ canvas{
         
         &__para{
             font-size: 17px;
-            margin: 0 203px 39px;
+            margin: 0 232px 39px;
         }
     
         &__illu{
@@ -588,6 +601,11 @@ canvas{
             height: 950px;
         }
     } 
+}
+@media (min-width: 890px){
+    .projet__para{
+        margin: 0 261px 36px;
+    }
 }
 
 //950px - 1110px
@@ -694,6 +712,11 @@ canvas{
         &__illu{
             top: 1800px;
         }
+    }
+}
+@media (min-width: 1000px){
+    .projet__para{
+        margin: 0 348px 36px;
     }
 }
 
@@ -855,6 +878,13 @@ canvas{
         &__illu{
             width: 2600px;
             top: 2150px;
+        }
+    }
+}
+@media (min-width: 1400px){
+    .projet{
+        &__para{
+            margin: 0 504px 43px;
         }
     }
 }

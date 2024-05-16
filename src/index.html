@@ -28,9 +28,13 @@
         <li class="navigation__el navigation__el--active">
           <a href="#introd">Home</a>
         </li>
-        <li class="navigation__el">
-          <a href="#projets">Work
-        </a>
+        <li class="navigation__el navigation__el--dropdown">
+          <a href="#projets">Work</a>
+          <ul class="navigation__dropdown">
+            <li><a href="rux.html">Rethinking UX</a></li>
+            <li><a href="dataplay.html">Dataplay</a></li>
+            <li><a href="december.html">December</a></li>
+          </ul>
         </li>
         <li class="navigation__el">
           <a href="annexe.html">Annexe</a>
@@ -47,7 +51,7 @@
     <section class="description" id="trigger-section">
       <div class="description__content">
         <div class="description__container">
-          <p class="description__para description__para--big">I’m a student from Belgium. I study web design, at the Haute École Albert Jacquard. On this webpage you will discover some of the works that I have done during my training.</p>
+          <p class="description__para description__para--big">I’m a dynamic student from Belgium. I study web design, at the Haute École Albert Jacquard. On this webpage you will discover some of the works that I have done during my training.</p>
 
           <div class="right">
             <p class="description__para">
@@ -112,10 +116,18 @@
     </section>
   </main>
   <footer>
-    <ul class="footer footer--late">
+    <ul class="footer">
         <li class="footer__el footer__el--txt">© Alice Derriks | <a href="">Crédits</a></li>
-        <li class="footer__el footer__el--icon footer__el--late"><a href="https://www.instagram.com/alice_derriks/">Instagram</a></li>
-        <li class="footer__el footer__el--icon footer__el--late"><a href="mailto:derriksalice@gmail.com">Email</a></li>
+        <li class="footer__el footer__el--icon">
+          <a href="https://www.instagram.com/alice_derriks/">
+            <img src="../assets/images/icon/instagram.svg" alt="">
+          </a>
+        </li>
+        <li class="footer__el footer__el--icon">
+          <a href="mailto:derriksalice@gmail.com">
+            <img src="../assets/images/icon/mail.svg" alt="">
+          </a>
+        </li>
     </ul>
   </footer>
 </body>
