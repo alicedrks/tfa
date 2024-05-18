@@ -99,6 +99,15 @@ if (home) {
       duration: 2,
       ease: "power2.out"
     }), "-=5";
+
+    if ((rota - 120) % 360 == 0) {
+      train.classList.add('projet__train--active');
+      nuage.classList.add('projet__container--active');
+    } else {
+      train.classList.remove('projet__train--active');
+      nuage.classList.remove('projet__container--active');
+    }
+
     activeSlideEl.classList.remove("projet__element--active");
     activeSlideEl.classList.add("projet__element--rotateLeft");
     nextSlideEl.classList.remove("projet__element--rotateLeft");
@@ -135,6 +144,15 @@ if (home) {
       duration: 2,
       ease: "power2.out"
     }), "-=5";
+
+    if ((rota - 120) % 360 == 0) {
+      train.classList.add('projet__train--active');
+      nuage.classList.add('projet__container--active');
+    } else {
+      train.classList.remove('projet__train--active');
+      nuage.classList.remove('projet__container--active');
+    }
+
     activeSlideEl.classList.remove("projet__element--active");
     prevSlideEl.classList.add("projet__element--rotateLeft");
     nextSlideEl.classList.remove("projet__element--rotateLeft");
@@ -407,6 +425,8 @@ if (home) {
   document.addEventListener("keydown", keyboardListener);
   var rota = 0;
   var rotah = 120;
+  var train = document.querySelector('.projet__train');
+  var nuage = document.querySelector('.projet__container');
 } else if (december) {
   var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     scrollTrigger: {

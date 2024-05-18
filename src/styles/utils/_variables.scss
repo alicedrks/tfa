@@ -5,6 +5,8 @@
     --transform-x: calc(var(--block-size) * var(--x-mouse));
     --transform-y: calc(var(--block-size) * var(--y-mouse));
     --transform-x2: calc(-50% + (var(--block-size) * var(--x-mouse)));
+    --bulles-rotation: 0deg;
+    --hommes-rotation: 120deg;
 }
 
 

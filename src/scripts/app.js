@@ -284,6 +284,8 @@ function keyboardListener(event){
 
 let rota = 0;
 let rotah = 120;
+let train = document.querySelector('.projet__train');
+let nuage = document.querySelector('.projet__container');
 
 function prevSlide(){
     let activeSlideEl = document.querySelector(".projet__element--active");
@@ -317,6 +319,14 @@ function prevSlide(){
       duration: 2,
       ease: "power2.out",
     }), "-=5";
+
+    if ((rota - 120) % 360 == 0){
+      train.classList.add('projet__train--active');
+      nuage.classList.add('projet__container--active');
+    } else {
+      train.classList.remove('projet__train--active');
+      nuage.classList.remove('projet__container--active')
+    }
 
     activeSlideEl.classList.remove("projet__element--active");
     activeSlideEl.classList.add("projet__element--rotateLeft");
@@ -356,6 +366,14 @@ function nextSlide(){
       duration: 2,
       ease: "power2.out",
     }), "-=5";
+
+    if ((rota - 120) % 360 == 0){
+      train.classList.add('projet__train--active');
+      nuage.classList.add('projet__container--active')
+    } else {
+      train.classList.remove('projet__train--active');
+      nuage.classList.remove('projet__container--active')
+    }
 
      activeSlideEl.classList.remove("projet__element--active");
      prevSlideEl.classList.add("projet__element--rotateLeft");

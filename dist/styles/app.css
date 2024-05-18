@@ -5,6 +5,8 @@
   --transform-x: calc(var(--block-size) * var(--x-mouse));
   --transform-y: calc(var(--block-size) * var(--y-mouse));
   --transform-x2: calc(-50% + (var(--block-size) * var(--x-mouse)));
+  --bulles-rotation: 0deg;
+  --hommes-rotation: 120deg;
 }
 
 @font-face {
@@ -131,11 +133,6 @@ small a {
     font-size: 24px;
   }
 }
-:root {
-  --bulles-rotation: 0deg;
-  --hommes-rotation: 120deg;
-}
-
 .header {
   padding-left: 24px;
   padding-right: 24px;
@@ -262,6 +259,16 @@ canvas {
   z-index: 1;
   height: 1000px;
   top: 30px;
+  background-position-y: 200%;
+}
+.projet__container--active {
+  background-image: url("../../assets/images/illu/nuages.svg");
+  background-size: 500px;
+  background-repeat: repeat-x;
+  background-position-y: 55%;
+  -webkit-animation: nuages 120s infinite linear;
+          animation: nuages 120s infinite linear;
+  transition: background-position-y 1s;
 }
 .projet__container::before {
   content: "";
@@ -269,6 +276,7 @@ canvas {
   height: 370px;
   top: 400px;
   left: 260px;
+  background-image: url("../../assets/images/illu/bulles.png");
   background-size: cover;
   position: relative;
   z-index: 200;
@@ -311,7 +319,7 @@ canvas {
   width: 1200px;
   left: 50%;
   top: 1190px;
-  transform: translate(-50%, -60%) rotate(120deg);
+  transform: translate(-50%, -60%) rotate(0deg);
   z-index: 5;
 }
 .projet__btn {
@@ -360,13 +368,13 @@ canvas {
   background-size: cover;
   position: relative;
   z-index: 200;
-  display: block;
-  transform-origin: center center;
-  -webkit-animation: trainSlide 8s linear infinite;
-          animation: trainSlide 8s linear infinite;
-}
-.projet__train--none {
   display: none;
+  transform-origin: center center;
+  -webkit-animation: trainSlider 8s linear infinite;
+          animation: trainSlider 8s linear infinite;
+}
+.projet__train--active {
+  display: block;
 }
 
 @-webkit-keyframes bullesSlider {
@@ -400,6 +408,22 @@ canvas {
   }
   to {
     transform: translateX(-50%) rotate(240deg);
+  }
+}
+@-webkit-keyframes nuages {
+  from {
+    background-position-x: -1000px;
+  }
+  to {
+    background-position-x: 1000px;
+  }
+}
+@keyframes nuages {
+  from {
+    background-position-x: -1000px;
+  }
+  to {
+    background-position-x: 1000px;
   }
 }
 @media (max-width: 370px) {
@@ -502,6 +526,9 @@ canvas {
     height: 700px;
     top: 0px;
   }
+  .projet__container--active {
+    background-position-y: 85%;
+  }
   .projet__container::before {
     height: 230px;
     top: 430px;
@@ -561,6 +588,9 @@ canvas {
     top: 410px;
     left: 190px;
     width: 870px;
+  }
+  .projet__container--active {
+    background-position-y: 95%;
   }
   .projet__illu {
     position: absolute;
@@ -644,6 +674,9 @@ canvas {
   .projet__container::before {
     left: 400px;
   }
+  .projet__container--active {
+    background-position-y: 55%;
+  }
   .projet__para {
     margin: 0 0px 36px;
   }
@@ -674,6 +707,9 @@ canvas {
   .projet__container {
     height: 800px;
     top: 90px;
+  }
+  .projet__container--active {
+    background-position-y: 75%;
   }
 }
 @media (min-width: 620px) {
@@ -742,6 +778,12 @@ canvas {
     left: 46%;
     transform-origin: center 1000px;
   }
+  .projet__container--active {
+    background-size: 1000px;
+    background-position-y: 45%;
+    -webkit-animation: nuages 120s infinite linear;
+            animation: nuages 120s infinite linear;
+  }
   .projet__titre1 {
     font-size: 39px;
     margin: 0;
@@ -792,6 +834,9 @@ canvas {
   }
   .projet__container {
     height: 950px;
+  }
+  .projet__container--active {
+    background-position-y: 110%;
   }
 }
 @media (min-width: 890px) {
@@ -853,6 +898,9 @@ canvas {
     top: -8%;
     left: 48%;
   }
+  .projet__container--active {
+    background-position-y: 50%;
+  }
   .projet__train {
     top: 186px;
   }
@@ -899,6 +947,9 @@ canvas {
   .projet__container::after {
     top: -16%;
     left: 48%;
+  }
+  .projet__container--active {
+    background-position-y: 160%;
   }
   .projet__train {
     top: 165px;
@@ -991,6 +1042,9 @@ canvas {
     top: -12%;
     transform-origin: center 1650px;
   }
+  .projet__container--active {
+    background-position-y: 55%;
+  }
   .projet__train {
     top: 159px;
   }
@@ -1048,6 +1102,9 @@ canvas {
   .projet__container::after {
     top: -17%;
   }
+  .projet__container--active {
+    background-position-y: 125%;
+  }
   .projet__illu {
     width: 2400px;
     top: 2050px;
@@ -1071,6 +1128,9 @@ canvas {
     width: 1500px;
     height: 550px;
     top: -8%;
+  }
+  .projet__container--active {
+    background-position-y: 27%;
   }
   .projet__train {
     width: 2620px;
@@ -1105,6 +1165,9 @@ canvas {
   }
   .projet__container::after {
     top: -23%;
+  }
+  .projet__container--active {
+    background-position-y: 160%;
   }
   .projet__train {
     width: 2620px;
@@ -1154,6 +1217,9 @@ canvas {
     height: 600px;
     top: -17%;
   }
+  .projet__container--active {
+    background-position-y: 25%;
+  }
   .projet__illu {
     width: 3200px;
     top: 2550px;
@@ -1180,6 +1246,9 @@ canvas {
   }
   .projet__container::after {
     top: -46%;
+  }
+  .projet__container--active {
+    background-position-y: 120%;
   }
   .projet__train {
     top: -63px;
@@ -1223,6 +1292,9 @@ canvas {
     height: 700px;
     top: -25%;
   }
+  .projet__container--active {
+    background-position-y: 34%;
+  }
   .projet__train {
     width: 3120px;
     height: 3120px;
@@ -1246,6 +1318,9 @@ canvas {
   }
   .projet__container::after {
     top: -53%;
+  }
+  .projet__container--active {
+    background-position-y: 100%;
   }
   .projet__train {
     top: -107px;
@@ -1287,6 +1362,9 @@ canvas {
     height: 800px;
     top: -19%;
   }
+  .projet__container--active {
+    background-position-y: 23%;
+  }
   .projet__titre1 {
     font-size: 57px;
   }
@@ -1318,6 +1396,9 @@ canvas {
   }
   .projet__container::after {
     top: -46%;
+  }
+  .projet__container--active {
+    background-position-y: 90%;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
