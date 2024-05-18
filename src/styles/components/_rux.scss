@@ -91,7 +91,7 @@
         position: absolute;
         z-index: 10;
 
-        & img{
+        img{
             position: relative;
             top:0;
             left:0;
@@ -113,7 +113,7 @@
             background-repeat: no-repeat;
         }
     }
-    & a{
+    a{
         position: relative;
         z-index: 30;
     }
