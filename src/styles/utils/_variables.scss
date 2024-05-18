@@ -4,6 +4,7 @@
     --block-size: 20px;
     --transform-x: calc(var(--block-size) * var(--x-mouse));
     --transform-y: calc(var(--block-size) * var(--y-mouse));
+    --transform-x2: calc(-50% + (var(--block-size) * var(--x-mouse)));
 }
 
 
