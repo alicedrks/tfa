@@ -24,15 +24,26 @@
         text-align: left;
     }
 
-    &__logo{
-        text-indent: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        width: 40px;
-        height: 40px;
-        background-image: url('../../assets/images/illu/logo.svg');
-        background-repeat: no-repeat;
+    &__logo {
+        svg:hover path{
+            animation: dash 1.5s linear;
+        }
+
+        svg{
+            width: 45px;
+            height: 45px;
+            margin: 0;
+            align-self: center;
+
+            path{ 
+                stroke-dasharray: 14000;
+                stroke-dashoffset: 0;
+            }
+        }
     }
+    
+    
+
 
     &__el{
         list-style: none;
@@ -93,6 +104,15 @@
         mix-blend-mode: normal;
     }
 }
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 14000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 
 
 

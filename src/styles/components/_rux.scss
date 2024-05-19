@@ -61,11 +61,14 @@
     position: relative;
     z-index: 30;
     overflow: hidden;
-    background-image: url('../../assets/images/illu/nuages.svg');
-    background-repeat: no-repeat;
-    background-position-y: 85%;
-    background-size: 750px;
-    animation: backgroundNuage 60s linear infinite;
+
+    &--rux{
+        background-image: url('../../assets/images/illu/nuages.svg');
+        background-repeat: no-repeat;
+        background-position-y: 85%;
+        background-size: 750px;
+        animation: backgroundNuage 60s linear infinite;
+    }
 
     &__titre{
         font-family: 'owners-text', sans-serif;
@@ -413,7 +416,11 @@ footer{
     } 
     .next{
         padding: 186px 66px 246px;
-        background-size: 870px;
+
+        &--rux{
+            background-size: 870px;
+        }
+        
     
         &__titre{
             font-size: 52px;
@@ -696,7 +703,11 @@ footer{
     
     .next{
         padding: 202px 86px 285px;
-        background-size: 950px;
+
+        &--rux{
+            background-size: 950px;
+        }
+        
     
         &__titre{
             font-size: 57px;
@@ -853,7 +864,11 @@ footer{
     
     .next{
         padding: 285px 86px 285px;
-        background-size: 1100px;
+
+        &--rux{
+            background-size: 1100px;
+        }
+        
     
         &__titre{
             font-size: 76px;
@@ -1201,9 +1216,12 @@ footer{
     
     .next{
         padding: 342px 473px 627px;
-        background-size: 1700px;
-        animation: backgroundNuage 60s linear infinite;
 
+        &--rux{
+            background-size: 1700px;
+            animation: backgroundNuage 60s linear infinite;
+        }
+        
         &__imgContainer{
             left: 30%;
             top: 20%; 

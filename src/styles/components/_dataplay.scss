@@ -22,13 +22,22 @@
 
 .projetVisuel--late{
     padding: 144px 27px 72px;
-    background-image: url('../../assets/images/illu/backgroundDataplayProjets.svg');
-    background-size: 280%;
-    background-position-y: 110px;
-    background-position-x: -120px;
-    background-repeat: no-repeat;
     position: relative;
     z-index: 5;
+    overflow: hidden;
+
+    svg {
+        position: absolute;
+        z-index: 4;
+        top: 100px;
+        left: -100px;
+        width: 270%;
+
+        path{
+            stroke-dashoffset: 2000;
+            animation: dashDataplay 100s linear infinite;
+        }
+    }
 }
 
 .projetVisuel{
@@ -68,11 +77,31 @@
     }
 }
 
+@keyframes dashDataplay {
+    from {
+      stroke-dashoffset: 2000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+}
+
 @media (max-width: 350px){
     .h1Projet--late{
         background-size: 600px;
         background-position-x: 140px;
         background-position-y: 80px;
+    }
+
+    .projetVisuel--late{
+    
+        svg {
+            position: absolute;
+            z-index: 4;
+            top: 130px;
+            left: -100px;
+            width: 270%;
+        }
     }
 }
 
@@ -92,7 +121,11 @@
         padding: 144px 27px 144px;
         display: flex;
         flex-direction: column;
-        background-size: 230%;
+
+        svg {
+            width: 200%;
+            top: 130px;
+        }
     }
     
     .projetVisuel{
@@ -124,10 +157,6 @@
 @media (min-width: 600Px){
     .h1Projet--late{
         background-position-x: 380px;
-    }
-
-    .projetVisuel--late{
-        background-size: 220%;
     }
 
     .next{
@@ -168,6 +197,11 @@
             background-size: 175%;
             background-position-y: 170px;   
         }
+
+        svg {
+            width: 170%;
+            top: 180px;
+        }
     }
     .next{
         &__img--late{
@@ -203,12 +237,15 @@
         &__img--late{
             width: 70%;
         }
+
+        svg {
+            width: 170%;
+            top: 150px;
+        }
     }
 
     .projetVisuel--late{
         padding: 192px 132px 96px;
-        background-size: 160%;
-        background-position-y: 200px;
     }
     
     .next{
@@ -251,8 +288,12 @@
     
     .projetVisuel--late{
         padding: 404px 96px 202px; 
-        background-size: 165%;
-        background-position-y: 350px;
+
+        svg {
+            width: 170%;
+            top: 330px;
+            left: -300px;
+        }
     }
     
     .projetVisuel{
@@ -290,11 +331,6 @@
     .infoProjet--late{
         padding-bottom: 505px;
     }
-
-    .projetVisuel--late{
-        background-position-y: 300px;
-        background-size: 170%;
-    }
     
     .next{
         &__img--late{
@@ -306,6 +342,13 @@
             top: 0%;
             left: 40%;
             width: 1500px;
+        }
+    }
+    .projetVisuel{
+        svg {
+            width: 170%;
+            top: 340px;
+            left: -300px;
         }
     }
 }
@@ -324,7 +367,6 @@
     }
 
     .projetVisuel--late{
-        background-position-y: 250px;
         padding: 171px 187px 513px;
     }
 
@@ -334,7 +376,12 @@
         }
         &__img--right{
             margin-top: 303px;
-        }  
+        } 
+        svg {
+            width: 170%;
+            top: 190px;
+            left: -500px;
+        }
     }
     .next{
         &__img--late{
@@ -367,9 +414,6 @@
     }
 
     .projetVisuel--late{
-        background-position-y: 340px;
-        background-position-x: -200px;
-        background-size: 150%;
         padding: 404px 360px 202px; 
     }
 
@@ -379,7 +423,12 @@
         }
         &__img--right{
             margin-top: 303px;
-        }  
+        } 
+
+        svg {
+            width: 155%;
+            top: 410px;
+        } 
     }
 
     .next{
@@ -411,9 +460,6 @@
     }
 
     .projetVisuel--late{
-        background-size: 130%;
-        background-position-x: -180px;
-        background-position-y: 320px;
         padding: 342px 490px 456px;
     }
 
@@ -423,7 +469,12 @@
         }
         &__img--right{
             margin-top: 505px;
-        }  
+        } 
+        
+        svg {
+            width: 140%;
+            top: 310px;
+        } 
     }
 
     .next{

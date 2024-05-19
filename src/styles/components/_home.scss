@@ -204,14 +204,17 @@ canvas{
     }
 
     &__btn{
-        padding: 0 24px;
         display: flex;
         justify-content: space-between;
         position: absolute;
-        width: 100vw;
+        width: 91%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 124px;
         box-sizing: border-box;
-        top: 84px;
         z-index: 40;
+        margin: 0;
+        padding: 0;
 
         & li {
             list-style: none;
@@ -233,6 +236,7 @@ canvas{
         opacity: 40%;
         margin-right: 0;
         padding-left: 0;
+        transform-origin: center center;
 
 
         &--prev{
@@ -349,6 +353,14 @@ canvas{
         }
         &__train{
             top: 320px;
+        }
+
+        &__element{
+            width: 75%;
+        }
+
+        &__btn{
+            width: 97%;
         }
     }
 }
@@ -525,6 +537,10 @@ canvas{
         &__element{
             width: 70%;
         }
+
+        &__btn{
+            width: 75%;
+        }
     }
 }
 @media (min-width: 455px) and (max-height: 560px){ 
@@ -593,6 +609,11 @@ canvas{
         &__boutons{
             padding: 0 126px;
         }
+
+        &__btn{
+            width: 70%;
+            top: 157px;
+        }
     }
 }
 @media (min-width: 550px) and (max-height: 620px){
@@ -637,6 +658,10 @@ canvas{
     .projet{
         &__element{
             width: 60%;
+        }
+
+        &__btn{
+            width: 55%;
         }
 
     }
@@ -746,6 +771,11 @@ canvas{
         &__btnSlider{
             height: 52px;
             width: 52px;
+        }
+
+        &__btn{
+            width: 60%;
+            top: 122px;
         }
     }
 }
@@ -868,6 +898,10 @@ canvas{
 
         &__boutons{
             padding: 0 203px;
+        }
+
+        &__btn{
+            width:50%;
         }
     }
 }
@@ -1065,6 +1099,11 @@ canvas{
             height: 57px;
             width: 57px;
         }
+
+        &__btn{
+            top: 190px;
+            width:45%;
+        }
     }
 }
 @media (min-width: 1110px) and (max-height: 850px){
@@ -1155,6 +1194,9 @@ canvas{
         }
         &__element{
             width: 30%;
+        }
+        &__btn{
+            width:40%;
         }
     }
 }
@@ -1263,6 +1305,10 @@ canvas{
         &__boutons{
             padding: 0 505px;
         }
+
+        &__btn{
+            width:35%;
+        }
     }
 }
 @media (min-width: 1530px) and (max-height: 1120px){
@@ -1347,6 +1393,10 @@ canvas{
             width: 3120px;
             height: 3120px;
             top: -60px;
+        }
+
+        &__btn{
+            width:30%;
         }
         
     }
@@ -1451,6 +1501,11 @@ canvas{
             width: 4020px;
             height: 4020px;
             top: -3px;
+        }
+
+        &__btn{
+            top: 200px;
+            width:30%;
         }
     }
 }
