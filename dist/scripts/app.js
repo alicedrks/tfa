@@ -20,6 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 
 gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.registerPlugin(gsap_scrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"]);
 var home = document.querySelector('.home');
+var rux = document.querySelector('.fyt');
 var dataplay = document.querySelector('.dataplay');
 var december = document.querySelector('.decembre');
 var annexe = document.querySelector('.annexe'); //burger Menu
@@ -427,23 +428,42 @@ if (home) {
   var rotah = 120;
   var train = document.querySelector('.projet__train');
   var nuage = document.querySelector('.projet__container');
-} else if (december) {
+} else if (rux) {
   var tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+    scrollTrigger: {
+      trigger: '.projetVisuel',
+      start: '10% 0%',
+      end: 'bottom 80%',
+      scrub: 1,
+      pin: true,
+      markers: true
+    }
+  });
+  tl.from('.projetVisuel', {
+    scale: 0.8
+  });
+  tl.to('.projetVisuel', {
+    scale: 1
+  });
+} else if (december) {
+  var _tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     scrollTrigger: {
       trigger: '.projetVisuel',
       start: '20% 15%',
       end: 'bottom center',
       scrub: 1,
-      pin: true,
-      markers: true
+      pin: true
     }
   }); //anim gsap
 
-  tl.to('.main1', {
+
+  _tl.to('.main1', {
     rotation: -20,
+    x: -220,
     duration: 3,
     opacity: 0
   }, '+=2').to('.main2', {
+    x: 220,
     rotation: 20,
     duration: 5,
     opacity: 0
@@ -452,7 +472,7 @@ if (home) {
     duration: 7
   }, '-=5');
 } else if (dataplay) {
-  var _tl = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
+  var _tl2 = gsap__WEBPACK_IMPORTED_MODULE_1__.gsap.timeline({
     scrollTrigger: {
       trigger: '.projetVisuel',
       start: '0% 15%',
@@ -464,7 +484,7 @@ if (home) {
   }); //anim gsap
 
 
-  _tl.from('.projetVisuel__img--left', {
+  _tl2.from('.projetVisuel__img--left', {
     rotation: -4,
     duration: 1
   }).to('.projetVisuel__img--left', {

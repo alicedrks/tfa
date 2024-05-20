@@ -42,10 +42,13 @@
 
     &__img{
         width: 100%;
-        border-radius: 35px;
-        //border-color: white;
-        //border-style: solid;
-        //border-width: 3px;
+        border-radius: 30px;
+
+        &--rux{
+            border-color: white;
+            border-style: solid;
+            border-width: 3px;
+        }
     }
 
     &__bulle{
@@ -411,7 +414,7 @@ footer{
         padding: 186px 66px 0;
     
         &__img{
-            border-radius: 60px;
+            border-radius: 50px;
         }
     } 
     .next{
@@ -693,7 +696,7 @@ footer{
         padding: 202px 86px 0;
     
         &__img{
-            border-radius: 90px;
+            border-radius: 60px;
         }
         &__bulle{
             width: 16%;
@@ -850,10 +853,10 @@ footer{
     }
     
     .projetVisuel{
-        padding: 285px 86px 0;
+        padding: 202px 86px 0;
     
         &__img{
-            border-radius: 110px;
+            border-radius: 90px;
         }
 
         &__bulle{

@@ -1643,7 +1643,12 @@ canvas {
 }
 .projetVisuel__img {
   width: 100%;
-  border-radius: 35px;
+  border-radius: 30px;
+}
+.projetVisuel__img--rux {
+  border-color: white;
+  border-style: solid;
+  border-width: 3px;
 }
 .projetVisuel__bulle {
   position: absolute;
@@ -2095,7 +2100,7 @@ footer {
     padding: 186px 66px 0;
   }
   .projetVisuel__img {
-    border-radius: 60px;
+    border-radius: 50px;
   }
 
   .next {
@@ -2439,7 +2444,7 @@ footer {
     padding: 202px 86px 0;
   }
   .projetVisuel__img {
-    border-radius: 90px;
+    border-radius: 60px;
   }
   .projetVisuel__bulle {
     width: 16%;
@@ -2626,10 +2631,10 @@ footer {
   }
 
   .projetVisuel {
-    padding: 285px 86px 0;
+    padding: 202px 86px 0;
   }
   .projetVisuel__img {
-    border-radius: 110px;
+    border-radius: 90px;
   }
   .projetVisuel__bulle {
     width: 16%;

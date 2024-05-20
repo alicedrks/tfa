@@ -7,6 +7,7 @@ import ScrollTrigger from 'gsap/scrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 let home = document.querySelector('.home');
+let rux = document.querySelector('.fyt');
 let dataplay = document.querySelector('.dataplay');
 let december = document.querySelector('.decembre');
 let annexe = document.querySelector('.annexe');
@@ -483,6 +484,27 @@ function nextSlide(){
 
   calculerAngleRotation();*/
 
+} else if (rux){
+  let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.projetVisuel',
+        start: '10% 0%',
+        end: 'bottom 80%',
+        scrub: 1, 
+        pin: true,
+        markers: true
+        }
+      })
+
+  tl.from('.projetVisuel', {
+    scale: 0.8
+  })
+  tl.to('.projetVisuel', {
+    scale: 1,
+  })
+
+
+
 } else if (december){
 
   let tl = gsap.timeline({
@@ -492,17 +514,18 @@ function nextSlide(){
         end: 'bottom center',
         scrub: 1, 
         pin: true,
-        markers: true,
         }
       })
 
   //anim gsap
   tl.to('.main1', {
       rotation:-20, 
+      x: -220,
       duration: 3,
       opacity: 0
     }, '+=2')
     .to('.main2', {
+      x: 220,
       rotation:20, 
       duration: 5,
       opacity: 0
