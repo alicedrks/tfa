@@ -16,9 +16,9 @@
   <script src="scripts/app.js" defer></script>
 </head>
 
-<body class="home">
+<body class="home body">
 
-   <header class="header">
+  <header class="header">
     <nav class="navigation">
       <a href="index.html" class="navigation__logo">
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 3029.934 2503.802">
@@ -29,20 +29,31 @@
       
       <button class="burgerMenu" id="mobile-menu">Menu</button>
 
-      <ul class="navigation__liens">
+      <ul class="navigation__liens navFirst">
         <li class="navigation__el navigation__el--active">
-          <a href="#introd">Home</a>
+          <a href="index.html">Home</a>
         </li>
-        <li class="navigation__el navigation__el--dropdown">
+        <li class="navigation__el navigation__el--work work">
           <a href="#projets">Work</a>
-          <!--<ul class="navigation__dropdown">
-            <li><a href="rux.html">Rethinking UX</a></li>
-            <li><a href="dataplay.html">Dataplay</a></li>
-            <li><a href="december.html">December</a></li>
-          </ul>-->
+          <button class="navigation__button">Work</button>
         </li>
         <li class="navigation__el">
           <a href="annexe.html">Annexe</a>
+        </li>
+      </ul>
+
+      <ul class="navigation__liens navSecond navigation__liens--hide">
+        <li class="navigation__el navigation__el--back">
+          <button class="navigation__back">Back</button>
+        </li>
+        <li class="navigation__el">
+          <a href="rux.html">Find Your Type</a>
+        </li>
+        <li class="navigation__el">
+          <a href="dataplay.html">Late</a>
+        </li>
+        <li class="navigation__el">
+          <a href="december.html">After Yang</a>
         </li>
       </ul>
     </nav>

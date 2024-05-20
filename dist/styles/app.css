@@ -1454,6 +1454,10 @@ canvas {
     background-image: url("../../assets/images/illu/hommes@2x.png");
   }
 }
+.body--burgerMenu {
+  overflow: hidden;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -1477,6 +1481,9 @@ canvas {
   transition: opacity 0.3s linear;
   font-size: 32px;
   text-align: left;
+}
+.navigation__liens--hide {
+  display: none;
 }
 .navigation__logo svg:hover path {
   -webkit-animation: dash 1.5s linear;
@@ -1503,9 +1510,6 @@ canvas {
   transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
   opacity: 60%;
 }
-.navigation__el > a {
-  mix-blend-mode: difference;
-}
 .navigation__el a:hover {
   opacity: 100%;
 }
@@ -1518,6 +1522,45 @@ canvas {
 }
 .navigation__el--active a {
   opacity: 100%;
+}
+.navigation__el--work {
+  background-image: url("../../assets/images/icon/arrowSlider.svg");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  background-position-x: 50%;
+  opacity: 60%;
+  transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+  cursor: pointer;
+}
+.navigation__el--work:hover {
+  opacity: 100%;
+}
+.navigation__el--work a {
+  display: none;
+}
+.navigation__el--back {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  left: 24px;
+  top: 168px;
+}
+.navigation__button {
+  margin: 0px;
+  padding: 0;
+  font-family: "owners-text", sans-serif;
+  font-size: 32px;
+  color: white;
+  transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+  display: block;
+}
+.navigation__back {
+  color: white;
+  background-color: none;
+  text-decoration: underline;
+  font-family: "owners-text", sans-serif;
+  font-size: 18px;
+  padding: 0;
 }
 
 .burgerMenu {
@@ -1562,6 +1605,15 @@ canvas {
     stroke-dashoffset: 0;
   }
 }
+@media (min-width: 550px) {
+  .navigation__el--back {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 64px;
+    top: 168px;
+  }
+}
 @media (min-width: 760px) {
   .navigation__liens {
     display: flex;
@@ -1577,6 +1629,15 @@ canvas {
     position: relative;
     visibility: visible;
   }
+  .navigation__liens--hide {
+    display: none;
+  }
+  .navigation__liens a {
+    display: inline-block;
+  }
+  .navigation__liens button {
+    display: none;
+  }
   .navigation__el {
     margin-left: 44px;
     padding: 0px 0px 12px 0px;
@@ -1584,7 +1645,7 @@ canvas {
   }
   .navigation__el--active {
     background-position-y: 100%;
-    background-size: 17%;
+    background-size: 10px;
     background-position-x: 50%;
     transition: opacity 0.2s linear;
   }

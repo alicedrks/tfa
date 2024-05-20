@@ -17,7 +17,7 @@
   
 </head>
 
-<body class="dataplay">
+<body class="dataplay body">
   <header class="header">
     <nav class="navigation">
       <a href="index.html" class="navigation__logo">
@@ -29,15 +29,31 @@
       
       <button class="burgerMenu" id="mobile-menu">Menu</button>
 
-      <ul class="navigation__liens">
+      <ul class="navigation__liens navFirst">
         <li class="navigation__el">
           <a href="index.html">Home</a>
         </li>
-        <li class="navigation__el navigation__el--active">
-          <a href="index.html#projets">Work</a>
+        <li class="navigation__el navigation__el--active navigation__el--work work">
+          <a href="#projets">Work</a>
+          <button class="navigation__button">Work</button>
         </li>
         <li class="navigation__el">
           <a href="annexe.html">Annexe</a>
+        </li>
+      </ul>
+
+      <ul class="navigation__liens navSecond navigation__liens--hide">
+        <li class="navigation__el navigation__el--back">
+          <button class="navigation__back">Back</button>
+        </li>
+        <li class="navigation__el">
+          <a href="rux.html">Find Your Type</a>
+        </li>
+        <li class="navigation__el navigation__el--active">
+          <a href="dataplay.html">Late</a>
+        </li>
+        <li class="navigation__el">
+          <a href="december.html">After Yang</a>
         </li>
       </ul>
     </nav>
