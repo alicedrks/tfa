@@ -5,13 +5,13 @@
     width: 100vw;
     box-sizing: border-box;
     top: 24px;
-}
+} 
 
 .intro{
     padding-left: 24px;
     padding-right: 24px;
     height: 100vh;
-    background-image: url("../../assets/images/illu/grille.svg");
+    background-image: url("../assets/images/illu/grille.svg");
     box-shadow: inset 0 -70px 50px -50px black;
     background-repeat: no-repeat;
     background-size: 610%;
@@ -137,7 +137,7 @@ canvas{
         background-position-y: 200%;
 
         &--active{
-            background-image: url('../../assets/images/illu/nuages.svg');
+            background-image: url('../assets/images/illu/nuages.svg');
             background-size: 500px;
             background-repeat: repeat-x;
             background-position-y: 55%;
@@ -151,7 +151,7 @@ canvas{
             height: 370px;
             top: 400px;
             left: 260px;
-            background-image: url('../../assets/images/illu/bulles.png');
+            background-image: url('../assets/images/illu/bulles.png');
             background-size: cover;
             position: relative;
             z-index: 200;
@@ -167,7 +167,7 @@ canvas{
             height: 300px;
             top: 3%;
             left: 50%;
-            background-image: url('../../assets/images/illu/hommes.png');
+            background-image: url('../assets/images/illu/hommes.png');
             background-size: cover;
             position: relative;
             z-index: 200;
@@ -231,7 +231,7 @@ canvas{
         overflow: hidden;
         height: 35px;
         width: 35px;
-        background-image: url('../../assets/images/icon/arrowSlider.svg');
+        background-image: url('../assets/images/icon/arrowSlider.svg');
         background-repeat: no-repeat;
         background-size: 100%;
         opacity: 40%;
@@ -255,7 +255,7 @@ canvas{
         top: 180px;
         left: 50%;
         transform: translateX(-50%) rotate(0);
-        background-image: url('../../assets/images/illu/train.svg');
+        background-image: url('../assets/images/illu/train.svg');
         background-size: cover;
         position: relative;
         z-index: 200;
@@ -1535,10 +1535,10 @@ canvas{
     .projet{
         &__container
             &::before{
-                background-image: url('../../assets/images/illu/bulles@2x.png');
+                background-image: url('../assets/images/illu/bulles@2x.png');
             }
             &::after{
-                background-image: url('../../assets/images/illu/hommes@2x.png');
+                background-image: url('../assets/images/illu/hommes@2x.png');
             }
     }
 }
