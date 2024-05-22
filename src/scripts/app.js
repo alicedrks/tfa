@@ -35,11 +35,11 @@ function menuOpen(){
     bodyc.classList.toggle("body--burgerMenu");
 
     if (bodyc.classList.contains('navigation__liens--open')) {
-        
-        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
+    
+        menuToggle.style.backgroundImage = "url('assets/images/icon/burgerMenuCroix.svg')";
 
     } else {
-        menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")'; 
+        menuToggle.style.backgroundImage = "url('assets/images/icon/burgerMenu.svg')"; 
     }   
 }
 
@@ -102,7 +102,7 @@ if(home){
   const description = document.querySelector(".description");
   const thiccness = 60;
   const texture = new Image();
-  texture.src = '../assets/images/illu/balleTennis.svg';
+  texture.src = 'assets/images/illu/balleTennis.svg';
 
   var height = description.clientHeight;
   var width = description.clientWidth;
@@ -188,7 +188,7 @@ if(home){
   } else {
     for (let i = 0; i < 120; i++){
       let circle = Bodies.circle(i, 10, 30, {
-          friction: 0.3,
+          friction: 0.5,
           frictionAir: 0.00001,
           restitution: 0.8,
           render: {
@@ -416,7 +416,6 @@ function nextSlide(){
           end: 'bottom center',
           scrub: 10, 
           pin: true,
-          markers: true,
           }
   })
 
@@ -511,8 +510,8 @@ function nextSlide(){
         start: '10% 0%',
         end: 'bottom 80%',
         scrub: 1, 
+        ease: 'linear',
         pin: true,
-        markers: true
         }
       })
 
@@ -564,7 +563,6 @@ function nextSlide(){
         end: 'bottom center',
         scrub: 1, 
         pin: false,
-        markers: true,
         }
       })
 

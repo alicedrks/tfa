@@ -43,6 +43,18 @@ button{
   display: inline-block;
   overflow: hidden;
   position: relative;
+  z-index: 1;
+
+  /*&::after{
+    content:'';
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    left: -25%;
+    top: 100%;
+    z-index: 5;
+    background-image: url(../assets/images/illu/animbtn.svg);
+  }*/
 
   &--right{
       margin-left: 9px;
@@ -62,6 +74,7 @@ button{
   &:hover{
       color: #000000;
       transition: color 0.4s;
+      
 
       & .btn__background{
           position: absolute;

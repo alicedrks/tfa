@@ -42,9 +42,9 @@ function menuOpen() {
   bodyc.classList.toggle("body--burgerMenu");
 
   if (bodyc.classList.contains('navigation__liens--open')) {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenuCroix.svg")';
+    menuToggle.style.backgroundImage = "url('assets/images/icon/burgerMenuCroix.svg')";
   } else {
-    menuToggle.style.backgroundImage = 'url("../../assets/images/icon/burgerMenu.svg")';
+    menuToggle.style.backgroundImage = "url('assets/images/icon/burgerMenu.svg')";
   }
 }
 
@@ -204,7 +204,6 @@ if (home) {
             end: 'bottom center',
             scrub: 10, 
             pin: true,
-            markers: true,
             }
     })
   
@@ -302,7 +301,7 @@ if (home) {
   var description = document.querySelector(".description");
   var thiccness = 60;
   var texture = new Image();
-  texture.src = '../assets/images/illu/balleTennis.svg';
+  texture.src = 'assets/images/illu/balleTennis.svg';
   var height = description.clientHeight;
   var width = description.clientWidth;
   var windowWidth = window.innerWidth;
@@ -388,7 +387,7 @@ if (home) {
   } else {
     for (var _i4 = 0; _i4 < 120; _i4++) {
       var _circle4 = Bodies.circle(_i4, 10, 30, {
-        friction: 0.3,
+        friction: 0.5,
         frictionAir: 0.00001,
         restitution: 0.8,
         render: {
@@ -452,8 +451,8 @@ if (home) {
       start: '10% 0%',
       end: 'bottom 80%',
       scrub: 1,
-      pin: true,
-      markers: true
+      ease: 'linear',
+      pin: true
     }
   });
   tl.from('.projetVisuel', {
@@ -495,8 +494,7 @@ if (home) {
       start: '0% 15%',
       end: 'bottom center',
       scrub: 1,
-      pin: false,
-      markers: true
+      pin: false
     }
   }); //anim gsap
 
