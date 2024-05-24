@@ -46,21 +46,11 @@ button {
   border-radius: 25px;
   font-family: "owners-text", sans-serif;
   font-size: 18px;
-  padding: 9px 18px;
+  padding: 9px 21px 10px;
   display: inline-block;
   overflow: hidden;
   position: relative;
   z-index: 1;
-  /*&::after{
-    content:'';
-    position: absolute;
-    width: 800px;
-    height: 300px;
-    left: -25%;
-    top: 100%;
-    z-index: 5;
-    background-image: url(../assets/images/illu/animbtn.svg);
-  }*/
 }
 .btn--right {
   margin-left: 9px;
@@ -310,6 +300,7 @@ canvas {
   display: block;
   transform-origin: center 700px;
   transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+  animation: hommes 2s linear alternate-reverse infinite;
 }
 .projet__titre1 {
   font-size: 32px;
@@ -410,6 +401,22 @@ canvas {
     transform: translateY(-2%) translateX(-50%) rotate(var(--bulles-rotation));
   }
 }
+@-webkit-keyframes hommes {
+  from {
+    transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+  }
+  to {
+    transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+  }
+}
+@keyframes hommes {
+  from {
+    transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+  }
+  to {
+    transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+  }
+}
 @-webkit-keyframes trainSlider {
   from {
     transform: translateX(-50%) rotate(-120deg);
@@ -498,6 +505,7 @@ canvas {
   }
   .projet__btn {
     width: 97%;
+    top: 100px;
   }
 }
 @media (max-width: 350px) and (max-height: 430px) {
@@ -840,8 +848,8 @@ canvas {
     width: 52px;
   }
   .projet__btn {
-    width: 60%;
-    top: 122px;
+    width: 65%;
+    top: 278px;
   }
 }
 @media (min-width: 760px) and (max-height: 690px) {
@@ -947,7 +955,7 @@ canvas {
     padding: 0 203px;
   }
   .projet__btn {
-    width: 50%;
+    width: 55%;
   }
 }
 @media (min-width: 950px) and (max-height: 680px) {
@@ -1110,8 +1118,8 @@ canvas {
     width: 57px;
   }
   .projet__btn {
-    top: 190px;
-    width: 45%;
+    top: 360px;
+    width: 50%;
   }
 }
 @media (min-width: 1110px) and (max-height: 850px) {
@@ -1188,7 +1196,7 @@ canvas {
     width: 30%;
   }
   .projet__btn {
-    width: 40%;
+    width: 42%;
   }
 }
 @media (min-width: 1300px) and (max-height: 1050px) {
@@ -1439,7 +1447,7 @@ canvas {
     top: -3px;
   }
   .projet__btn {
-    top: 200px;
+    top: 400px;
     width: 30%;
   }
 }
@@ -1458,10 +1466,10 @@ canvas {
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .projet__container .projet::before {
+  .projet__container::before {
     background-image: url("../assets/images/illu/bulles@2x.png");
   }
-  .projet::after {
+  .projet__container::after {
     background-image: url("../assets/images/illu/hommes@2x.png");
   }
 }
