@@ -4368,5 +4368,133 @@ footer {
     }
   }
 }
+.scroll-container {
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-image {
+  height: 100vh;
+}
+
+.buttonCI:hover path:nth-child(1) {
+  fill: red;
+  cursor: pointer;
+}
+
+.joueurGauche {
+  animation: joueurG 2s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate-reverse;
+  transform-origin: bottom center;
+}
+
+.joueurDroit {
+  animation: joueurD 2s cubic-bezier(0.5, 0, 0.75, 0) infinite alternate-reverse;
+  transform-origin: bottom center;
+}
+
+.balle {
+  transform-origin: center 1200px;
+  animation: balle 2s linear infinite alternate-reverse;
+}
+
+.feu {
+  animation: feu 1.5s linear infinite alternate-reverse;
+}
+
+.brasD {
+  background-color: red;
+  animation: brasD 4s infinite cubic-bezier(0.61, 1, 0.88, 1) alternate-reverse;
+  transform-origin: 85% 80%;
+}
+
+.brasG {
+  fill: red;
+  animation: brasD 4s infinite cubic-bezier(0.61, 1, 0.88, 1) alternate-reverse;
+  transform-origin: 80% 80%;
+}
+
+@-webkit-keyframes joueurG {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes joueurG {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes joueurD {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes joueurD {
+  0% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes balle {
+  from {
+    transform: translateY(-15px) rotate(-21deg);
+  }
+  to {
+    transform: translateY(30px) rotate(17deg);
+  }
+}
+@keyframes balle {
+  from {
+    transform: translateY(-15px) rotate(-21deg);
+  }
+  to {
+    transform: translateY(30px) rotate(17deg);
+  }
+}
+@-webkit-keyframes feu {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-0.5%);
+  }
+}
+@keyframes feu {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-0.5%);
+  }
+}
+@-webkit-keyframes brasD {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+@keyframes brasD {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
 
 /*# sourceMappingURL=app.css.map*/

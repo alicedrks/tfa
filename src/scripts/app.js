@@ -583,7 +583,34 @@ function nextSlide(){
       rotation:10, 
       duration: 5
     })
-} else if (annexe){}
+} else if (annexe){
+
+
+// Scroll horizontal
+
+
+
+/*document.addEventListener('wheel', function(e)
+{
+
+  let delta = ((e.deltaY || -e.wheelDelta || e.detail) >> 10) || 1;
+  delta = delta * (-700);
+  document.documentElement.scrollLeft -= delta;    
+});*/
+
+const scrollContainer = document.querySelector('.scroll-container');
+const scrollContent = document.querySelector('.scroll-content');
+const scrollingImage = document.querySelector('.scrolling-image');
+
+
+scrollContainer.addEventListener('scroll', () => {
+    if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContent.clientWidth) {
+      const imageClone = scrollingImage.cloneNode(true); 
+      scrollContent.appendChild(imageClone);
+    }
+});
+
+}
 
 
 
