@@ -73,11 +73,6 @@ function nav(){
   }
 }
 
-
-
-
-
-
 //déplacement hommes
 document.addEventListener('mousemove', e => {
   const x = e.clientX;
@@ -587,9 +582,6 @@ function nextSlide(){
 
 
 // Scroll horizontal
-
-
-
 /*document.addEventListener('wheel', function(e)
 {
 
@@ -598,7 +590,59 @@ function nextSlide(){
   document.documentElement.scrollLeft -= delta;    
 });*/
 
-const scrollContainer = document.querySelector('.scroll-container');
+  //tennis
+  let tennis = document.querySelector('.alcoveTennis');
+  let joueurDroit = document.querySelector('.joueurDroit');
+  let joueurGauche = document.querySelector('.joueurGauche');
+  let balle = document.querySelector('.balle');
+  let filet = document.querySelector('.filet');
+
+  tennis.addEventListener('click', tennisScene);
+
+  function tennisScene(){
+    joueurDroit.classList.add('joueurDroit--active');
+    joueurGauche.classList.add('joueurGauche--active');
+    balle.classList.add('balle--active');
+    filet.classList.add('filet--active');
+
+    setTimeout(() => {
+      joueurDroit.classList.remove('joueurDroit--active');
+      joueurGauche.classList.remove('joueurGauche--active');
+      balle.classList.remove('balle--active');
+      filet.classList.remove('filet--active');
+    }, "19000");
+  }
+
+  //scout
+  let scout = document.querySelector('.alcoveScout');
+  let scoutGauche = document.querySelector('.persoGauche');
+  let scoutDroite = document.querySelector('.persoDroite');
+  let tente = document.querySelector('.tente');
+  let arbre = document.querySelector('.arbres');
+  let feu = document.querySelector('.feu');
+  let fond = document.querySelector('.fondExpo');
+
+  scout.addEventListener('click', scoutScene);
+
+  function scoutScene(){
+    scoutDroite.classList.add('persoDroite--active');
+    scoutGauche.classList.add('persoGauche--active');
+    tente.classList.add('tente--active');
+    arbre.classList.add('arbres--active');
+    feu.classList.add('feu--active');
+    fond.classList.add('fondExpo--remove');
+
+    setTimeout(() => {
+      scoutDroite.classList.remove('persoDroite--active');
+      scoutGauche.classList.remove('persoGauche--active');
+      tente.classList.remove('tente--active');
+      arbre.classList.remove('arbres--active');
+      feu.classList.remove('feu--active');
+      fond.classList.remove('fondExpo--remove');
+    }, "19000");
+  }
+
+/*const scrollContainer = document.querySelector('.scroll-container');
 const scrollContent = document.querySelector('.scroll-content');
 const scrollingImage = document.querySelector('.scrolling-image');
 
@@ -608,7 +652,7 @@ scrollContainer.addEventListener('scroll', () => {
       const imageClone = scrollingImage.cloneNode(true); 
       scrollContent.appendChild(imageClone);
     }
-});
+});*/
 
 }
 

@@ -513,6 +513,49 @@ if (home) {
     duration: 5
   });
 } else if (annexe) {
+  var tennisScene = function tennisScene() {
+    joueurDroit.classList.add('joueurDroit--active');
+    joueurGauche.classList.add('joueurGauche--active');
+    balle.classList.add('balle--active');
+    filet.classList.add('filet--active');
+    setTimeout(function () {
+      joueurDroit.classList.remove('joueurDroit--active');
+      joueurGauche.classList.remove('joueurGauche--active');
+      balle.classList.remove('balle--active');
+      filet.classList.remove('filet--active');
+    }, "19000");
+  }; //scout
+
+
+  var scoutScene = function scoutScene() {
+    scoutDroite.classList.add('persoDroite--active');
+    scoutGauche.classList.add('persoGauche--active');
+    tente.classList.add('tente--active');
+    arbre.classList.add('arbres--active');
+    feu.classList.add('feu--active');
+    fond.classList.add('fondExpo--remove');
+    setTimeout(function () {
+      scoutDroite.classList.remove('persoDroite--active');
+      scoutGauche.classList.remove('persoGauche--active');
+      tente.classList.remove('tente--active');
+      arbre.classList.remove('arbres--active');
+      feu.classList.remove('feu--active');
+      fond.classList.remove('fondExpo--remove');
+    }, "19000");
+  };
+  /*const scrollContainer = document.querySelector('.scroll-container');
+  const scrollContent = document.querySelector('.scroll-content');
+  const scrollingImage = document.querySelector('.scrolling-image');
+  
+  
+  scrollContainer.addEventListener('scroll', () => {
+      if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContent.clientWidth) {
+        const imageClone = scrollingImage.cloneNode(true); 
+        scrollContent.appendChild(imageClone);
+      }
+  });*/
+
+
   // Scroll horizontal
 
   /*document.addEventListener('wheel', function(e)
@@ -522,15 +565,21 @@ if (home) {
     delta = delta * (-700);
     document.documentElement.scrollLeft -= delta;    
   });*/
-  var scrollContainer = document.querySelector('.scroll-container');
-  var scrollContent = document.querySelector('.scroll-content');
-  var scrollingImage = document.querySelector('.scrolling-image');
-  scrollContainer.addEventListener('scroll', function () {
-    if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContent.clientWidth) {
-      var imageClone = scrollingImage.cloneNode(true);
-      scrollContent.appendChild(imageClone);
-    }
-  });
+  //tennis
+  var tennis = document.querySelector('.alcoveTennis');
+  var joueurDroit = document.querySelector('.joueurDroit');
+  var joueurGauche = document.querySelector('.joueurGauche');
+  var balle = document.querySelector('.balle');
+  var filet = document.querySelector('.filet');
+  tennis.addEventListener('click', tennisScene);
+  var scout = document.querySelector('.alcoveScout');
+  var scoutGauche = document.querySelector('.persoGauche');
+  var scoutDroite = document.querySelector('.persoDroite');
+  var tente = document.querySelector('.tente');
+  var arbre = document.querySelector('.arbres');
+  var feu = document.querySelector('.feu');
+  var fond = document.querySelector('.fondExpo');
+  scout.addEventListener('click', scoutScene);
 }
 
 /***/ }),
