@@ -518,11 +518,16 @@ if (home) {
     joueurGauche.classList.add('joueurGauche--active');
     balle.classList.add('balle--active');
     filet.classList.add('filet--active');
+    fond.classList.add('fondExpo--remove');
+    fondE.classList.add('fondExpo--remove');
+    fondT.classList.remove('fondExpo--remove');
     setTimeout(function () {
       joueurDroit.classList.remove('joueurDroit--active');
       joueurGauche.classList.remove('joueurGauche--active');
       balle.classList.remove('balle--active');
       filet.classList.remove('filet--active');
+      fond.classList.remove('fondExpo--remove');
+      fondE.classList.remove('fondExpo--remove');
     }, "19000");
   }; //scout
 
@@ -534,6 +539,8 @@ if (home) {
     arbre.classList.add('arbres--active');
     feu.classList.add('feu--active');
     fond.classList.add('fondExpo--remove');
+    fondT.classList.add('fondExpo--remove');
+    fondE.classList.remove('fondExpo--remove');
     setTimeout(function () {
       scoutDroite.classList.remove('persoDroite--active');
       scoutGauche.classList.remove('persoGauche--active');
@@ -541,7 +548,26 @@ if (home) {
       arbre.classList.remove('arbres--active');
       feu.classList.remove('feu--active');
       fond.classList.remove('fondExpo--remove');
+      fondT.classList.remove('fondExpo--remove');
     }, "19000");
+  }; //music
+
+
+  var musicButton = function musicButton() {
+    var btnM = document.querySelector('.btnM');
+    btnM.classList.toggle('btnM--show');
+  };
+
+  var playFunction = function playFunction() {
+    play.classList.add('hide');
+    pause.classList.remove('hide');
+    audio.play();
+  };
+
+  var pauseFunction = function pauseFunction() {
+    play.classList.remove('hide');
+    pause.classList.add('hide');
+    audio.pause();
   };
   /*const scrollContainer = document.querySelector('.scroll-container');
   const scrollContent = document.querySelector('.scroll-content');
@@ -565,12 +591,15 @@ if (home) {
     delta = delta * (-700);
     document.documentElement.scrollLeft -= delta;    
   });*/
-  //tennis
+  //alcoves
+  var fond = document.querySelector('.fondExpo'); //tennis
+
   var tennis = document.querySelector('.alcoveTennis');
   var joueurDroit = document.querySelector('.joueurDroit');
   var joueurGauche = document.querySelector('.joueurGauche');
   var balle = document.querySelector('.balle');
   var filet = document.querySelector('.filet');
+  var fondT = document.querySelector('.fondTennis');
   tennis.addEventListener('click', tennisScene);
   var scout = document.querySelector('.alcoveScout');
   var scoutGauche = document.querySelector('.persoGauche');
@@ -578,8 +607,16 @@ if (home) {
   var tente = document.querySelector('.tente');
   var arbre = document.querySelector('.arbres');
   var feu = document.querySelector('.feu');
-  var fond = document.querySelector('.fondExpo');
+  var fondE = document.querySelector('.fondEtoile');
   scout.addEventListener('click', scoutScene);
+  var button = document.getElementById('play-sound-btn');
+  var audio = document.getElementById('sound');
+  var music = document.querySelector('.alcoveMusic');
+  var play = document.querySelector('.btnMPL');
+  var pause = document.querySelector('.btnMPA');
+  music.addEventListener('click', musicButton);
+  play.addEventListener('click', playFunction);
+  pause.addEventListener('click', pauseFunction);
 }
 
 /***/ }),

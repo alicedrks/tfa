@@ -79,6 +79,14 @@
         visibility: visible;
     }
 }
+.fondTennis{
+    transform: translateY(0%);
+    transition: 1s cubic-bezier(.36,0,.67,-0.37);
+
+    &--remove{
+        transform: translateY(105%);
+    }
+}
 
 //scout scene
 .flammes{
@@ -161,12 +169,41 @@
         transform: rotate(0deg) translateX(0px);
     }
 }
+.fondEtoile{
+    transform: translateY(0%);
+    transition: 1s cubic-bezier(.36,0,.67,-0.37);
+
+    &--remove{
+        transform: translateY(105%);
+    }
+}
+
+//music
+.btnM{
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    transition: 0.5s cubic-bezier(.36,0,.67,-0.37);
+    cursor: pointer;
+
+    &--show{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.hide{
+    display: none;
+}
+
+
+
+
 .fondExpo{
     transform: translateY(0%);
     transition: 1s cubic-bezier(.36,0,.67,-0.37);
 
     &--remove{
-        transform: translateY(100%);
+        transform: translateY(105%);
     }
 }
 
@@ -187,9 +224,9 @@
 }
 @keyframes balle{
     from{
-        transform: translateY(-15px) rotate(-21deg);
+        transform: translateY(15px) rotate(-21deg);
     } to{
-        transform:translateY(30px) rotate(17deg);
+        transform:translateY(40px) rotate(17deg);
     }
 }
 

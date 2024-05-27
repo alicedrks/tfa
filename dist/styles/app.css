@@ -17,6 +17,14 @@
   font-family: "Pangaia regular";
   src: url("../assets/font/pangaia/PPPangaia-Medium.otf") format("opentype");
 }
+@font-face {
+  font-family: "Pangaia-UltralightItalic";
+  src: url("../assets/font/pangaia/PPPangaia-UltralightItalic.otf") format("opentype");
+}
+@font-face {
+  font-family: "Pangaia-Ultralight";
+  src: url("../../assets/font/pangaia/PPPangaia-Ultralight.otf") format("opentype");
+}
 html {
   scroll-behavior: smooth;
 }
@@ -1800,7 +1808,7 @@ canvas {
 }
 
 footer {
-  mix-blend-mode: exclusion;
+  mix-blend-mode: difference;
   margin: 0 24px;
   position: absolute;
   z-index: 40;
@@ -4453,6 +4461,14 @@ footer {
   visibility: visible;
 }
 
+.fondTennis {
+  transform: translateY(0%);
+  transition: 1s cubic-bezier(0.36, 0, 0.67, -0.37);
+}
+.fondTennis--remove {
+  transform: translateY(105%);
+}
+
 .flammes {
   animation: feu 1.5s linear infinite alternate-reverse;
 }
@@ -4531,12 +4547,36 @@ footer {
   transform: rotate(0deg) translateX(0px);
 }
 
+.fondEtoile {
+  transform: translateY(0%);
+  transition: 1s cubic-bezier(0.36, 0, 0.67, -0.37);
+}
+.fondEtoile--remove {
+  transform: translateY(105%);
+}
+
+.btnM {
+  opacity: 0;
+  visibility: hidden;
+  display: block;
+  transition: 0.5s cubic-bezier(0.36, 0, 0.67, -0.37);
+  cursor: pointer;
+}
+.btnM--show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide {
+  display: none;
+}
+
 .fondExpo {
   transform: translateY(0%);
   transition: 1s cubic-bezier(0.36, 0, 0.67, -0.37);
 }
 .fondExpo--remove {
-  transform: translateY(100%);
+  transform: translateY(105%);
 }
 
 @-webkit-keyframes joueurG {
@@ -4574,18 +4614,18 @@ footer {
 }
 @-webkit-keyframes balle {
   from {
-    transform: translateY(-15px) rotate(-21deg);
+    transform: translateY(15px) rotate(-21deg);
   }
   to {
-    transform: translateY(30px) rotate(17deg);
+    transform: translateY(40px) rotate(17deg);
   }
 }
 @keyframes balle {
   from {
-    transform: translateY(-15px) rotate(-21deg);
+    transform: translateY(15px) rotate(-21deg);
   }
   to {
-    transform: translateY(30px) rotate(17deg);
+    transform: translateY(40px) rotate(17deg);
   }
 }
 @-webkit-keyframes feu {

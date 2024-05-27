@@ -590,12 +590,19 @@ function nextSlide(){
   document.documentElement.scrollLeft -= delta;    
 });*/
 
+
+
+//alcoves
+
+  let fond = document.querySelector('.fondExpo');
+
   //tennis
   let tennis = document.querySelector('.alcoveTennis');
   let joueurDroit = document.querySelector('.joueurDroit');
   let joueurGauche = document.querySelector('.joueurGauche');
   let balle = document.querySelector('.balle');
   let filet = document.querySelector('.filet');
+  let fondT = document.querySelector('.fondTennis');
 
   tennis.addEventListener('click', tennisScene);
 
@@ -604,12 +611,18 @@ function nextSlide(){
     joueurGauche.classList.add('joueurGauche--active');
     balle.classList.add('balle--active');
     filet.classList.add('filet--active');
+    fond.classList.add('fondExpo--remove');
+    fondE.classList.add('fondExpo--remove');
+    fondT.classList.remove('fondExpo--remove');
+
 
     setTimeout(() => {
       joueurDroit.classList.remove('joueurDroit--active');
       joueurGauche.classList.remove('joueurGauche--active');
       balle.classList.remove('balle--active');
       filet.classList.remove('filet--active');
+      fond.classList.remove('fondExpo--remove');
+      fondE.classList.remove('fondExpo--remove');
     }, "19000");
   }
 
@@ -620,7 +633,7 @@ function nextSlide(){
   let tente = document.querySelector('.tente');
   let arbre = document.querySelector('.arbres');
   let feu = document.querySelector('.feu');
-  let fond = document.querySelector('.fondExpo');
+  let fondE = document.querySelector('.fondEtoile');
 
   scout.addEventListener('click', scoutScene);
 
@@ -631,6 +644,8 @@ function nextSlide(){
     arbre.classList.add('arbres--active');
     feu.classList.add('feu--active');
     fond.classList.add('fondExpo--remove');
+    fondT.classList.add('fondExpo--remove');
+    fondE.classList.remove('fondExpo--remove');
 
     setTimeout(() => {
       scoutDroite.classList.remove('persoDroite--active');
@@ -639,7 +654,40 @@ function nextSlide(){
       arbre.classList.remove('arbres--active');
       feu.classList.remove('feu--active');
       fond.classList.remove('fondExpo--remove');
+      fondT.classList.remove('fondExpo--remove');
     }, "19000");
+  }
+
+
+  //music
+
+  const button = document.getElementById('play-sound-btn');
+  const audio = document.getElementById('sound');
+
+
+
+  let music = document.querySelector('.alcoveMusic');
+  let play = document.querySelector('.btnMPL');
+  let pause= document.querySelector('.btnMPA');
+
+  music.addEventListener('click', musicButton);
+  play.addEventListener('click', playFunction);
+  pause.addEventListener('click', pauseFunction);
+
+  function musicButton(){
+    let btnM = document.querySelector('.btnM');
+    btnM.classList.toggle('btnM--show');
+  }
+
+  function playFunction(){
+    play.classList.add('hide');
+    pause.classList.remove('hide');
+    audio.play();
+  }
+  function pauseFunction(){
+    play.classList.remove('hide');
+    pause.classList.add('hide');
+    audio.pause();
   }
 
 /*const scrollContainer = document.querySelector('.scroll-container');
