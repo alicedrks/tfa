@@ -73,6 +73,7 @@ function nav(){
   }
 }
 
+
 //déplacement hommes
 document.addEventListener('mousemove', e => {
   const x = e.clientX;
@@ -97,7 +98,9 @@ if(home){
   const description = document.querySelector(".description");
   const thiccness = 60;
   const texture = new Image();
-  texture.src = 'assets/images/illu/balleTennis100.svg';
+  texture.src = 'assets/images/illu/balleTennis.svg';
+  const texture2 = new Image();
+  texture2.src = 'assets/images/illu/balleTennis100.svg';
 
   var height = description.clientHeight;
   var width = description.clientWidth;
@@ -141,14 +144,15 @@ if(home){
           restitution: 0.8,
           render: {
             sprite: {
-              texture: texture.src,
-              xScale: 2 * 30 / texture.width,
-              yScale: 2 * 30 / texture.height
+              texture: texture2.src,
+              xScale: 2 * 30 / texture2.width,
+              yScale: 2 * 30 / texture2.height
             }
           }
       });
       Composite.add(engine.world, circle);
     }
+
   } else if (windowWidth < 1530){
     for (let i = 0; i < 50; i++){
       let circle = Bodies.circle(i, 10, 30, {
@@ -160,6 +164,22 @@ if(home){
               texture: texture.src,
               xScale: 2 * 30 / texture.width,
               yScale: 2 * 30 / texture.height
+            }
+          }
+      });
+      Composite.add(engine.world, circle);
+    }
+
+    for (let i = 0; i < 6; i++){
+      let circle = Bodies.circle(i, 10, 30, {
+          friction: 0.3,
+          frictionAir: 0.00001,
+          restitution: 0.8,
+          render: {
+            sprite: {
+              texture: texture2.src,
+              xScale: 2 * 30 / texture2.width,
+              yScale: 2 * 30 / texture2.height
             }
           }
       });
@@ -280,8 +300,48 @@ if(home){
   }, "7000");*/
 
 
+  //etat actif
+  const sections = document.querySelectorAll("section");
+  const menuLinks = document.querySelectorAll(".navigation__el");
+  
+  function updateMenuActiveState(activeIndex) {
+    menuLinks.forEach((item, index) => {
+      if (index === activeIndex) {
+        item.classList.add("navigation__el--active");
+      } else {
+        item.classList.remove("navigation__el--active");
+      }
+    });
+  }
+  
+  sections.forEach((section, index) => {
+    const trigger = ScrollTrigger.create({
+      trigger: section,
+      start: "top center",
+      end: "bottom center",
+      onEnter: () => {
+        if (index <= 1) {
+          updateMenuActiveState(0); 
+        } else {
+          updateMenuActiveState(index - 1);
+        }
+      },
+      onLeaveBack: () => {
+        if (index <= 2) {
+          updateMenuActiveState(0);
+        } else {
+          updateMenuActiveState(index - 2);
+        }
+      },
+    });
+  
+    const resizeObserver = new ResizeObserver(() => {
+      trigger.refresh();
+    });
+    resizeObserver.observe(section);
+  });
 
-  //slider
+//slider
 let prevButton = document.querySelector(".projet__btnSlider--prev");
 let nextButton = document.querySelector(".projet__btnSlider--next");
 

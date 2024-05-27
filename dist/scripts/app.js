@@ -99,6 +99,16 @@ if (home) {
     matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(leftWall, matter_js__WEBPACK_IMPORTED_MODULE_0___default().Vector.create(0 - thiccness / 2, height / 2));
   };
 
+  var updateMenuActiveState = function updateMenuActiveState(activeIndex) {
+    menuLinks.forEach(function (item, index) {
+      if (index === activeIndex) {
+        item.classList.add("navigation__el--active");
+      } else {
+        item.classList.remove("navigation__el--active");
+      }
+    });
+  };
+
   var keyboardListener = function keyboardListener(event) {
     if (event.code == "ArrowLeft") {
       prevSlide();
@@ -301,7 +311,9 @@ if (home) {
   var description = document.querySelector(".description");
   var thiccness = 60;
   var texture = new Image();
-  texture.src = 'assets/images/illu/balleTennis100.svg';
+  texture.src = 'assets/images/illu/balleTennis.svg';
+  var texture2 = new Image();
+  texture2.src = 'assets/images/illu/balleTennis100.svg';
   var height = description.clientHeight;
   var width = description.clientWidth;
   var windowWidth = window.innerWidth;
@@ -341,9 +353,9 @@ if (home) {
         restitution: 0.8,
         render: {
           sprite: {
-            texture: texture.src,
-            xScale: 2 * 30 / texture.width,
-            yScale: 2 * 30 / texture.height
+            texture: texture2.src,
+            xScale: 2 * 30 / texture2.width,
+            yScale: 2 * 30 / texture2.height
           }
         }
       });
@@ -367,9 +379,26 @@ if (home) {
 
       Composite.add(engine.world, _circle2);
     }
-  } else if (windowWidth < 1820) {
-    for (var _i3 = 0; _i3 < 80; _i3++) {
+
+    for (var _i3 = 0; _i3 < 6; _i3++) {
       var _circle3 = Bodies.circle(_i3, 10, 30, {
+        friction: 0.3,
+        frictionAir: 0.00001,
+        restitution: 0.8,
+        render: {
+          sprite: {
+            texture: texture2.src,
+            xScale: 2 * 30 / texture2.width,
+            yScale: 2 * 30 / texture2.height
+          }
+        }
+      });
+
+      Composite.add(engine.world, _circle3);
+    }
+  } else if (windowWidth < 1820) {
+    for (var _i4 = 0; _i4 < 80; _i4++) {
+      var _circle4 = Bodies.circle(_i4, 10, 30, {
         friction: 0.3,
         frictionAir: 0.00001,
         restitution: 0.8,
@@ -382,11 +411,11 @@ if (home) {
         }
       });
 
-      Composite.add(engine.world, _circle3);
+      Composite.add(engine.world, _circle4);
     }
   } else {
-    for (var _i4 = 0; _i4 < 120; _i4++) {
-      var _circle4 = Bodies.circle(_i4, 10, 30, {
+    for (var _i5 = 0; _i5 < 120; _i5++) {
+      var _circle5 = Bodies.circle(_i5, 10, 30, {
         friction: 0.5,
         frictionAir: 0.00001,
         restitution: 0.8,
@@ -399,7 +428,7 @@ if (home) {
         }
       });
 
-      Composite.add(engine.world, _circle4);
+      Composite.add(engine.world, _circle5);
     }
   }
 
@@ -432,7 +461,35 @@ if (home) {
   /*setTimeout(() => {
     Matter.Runner.stop(runner);
   }, "7000");*/
-  //slider
+  //etat actif
+
+  var sections = document.querySelectorAll("section");
+  var menuLinks = document.querySelectorAll(".navigation__el");
+  sections.forEach(function (section, index) {
+    var trigger = gsap_scrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"].create({
+      trigger: section,
+      start: "top center",
+      end: "bottom center",
+      onEnter: function onEnter() {
+        if (index <= 1) {
+          updateMenuActiveState(0);
+        } else {
+          updateMenuActiveState(index - 1);
+        }
+      },
+      onLeaveBack: function onLeaveBack() {
+        if (index <= 2) {
+          updateMenuActiveState(0);
+        } else {
+          updateMenuActiveState(index - 2);
+        }
+      }
+    });
+    var resizeObserver = new ResizeObserver(function () {
+      trigger.refresh();
+    });
+    resizeObserver.observe(section);
+  }); //slider
 
   var prevButton = document.querySelector(".projet__btnSlider--prev");
   var nextButton = document.querySelector(".projet__btnSlider--next");

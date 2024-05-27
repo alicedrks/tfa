@@ -237,7 +237,7 @@ canvas {
   left: 0;
   top: 0;
   z-index: 1;
-  opacity: 80%;
+  opacity: 40%;
 }
 
 .projet {
@@ -1576,7 +1576,7 @@ canvas {
   opacity: 100%;
 }
 .navigation__el--active {
-  background-image: url("../assets/images/illu/balleTennis.svg");
+  background-image: url("../assets/images/illu/balleTennis100.svg");
   background-repeat: no-repeat;
   background-position-x: 0%;
   background-position-y: 50%;
@@ -3456,6 +3456,11 @@ footer {
     width: 270%;
   }
 }
+@media (min-width: 450px) {
+  .infoProjet--late {
+    padding-bottom: 312px;
+  }
+}
 @media (min-width: 550px) {
   .h1Projet--late {
     line-height: 50%;
@@ -3569,7 +3574,7 @@ footer {
   }
 
   .infoProjet--late {
-    padding-bottom: 465px;
+    padding-bottom: 558px;
     background-position-y: 90%;
   }
 
@@ -3612,7 +3617,7 @@ footer {
   }
 
   .infoProjet--late {
-    padding-bottom: 404px;
+    padding-bottom: 606px;
     background-position-y: 100%;
   }
 
@@ -3657,7 +3662,7 @@ footer {
   }
 
   .infoProjet--late {
-    padding-bottom: 505px;
+    padding-bottom: 707px;
   }
 
   .next__img--late {
@@ -3686,7 +3691,7 @@ footer {
   }
 
   .infoProjet--late {
-    padding-bottom: 606px;
+    padding-bottom: 808px;
     background-position-y: 80%;
   }
 
@@ -3729,7 +3734,7 @@ footer {
   }
 
   .infoProjet--late {
-    padding-bottom: 808px;
+    padding-bottom: 1010px;
     background-position-y: 85%;
   }
 
