@@ -97,7 +97,7 @@ if(home){
   const description = document.querySelector(".description");
   const thiccness = 60;
   const texture = new Image();
-  texture.src = 'assets/images/illu/balleTennis.svg';
+  texture.src = 'assets/images/illu/balleTennis100.svg';
 
   var height = description.clientHeight;
   var width = description.clientWidth;
@@ -132,6 +132,7 @@ if(home){
       });
       Composite.add(engine.world, circle);
     }
+
   } else if (windowWidth < 950){
     for (let i = 0; i < 30; i++){
       let circle = Bodies.circle(i, 10, 30, {
@@ -589,6 +590,10 @@ function nextSlide(){
   delta = delta * (-700);
   document.documentElement.scrollLeft -= delta;    
 });*/
+
+
+
+
 
 
 

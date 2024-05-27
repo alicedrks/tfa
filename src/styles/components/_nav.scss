@@ -125,7 +125,6 @@
     }
 }
 
-
 .burgerMenu{
     text-indent: 100%;
     padding: 0;
@@ -184,7 +183,7 @@
             align-items: end;
             background-color: transparent;
             opacity: 100;
-            font-size: 22px;
+            font-size: 17px;
             z-index: 90;
             width: auto;
             height: auto;
@@ -211,15 +210,23 @@
 
             &--active{
                 background-position-y: 100%;
-                background-size: 10px;
+                background-size: 8px;
                 background-position-x: 50%;
                 transition: opacity 0.2s linear;
             }
         }
+
+        &__logo{
+            svg{
+                width: 35px;
+                height: 35px;
+                margin: 0;
+                align-self: center;
+            }
+        }
+
     }
 
-      
-    
     .burgerMenu{
         display: none;
     }
@@ -234,6 +241,20 @@
         &__el{
             margin-left: 64px;
             padding: 0px 0px 14px 0px;
+    
+                &--active{
+                    background-position-y: 100%;
+                    background-size: 10px;
+                    background-position-x: 50%;
+                    transition: opacity 0.2s linear;
+                }
+        }
+
+        &__logo{
+            svg{
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 }

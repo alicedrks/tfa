@@ -301,7 +301,7 @@ if (home) {
   var description = document.querySelector(".description");
   var thiccness = 60;
   var texture = new Image();
-  texture.src = 'assets/images/illu/balleTennis.svg';
+  texture.src = 'assets/images/illu/balleTennis100.svg';
   var height = description.clientHeight;
   var width = description.clientWidth;
   var windowWidth = window.innerWidth;

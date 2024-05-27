@@ -23,14 +23,14 @@
 
 h1{
     font-family: 'owners-text', sans-serif;
+    font-weight: 400;
     font-size: 76px;
-    line-height: 130%;
+    line-height: 120%;
     margin: 0;
 }
 
 .h1__nom{
     font-family: 'Pangaia';
-    font-weight: 200;
     font-size: 101px;
     color: $c-element;
     display: block;
@@ -53,12 +53,14 @@ h1{
         z-index: 2;
         font-size: 18px;
         font-family: 'owners-text', sans-serif;
+        font-weight: 300;
         margin-top: 0;
         margin-bottom: 72px;
         line-height: 140%;
 
         &--big{
-            font-size: 23px;
+            font-size: 32px;
+            font-weight: 300;
             margin-top: 0;
         } 
     }
@@ -80,8 +82,8 @@ canvas{
     position: absolute;
     left: 0;
     top: 0;
-    opacity: 15%;
     z-index: 1;
+    opacity: 80%;
 }
 
 .projet{
@@ -179,14 +181,16 @@ canvas{
     }
 
     &__titre1{
-        font-size: 32px;
+        font-size: 18px;
         font-family: 'owners-text', sans-serif;
+        font-weight: 200;
     }
 
     &__titre2{
-        font-size: 24px;
+        font-size: 32px;
         font-family: 'Pangaia regular';
         font-weight: 200;
+        margin: 18px 0px 32px;
     }
     
     &__para{
@@ -194,6 +198,7 @@ canvas{
         line-height: 140%;
         font-family: 'owners-text', sans-serif;
         margin: 0px 0px 36px;
+        font-weight: 300;
     }
 
     &__illu{
@@ -212,7 +217,7 @@ canvas{
         width: 91%;
         left: 50%;
         transform: translateX(-50%);
-        top: 124px;
+        top: 158px;
         box-sizing: border-box;
         z-index: 40;
         margin: 0;
@@ -327,6 +332,7 @@ canvas{
         &__para{
     
             &--big{
+                font-size: 32px;
                 margin-top: 96px;;
             }
         }
@@ -370,7 +376,7 @@ canvas{
 
         &__btn{
             width: 97%;
-            top: 100px;
+            top: 143px;
         }
 
     }
@@ -623,7 +629,7 @@ canvas{
 
         &__btn{
             width: 70%;
-            top: 157px;
+            top: 190px;
         }
     }
 }
@@ -711,7 +717,7 @@ canvas{
             margin-bottom: 87px;
     
             &--big{
-                font-size: 29px;
+                font-size: 39px;
             }
         }
     }
@@ -756,13 +762,13 @@ canvas{
         }
     
         &__titre1{
-            font-size: 39px;
+            font-size: 17px;
             margin: 0;
         }
     
         &__titre2{
             font-size: 29px;
-            margin: 39px 0px 22px ;
+            margin: 17px 0px 34px ;
         }
         
         &__para{
@@ -780,13 +786,13 @@ canvas{
         }
     
         &__btnSlider{
-            height: 52px;
-            width: 52px;
+            height: 42px;
+            width: 42px;
         }
 
         &__btn{
-            width: 65%;
-            top: 278px;
+            width: 45%;
+            top: 162px;
         }
     }
 }
@@ -864,12 +870,6 @@ canvas{
             }
         }   
     }
-
-    .right{
-        grid-column: 2;
-        grid-row: 2;
-        align-self: end;
-    }
     
     .h1_n{
         display: inline;
@@ -912,7 +912,7 @@ canvas{
         }
 
         &__btn{
-            width:55%;
+            width:35%;
         }
     }
 }
@@ -1035,17 +1035,19 @@ canvas{
         
         &__container{
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 2;
         }
     
         &__para{
-            font-size: 24px;
-            margin-bottom: 58px;
+            font-size: 18px;
+            margin-bottom: 54px;
     
             &--big{
                 font-size: 32px;
                 margin-bottom: 87px;
+                grid-column: 1 / 3;
+                grid-row: 1;
             }
         }
         &__content{
@@ -1053,6 +1055,11 @@ canvas{
         }
 
 
+    }
+    .right{
+        grid-column: 3;
+        grid-row: 2;
+        align-self: end;
     }
 
     .projet{
@@ -1084,12 +1091,12 @@ canvas{
         }
     
         &__titre1{
-            font-size: 43px;
+            font-size: 18px;
         }
     
         &__titre2{
             font-size: 32px;
-            margin: 43px 0px 24px ;
+            margin: 18px 0px 36px ;
         }
         
         &__para{
@@ -1107,13 +1114,13 @@ canvas{
         }
     
         &__btnSlider{
-            height: 57px;
-            width: 57px;
+            height: 45px;
+            width: 45px;
         }
 
         &__btn{
-            top: 360px;
-            width:50%;
+            top: 233px;
+            width:35%;
         }
     }
 }
@@ -1207,7 +1214,20 @@ canvas{
             width: 30%;
         }
         &__btn{
-            width:42%;
+            width:27%;
+        }
+    }
+    .description{
+        &__para{
+            font-size: 24px;
+            margin-bottom: 72px;
+    
+            &--big{
+                font-size: 43px;
+                margin-bottom: 87px;
+                grid-column: 1 / 3;
+                grid-row: 1;
+            }
         }
     }
 }
@@ -1318,7 +1338,7 @@ canvas{
         }
 
         &__btn{
-            width:35%;
+            width:23%;
         }
     }
 }
@@ -1407,7 +1427,7 @@ canvas{
         }
 
         &__btn{
-            width:30%;
+            width:20%;
         }
         
     }
@@ -1488,11 +1508,12 @@ canvas{
         }
     
         &__titre1{
-            font-size: 57px;
+            font-size: 22px;
         }
     
         &__titre2{
             font-size: 43px;
+            margin: 22px 0 44px;
         }
         
         &__para{
@@ -1515,8 +1536,8 @@ canvas{
         }
 
         &__btn{
-            top: 400px;
-            width:30%;
+            top: 253px;
+            width:20%;
         }
     }
 }

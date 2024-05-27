@@ -3,23 +3,20 @@
   src:
     url("../assets/font/pangaia/PPPangaia-MediumItalic.otf") format("opentype");
 }
- 
 @font-face {
   font-family: "Pangaia regular";
   src:
     url("../assets/font/pangaia/PPPangaia-Medium.otf") format("opentype");
 }
-
 @font-face {
   font-family: "Pangaia-UltralightItalic";
   src:
     url("../assets/font/pangaia/PPPangaia-UltralightItalic.otf") format("opentype");
 }
-
 @font-face {
   font-family: "Pangaia-Ultralight";
   src:
-    url("../../assets/font/pangaia/PPPangaia-Ultralight.otf") format("opentype");
+    url("../assets/font/pangaia/PPPangaia-Ultralight.otf") format("opentype");
 }
 
 html{
@@ -47,9 +44,11 @@ button{
 .btn{
   border-style: solid;
   border-color: #fff;
+  border-width: 1px;
   color: #fff;
   border-radius: 25px;
   font-family: 'owners-text', sans-serif;
+  font-weight: 300;
   font-size: 18px;
   padding: 9px 21px 10px;
   display: inline-block;
@@ -144,12 +143,28 @@ small{
 @media (min-width: 760px){
   .btn {
     font-size: 22px;
+    border-radius: 50px;
   }
 }
 
 @media (min-width: 1110px){
   .btn {
     font-size: 24px;
+    border-radius: 100px;
+
+    &--description{
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1300px){
+  .btn {
+    font-size: 24px;
+
+    &--description{
+      font-size: 24px;
+    }
   }
 }
 

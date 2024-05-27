@@ -22,10 +22,13 @@
         font-family: 'owners-text', sans-serif;
         margin-top: 0;
         margin-bottom: 72px;
-        line-height: 140%;
+        line-height: 170%;
+        font-weight: 200;
 
         &--big{
-            font-size: 23px;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 140%;
         }
     }
 
@@ -76,6 +79,7 @@
     &__titre{
         font-family: 'owners-text', sans-serif;
         font-size: 43px;
+        font-weight: 400;
         text-transform: uppercase;
         margin: 0 0 43px;
         line-height: 110%;
@@ -87,9 +91,8 @@
         display: block;
 
         &--decal{
-            font-family: 'Pangaia';
+            font-family: "Pangaia";
             text-transform: capitalize;
-            font-weight: 200;
         }
     }
 
@@ -143,6 +146,7 @@ footer{
 
     &__el {
         font-family: 'owners-text', sans-serif;
+        font-weight: 400;
         font-size: 14px;
         margin-left: 8px;
     }
@@ -403,10 +407,9 @@ footer{
         &__para{
             font-size: 22px;
             margin-bottom: 78px;
-            line-height: 140%;
     
             &--big{
-                font-size: 29px;
+                font-size: 39px;
             }
         }
     }
@@ -551,7 +554,7 @@ footer{
             margin-left: 154px;
     
             &--big{
-                font-size: 29px;
+                font-size: 39px;
             }
         }
 
@@ -680,7 +683,7 @@ footer{
             margin-left: 303px;
     
             &--big{
-                font-size: 32px;
+                font-size: 43px;
             }
         }
         & a{
@@ -839,7 +842,7 @@ footer{
     
     .infoProjet{
         &__para{
-            font-size: 32px;
+            font-size: 24px;
     
             &--big{
                 font-size: 43px;
