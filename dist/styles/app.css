@@ -300,7 +300,7 @@ canvas {
 .projet__container::before {
   content: "";
   width: 1050px;
-  height: 370px;
+  height: 360px;
   top: 400px;
   left: 260px;
   background-image: url("../assets/images/illu/bulles.png");
@@ -519,7 +519,7 @@ canvas {
     top: 70px;
   }
   .projet__container::before {
-    width: 530px;
+    width: 550px;
     height: 230px;
     top: 430px;
   }
@@ -1110,7 +1110,7 @@ canvas {
     top: 30px;
   }
   .projet__container::before {
-    width: 1700px;
+    width: 1800px;
     height: 600px;
     top: 480px;
     left: 570px;
@@ -1255,7 +1255,7 @@ canvas {
     top: 30px;
   }
   .projet__container::before {
-    width: 1700px;
+    width: 1800px;
     height: 600px;
     top: 410px;
   }
@@ -1751,7 +1751,7 @@ canvas {
   font-family: "Pangaia";
   font-weight: 200;
   font-size: 57px;
-  margin-left: 114px;
+  margin-left: 108px;
 }
 
 .infoProjet {
@@ -2224,7 +2224,7 @@ footer {
   }
   .h1Projet__span {
     font-size: 93px;
-    margin-left: 186px;
+    margin-left: 174px;
   }
 
   .infoProjet {
@@ -2392,9 +2392,6 @@ footer {
   .h1Projet {
     padding: 246px 116px 123px;
   }
-  .h1Projet__span {
-    margin-left: 186px;
-  }
 
   .infoProjet {
     padding: 0px 116px;
@@ -2559,7 +2556,7 @@ footer {
   }
   .h1Projet__span {
     font-size: 101px;
-    margin-left: 202px;
+    margin-left: 191px;
   }
 
   .infoProjet {
@@ -3470,7 +3467,7 @@ footer {
   }
 
   .h1Projet__span--late {
-    margin-left: 144px;
+    margin-left: 130px;
   }
 
   .projetVisuel--late {
@@ -3521,7 +3518,7 @@ footer {
 }
 @media (min-width: 760px) {
   .h1Projet__span--late {
-    margin-left: 232px;
+    margin-left: 212px;
   }
 
   .h1Projet--late {
@@ -3612,17 +3609,13 @@ footer {
     padding: 288px 86px 171px;
   }
 
-  .h1Projet__span--late {
-    margin-left: 0px;
-  }
-
   .infoProjet--late {
     padding-bottom: 606px;
     background-position-y: 100%;
   }
 
   .h1Projet__span--late {
-    margin-left: 264px;
+    margin-left: 224px;
   }
 
   .projetVisuel--late {
@@ -4200,7 +4193,7 @@ footer {
   }
 
   .h1Projet__span--dec {
-    margin-left: 675px;
+    margin-left: 595px;
   }
 
   .projetVisuel__img--dec:nth-child(1) {

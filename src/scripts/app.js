@@ -90,10 +90,12 @@ document.addEventListener('mousemove', e => {
 if(home){
   //Balle de tennis
   var Engine = Matter.Engine,
-        Render = Matter.Render,
-        Runner = Matter.Runner,
-        Bodies = Matter.Bodies,
-        Composite = Matter.Composite;
+    Render = Matter.Render,
+    Runner = Matter.Runner,
+    Bodies = Matter.Bodies,
+    Composite = Matter.Composite,
+    Mouse = Matter.Mouse,
+    MouseConstraint = Matter.MouseConstraint
 
   const description = document.querySelector(".description");
   const thiccness = 60;
@@ -107,149 +109,86 @@ if(home){
   var windowWidth = window.innerWidth;
 
   var engine = Engine.create();
+  engine.positionIterations = 20;
+  engine.velocityIterations = 20;
 
-  var render = Matter.Render.create({
-  element: description,
-  engine: engine,
-  options: {
-      width: width,
-      height: height,
-      wireframes: false,
-      background: 'transparent'
-    }
+  var render = Render.create({
+      element: description,
+      engine: engine,
+      options: {
+          width: width,
+          height: height,
+          wireframes: false,
+          background: 'transparent'
+      }
   });
 
-  if (windowWidth < 760){
-    for (let i = 0; i < 20; i++){
-      let circle = Bodies.circle(i, 10, 30, {
-          friction: 0.3,
-          frictionAir: 0.00001,
-          restitution: 0.8,
-          render: {
-            sprite: {
-              texture: texture.src,
-              xScale: 2 * 30 / texture.width,
-              yScale: 2 * 30 / texture.height
-            }
-          }
-      });
-      Composite.add(engine.world, circle);
-    }
+  function createCircles(count, textureSrc) {
+      for (let i = 0; i < count; i++) {
+          let circle = Bodies.circle(Math.random() * width, Math.random() * height / 2, 30, {
+              friction: 0.2,
+              frictionAir: 0.01,
+              restitution: 1,
+              render: {
+                  sprite: {
+                      texture: textureSrc,
+                      xScale: 2 * 30 / texture.width,
+                      yScale: 2 * 30 / texture.height
+                  }
+              }
+          });
+          Composite.add(engine.world, circle);
+      }
+  }
 
-  } else if (windowWidth < 950){
-    for (let i = 0; i < 30; i++){
-      let circle = Bodies.circle(i, 10, 30, {
-          friction: 0.3,
-          frictionAir: 0.00001,
-          restitution: 0.8,
-          render: {
-            sprite: {
-              texture: texture2.src,
-              xScale: 2 * 30 / texture2.width,
-              yScale: 2 * 30 / texture2.height
-            }
-          }
-      });
-      Composite.add(engine.world, circle);
-    }
-
-  } else if (windowWidth < 1530){
-    for (let i = 0; i < 50; i++){
-      let circle = Bodies.circle(i, 10, 30, {
-          friction: 0.3,
-          frictionAir: 0.00001,
-          restitution: 0.8,
-          render: {
-            sprite: {
-              texture: texture.src,
-              xScale: 2 * 30 / texture.width,
-              yScale: 2 * 30 / texture.height
-            }
-          }
-      });
-      Composite.add(engine.world, circle);
-    }
-
-    for (let i = 0; i < 6; i++){
-      let circle = Bodies.circle(i, 10, 30, {
-          friction: 0.3,
-          frictionAir: 0.00001,
-          restitution: 0.8,
-          render: {
-            sprite: {
-              texture: texture2.src,
-              xScale: 2 * 30 / texture2.width,
-              yScale: 2 * 30 / texture2.height
-            }
-          }
-      });
-      Composite.add(engine.world, circle);
-    }
-  } else if (windowWidth < 1820){
-    for (let i = 0; i < 80; i++){
-      let circle = Bodies.circle(i, 10, 30, {
-          friction: 0.3,
-          frictionAir: 0.00001,
-          restitution: 0.8,
-          render: {
-            sprite: {
-              texture: texture.src,
-              xScale: 2 * 30 / texture.width,
-              yScale: 2 * 30 / texture.height
-            }
-          }
-      });
-      Composite.add(engine.world, circle);
-    }
+  if (windowWidth < 760) {
+      createCircles(20, texture.src);
+      createCircles(2, texture2.src);
+  } else if (windowWidth < 950) {
+      createCircles(30, texture.src);
+      createCircles(4, texture2.src);
+  } else if (windowWidth < 1530) {
+      createCircles(50, texture.src);
+      createCircles(6, texture2.src);
+  } else if (windowWidth < 1820) {
+      createCircles(80, texture.src);
+      createCircles(8, texture2.src);
   } else {
-    for (let i = 0; i < 120; i++){
-      let circle = Bodies.circle(i, 10, 30, {
-          friction: 0.5,
-          frictionAir: 0.00001,
-          restitution: 0.8,
-          render: {
-            sprite: {
-              texture: texture.src,
-              xScale: 2 * 30 / texture.width,
-              yScale: 2 * 30 / texture.height
-            }
-          }
-      });
-      Composite.add(engine.world, circle);
-    }
+      createCircles(120, texture.src);
+      createCircles(10, texture2.src);
   }
 
 
-
   let ground = Bodies.rectangle(
-    width / 2, 
-    height + thiccness / 2, 
-    width, 
-    thiccness, 
-    { isStatic: true })
+      width / 2,
+      height + thiccness / 2,
+      width,
+      thiccness,
+      { isStatic: true, friction: 1 }
+  );
   let leftWall = Bodies.rectangle(
-    0 - thiccness / 2,
-    height / 2,
-    thiccness,
-    height * 5,
-    { isStatic: true }
+      0 - thiccness / 2,
+      height / 2,
+      thiccness,
+      height * 5,
+      { isStatic: true, friction: 1 }
   );
   let rightWall = Bodies.rectangle(
       width + thiccness / 2,
       height / 2,
       thiccness,
       height * 5,
-      { isStatic: true }
-        );
+      { isStatic: true, friction: 1 }
+  );
 
   Composite.add(engine.world, [ground, leftWall, rightWall]);
 
-  let mouse = Matter.Mouse.create(render.canvas);
-  let mouseConstraint = Matter.MouseConstraint.create(engine, {
-    mouse: mouse,
-    constraint: {
-        stiffness: 0.2,
-    }
+  let mouse = Mouse.create(render.canvas);
+  let mouseConstraint = MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+          stiffness: 0.2,
+      }
   });
   Composite.add(engine.world, mouseConstraint);
 
@@ -259,48 +198,23 @@ if(home){
   Render.run(render);
 
   var runner = Runner.create();
-
   Runner.run(runner, engine);
 
   function handleResize() {
-    height = description.clientHeight;
-    width = description.clientWidth;
+      height = description.clientHeight;
+      width = description.clientWidth;
 
-    render.canvas.width = width;
-    render.canvas.height = height;
-    Matter.Body.setPosition(
-        ground,
-        Matter.Vector.create(
-            width / 2,
-            height + thiccness / 2,
-            width,
-            thiccness
-        )
-    );
-    Matter.Body.setPosition(
-        rightWall,
-        Matter.Vector.create(
-            width + thiccness / 2,
-            height / 2
-        )
-    );
-    Matter.Body.setPosition(
-        leftWall,
-        Matter.Vector.create(
-            0 - thiccness / 2,
-            height / 2
-        )
-    );
+      render.canvas.width = width;
+      render.canvas.height = height;
+
+      Matter.Body.setPosition(ground, { x: width / 2, y: height + thiccness / 2 });
+      Matter.Body.setPosition(rightWall, { x: width + thiccness / 2, y: height / 2 });
+      Matter.Body.setPosition(leftWall, { x: 0 - thiccness / 2, y: height / 2 });
   }
 
   window.addEventListener('resize', () => handleResize(description));
 
-  /*setTimeout(() => {
-    Matter.Runner.stop(runner);
-  }, "7000");*/
-
-
-  //etat actif
+  //etat actif nav
   const sections = document.querySelectorAll("section");
   const menuLinks = document.querySelectorAll(".navigation__el");
   
@@ -345,17 +259,17 @@ if(home){
 let prevButton = document.querySelector(".projet__btnSlider--prev");
 let nextButton = document.querySelector(".projet__btnSlider--next");
 
-prevButton.addEventListener("click", prevSlide);
-nextButton.addEventListener("click", nextSlide);
+nextButton.addEventListener("click", prevSlide);
+prevButton.addEventListener("click", nextSlide);
 
 //navigation clavier
 document.addEventListener("keydown", keyboardListener);
 
 function keyboardListener(event){
     if(event.code == "ArrowLeft"){
-        prevSlide();
-    }else if(event.code == "ArrowRight"){
         nextSlide();
+    }else if(event.code == "ArrowRight"){
+        prevSlide();
     }
 }
 
@@ -459,106 +373,6 @@ function nextSlide(){
 
 }
 
-
-
-
-
-
-/*
-  let tl = gsap.timeline({
-      scrollTrigger: {
-          trigger: '.projet',
-          start: 'top top',
-          end: 'bottom center',
-          scrub: 10, 
-          pin: true,
-          }
-  })
-
-
-
-
-  //anim gsap
-  tl.from('.projet__illu', {
-          rotation:0, 
-          duration:2,
-      })
-      .to('.projet__illu', {
-          rotation:120, 
-          duration: 40,
-          ease: "slow(0.7,0.7,false)",
-      })
-      .set('.projet__illu', {
-          rotation:120, 
-          duration: 20,
-      })
-      .to('.projet__illu', {
-          rotation:240, 
-          duration: 40,
-          ease: "slow(0.7,0.7,false)",
-      })
-
-
-
-
-  // slider
-  let element = document.querySelector('.projet__illu');
-  let roundedAngle = 1;
-  let lastAngle = 0;
-  let projets = document.querySelectorAll('.projet__element');
-  let projet1 = document.querySelector('#projet1');
-  let projet2 = document.querySelector('#projet2');
-  let projet3 = document.querySelector('#projet3');
-
-
-  function calculerAngleRotation() {
-      let style = window.getComputedStyle(element);
-      let transform = style.getPropertyValue('transform');
-
-      let values = transform.split('(')[1].split(')')[0].split(',');
-      let a = values[0];
-      let b = values[1];
-      let angle = Math.atan2(b, a) * (180 / Math.PI);
-      
-      if (angle < 0) {
-          angle += 360;
-      }
-      
-      roundedAngle = Math.round(angle);
-
-      if (roundedAngle > lastAngle) {
-          if(roundedAngle >= 80 && roundedAngle <= 100){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet2.classList.add('projet__element--active');
-          
-          } else if(roundedAngle >= 200 && roundedAngle <= 220){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet3.classList.add('projet__element--active');
-          }
-      } else if (roundedAngle < lastAngle) {
-          if(roundedAngle <= 160 && roundedAngle >= 140){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet2.classList.add('projet__element--active');
-          } else if(roundedAngle <= 40 && roundedAngle >= 20){
-              for(let i = 0; i < projets.length; i++){
-                  projets[i].classList.remove('projet__element--active');
-              }
-              projet1.classList.add('projet__element--active');
-          }
-      }
-      lastAngle = roundedAngle;
-
-      requestAnimationFrame(calculerAngleRotation);
-  }
-
-  calculerAngleRotation();*/
-
 } else if (rux){
   let tl = gsap.timeline({
     scrollTrigger: {
@@ -650,12 +464,6 @@ function nextSlide(){
   delta = delta * (-700);
   document.documentElement.scrollLeft -= delta;    
 });*/
-
-
-
-
-
-
 
 //alcoves
 

@@ -89,14 +89,41 @@ document.addEventListener('mousemove', function (e) {
 });
 
 if (home) {
+  var createCircles = function createCircles(count, textureSrc) {
+    for (var i = 0; i < count; i++) {
+      var circle = Bodies.circle(Math.random() * width, Math.random() * height / 2, 30, {
+        friction: 0.2,
+        frictionAir: 0.01,
+        restitution: 1,
+        render: {
+          sprite: {
+            texture: textureSrc,
+            xScale: 2 * 30 / texture.width,
+            yScale: 2 * 30 / texture.height
+          }
+        }
+      });
+      Composite.add(engine.world, circle);
+    }
+  };
+
   var handleResize = function handleResize() {
     height = description.clientHeight;
     width = description.clientWidth;
     render.canvas.width = width;
     render.canvas.height = height;
-    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(ground, matter_js__WEBPACK_IMPORTED_MODULE_0___default().Vector.create(width / 2, height + thiccness / 2, width, thiccness));
-    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(rightWall, matter_js__WEBPACK_IMPORTED_MODULE_0___default().Vector.create(width + thiccness / 2, height / 2));
-    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(leftWall, matter_js__WEBPACK_IMPORTED_MODULE_0___default().Vector.create(0 - thiccness / 2, height / 2));
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(ground, {
+      x: width / 2,
+      y: height + thiccness / 2
+    });
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(rightWall, {
+      x: width + thiccness / 2,
+      y: height / 2
+    });
+    matter_js__WEBPACK_IMPORTED_MODULE_0___default().Body.setPosition(leftWall, {
+      x: 0 - thiccness / 2,
+      y: height / 2
+    });
   };
 
   var updateMenuActiveState = function updateMenuActiveState(activeIndex) {
@@ -111,9 +138,9 @@ if (home) {
 
   var keyboardListener = function keyboardListener(event) {
     if (event.code == "ArrowLeft") {
-      prevSlide();
-    } else if (event.code == "ArrowRight") {
       nextSlide();
+    } else if (event.code == "ArrowRight") {
+      prevSlide();
     }
   };
 
@@ -206,108 +233,15 @@ if (home) {
     nextSlideEl.classList.remove("projet__element--rotateLeft");
     nextSlideEl.classList.add("projet__element--active");
   };
-  /*
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.projet',
-            start: 'top top',
-            end: 'bottom center',
-            scrub: 10, 
-            pin: true,
-            }
-    })
-  
-  
-  
-  
-    //anim gsap
-    tl.from('.projet__illu', {
-            rotation:0, 
-            duration:2,
-        })
-        .to('.projet__illu', {
-            rotation:120, 
-            duration: 40,
-            ease: "slow(0.7,0.7,false)",
-        })
-        .set('.projet__illu', {
-            rotation:120, 
-            duration: 20,
-        })
-        .to('.projet__illu', {
-            rotation:240, 
-            duration: 40,
-            ease: "slow(0.7,0.7,false)",
-        })
-  
-  
-  
-  
-    // slider
-    let element = document.querySelector('.projet__illu');
-    let roundedAngle = 1;
-    let lastAngle = 0;
-    let projets = document.querySelectorAll('.projet__element');
-    let projet1 = document.querySelector('#projet1');
-    let projet2 = document.querySelector('#projet2');
-    let projet3 = document.querySelector('#projet3');
-  
-  
-    function calculerAngleRotation() {
-        let style = window.getComputedStyle(element);
-        let transform = style.getPropertyValue('transform');
-  
-        let values = transform.split('(')[1].split(')')[0].split(',');
-        let a = values[0];
-        let b = values[1];
-        let angle = Math.atan2(b, a) * (180 / Math.PI);
-        
-        if (angle < 0) {
-            angle += 360;
-        }
-        
-        roundedAngle = Math.round(angle);
-  
-        if (roundedAngle > lastAngle) {
-            if(roundedAngle >= 80 && roundedAngle <= 100){
-                for(let i = 0; i < projets.length; i++){
-                    projets[i].classList.remove('projet__element--active');
-                }
-                projet2.classList.add('projet__element--active');
-            
-            } else if(roundedAngle >= 200 && roundedAngle <= 220){
-                for(let i = 0; i < projets.length; i++){
-                    projets[i].classList.remove('projet__element--active');
-                }
-                projet3.classList.add('projet__element--active');
-            }
-        } else if (roundedAngle < lastAngle) {
-            if(roundedAngle <= 160 && roundedAngle >= 140){
-                for(let i = 0; i < projets.length; i++){
-                    projets[i].classList.remove('projet__element--active');
-                }
-                projet2.classList.add('projet__element--active');
-            } else if(roundedAngle <= 40 && roundedAngle >= 20){
-                for(let i = 0; i < projets.length; i++){
-                    projets[i].classList.remove('projet__element--active');
-                }
-                projet1.classList.add('projet__element--active');
-            }
-        }
-        lastAngle = roundedAngle;
-  
-        requestAnimationFrame(calculerAngleRotation);
-    }
-  
-    calculerAngleRotation();*/
-
 
   //Balle de tennis
   var Engine = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Engine),
       Render = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Render),
       Runner = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Runner),
       Bodies = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Bodies),
-      Composite = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Composite);
+      Composite = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Composite),
+      Mouse = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().Mouse),
+      MouseConstraint = (matter_js__WEBPACK_IMPORTED_MODULE_0___default().MouseConstraint);
   var description = document.querySelector(".description");
   var thiccness = 60;
   var texture = new Image();
@@ -318,7 +252,9 @@ if (home) {
   var width = description.clientWidth;
   var windowWidth = window.innerWidth;
   var engine = Engine.create();
-  var render = matter_js__WEBPACK_IMPORTED_MODULE_0___default().Render.create({
+  engine.positionIterations = 20;
+  engine.velocityIterations = 20;
+  var render = Render.create({
     element: description,
     engine: engine,
     options: {
@@ -330,120 +266,37 @@ if (home) {
   });
 
   if (windowWidth < 760) {
-    for (var i = 0; i < 20; i++) {
-      var circle = Bodies.circle(i, 10, 30, {
-        friction: 0.3,
-        frictionAir: 0.00001,
-        restitution: 0.8,
-        render: {
-          sprite: {
-            texture: texture.src,
-            xScale: 2 * 30 / texture.width,
-            yScale: 2 * 30 / texture.height
-          }
-        }
-      });
-      Composite.add(engine.world, circle);
-    }
+    createCircles(20, texture.src);
+    createCircles(2, texture2.src);
   } else if (windowWidth < 950) {
-    for (var _i = 0; _i < 30; _i++) {
-      var _circle = Bodies.circle(_i, 10, 30, {
-        friction: 0.3,
-        frictionAir: 0.00001,
-        restitution: 0.8,
-        render: {
-          sprite: {
-            texture: texture2.src,
-            xScale: 2 * 30 / texture2.width,
-            yScale: 2 * 30 / texture2.height
-          }
-        }
-      });
-
-      Composite.add(engine.world, _circle);
-    }
+    createCircles(30, texture.src);
+    createCircles(4, texture2.src);
   } else if (windowWidth < 1530) {
-    for (var _i2 = 0; _i2 < 50; _i2++) {
-      var _circle2 = Bodies.circle(_i2, 10, 30, {
-        friction: 0.3,
-        frictionAir: 0.00001,
-        restitution: 0.8,
-        render: {
-          sprite: {
-            texture: texture.src,
-            xScale: 2 * 30 / texture.width,
-            yScale: 2 * 30 / texture.height
-          }
-        }
-      });
-
-      Composite.add(engine.world, _circle2);
-    }
-
-    for (var _i3 = 0; _i3 < 6; _i3++) {
-      var _circle3 = Bodies.circle(_i3, 10, 30, {
-        friction: 0.3,
-        frictionAir: 0.00001,
-        restitution: 0.8,
-        render: {
-          sprite: {
-            texture: texture2.src,
-            xScale: 2 * 30 / texture2.width,
-            yScale: 2 * 30 / texture2.height
-          }
-        }
-      });
-
-      Composite.add(engine.world, _circle3);
-    }
+    createCircles(50, texture.src);
+    createCircles(6, texture2.src);
   } else if (windowWidth < 1820) {
-    for (var _i4 = 0; _i4 < 80; _i4++) {
-      var _circle4 = Bodies.circle(_i4, 10, 30, {
-        friction: 0.3,
-        frictionAir: 0.00001,
-        restitution: 0.8,
-        render: {
-          sprite: {
-            texture: texture.src,
-            xScale: 2 * 30 / texture.width,
-            yScale: 2 * 30 / texture.height
-          }
-        }
-      });
-
-      Composite.add(engine.world, _circle4);
-    }
+    createCircles(80, texture.src);
+    createCircles(8, texture2.src);
   } else {
-    for (var _i5 = 0; _i5 < 120; _i5++) {
-      var _circle5 = Bodies.circle(_i5, 10, 30, {
-        friction: 0.5,
-        frictionAir: 0.00001,
-        restitution: 0.8,
-        render: {
-          sprite: {
-            texture: texture.src,
-            xScale: 2 * 30 / texture.width,
-            yScale: 2 * 30 / texture.height
-          }
-        }
-      });
-
-      Composite.add(engine.world, _circle5);
-    }
+    createCircles(120, texture.src);
+    createCircles(10, texture2.src);
   }
 
   var ground = Bodies.rectangle(width / 2, height + thiccness / 2, width, thiccness, {
-    isStatic: true
+    isStatic: true,
+    friction: 1
   });
   var leftWall = Bodies.rectangle(0 - thiccness / 2, height / 2, thiccness, height * 5, {
-    isStatic: true
+    isStatic: true,
+    friction: 1
   });
   var rightWall = Bodies.rectangle(width + thiccness / 2, height / 2, thiccness, height * 5, {
-    isStatic: true
+    isStatic: true,
+    friction: 1
   });
   Composite.add(engine.world, [ground, leftWall, rightWall]);
-  var mouse = matter_js__WEBPACK_IMPORTED_MODULE_0___default().Mouse.create(render.canvas);
-  var mouseConstraint = matter_js__WEBPACK_IMPORTED_MODULE_0___default().MouseConstraint.create(engine, {
+  var mouse = Mouse.create(render.canvas);
+  var mouseConstraint = MouseConstraint.create(engine, {
     mouse: mouse,
     constraint: {
       stiffness: 0.2
@@ -457,11 +310,7 @@ if (home) {
   Runner.run(runner, engine);
   window.addEventListener('resize', function () {
     return handleResize(description);
-  });
-  /*setTimeout(() => {
-    Matter.Runner.stop(runner);
-  }, "7000");*/
-  //etat actif
+  }); //etat actif nav
 
   var sections = document.querySelectorAll("section");
   var menuLinks = document.querySelectorAll(".navigation__el");
@@ -493,8 +342,8 @@ if (home) {
 
   var prevButton = document.querySelector(".projet__btnSlider--prev");
   var nextButton = document.querySelector(".projet__btnSlider--next");
-  prevButton.addEventListener("click", prevSlide);
-  nextButton.addEventListener("click", nextSlide); //navigation clavier
+  nextButton.addEventListener("click", prevSlide);
+  prevButton.addEventListener("click", nextSlide); //navigation clavier
 
   document.addEventListener("keydown", keyboardListener);
   var rota = 0;
