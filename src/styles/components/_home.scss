@@ -244,13 +244,17 @@ canvas{
         margin-right: 0;
         padding-left: 0;
         transform-origin: center center;
+        transition: 0.1s cubic-bezier(0.37, 0, 0.63, 1);
 
 
         &--prev{
             transform: rotate(180deg);
         }
         &:hover{
-            background-size: 95%;
+            opacity: 60%;
+        }
+        &:active{
+            opacity: 20%;
         }
     }
 

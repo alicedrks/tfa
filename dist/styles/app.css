@@ -92,6 +92,9 @@ button {
   fill: #000000;
   transition: fill 0.4s;
 }
+.btn:active {
+  transform: scale(0.98);
+}
 
 a svg {
   width: 14px;
@@ -122,6 +125,21 @@ small a {
   top: 0;
   left: 0;
   z-index: 100;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer a:active {
+  opacity: 60%;
+}
+.footer a img:hover {
+  transform: scale(1.05);
+  transition: 0.1s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.footer a img:active {
+  transform: scale(0.9);
+  transition: 0.1s cubic-bezier(0.37, 0, 0.63, 1);
 }
 
 @media (max-width: 350px) {
@@ -385,12 +403,16 @@ canvas {
   margin-right: 0;
   padding-left: 0;
   transform-origin: center center;
+  transition: 0.1s cubic-bezier(0.37, 0, 0.63, 1);
 }
 .projet__btnSlider--prev {
   transform: rotate(180deg);
 }
 .projet__btnSlider:hover {
-  background-size: 95%;
+  opacity: 60%;
+}
+.projet__btnSlider:active {
+  opacity: 20%;
 }
 .projet__train {
   content: "";
@@ -1570,11 +1592,14 @@ canvas {
   margin-left: 24px;
 }
 .navigation__el a {
-  transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+  transition: opacity 0.2s cubic-bezier(0.37, 0, 0.63, 1);
   opacity: 60%;
 }
 .navigation__el a:hover {
   opacity: 100%;
+}
+.navigation__el a:active {
+  opacity: 10%;
 }
 .navigation__el--active {
   background-image: url("../assets/images/illu/balleTennis100.svg");
@@ -4754,6 +4779,12 @@ footer {
   margin: 9px 0;
   padding: 0;
   list-style: none;
+}
+.credit__list a:hover {
+  text-decoration: underline;
+}
+.credit__list a:active {
+  opacity: 60%;
 }
 .credit__el {
   font-family: "owners-text";

@@ -16,6 +16,13 @@
         margin: 9px 0;
         padding:0;
         list-style: none;
+
+        a:hover{
+            text-decoration: underline;
+        }
+        a:active{
+            opacity: 60%;
+        }
     }
     &__el{
         font-family: 'owners-text';

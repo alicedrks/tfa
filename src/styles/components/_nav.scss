@@ -59,12 +59,16 @@
         margin-left: 24px;
 
         a{
-            transition: opacity 0.3s cubic-bezier(0.37, 0, 0.63, 1);
+            transition: opacity 0.2s cubic-bezier(0.37, 0, 0.63, 1);
             opacity: 60%;
         }
 
         & a:hover{
             opacity: 100%;
+        }
+
+        & a:active{
+            opacity: 10%;
         }
 
         &--active{
