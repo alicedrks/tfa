@@ -395,7 +395,6 @@ function nextSlide(){
 
 
 } else if (december){
-
   let tl = gsap.timeline({
     scrollTrigger: {
         trigger: '.projetVisuel',
@@ -485,17 +484,20 @@ function nextSlide(){
     balle.classList.add('balle--active');
     filet.classList.add('filet--active');
     fond.classList.add('fondExpo--remove');
-    fondE.classList.add('fondExpo--remove');
-    fondT.classList.remove('fondExpo--remove');
-
+    fondE.classList.add('fondEtoile--remove');
+    fondT.classList.remove('fondTennis--remove');
 
     setTimeout(() => {
       joueurDroit.classList.remove('joueurDroit--active');
       joueurGauche.classList.remove('joueurGauche--active');
       balle.classList.remove('balle--active');
       filet.classList.remove('filet--active');
-      fond.classList.remove('fondExpo--remove');
-      fondE.classList.remove('fondExpo--remove');
+
+      if (!scoutGauche.classList.contains('persoGauche--active')){
+        fond.classList.remove('fondExpo--remove');
+        fondE.classList.remove('fondEtoile--remove');
+      } 
+
     }, "19000");
   }
 
@@ -517,8 +519,8 @@ function nextSlide(){
     arbre.classList.add('arbres--active');
     feu.classList.add('feu--active');
     fond.classList.add('fondExpo--remove');
-    fondT.classList.add('fondExpo--remove');
-    fondE.classList.remove('fondExpo--remove');
+    fondT.classList.add('fondTennis--remove');
+    fondE.classList.remove('fondEtoile--remove');
 
     setTimeout(() => {
       scoutDroite.classList.remove('persoDroite--active');
@@ -526,8 +528,11 @@ function nextSlide(){
       tente.classList.remove('tente--active');
       arbre.classList.remove('arbres--active');
       feu.classList.remove('feu--active');
-      fond.classList.remove('fondExpo--remove');
-      fondT.classList.remove('fondExpo--remove');
+
+      if (!joueurDroit.classList.contains('joueurDroit--active')){
+        fond.classList.remove('fondExpo--remove');
+        fondT.classList.remove('fondTennis--remove');
+      } 
     }, "19000");
   }
 
