@@ -264,6 +264,19 @@ if (home) {
       background: 'transparent'
     }
   });
+  var ground = Bodies.rectangle(width / 2, height + thiccness / 2, width, thiccness, {
+    isStatic: true,
+    friction: 1
+  });
+  var leftWall = Bodies.rectangle(0 - thiccness / 2, height / 2, thiccness, height * 5, {
+    isStatic: true,
+    friction: 1
+  });
+  var rightWall = Bodies.rectangle(width + thiccness / 2, height / 2, thiccness, height * 5, {
+    isStatic: true,
+    friction: 1
+  });
+  Composite.add(engine.world, [ground, leftWall, rightWall]);
 
   if (windowWidth < 760) {
     createCircles(20, texture.src);
@@ -282,19 +295,6 @@ if (home) {
     createCircles(10, texture2.src);
   }
 
-  var ground = Bodies.rectangle(width / 2, height + thiccness / 2, width, thiccness, {
-    isStatic: true,
-    friction: 1
-  });
-  var leftWall = Bodies.rectangle(0 - thiccness / 2, height / 2, thiccness, height * 5, {
-    isStatic: true,
-    friction: 1
-  });
-  var rightWall = Bodies.rectangle(width + thiccness / 2, height / 2, thiccness, height * 5, {
-    isStatic: true,
-    friction: 1
-  });
-  Composite.add(engine.world, [ground, leftWall, rightWall]);
   var mouse = Mouse.create(render.canvas);
   var mouseConstraint = MouseConstraint.create(engine, {
     mouse: mouse,
@@ -481,28 +481,7 @@ if (home) {
     pause.classList.add('hide');
     audio.pause();
   };
-  /*const scrollContainer = document.querySelector('.scroll-container');
-  const scrollContent = document.querySelector('.scroll-content');
-  const scrollingImage = document.querySelector('.scrolling-image');
-  
-  
-  scrollContainer.addEventListener('scroll', () => {
-      if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContent.clientWidth) {
-        const imageClone = scrollingImage.cloneNode(true); 
-        scrollContent.appendChild(imageClone);
-      }
-  });*/
 
-
-  // Scroll horizontal
-
-  /*document.addEventListener('wheel', function(e)
-  {
-  
-    let delta = ((e.deltaY || -e.wheelDelta || e.detail) >> 10) || 1;
-    delta = delta * (-700);
-    document.documentElement.scrollLeft -= delta;    
-  });*/
   //alcoves
   var fond = document.querySelector('.fondExpo'); //tennis
 
@@ -529,6 +508,24 @@ if (home) {
   music.addEventListener('click', musicButton);
   play.addEventListener('click', playFunction);
   pause.addEventListener('click', pauseFunction);
+  var scrollContainer = document.querySelector('.scroll-container');
+  var scrollContent = document.querySelector('.scroll-content');
+  var scrollingImage = document.querySelector('.scrolling-image');
+  /*scrollContainer.addEventListener('scroll', () => {
+      if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContent.clientWidth) {
+        const imageClone = scrollingImage.cloneNode(true); 
+        scrollContent.appendChild(imageClone);
+      }
+  });*/
+
+  document.addEventListener('wheel', function (e) {
+    if (e.deltaY !== 0) {
+      document.querySelector('.scroll-container').scrollLeft += e.deltaY;
+      e.preventDefault();
+    }
+  }, {
+    passive: false
+  });
 }
 
 /***/ }),

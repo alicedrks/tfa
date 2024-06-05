@@ -88,6 +88,7 @@ document.addEventListener('mousemove', e => {
 
 
 if(home){
+
   //Balle de tennis
   var Engine = Matter.Engine,
     Render = Matter.Render,
@@ -123,41 +124,6 @@ if(home){
       }
   });
 
-  function createCircles(count, textureSrc) {
-      for (let i = 0; i < count; i++) {
-          let circle = Bodies.circle(Math.random() * width, Math.random() * height / 2, 30, {
-              friction: 0.2,
-              frictionAir: 0.01,
-              restitution: 1,
-              render: {
-                  sprite: {
-                      texture: textureSrc,
-                      xScale: 2 * 30 / texture.width,
-                      yScale: 2 * 30 / texture.height
-                  }
-              }
-          });
-          Composite.add(engine.world, circle);
-      }
-  }
-
-  if (windowWidth < 760) {
-      createCircles(20, texture.src);
-      createCircles(2, texture2.src);
-  } else if (windowWidth < 950) {
-      createCircles(30, texture.src);
-      createCircles(4, texture2.src);
-  } else if (windowWidth < 1530) {
-      createCircles(50, texture.src);
-      createCircles(6, texture2.src);
-  } else if (windowWidth < 1820) {
-      createCircles(80, texture.src);
-      createCircles(8, texture2.src);
-  } else {
-      createCircles(120, texture.src);
-      createCircles(10, texture2.src);
-  }
-
 
   let ground = Bodies.rectangle(
       width / 2,
@@ -182,6 +148,42 @@ if(home){
   );
 
   Composite.add(engine.world, [ground, leftWall, rightWall]);
+
+  if (windowWidth < 760) {
+    createCircles(20, texture.src);
+    createCircles(2, texture2.src);
+  } else if (windowWidth < 950) {
+    createCircles(30, texture.src);
+    createCircles(4, texture2.src);
+  } else if (windowWidth < 1530) {
+    createCircles(50, texture.src);
+    createCircles(6, texture2.src);
+  } else if (windowWidth < 1820) {
+    createCircles(80, texture.src);
+    createCircles(8, texture2.src);
+  } else {
+    createCircles(120, texture.src);
+    createCircles(10, texture2.src);
+  }
+
+
+  function createCircles(count, textureSrc) {
+    for (let i = 0; i < count; i++) {
+        let circle = Bodies.circle(Math.random() * width, Math.random() * height / 2, 30, {
+            friction: 0.2,
+            frictionAir: 0.01,
+            restitution: 1,
+            render: {
+                sprite: {
+                    texture: textureSrc,
+                    xScale: 2 * 30 / texture.width,
+                    yScale: 2 * 30 / texture.height
+                }
+            }
+        });
+        Composite.add(engine.world, circle);
+    }
+}
 
   let mouse = Mouse.create(render.canvas);
   let mouseConstraint = MouseConstraint.create(engine, {
@@ -213,6 +215,7 @@ if(home){
   }
 
   window.addEventListener('resize', () => handleResize(description));
+  
 
   //etat actif nav
   const sections = document.querySelectorAll("section");
@@ -453,19 +456,7 @@ function nextSlide(){
       duration: 5
     })
 } else if (annexe){
-
-
-// Scroll horizontal
-/*document.addEventListener('wheel', function(e)
-{
-
-  let delta = ((e.deltaY || -e.wheelDelta || e.detail) >> 10) || 1;
-  delta = delta * (-700);
-  document.documentElement.scrollLeft -= delta;    
-});*/
-
-//alcoves
-
+  //alcoves
   let fond = document.querySelector('.fondExpo');
 
   //tennis
@@ -568,17 +559,28 @@ function nextSlide(){
     audio.pause();
   }
 
-/*const scrollContainer = document.querySelector('.scroll-container');
+const scrollContainer = document.querySelector('.scroll-container');
 const scrollContent = document.querySelector('.scroll-content');
 const scrollingImage = document.querySelector('.scrolling-image');
 
 
-scrollContainer.addEventListener('scroll', () => {
+                                                                                                                                                          
+/*scrollContainer.addEventListener('scroll', () => {
     if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContent.clientWidth) {
       const imageClone = scrollingImage.cloneNode(true); 
       scrollContent.appendChild(imageClone);
     }
 });*/
+
+
+document.addEventListener('wheel', function(e) {
+  if (e.deltaY !== 0) {
+      document.querySelector('.scroll-container').scrollLeft += e.deltaY;
+      e.preventDefault();
+  }
+}, { passive: false });
+
+
 
 }
 
