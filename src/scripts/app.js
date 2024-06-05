@@ -90,14 +90,127 @@ document.addEventListener('mousemove', e => {
 if(home){
 
   //Balle de tennis
-  var Engine = Matter.Engine,
-    Render = Matter.Render,
-    Runner = Matter.Runner,
-    Bodies = Matter.Bodies,
-    Composite = Matter.Composite,
-    Mouse = Matter.Mouse,
-    MouseConstraint = Matter.MouseConstraint
+    setTimeout(function() {
+      var Engine = Matter.Engine,
+      Render = Matter.Render,
+      Runner = Matter.Runner,
+      Bodies = Matter.Bodies,
+      Composite = Matter.Composite,
+      Mouse = Matter.Mouse,
+      MouseConstraint = Matter.MouseConstraint
+  
+      var height = description.clientHeight;
+      var width = description.clientWidth;
+      var windowWidth = window.innerWidth;
+  
+      var engine = Engine.create();
+      engine.positionIterations = 20;
+      engine.velocityIterations = 20;
+  
+      var render = Render.create({
+          element: description,
+          engine: engine,
+          options: {
+              width: width,
+              height: height,
+              wireframes: false,
+              background: 'transparent'
+          }
+      });
+    
+      if (windowWidth < 760) {
+        createCircles(20, texture.src);
+        createCircles(2, texture2.src);
+      } else if (windowWidth < 950) {
+        createCircles(30, texture.src);
+        createCircles(4, texture2.src);
+      } else if (windowWidth < 1530) {
+        createCircles(50, texture.src);
+        createCircles(6, texture2.src);
+      } else if (windowWidth < 1820) {
+        createCircles(80, texture.src);
+        createCircles(8, texture2.src);
+      } else {
+        createCircles(120, texture.src);
+        createCircles(10, texture2.src);
+      }
+  
+      function createCircles(count, textureSrc) {
+        for (let i = 0; i < count; i++) {
+            let circle = Bodies.circle(Math.random() * width, Math.random() * height / 2, 30, {
+                friction: 0.2,
+                frictionAir: 0.01,
+                restitution: 1,
+                render: {
+                    sprite: {
+                        texture: textureSrc,
+                        xScale: 2 * 30 / texture.width,
+                        yScale: 2 * 30 / texture.height
+                    }
+                }
+            });
+            Composite.add(engine.world, circle);
+        }
+      }
+  
+  
+      let ground = Bodies.rectangle(
+          width / 2,
+          height + thiccness / 2,
+          width,
+          thiccness,
+          { isStatic: true, friction: 1 }
+      );
+      let leftWall = Bodies.rectangle(
+          0 - thiccness / 2,
+          height / 2,
+          thiccness,
+          height * 5,
+          { isStatic: true, friction: 1 }
+      );
+      let rightWall = Bodies.rectangle(
+          width + thiccness / 2,
+          height / 2,
+          thiccness,
+          height * 5,
+          { isStatic: true, friction: 1 }
+      );
+  
+      Composite.add(engine.world, [ground, leftWall, rightWall]);
+  
+      let mouse = Mouse.create(render.canvas);
+      let mouseConstraint = MouseConstraint.create(engine, {
+          mouse: mouse,
+          constraint: {
+              stiffness: 0.2,
+          }
+      });
+      Composite.add(engine.world, mouseConstraint);
+  
+      mouseConstraint.mouse.element.removeEventListener('mousewheel', mouseConstraint.mouse.mousewheel);
+      mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', mouseConstraint.mouse.mousewheel);
+  
+      Render.run(render);
+  
+      var runner = Runner.create();
+      Runner.run(runner, engine);
+  
+      function handleResize() {
+        height = description.clientHeight;
+        width = description.clientWidth;
+  
+        render.canvas.width = width;
+        render.canvas.height = height;
+  
+        Matter.Body.setPosition(ground, { x: width / 2, y: height + thiccness / 2 });
+        Matter.Body.setPosition(rightWall, { x: width + thiccness / 2, y: height / 2 });
+        Matter.Body.setPosition(leftWall, { x: 0 - thiccness / 2, y: height / 2 });
+      }
+  
+      window.addEventListener('resize', () => handleResize(description));
+    }, 100);
 
+  
   const description = document.querySelector(".description");
   const thiccness = 60;
   const texture = new Image();
@@ -105,116 +218,9 @@ if(home){
   const texture2 = new Image();
   texture2.src = 'assets/images/illu/balleTennis100.svg';
 
-  var height = description.clientHeight;
-  var width = description.clientWidth;
-  var windowWidth = window.innerWidth;
-
-  var engine = Engine.create();
-  engine.positionIterations = 20;
-  engine.velocityIterations = 20;
-
-  var render = Render.create({
-      element: description,
-      engine: engine,
-      options: {
-          width: width,
-          height: height,
-          wireframes: false,
-          background: 'transparent'
-      }
-  });
 
 
-  let ground = Bodies.rectangle(
-      width / 2,
-      height + thiccness / 2,
-      width,
-      thiccness,
-      { isStatic: true, friction: 1 }
-  );
-  let leftWall = Bodies.rectangle(
-      0 - thiccness / 2,
-      height / 2,
-      thiccness,
-      height * 5,
-      { isStatic: true, friction: 1 }
-  );
-  let rightWall = Bodies.rectangle(
-      width + thiccness / 2,
-      height / 2,
-      thiccness,
-      height * 5,
-      { isStatic: true, friction: 1 }
-  );
-
-  Composite.add(engine.world, [ground, leftWall, rightWall]);
-
-  if (windowWidth < 760) {
-    createCircles(20, texture.src);
-    createCircles(2, texture2.src);
-  } else if (windowWidth < 950) {
-    createCircles(30, texture.src);
-    createCircles(4, texture2.src);
-  } else if (windowWidth < 1530) {
-    createCircles(50, texture.src);
-    createCircles(6, texture2.src);
-  } else if (windowWidth < 1820) {
-    createCircles(80, texture.src);
-    createCircles(8, texture2.src);
-  } else {
-    createCircles(120, texture.src);
-    createCircles(10, texture2.src);
-  }
-
-
-  function createCircles(count, textureSrc) {
-    for (let i = 0; i < count; i++) {
-        let circle = Bodies.circle(Math.random() * width, Math.random() * height / 2, 30, {
-            friction: 0.2,
-            frictionAir: 0.01,
-            restitution: 1,
-            render: {
-                sprite: {
-                    texture: textureSrc,
-                    xScale: 2 * 30 / texture.width,
-                    yScale: 2 * 30 / texture.height
-                }
-            }
-        });
-        Composite.add(engine.world, circle);
-    }
-}
-
-  let mouse = Mouse.create(render.canvas);
-  let mouseConstraint = MouseConstraint.create(engine, {
-      mouse: mouse,
-      constraint: {
-          stiffness: 0.2,
-      }
-  });
-  Composite.add(engine.world, mouseConstraint);
-
-  mouseConstraint.mouse.element.removeEventListener('mousewheel', mouseConstraint.mouse.mousewheel);
-  mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', mouseConstraint.mouse.mousewheel);
-
-  Render.run(render);
-
-  var runner = Runner.create();
-  Runner.run(runner, engine);
-
-  function handleResize() {
-      height = description.clientHeight;
-      width = description.clientWidth;
-
-      render.canvas.width = width;
-      render.canvas.height = height;
-
-      Matter.Body.setPosition(ground, { x: width / 2, y: height + thiccness / 2 });
-      Matter.Body.setPosition(rightWall, { x: width + thiccness / 2, y: height / 2 });
-      Matter.Body.setPosition(leftWall, { x: 0 - thiccness / 2, y: height / 2 });
-  }
-
-  window.addEventListener('resize', () => handleResize(description));
+ 
   
 
   //etat actif nav
