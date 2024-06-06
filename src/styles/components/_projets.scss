@@ -3,12 +3,33 @@
     padding: 228px 24px 108px;
     line-height: 50%;
 
+    &--dec{
+        line-height: 90%;
+    }
+
     &__span{
         display: block;
         font-family: 'Pangaia';
         font-weight: 200;
         font-size: 57px;
         margin-left: 108px;
+
+        &--dec{
+            margin-left: 0;
+        }
+        &--late{
+            margin-left: 0px;
+        }
+    }
+
+    &--late{
+        line-height: 90%;
+        background-image: url('../assets/images/illu/illuLateFirst.svg');
+        background-repeat: no-repeat;
+        background-size: 600px;
+        background-position-x: 210px;
+        background-position-y: 50px;
+        padding: 152px 24px 108px;
     }
 }
 
@@ -36,6 +57,22 @@
         display: none;
         animation: 5s linear bulle4 infinite;
     }
+
+    &--dec{
+        padding-bottom: 76px;
+    }
+
+    &__homme{
+        display: none;
+    }
+
+    &--late{
+        padding-bottom: 216px;
+        background-image: url('../assets/images/illu/illuLateThird.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: 95%;
+    }
 }
 
 .projetVisuel{
@@ -52,6 +89,42 @@
             border-style: solid;
             border-width: 1px;
         }
+
+        &--dec{
+            transform: rotate(0deg);
+    
+            &:nth-child(1){
+                position: absolute;
+                width: 85%;
+                left: -28%;
+                top: 15%;
+            }
+            &:nth-child(2){
+                position: absolute;
+                width: 85%;
+                right: -28%;
+                bottom: 5%;
+            }
+            &:nth-child(3){
+                margin-top: 0;
+                width: 90%;
+                scale: 0;
+            }
+        }
+
+        &--late{
+            height: 100%;
+            width: 100%;
+            border-radius: 0px;
+            position: relative;
+            z-index: 10;
+            transform: rotate(-4deg);
+        }
+
+        &--right{
+            margin-top: 76px;
+            transform: rotate(4deg);
+        }  
     }
 
     &__bulle{
@@ -59,6 +132,38 @@
         width: 20%;
         left: 78%;
         animation: 4s linear bulle3 infinite;
+    }
+
+    &__imgs{
+        display: flex;
+        justify-content: center;
+    }
+
+    &--dec{
+        position: relative;
+        overflow: hidden;
+        z-index: 10;
+        padding: 144px 24px;
+    }
+
+    &--late{
+        padding: 144px 27px 72px;
+        position: relative;
+        z-index: 5;
+        overflow: hidden;
+    
+        svg {
+            position: absolute;
+            z-index: 4;
+            top: 100px;
+            left: -100px;
+            width: 270%;
+    
+            path{
+                stroke-dashoffset: 2000;
+                animation: dashDataplay 100s linear infinite;
+            }
+        }
     }
 }
 
@@ -122,9 +227,40 @@
             background-repeat: no-repeat;
         }
     }
+
     a{
         position: relative;
         z-index: 30;
+    }
+
+    &__bulles{
+        position: absolute;
+        z-index: 11;
+        width: 1000px;
+        top: 43%;
+        left: 10%;
+        animation: bulles 5s linear infinite;
+    }
+
+    &__img--late{
+        top: 55%;
+        left: -20%;
+        width: 1000px;
+        position: absolute;
+        z-index: 10; 
+    }
+
+    &__hommes{
+        position: absolute;
+        top: 40%;
+        left:0;
+        z-index: 11; 
+        width: 700px;
+        transform: translate(var(--transform-x), var(--transform-y));
+        transition: transform 0.16s;
+    }
+    &--late{
+        padding: 90px 24px 216Px;  /////peux juste changer le premier
     }
 }
  
@@ -157,6 +293,16 @@ footer{
             animation: 5s linear bulle2 infinite;
             left: 54%;
         }
+    }
+
+    &__homme{
+        position: absolute;
+        width: 450px;
+        top: -5%;
+        left: 22%;
+        opacity: 50%;
+        transform: translate(var(--transform-x), var(--transform-y));
+        transition: transform 0.16s;
     }
 }
 
@@ -207,6 +353,23 @@ footer{
         background-position-x: -750px;
     }
 }
+@keyframes bulles{
+    0%{
+        top: 43%;
+    } 50% {
+        top: 45%;
+    } 100%{
+        top: 43%;
+    }
+}
+@keyframes dashDataplay {
+    from {
+      stroke-dashoffset: 2000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+}
 
 
 
@@ -217,11 +380,26 @@ footer{
         &__span{
             margin-left: 0px;
         }
+        &--late{
+            background-size: 600px;
+            background-position-x: 140px;
+            background-position-y: 80px;
+        }
     }
 
     .projetVisuel{
         &__img{
             border-radius: 25px;
+        }
+        &--late{
+    
+            svg {
+                position: absolute;
+                z-index: 4;
+                top: 130px;
+                left: -100px;
+                width: 270%;
+            }
         }
     }
 
@@ -261,9 +439,36 @@ footer{
     }
 }
 
+@media (min-width: 450px){
+    .infoProjet--late{
+        padding-bottom: 312px;
+    }
+}
+
+@media(min-width: 465px){
+    .titre__homme{
+        width: 450px;
+        top: -5%;
+        left: 30%;
+    }
+}
+
 @media (min-width: 550px){
     .h1Projet{
         padding: 228px 64px 108px;
+
+        &--dec{
+            line-height: 90%;
+        }
+        &--late{
+            line-height: 50%;
+            background-position-x: 360px;
+            background-position-y: 0px;
+            padding: 152px 64px 108px;
+        }
+        &__span--late{
+            margin-left: 130px;
+        }
     }
     
     .infoProjet{
@@ -276,6 +481,42 @@ footer{
         &__bulle{
             width: 18%;
             left: 78%;
+        }
+
+        &__img{
+            &--dec{
+                &:nth-child(1){
+                    width: 85%;
+                    left: -28%;
+                    top: 15%;
+                }
+                &:nth-child(2){
+                    width: 85%;
+                    right: -28%;
+                    bottom: 10%;
+                }
+                &:nth-child(3){
+                    width: 85%;
+                    scale: 0;
+                }
+            }
+            &--late{
+                width: 70%;
+            }
+            &--right{
+                margin-top: 144px;
+                align-self: end;
+            }
+        }
+        &--late{
+            padding: 144px 27px 144px;
+            display: flex;
+            flex-direction: column;
+    
+            svg {
+                width: 200%;
+                top: 130px;
+            }
         }
     }
     
@@ -299,6 +540,23 @@ footer{
                 width: 1610px;
                 height: 1610px;
             }
+        }
+
+        &__bulles{
+            top: 40%;
+        }
+
+        &__img--late{
+            top: 50%;
+            width: 1200px;
+        }
+        &__hommes{
+            top: 20%;
+            left: 22%;
+            width: 900px;
+        }
+        &--late{
+            padding: 54px 64px 216Px;
         }
     }
     
@@ -358,6 +616,73 @@ footer{
             background-position-x: -750px;
         }
     }
+    @keyframes bulles{
+        0%{
+            top: 40%;
+        } 50% {
+            top: 42%;
+        } 100%{
+            top: 40%;
+        }
+    }
+}
+
+@media (min-width: 600Px){
+    .h1Projet--late{
+        background-position-x: 380px;
+    }
+
+    .projetVisuel{
+        &__img--dec{  
+            &:nth-child(1){
+                width: 65%;
+                left: -18%;
+            }
+            &:nth-child(2){
+                width: 65%;
+                right: -18%;
+            }
+            &:nth-child(3){
+                width: 55%;
+                scale: 0;
+            }
+        }
+        &--dec{
+            padding-top: 303px;
+        }
+    }
+
+    .titre__homme{
+        top: -3%;
+        left: 45%;
+    }
+
+    .next{
+        &__bulles{
+            width: 1200px;
+            top: 17%;
+            left: 30%;
+        }
+        &__img--late{
+            top: 30%;
+            width: 1700px;
+         }
+        &__hommes{
+            top: 0%;
+            left: 37%;
+            width: 1100px;
+        }
+    }
+
+    @keyframes bulles{
+        0%{
+            top: 17%;
+        } 50% {
+            top: 20%;
+        } 100%{
+            top: 17%;
+        }
+    }
 }
 
 @media (min-width: 760px){
@@ -369,6 +694,22 @@ footer{
         &__span{
             font-size: 93px;
             margin-left: 174px;
+
+            &--dec{
+                margin-left: 0;
+            }
+            &--late{
+                margin-left: 212px;
+            }
+        }
+        &--dec{
+            line-height: 80%;
+        }
+        &--late{
+            background-size: 700px;
+            background-position-x: 560px;
+            background-position-y: 220px;
+            padding: 312px 66px 186px;
         }
     }
     .infoProjet{
@@ -382,14 +723,65 @@ footer{
                 font-size: 39px;
             }
         }
+
+        &--dec{
+            padding-bottom: 93px;
+        }
+        &--late{
+            padding-bottom: 372px;
+        }
     }
     .projetVisuel{
         padding: 186px 66px 0;
     
         &__img{
             border-radius: 50px;
+
+            &--dec{
+
+                &:nth-child(1){
+                    width: 65%;
+                    left: -20%;
+                    top: 15%;
+                }
+                &:nth-child(2){
+                    width: 60%;
+                    right: -20%;
+                    bottom: 0%;
+                }
+                &:nth-child(3){
+                    width: 100%;
+                    scale: 0;
+                }
+            }
+            &--late{
+                width: 65%;
+            }
+            &--right{
+                margin-top: 186px;
+            }
+        }
+
+        &--dec{
+            padding: 186px 66px;
+        
+        }
+        &--late{
+            padding: 186px 84px 93px; 
+            background-size: 175%;
+            background-position-y: 170px;   
+        }
+
+        svg {
+            width: 170%;
+            top: 180px;
         }
     } 
+    .titre__homme{
+        width: 650px;
+        top: 0%;
+        left: 45%;
+    }
     .next{
         padding: 186px 66px 246px;
 
@@ -420,6 +812,26 @@ footer{
                 width: 1870px;
                 height: 1870px;
             }
+        }
+
+        &__bulles{
+            width: 1400px;
+            top: 25%;
+            left: 35%;
+        }
+
+        &__img--late{
+            top: 40%;
+            left: 0;
+            width: 1700px;
+        }
+        &__hommes{
+            top: 15%;
+            left: 37%;
+            width: 1100px;
+        }
+        &--late{
+            padding: 93px 66px 246px;
         }
     }
     footer{
@@ -506,11 +918,41 @@ footer{
             background-position-x: -870px;
         }
     }
+    @keyframes bulles{
+        0%{
+            top: 25%;
+        } 50% {
+            top: 28%;
+        } 100%{
+            top: 25%;
+        }
+    }
+}
+
+@media (min-width: 760px) and (min-height: 990px){  
+    .projetVisuel{
+        &__img--dec{
+
+            &:nth-child(1){
+                top: 20%;
+            }
+            &:nth-child(2){
+                bottom: 5%;
+            }
+        }
+    }
 }
 
 @media (min-width: 950px){
     .h1Projet{
         padding: 246px 116px 123px;
+
+        &--late{
+            background-size: 700px;
+            background-position-x: 660px;
+            background-position-y: 43px;
+            padding: 246px 116px 123px;
+        }
     }
     
     .infoProjet{
@@ -535,6 +977,24 @@ footer{
             width: 300px;
             left: -14%;
         }
+
+        &__homme{
+            display: block;
+            position: absolute;
+            width: 150px;
+            opacity: 50%;
+            left: 7%;
+            top: 26%;
+            transform: translate(var(--transform-x), var(--transform-y));
+            transition: transform 0.16s;
+        }
+        &--dec{
+            padding-bottom: 186px;
+        }
+        &--late{
+            padding-bottom: 558px;
+            background-position-y: 90%;
+        }
     }
     
     .projetVisuel{
@@ -544,6 +1004,37 @@ footer{
             width: 16%;
             left: 80%;
         }
+
+        &--dec{
+            padding: 93px 116px;
+        }
+
+        &__img{
+            &--dec{
+                &:nth-child(1){
+                    width: 57%;
+                    left: -15%;
+                    top: 15%;
+                }
+                &:nth-child(2){
+                    width: 47%;
+                    right: -13%;
+                    bottom: -20%;
+                }
+            }
+            &--late{
+                width: 70%;
+            }
+        }
+
+        svg {
+            width: 170%;
+            top: 150px;
+        }
+
+        &--late{
+            padding: 192px 132px 96px;
+        }
     }
     
     .next{
@@ -552,6 +1043,26 @@ footer{
         &__imgContainer{
             left: 14%;
             top: 45%;   
+        }
+
+        &__bulles{
+            width: 1700px;
+            top: 25%;
+            left: 35%;
+        }
+
+        &__img--late{
+            top: 40%;
+            left: 15%;
+            width: 1700px;
+        }
+        &__hommes{
+            top: 20%;
+            left: 35%;
+            width: 1300px;
+        }
+        &--late{
+            padding: 186px 116px 246px;
         }
     }
     
@@ -571,6 +1082,12 @@ footer{
                 width: 130px;
                 left: 63%;
             }
+        }
+
+        &__homme{
+            width: 600px;
+            top: -5%;
+            left: 55%;
         }
     }
 
@@ -625,6 +1142,15 @@ footer{
             background-position-x: -870px;
         }
     }
+    @keyframes bulles{
+        0%{
+            top: 25%;
+        } 50% {
+            top: 28%;
+        } 100%{
+            top: 25%;
+        }
+    }
 }
 
 @media (min-width: 1110px){
@@ -636,6 +1162,23 @@ footer{
         &__span{
             font-size: 101px;
             margin-left: 191px;
+
+            &--dec{
+                margin-left: 0;
+            }
+            &--late{
+                margin-left: 224px;
+            }
+        }
+
+        &--dec{
+            line-height: 80%;
+        }
+        &--late{
+            background-size: 800px;
+            background-position-x: 670px;
+            background-position-y: 47px;
+            padding: 288px 86px 171px;
         }
     }
     
@@ -659,6 +1202,18 @@ footer{
             width: 300px;
             left: -5%;
         }
+        &--dec{
+            padding-bottom: 101px;
+        }
+        &__homme{
+            width: 180px;
+            left: 7%;
+            top: 22%;
+        }
+        &--late{
+            padding-bottom: 606px;
+            background-position-y: 100%;
+        }
     }
     
     .projetVisuel{
@@ -666,10 +1221,42 @@ footer{
     
         &__img{
             border-radius: 60px;
+
+            &--dec{
+                &:nth-child(1){
+                    width: 55%;
+                    left: -10%;
+                    top: 20%;
+                }
+                &:nth-child(2){
+                    margin-top: 0;
+                    width: 50%;
+                    right: -10%;
+                    bottom: 0%;
+                }
+            }
+            &--late{
+                width: 60%;
+            }
+            &-right{
+                margin-top: 202px;
+            }  
         }
         &__bulle{
             width: 16%;
             left: 82%;
+        }
+        &--dec{
+            padding: 202px 86px;
+        }
+        &--late{
+            padding: 404px 96px 202px; 
+    
+            svg {
+                width: 170%;
+                top: 330px;
+                left: -300px;
+            }
         }
     }
     
@@ -700,6 +1287,24 @@ footer{
                 width: 2680px;
                 height: 2680px;
             }
+        }
+        &__bulles{
+            width: 1900px;
+            top: 12%;
+            left: 35%;
+        }
+        &__img--late{
+            top: 30%;
+            left: 10%;
+            width: 2000px;
+        }
+        &__hommes{
+            top: 10%;
+            left: 27%;
+            width: 1500px;
+        }
+        &--late{
+            padding: 101px 86px 285px;
         }
     }
     
@@ -740,6 +1345,12 @@ footer{
                 width: 130px;
                 left: 64%;
             }
+        }
+
+        &__homme{
+            width: 650px;
+            top: 5%;
+            left: 57%;
         }
     }
 
@@ -794,6 +1405,15 @@ footer{
             background-position-x: -870px;
         }
     }
+    @keyframes bulles{
+        0%{
+            top: 12%;
+        } 50% {
+            top: 15%;
+        } 100%{
+            top: 12%;
+        }
+    }
 }
 
 @media (min-width: 1300px){ 
@@ -803,6 +1423,17 @@ footer{
     
         &__span{
             font-size: 101px;
+
+            &--dec{
+                margin-left: 595px;
+            }
+        }
+        &--dec{
+            line-height: 65%;
+        }
+        &--late{
+            background-position-x: 870px;
+            padding: 288px 86px 228px;
         }
     }
     
@@ -819,6 +1450,14 @@ footer{
             width: 350px;
             left: -1%;
         }
+        &__homme{
+            width: 230px;
+            left: 7%;
+            top: 18%;
+        }
+        &--late{
+            padding-bottom: 707px;
+        }
     }
     
     .projetVisuel{
@@ -826,11 +1465,28 @@ footer{
     
         &__img{
             border-radius: 90px;
+
+            &--dec{
+                &:nth-child(1){
+                    width: 47%;
+                    left: -5%;
+                }
+                &:nth-child(2){
+                    width: 42%;
+                    right: -5%;
+                }
+            }
         }
 
         &__bulle{
             width: 16%;
             left: 82%;
+        }
+
+        svg {
+            width: 170%;
+            top: 340px;
+            left: -300px;
         }
     }
     
@@ -841,7 +1497,6 @@ footer{
             background-size: 1100px;
         }
         
-    
         &__titre{
             font-size: 76px;
             margin: 0 0 76px;
@@ -861,6 +1516,23 @@ footer{
                 width: 2780px;
                 height: 2780px;
             }
+        }
+
+        &__bulles{
+            width: 2300px;
+            top: 20%;
+            left: 35%;
+        }
+
+        &__img--late{
+            top: 40%;
+            left: 25%;
+            width: 2000px;
+        }
+        &__hommes{
+            top: 0%;
+            left: 40%;
+            width: 1500px;
         }
     }
     
@@ -884,6 +1556,12 @@ footer{
                 left: 57%;
             }
         }
+        &__homme{
+            width: 650px;
+            top: 5%;
+            left: 67%;
+        }
+    
     }
 
     @keyframes bulle1 {
@@ -937,11 +1615,27 @@ footer{
             background-position-x: -1100px;
         }
     }
+    @keyframes bulles{
+        0%{
+            top: 20%;
+        } 50% {
+            top: 23%;
+        } 100%{
+            top: 20%;
+        }
+    }
 }
 
 @media (min-width: 1530px){ 
     .h1Projet{
         padding: 288px 172px 228px;
+
+        &--late{
+            background-size: 1100px;
+            background-position-y: 20px;
+            background-position-x: 870px;
+            padding: 288px 172px 228px;
+        }
     }
 
     .infoProjet{
@@ -951,6 +1645,18 @@ footer{
             width: 350px;
             left: 1%;
         }
+        &--dec{
+            padding-bottom: 57px;
+        }
+        &__homme{
+            width: 220px;
+            left: 7%;
+            top: 22%;
+        }
+        &--late{
+            padding-bottom: 808px;
+            background-position-y: 80%;
+        }
     }
     
     .projetVisuel{
@@ -958,6 +1664,34 @@ footer{
 
         &__bulle{
             left: 78%;
+        }
+        &--dec{
+            padding: 303px 172px;
+        }
+        &__img{
+            &--dec{
+                &:nth-child(1){
+                    width: 50%;
+                }
+                &:nth-child(2){
+                    width: 45%;
+                }
+            }
+            &--late{
+                width: 55%;
+            }
+            &--right{
+                margin-top: 303px;
+            } 
+        }
+        &--late{
+            padding: 171px 187px 513px;
+        }
+
+        svg {
+            width: 170%;
+            top: 190px;
+            left: -500px;
         }
     }
     
@@ -979,6 +1713,24 @@ footer{
                 height: 3320px;
             }
         }
+        &__bulles{
+            width: 2600px;
+            top: -5%;
+            left: 40%;
+        }
+        &__img--late{
+            top: 15%;
+            left: 30%;
+            width: 2200px;
+        }
+        &__hommes{
+            top: -10%;
+            left: 42%;
+            width: 1700px;
+        }
+        &--late{
+            padding: 57px 172px 285px;
+        }
     }
     
     footer{
@@ -995,6 +1747,9 @@ footer{
                 width: 130px;
                 left: 57%;
             }
+        }
+        &__homme{
+            left: 69%;
         }
     }
 
@@ -1049,11 +1804,27 @@ footer{
             background-position-x: -1100px;
         }
     }
+    @keyframes bulles{
+        0%{
+            top: -5%;
+        } 50% {
+            top: -2%;
+        } 100%{
+            top: -5%;
+        }
+    }
 }
 
 @media (min-width: 1820px){ 
     .h1Projet{
         padding: 288px 344px 228px;
+
+        &--late{
+            background-position-x: 1200px;
+            background-position-y: 0px;
+            background-size: 1200px;
+            padding: 288px 344px 228px;
+        }
     }
     
     .infoProjet{
@@ -1062,6 +1833,18 @@ footer{
         &__bulle{
             width: 400px;
             left: 7%;
+        }
+        &--dec{
+            padding-bottom: 114px;
+        }
+        &__homme{
+            width: 250px;
+            left: 12%;
+            top: 14%;
+        }
+        &--late{
+            padding-bottom: 1010px;
+            background-position-y: 85%;
         }
     }
     
@@ -1072,6 +1855,37 @@ footer{
             width: 12%;
             left: 74%;
         }
+        &--dec{
+            padding: 303px 344px;
+        }
+        &__img{
+            &--dec{
+                &:nth-child(1){
+                    width: 48%;
+                    left: -10%;
+                    top: 20%;
+                }
+                &:nth-child(2){
+                    margin-top: 0;
+                    width: 43%;
+                    right: -10%;
+                    bottom:-10%;
+                }
+            }
+            &--late{
+                width: 75%;
+            }
+            &--right{
+                margin-top: 303px;
+            } 
+        }
+        &--late{
+            padding: 404px 360px 202px; 
+        }
+        svg {
+            width: 155%;
+            top: 410px;
+        } 
     }
     
     .next{
@@ -1092,6 +1906,27 @@ footer{
                 height: 4160px;
             }
         }
+        &--dec{
+            padding-top: 114px;
+        }
+        &__bulles{
+            width: 2800px;
+            top: 10%;
+            left: 40%;
+        }
+        &__img--late{
+            top: 30%;
+            left: 30%;
+            width: 2900px;
+        }
+        &__hommes{
+            top: 20%;
+            left: 40%;
+            width: 2000px;
+        }
+        &--late{
+            padding: 285px 344px 513px;
+        }
     }
     
     footer{
@@ -1108,6 +1943,10 @@ footer{
                 width: 130px;
                 left: 62%;
             }
+        }
+        &__homme{
+            width: 660px;
+            left: 70%;
         }
     }
 
@@ -1162,11 +2001,26 @@ footer{
             background-position-x: -1500px;
         }
     }
+    @keyframes bulles{
+        0%{
+            top: 10%;
+        } 50% {
+            top: 13%;
+        } 100%{
+            top: 10%;
+        }
+    }
+
 }
 
 @media (min-width: 2200px){
     .h1Projet{
         padding: 288px 473px 228px;
+
+        &--late{
+            background-position-x: 1600px;
+            padding: 288px 473px 228px;
+        }
     }
     
     .infoProjet{
@@ -1176,6 +2030,13 @@ footer{
             width: 450px;
             left: 6%;
         }
+        &--dec{
+            padding-bottom: 0px;
+        }
+        &--late{
+            padding-bottom: 1010px;
+            background-position-y: 85%;
+        }
     }
     
     .projetVisuel{
@@ -1184,6 +2045,37 @@ footer{
         &__bulle{
             left: 70%;
         }
+        &--dec{
+            padding: 505px 473px;
+        }
+        &__img{
+            &--dec{
+                &:nth-child(1){
+                    width: 43%;
+                    left: -5%;
+                    top: 26%;
+                }
+                &:nth-child(2){
+                    margin-top: 0;
+                    width: 38%;
+                    right: -5%;
+                    bottom: 0%;
+                }
+            }
+            &--late{
+                width: 60%;
+            }
+            &--right{
+                margin-top: 505px;
+            } 
+        }
+        &--late{
+            padding: 342px 490px 456px;
+        }
+        svg {
+            width: 140%;
+            top: 310px;
+        } 
     }
     
     .next{
@@ -1209,10 +2101,37 @@ footer{
                 height: 4540px;
             }
         }
+        &--dec{
+            padding-top: 0px;
+        }
+        &__bulles{
+            width: 3200px;
+            top: 0%;
+            left: 40%;
+        }
+        &__img--late{
+            top: 16%;
+            left: 30%;
+            width: 3000px;
+        }
+        &__hommes{
+            top: -10%;
+            left: 37%;
+            width: 2500px;
+        }
+        &--late{
+            padding: 0px 473px 627px;
+        }
     }
     
     footer{
         margin: 0 473px;
+    }
+
+    .titre__homme{
+        width: 700px;
+        left: 70%;
+        transform: rotate(-10deg);
     }
 
     @keyframes bulle3 {
@@ -1242,6 +2161,15 @@ footer{
             background-position-x: 2400px;
         } to{
             background-position-x: -1700px;
+        }
+    }
+    @keyframes bulles{
+        0%{
+            top: 0%;
+        } 50% {
+            top: 3%;
+        } 100%{
+            top: 0%;
         }
     }
 }
