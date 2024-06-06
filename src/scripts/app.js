@@ -558,6 +558,7 @@ function nextSlide(){
     play.classList.add('hide');
     pause.classList.remove('hide');
     audio.play();
+    audio.volume = 0.5;
   }
   function pauseFunction(){
     play.classList.remove('hide');
