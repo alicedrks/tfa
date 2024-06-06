@@ -1,48 +1,99 @@
 .header{
     padding-left: 24px;
     padding-right: 24px;
+    position: fixed;
+    width: 100vw;
+    box-sizing: border-box;
+    top: 24px;
+} 
+
+.intro{
+    padding-left: 24px;
+    padding-right: 24px;
     height: 100vh;
-    background-image: url("../../assets/images/illu/grille.svg");
-    background-size: 200%;
+    background-image: url("../assets/images/illu/grille.svg");
+    box-shadow: inset 0 -70px 50px -50px black;
+    background-repeat: no-repeat;
+    background-size: 610%;
+    background-position-x: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1{
     font-family: 'owners-text', sans-serif;
+    font-weight: 400;
     font-size: 76px;
-    line-height: 130%;
-    margin-top: 120px;
+    line-height: 120%;
+    margin: 0;
 }
 
-.h1_nom{
+.h1__nom{
     font-family: 'Pangaia';
-    font-weight: 200;
     font-size: 101px;
     color: $c-element;
     display: block;
 }
 
 .description{
-    margin-left: 24px;
-    margin-right: 24px;
+    position:relative;
+    z-index: 20;
+
+    &__content{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 24px;
+    }
 
     &__para{
+        position: relative;
+        z-index: 2;
         font-size: 18px;
         font-family: 'owners-text', sans-serif;
+        font-weight: 300;
+        margin-top: 0;
         margin-bottom: 72px;
+        line-height: 140%;
 
         &--big{
-            font-size: 23px;
-            padding-top: 144px;
+            font-size: 32px;
+            font-weight: 300;
             margin-top: 0;
+        } 
+    }
+
+    &__liens{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 2;
+
+        & li{
+            text-decoration: none;
+            display: inline;
         }
     }
 }
 
+canvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 40%
+}
+
 .projet{
+    box-sizing: border-box;
     margin: 0;
-    padding: 0 18px;
-    height: 750px;
     overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 5;
 
     &__liste{
         list-style: none;
@@ -51,42 +102,1480 @@ h1{
     }
 
     &__element{
-        display: none;
+        opacity:0;
+        visibility: hidden;
+        text-align: center;
+        position: absolute;
+        z-index: 5;
+        height: 100%;
+        top: 96px;
+        left: 50%;
+        transform: translateX(-50%) rotate(30deg);
+        width: 85%;
+        transform-origin: center 1600px;
+        transition: 2s;
 
         &--active{
+            transform: translateX(-50%) rotate(0deg);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &--rotateLeft{
+            transform: translateX(-50%) rotate(-30deg);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__container{
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        height: 1000px;
+        top: 30px;
+        background-position-y: 200%;
+
+        &--active{
+            background-image: url('../assets/images/illu/nuages.svg');
+            background-size: 500px;
+            background-repeat: repeat-x;
+            background-position-y: 55%;
+            animation: nuages 120s infinite linear;
+            transition: background-position-y 1s;
+        }
+        
+        &::before{
+            content: "";
+            width: 1050px;
+            height: 360px;
+            top: 400px;
+            left: 260px;
+            background-image: url('../assets/images/illu/bulles.png');
+            background-size: cover;
+            position: relative;
+            z-index: 200;
             display: block;
-            text-align: center;
+            transform-origin: center 800px;
+            transform: translateY(0%) translateX(-50%) rotate(var(--bulles-rotation));
+            animation: bullesSlider 2s linear alternate-reverse infinite;
+        }
+
+        &::after{
+            content: "";
+            width: 800px;
+            height: 300px;
+            top: 3%;
+            left: 50%;
+            background-image: url('../assets/images/illu/hommes.png');
+            background-size: cover;
+            position: relative;
+            z-index: 200;
+            display: block;
+            transform-origin: center 700px;
+            transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+            animation: hommes 2s linear alternate-reverse infinite;
         }
     }
 
     &__titre1{
-        font-size: 32px;
+        font-size: 18px;
         font-family: 'owners-text', sans-serif;
-        margin: 0;
-        padding-top: 198px;
+        font-weight: 200;
     }
 
     &__titre2{
-        font-size: 24px;
+        font-size: 32px;
         font-family: 'Pangaia regular';
         font-weight: 200;
-        margin: 36px 0 18px ;
+        margin: 18px 0px 32px;
     }
     
     &__para{
-        font-size: 14px;
+        font-size: 18px;
+        line-height: 140%;
         font-family: 'owners-text', sans-serif;
-        margin: 0 36px 36px;
+        margin: 0px 0px 36px;
+        font-weight: 300;
     }
 
     &__illu{
-        position: relative;
-        transform: rotate(120deg);
-        left: 50%;
-        top: 850px;
-        transform: translate(-50%, -60%);
+        position: absolute;
         width: 1200px;
+        left: 50%;
+        top: 1190px;
+        transform: translate(-50%, -60%) rotate(0deg);
+        z-index: 5;
+    }
 
+    &__btn{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 91%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 158px;
+        box-sizing: border-box;
+        z-index: 40;
+        margin: 0;
+        padding: 0;
+
+        & li {
+            list-style: none;
+            margin: 0;
+        }
+    }
+
+    &__btnSlider{
+        padding: 0;
+        color: white;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        height: 35px;
+        width: 35px;
+        background-image: url('../assets/images/icon/arrowSlider.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        opacity: 40%;
+        margin-right: 0;
+        padding-left: 0;
+        transform-origin: center center;
+        transition: 0.1s cubic-bezier(0.37, 0, 0.63, 1);
+
+
+        &--prev{
+            transform: rotate(180deg);
+        }
+        &:hover{
+            opacity: 60%;
+        }
+        &:active{
+            opacity: 20%;
+        }
+    }
+
+    &__train{
+        content: "";
+        width: 1190px;
+        height: 1190px;
+        top: 180px;
+        left: 50%;
+        transform: translateX(-50%) rotate(0);
+        background-image: url('../assets/images/illu/train.svg');
+        background-size: cover;
+        position: relative;
+        z-index: 200;
+        display: none;
+        transform-origin: center center;
+        animation: trainSlider 8s linear infinite; 
+
+        &--active{
+            display: block;
+        }
+    }
+}
+
+@keyframes bullesSlider{
+    from {
+        transform: translateY(0%) translateX(-50%) rotate(var(--bulles-rotation));
+    } to {
+        transform: translateY(-2%) translateX(-50%) rotate(var(--bulles-rotation));
+    }
+}
+@keyframes hommes{
+    from {
+        transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+    } to {
+        transform: translate(var(--transform-x2), var(--transform-y)) rotate(var(--hommes-rotation));
+    }
+}
+@keyframes trainSlider{
+    from{
+        transform: translateX(-50%) rotate(-120deg);
+    } to {
+        transform: translateX(-50%) rotate(240deg);
+    }
+}
+@keyframes nuages {
+    from {
+        background-position-x: -1000px;
+    } to {
+        background-position-x: 1000px;
+    }
+}
+
+
+
+
+//inférieur à 350px
+@media (max-width: 370px){
+    .projet{
+        &__para{
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width: 350px){
+    h1{
+        font-size: 57px;
+    }
+    .h1__nom{
+        font-size: 76px;
+    }
+    .description{
+        position:relative;
+    
+        &__content{
+            height: 100%;
+        }
+        
+        &__para{
+    
+            &--big{
+                font-size: 32px;
+                margin-top: 96px;;
+            }
+        }
+    
+        &__liens{
+            margin: 0 0 96px;
+            display: flex;
+            flex-direction: column;
+    
+            & li{
+                display: block;
+            }
+        }
+    }
+    .projet{
+        &__container{
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            height: 1000px;
+            top: 70px;
+
+            &::before{
+                width: 550px;
+                height: 230px;
+                top: 430px;
+            }
+
+            &::after{
+                top: 14%;
+            }
+        }
+        &__train{
+            top: 320px;
+        }
+
+        &__element{
+            width: 75%;
+        }
+
+        &__btn{
+            width: 97%;
+            top: 143px;
+        }
+
+    }
+}
+@media (max-width: 350px) and (max-height: 430px){
+    .intro{
+        height: 100%;
+    }
+    h1{
+        margin-top: 128px;
+        margin-bottom: 160px;
+    }
+}
+@media (max-width: 350px) and (max-height: 720px){
+    .projet{
+        box-sizing: border-box;
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 5;
+    
+        &__element{
+            opacity:0;
+            visibility: hidden;
+            text-align: center;
+            transition: 2s;
+            position: absolute;
+            height: 100%;
+            width: 85%;
+            top: 0px;
+
+            &--active{
+                transform: translateX(-50%) rotate(0deg);
+                opacity: 1;
+                visibility: visible;
+            }
+    
+            &--rotateLeft{
+                transform: translateX(-50%) rotate(-30deg);
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    
+        &__container{
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            height: 700px;
+            top: 0px;
+
+            &--active{
+                background-position-y: 85%;
+            }
+
+            &::before{
+                height: 230px;
+                top: 430px;
+            }
+            &::after{
+                top: 23%;
+            }
+        }
+    
+        &__illu{
+            position: absolute;
+            width: 1200px;
+            left: 50%;
+            top: 1190px;
+            transform: translate(-50%, -60%);
+            z-index: 5;
+        }
+
+        &__titre1{
+            margin-top: 96px;
+        }
+    } 
+}
+
+//350px - 455px
+@media (min-width: 350px) and (max-height: 530px){
+    .intro{
+        height: 100%;
+    }
+    h1{
+        margin-top: 128px;
+        margin-bottom: 160px;
+    }
+}
+@media (min-width: 350px) and (max-height: 680px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 96px;;
+            }
+        }
+        &__liens{
+            margin: 0 0 96px;
+        }
+    }
+}
+@media (min-width: 350px) and (max-height: 690px){
+    .projet{
+        height: 100%;
+
+        &__element{
+            top: 96px;
+        }
+    
+        &__container{
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            height: 700px;
+            top: 20px;
+
+            &::before{
+                top: 410px;
+                left: 190px;
+                width: 870px;
+            }
+
+            &--active{
+                background-position-y: 95%;
+            }
+        }
+    
+        &__illu{
+            position: absolute;
+            width: 1200px;
+            left: 50%;
+            top: 1190px;
+            transform: translate(-50%, -60%);
+            z-index: 5;
+        }
+    } 
+}
+@media (min-width: 350px) and (max-height: 620px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 96px;
+            }
+        }
+    }
+}
+
+//455px - 550px
+@media (min-width: 455px){ 
+    .intro{
+        background-size: 450%;
+        background-position-x: -400px;
+    }
+    h1{
+        font-size: 101px;
+    }
+    .h1__nom{
+        font-size: 135px;
+    }
+    .projet{
+        &__container{
+            top: 30px;
+        }
+
+        &__element{
+            width: 70%;
+        }
+
+        &__btn{
+            width: 75%;
+        }
+    }
+}
+@media (min-width: 455px) and (max-height: 560px){ 
+    .intro{
+        height: 100%;
+    & h1{
+        margin-top: 128px;
+        margin-bottom: 160px;
+        }
+    }
+}
+@media (min-width: 455px) and (max-height: 680px){
+    .description{
+        &__content{
+            height: 100vh;
+        }
+
+    }
+}
+
+ 
+//550px - 760px
+@media (min-width: 550px){ 
+    .header{
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+    .intro{
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+    .description{
+
+        &__container{
+            margin: 0;
+            padding: 0;
+        }
+
+        &__content{
+            padding: 0 64px;
+        }
+    }
+    .projet{
+        &__element{
+            top: 128px;
+            width: 65%;
+        }
+    
+        &__container{
+            height: 1000px;
+            top: 100px;
+
+            &::before{
+                left: 400px;
+            }
+
+            &--active{
+                background-position-y: 55%;
+            }
+        }
+        
+        &__para{
+            margin: 0 0px 36px;
+        }
+
+        &__boutons{
+            padding: 0 126px;
+        }
+
+        &__btn{
+            width: 70%;
+            top: 190px;
+        }
+    }
+}
+@media (min-width: 550px) and (max-height: 620px){
+    .description{
+        &__content{
+            height: 100vh;
+        }
+        &__para{
+            &--big{
+                margin-top: 0;
+            }
+        }
+    }
+}
+@media (min-width: 550px) and (max-height: 605px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 96px;
+            }
+        }
+    }
+}
+@media (min-width: 550px) and (max-height: 780px){
+    .projet{
+        height: 100%;
+    
+        &__container{
+            height: 800px;
+            top: 90px;
+
+            &--active{
+                background-position-y: 75%;
+            }
+        }
+    } 
+}
+@media (min-width: 620px){
+    .projet{
+        &__element{
+            width: 60%;
+        }
+
+        &__btn{
+            width: 55%;
+        }
+
+    }
+}
+
+//760px - 950px
+@media (min-width: 760px){ 
+    .header{
+        padding-left: 66px;
+        padding-right: 66px;
+        top: 29px;
+    }
+
+    .intro{
+        padding-left: 66px;
+        padding-right: 66px;
+        background-size: 350%;
+        background-position-x: -200px;
+    }
+    
+    h1{
+        font-size: 123px;
+    }
+    
+    .h1__nom{
+        font-size: 165px;
+    }
+    
+    .description{
+        &__content{
+            padding: 0 66px;
+        }
+    
+        &__para{
+            font-size: 22px;
+            margin-bottom: 87px;
+    
+            &--big{
+                font-size: 39px;
+            }
+        }
+    }
+
+    .projet{
+        &__element{
+            top: 123px;
+            width: 46%;
+        }
+
+        &__train{
+            width: 2190px;
+            height: 2190px;
+            top: 286px;
+        }
+    
+        &__container{
+            height: 1500px;
+            top: 30px;
+
+            &::before{
+                width: 1300px;
+                height: 400px;
+                top: 420px;
+                left: 390px;
+                transform-origin: center 1000px;
+               
+            }
+            &::after{
+                content: "";
+                width: 1100px;
+                height: 450px;
+                top: -1%;
+                left: 46%;
+                transform-origin: center 1000px;
+            }
+            &--active{
+                background-size: 1000px;
+                background-position-y: 45%;
+                animation: nuages 120s infinite linear;
+            }
+        }
+    
+        &__titre1{
+            font-size: 17px;
+            margin: 0;
+        }
+    
+        &__titre2{
+            font-size: 29px;
+            margin: 17px 0px 34px ;
+        }
+        
+        &__para{
+            font-size: 17px;
+            margin: 0 0 39px;
+        }
+    
+        &__illu{
+            width: 2200px;
+            top: 1860px;
+        }
+    
+        &__boutons{
+            padding: 0 165px;
+        }
+    
+        &__btnSlider{
+            height: 42px;
+            width: 42px;
+        }
+
+        &__btn{
+            width: 45%;
+            top: 162px;
+        }
+    }
+}
+@media (min-width: 760px) and (max-height: 690px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 123px;;
+            }
+        }
+        &__liens{
+            margin: 0 0 123px;
+        }
+    }
+}
+@media (min-width: 760px) and (max-height: 680px){ 
+    .intro{
+        height: 100%;
+    
+     & h1{
+        margin-top: 128px;
+        margin-bottom: 160px;
+        }
+    }
+}
+@media (min-width: 760px) and (max-height: 870px){
+    .projet{
+        height: 100%;
+    
+        &__container{
+            height: 950px;
+
+            &--active{
+                background-position-y: 110%;
+            }
+        }
+    } 
+}
+@media (min-width: 890px){
+    .projet__element{
+        width: 40%;
+    }
+}
+
+//950px - 1110px
+@media (min-width: 950px){ 
+    .header{
+        padding-left: 116px;
+        padding-right: 116px;
+    }
+
+    .intro{
+        background-size: 280%;
+        background-position-x: -150px;
+        padding-left: 116px;
+        padding-right: 116px;
+    }
+    
+    .description{
+        padding: 0;
+        margin: 0;
+
+        &__content{
+            padding: 0 116px; 
+        }
+        &__para{
+            &--big{
+                margin-bottom: 87px;
+            }
+            &--little{
+                margin-bottom: 58px;
+            }
+        }   
+    }
+    
+    .h1_n{
+        display: inline;
+    }
+
+    .projet{
+        &__element{
+            top: 123px;
+        }
+    
+        &__container{
+            height: 1500px;
+            top: 0px;
+
+            &::before{
+                width: 1450px;
+                height: 500px;
+                top: 430px;
+                left: 500px;
+            }
+            &::after{
+                top: -8%;
+                left: 48%;
+            }
+            &--active{
+                background-position-y: 50%;
+            }
+        }
+
+        &__train{
+            top: 186px;
+        }
+        
+        &__para{
+            margin: 0 0 39px;
+        }
+
+        &__boutons{
+            padding: 0 203px;
+        }
+
+        &__btn{
+            width:35%;
+        }
+    }
+}
+@media (min-width: 950px) and (max-height: 680px){
+    .intro{
+        height: 100vh;
+        & h1{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+}
+@media (min-width: 950px) and (max-height: 580px){ 
+    .intro{
+        height: 100%;
+        & h1{
+            margin-top: 128px;
+            margin-bottom: 160px;
+        }
+    }
+}
+@media (min-width: 950px) and (max-height: 780px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 195px;;
+            }
+        }
+        &__liens{
+            margin: 0 0 195px;
+        }
+    }
+}
+@media (min-width: 950px) and (max-height: 870px){
+    .projet{
+        &__container{
+            height: 850px;
+
+            &::after{
+                top: -16%;
+                left: 48%;
+            }
+
+            &--active{
+                background-position-y: 160%;
+            }
+        }
+        &__train{
+            top: 165px;
+        }
+
+        &__illu{
+            top: 1840px;
+        }
+    }
+}
+@media (min-width: 1000px){
+    .projet{
+        &__element{
+            width: 35%;
+        }
+        &__illu{
+            width: 2400px;
+            top: 1930px;
+        }
+        &__container{
+            &::after{
+                top: -10%;
+                width: 1250px;
+                left: 51.3%;
+            }
+            &::before{
+                left: 530px;
+            }
+        }
+        &__train{
+            width: 2420px;
+            height: 2420px;
+            top: 147px;
+        }
+    }
+}
+@media (min-width: 1000px) and (max-height:870px){
+    .projet{
+        &__container{
+            &::after{
+                top: -19%;
+            }
+        }
+    }
+}
+
+//1110px - 1530px/1300px
+@media (min-width: 1110px){ 
+    .header{
+        padding-left: 86px;
+        padding-right: 86px;
+        top: 39px;
+    }
+
+    .intro{
+        padding-left: 86px;
+        padding-right: 86px;
+        background-size: 200%;
+        background-position-x: -250px;
+    }
+    
+    h1{
+        font-size: 135px;
+    }
+    
+    .h1__nom{
+        font-size: 179px;
+    }
+    
+    .description{
+        
+        &__container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 2;
+        }
+    
+        &__para{
+            font-size: 18px;
+            margin-bottom: 54px;
+    
+            &--big{
+                font-size: 32px;
+                margin-bottom: 87px;
+                grid-column: 1 / 3;
+                grid-row: 1;
+            }
+        }
+        &__content{
+            padding: 0 86px;
+        }
+
+
+    }
+    .right{
+        grid-column: 3;
+        grid-row: 2;
+        align-self: end;
+    }
+
+    .projet{
+        &__element{
+            top: 192px;
+        }
+    
+        &__container{
+            height: 1500px;
+            top: 30px;
+
+            &::before{
+                width: 1800px;
+                height: 600px;
+                top: 480px;
+                left: 570px;
+                transform-origin: center 1650px;
+            }
+            &::after{
+                top: -12%;
+                transform-origin: center 1650px;
+            }
+            &--active{
+                background-position-y: 55%;
+            }
+        }
+        &__train{
+            top: 159px;
+        }
+    
+        &__titre1{
+            font-size: 18px;
+        }
+    
+        &__titre2{
+            font-size: 32px;
+            margin: 18px 0px 36px ;
+        }
+        
+        &__para{
+            font-size: 18px;
+            margin: 0 0 43px;
+        }
+    
+        &__illu{
+            width: 2400px;
+            top: 2040px;
+        }
+    
+        &__boutons{
+            padding: 0 303px;
+        }
+    
+        &__btnSlider{
+            height: 45px;
+            width: 45px;
+        }
+
+        &__btn{
+            top: 233px;
+            width:35%;
+        }
+    }
+}
+@media (min-width: 1110px) and (max-height: 850px){
+    .description{
+        &__content{
+            height: 100%;
+        }
+        &__para{
+            &--big{
+                margin-top: 192px;;
+            }
+        }
+        &__liens{
+            margin: 0 0 192px;
+        }
+    }
+}
+@media (min-width: 1110px) and (max-height: 580px){ 
+    .intro{
+        height: 100%;
+    
+        & h1{
+            margin-top: 135px;
+            margin-bottom: 179px;
+        }
+    }
+}
+@media (min-width: 1110px) and (max-height: 1050px){
+    .projet{
+        height: 100%; 
+
+        &__container{
+            height: 990px;
+            top: 30px;
+
+             &::after{
+                top: -17%;
+            }
+
+            &--active{
+                background-position-y: 125%;
+            }
+        }
+    
+        &__illu{
+            width: 2400px;
+            top: 2050px;
+        }
+
+        &__train{
+            top: 170px;
+        }
+    }
+}
+
+//1300px - 1530px
+@media (min-width: 1300px){
+    .projet{
+        &__container{
+            height: 2500px;
+            top: 30px;
+
+            &::before{
+                width: 1700px;
+                height: 600px;
+                top: 510px;
+                left: 670px;
+            }
+            &::after{
+                width: 1500px;
+                height: 550px;
+                top: -8%;
+            }
+            &--active{
+                background-position-y: 27%;
+            }
+        }
+
+        &__train{
+            width: 2620px;
+            height: 2620px;
+            top: 161px;
+        }
+    
+        &__illu{
+            width: 2600px;
+            top: 2150px;
+        }
+        &__element{
+            width: 30%;
+        }
+        &__btn{
+            width:27%;
+        }
+    }
+    .description{
+        &__para{
+            font-size: 24px;
+            margin-bottom: 72px;
+    
+            &--big{
+                font-size: 43px;
+                margin-bottom: 87px;
+                grid-column: 1 / 3;
+                grid-row: 1;
+            }
+        }
+    }
+}
+@media (min-width: 1300px) and (max-height: 1050px){
+    .projet{
+        height: 100vh; 
+    }
+}
+@media (min-width: 1300px) and (max-height: 1020px){
+    .projet{
+        height: 100%; 
+
+        &__container{
+            height: 900px;
+            top: 30px;
+
+            &::before{
+                width: 1800px;
+                height: 600px;
+                top: 410px;
+            }
+            &::after{
+                top: -23%;
+            }
+            &--active{
+                background-position-y: 160%;
+            }
+        }
+
+        &__train{
+            width: 2620px;
+            height: 2620px;
+            top: 141px;
+        }
+    
+        &__illu{
+            width: 2500px;
+            top: 2080px;
+        }
+    }
+}
+@media (min-width: 1400px){
+    .projet{
+        &__element{
+            width: 25%;
+        }
+        &__container{
+            &::before{
+                left: 720px;
+            }
+        }
+    }
+}
+
+//1530px - 1820px
+@media (min-width: 1530px){ 
+    .header{
+        padding-left: 172px;
+        padding-right: 172px;
+    }
+
+    .intro{
+        padding-left: 172px;
+        padding-right: 172px;
+    }
+
+    .description{
+
+        &__content{
+            padding: 0 172px;
+        }
+    }
+
+    .projet{
+        &__container{
+            height: 2700px;
+            top: 30px;
+
+            &::before{
+                width: 2450px;
+                height: 850px;
+                top: 500px;
+                left: 810px;
+            }
+            &::after{
+                width: 1700px;
+                height: 600px;
+                top: -17%;
+            }
+            &--active{
+                background-position-y: 25%;
+            }
+        }
+    
+        &__illu{
+            width: 3200px;
+            top: 2550px;
+        }
+
+        &__train{
+            width: 3320px;
+            height: 3320px;
+            top: -10px;
+        }
+
+        &__boutons{
+            padding: 0 505px;
+        }
+
+        &__btn{
+            width:23%;
+        }
+    }
+}
+@media (min-width: 1530px) and (max-height: 1120px){
+    .projet{
+        height: 100%;
+
+        &__container{
+            top: 30px;
+            height: 1000px;
+
+            &::before{
+                top: 410px;
+            }
+            &::after{
+                top: -46%;
+            }
+            &--active{
+                background-position-y: 120%;
+            }
+        }
+
+        &__train{
+            top: -63px;
+        }
+
+        &__illu{
+            top: 2500px;
+        }
+
+    }
+}
+
+//1820px - 2200px
+@media (min-width: 1820px){ 
+    .header{
+        padding-left: 344px;
+        padding-right: 344px;
+    }
+
+    .intro{
+        padding-left: 344px;
+        padding-right: 344px;
+    }
+
+    .description{
+        
+        &__content{
+            padding: 0 344px;
+        }
+    }
+
+    .projet{
+
+        &__element{
+            width: 22%;
+        }
+
+        &__boutons{
+            padding: 0 707px;
+        }
+
+        &__container{
+            height: 2090px;
+
+            &::before{
+                width: 2500px;
+                height: 900px;
+                top: 460px;
+                left: 910px;
+            }
+            &::after{
+                width: 1900px;
+                height: 700px;
+                top: -25%;
+            }
+            &--active{
+                background-position-y: 34%;
+            }
+        }
+
+        &__train{
+            width: 3120px;
+            height: 3120px;
+            top: -60px;
+        }
+
+        &__btn{
+            width:20%;
+        }
+        
+    }
+}
+@media (min-width: 1530px) and (max-height: 1120px){
+    .projet{
+        height: 100vh;
+    }
+}
+@media (min-width: 1820px) and (max-height: 1050px){
+    .projet{
+        height: 100%;
+
+        &__container{
+            height: 1090px;
+
+            &::before{
+                top: 460px;
+            }
+            &::after{
+                top: -53%;
+            }
+            &--active{
+                background-position-y: 100%;
+            }
+        }
+
+        &__train{
+            top: -107px;
+        }
+    }
+}
+
+//2200px et plus
+@media (min-width: 2200px){
+    h1{
+        font-size: 179px;
+    }
+
+    .h1__nom{
+        font-size: 239px;
+    }
+    
+    .header{
+        padding-left: 473px;
+        padding-right: 473px;
+    }
+
+    .intro{
+        padding-left: 473px;
+        padding-right: 473px;
+    }
+
+    .description{
+        
+        &__content{
+            padding: 0 473px;
+        }
+    }
+
+    .projet{
+        &__container{
+            height: 3000px;
+            top: 30px;
+
+            &::before{
+                width: 2600px;
+                left: 1160px;
+            }
+            &::after{
+                width: 2200px;
+                height: 800px;
+                top: -19%;
+            }
+            &--active{
+                background-position-y: 23%;
+            }
+        }
+    
+        &__titre1{
+            font-size: 22px;
+        }
+    
+        &__titre2{
+            font-size: 43px;
+            margin: 22px 0 44px;
+        }
+        
+        &__para{
+            font-size: 22px;
+        }
+    
+        &__illu{
+            width: 3900px;
+            top: 2980px;
+        }
+    
+        &__boutons{
+            padding: 0 909px;
+        }
+
+        &__train{
+            width: 4020px;
+            height: 4020px;
+            top: -3px;
+        }
+
+        &__btn{
+            top: 253px;
+            width:20%;
+        }
+    }
+}
+@media (min-width: 2200px) and (max-height: 1130px){
+
+    .projet{
+        height: 100%;
+
+        &__container{
+            height: 1200px;
+
+            &::after{
+                top: -46%;
+            }
+            &--active{
+                background-position-y: 90%;
+            }
+        }
+
+    } 
+}
+
+//Images retina
+@media (-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) {
+    .projet{
+        &__container{
+            &::before{
+                background-image: url('../assets/images/illu/bulles@2x.png');
+            }
+            &::after{
+                background-image: url('../assets/images/illu/hommes@2x.png');
+            }
+        }
     }
 }
 

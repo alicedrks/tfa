@@ -1,7 +1,19 @@
+:root {
+    --x-mouse: 0;
+    --y-mouse: 0;
+    --block-size: 20px;
+    --transform-x: calc(var(--block-size) * var(--x-mouse));
+    --transform-y: calc(var(--block-size) * var(--y-mouse));
+    --transform-x2: calc(-50% + (var(--block-size) * var(--x-mouse)));
+    --bulles-rotation: 0deg;
+    --hommes-rotation: 120deg;
+}
+
+
+
 $c-background: #000000;
-$c-action: #7180AC;
 $c-element: #A89885;
 
+$x-mouse: 0;
+$y-mouse: 0;
 
-$size-textSmartphone: 18px;
-$size-textDekstop: 24px;

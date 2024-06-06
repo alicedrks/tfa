@@ -1,0 +1,118 @@
+.credit{
+    margin: 0 24px;
+    
+    &__H1{
+        font-size: 57px;
+        margin-top: 129px;
+    }
+    &__titre{
+        font-family: 'Pangaia regular';
+        font-weight: 400;
+        font-size: 24px;
+        margin-top: 48px;
+        margin-bottom: 0px;
+    }
+    &__list{
+        margin: 9px 0;
+        padding:0;
+        list-style: none;
+
+        a:hover{
+            text-decoration: underline;
+        }
+        a:active{
+            opacity: 60%;
+        }
+    }
+    &__el{
+        font-family: 'owners-text';
+        font-size: 18px;
+        margin-bottom : 9px;
+        font-weight: 300;
+    }
+}
+.footer--credits{
+    position: relative;
+    margin-top: 57px
+}
+
+
+@media(min-width: 550px){
+    .credit{
+        margin: 0 64px;
+    }
+}
+
+@media(min-width: 760px){
+    .credit{
+        margin: 0 66px;
+        
+        &__H1{
+            font-size: 69px;
+            margin-top: 138px;
+        }
+        &__titre{
+            font-size: 29px;
+            margin-top: 58px;
+        }
+        &__list{
+            margin: 11px 0;
+        }
+        &__el{
+            font-size: 22px;
+            margin-bottom : 11px;
+        }
+    }
+    .footer--credits{
+        margin-top: 88px
+    }
+}
+
+@media(min-width: 950px){
+    .credit{
+        margin: 0 116px;
+    }
+}
+
+@media(min-width: 1110px){
+    .credit{
+        margin: 0 86px;
+        
+        &__H1{
+            font-size: 76px;
+            margin-top: 152px;
+        }
+        &__titre{
+            font-size: 32px;
+            margin-top: 64px;
+        }
+        &__list{
+            margin: 12px 0;
+        }
+        &__el{
+            font-size: 24px;
+            margin-bottom : 12px;
+        }
+    }
+    .footer--credits{
+        margin-top: 96px
+    }
+}
+
+@media(min-width: 1530px){
+    .credit{
+        margin: 0 172px;
+    }
+}
+
+@media(min-width: 1820px){
+    .credit{
+        margin: 0 344px;
+    }
+}
+
+@media(min-width: 2200px){
+    .credit{
+        margin: 0 473px;
+    }
+}

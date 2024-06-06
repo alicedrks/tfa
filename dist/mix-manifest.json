@@ -1,6 +1,11 @@
 {
     "/scripts/app.js": "/scripts/app.js",
     "/styles/app.css": "/styles/app.css",
+    "/aboutme.html": "/aboutme.html",
+    "/credits.html": "/credits.html",
+    "/dataplay.html": "/dataplay.html",
+    "/december.html": "/december.html",
     "/index.html": "/index.html",
+    "/rux.html": "/rux.html",
     "/assets/.DS_Store": "/assets/.DS_Store"
 }
