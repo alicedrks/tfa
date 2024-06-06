@@ -756,6 +756,7 @@ footer{
             }
             &--late{
                 width: 65%;
+                border-radius: 0px;
             }
             &--right{
                 margin-top: 186px;
@@ -1237,6 +1238,7 @@ footer{
             }
             &--late{
                 width: 60%;
+                border-radius: 0px;
             }
             &-right{
                 margin-top: 202px;
@@ -1476,6 +1478,9 @@ footer{
                     right: -5%;
                 }
             }
+            &--late{
+                border-radius: 0px;
+            }
         }
 
         &__bulle{
@@ -1487,6 +1492,14 @@ footer{
             width: 170%;
             top: 340px;
             left: -300px;
+        }
+        &--late{
+            padding-bottom: 179px;
+            margin-top: 179px;
+
+            svg {
+                top: 100px;
+            }
         }
     }
     
@@ -1530,7 +1543,7 @@ footer{
             width: 2000px;
         }
         &__hommes{
-            top: 0%;
+            top: 25%;
             left: 40%;
             width: 1500px;
         }

@@ -2663,6 +2663,7 @@ footer {
   }
   .projetVisuel__img--late {
     width: 65%;
+    border-radius: 0px;
   }
   .projetVisuel__img--right {
     margin-top: 186px;
@@ -3205,6 +3206,7 @@ footer {
   }
   .projetVisuel__img--late {
     width: 60%;
+    border-radius: 0px;
   }
   .projetVisuel__img-right {
     margin-top: 202px;
@@ -3481,6 +3483,9 @@ footer {
     width: 42%;
     right: -5%;
   }
+  .projetVisuel__img--late {
+    border-radius: 0px;
+  }
   .projetVisuel__bulle {
     width: 16%;
     left: 82%;
@@ -3489,6 +3494,13 @@ footer {
     width: 170%;
     top: 340px;
     left: -300px;
+  }
+  .projetVisuel--late {
+    padding-bottom: 179px;
+    margin-top: 179px;
+  }
+  .projetVisuel--late svg {
+    top: 100px;
   }
 
   .next {
@@ -3525,7 +3537,7 @@ footer {
     width: 2000px;
   }
   .next__hommes {
-    top: 0%;
+    top: 25%;
     left: 40%;
     width: 1500px;
   }
